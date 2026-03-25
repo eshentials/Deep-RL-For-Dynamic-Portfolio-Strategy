@@ -55,8 +55,7 @@ import pandas as pd
 DATA_DIR   = "data"
 REPORT_PATH = os.path.join(DATA_DIR, "cleaning_report.txt")
 
-RAW_EQUITY_PATH = os.path.join(DATA_DIR, "equity_raw_full.csv")   # MultiIndex CSV
-RAW_ADJ_PATH    = os.path.join(DATA_DIR, "adj_close_full.csv")    # fallback flat CSV
+RAW_EQUITY_PATH = os.path.join(DATA_DIR, "raw_ohlcv_2014_2024.csv")
 
 # ── Thresholds ─────────────────────────────────────────────────────────────────
 MISSING_ROW_THRESHOLD = 0.20   # drop date if fraction of NaN assets exceeds this
@@ -70,6 +69,12 @@ WINDOWS: dict[str, tuple[str, str]] = {
     "train": ("2014-01-01", "2020-12-31"),
     "test":  ("2021-01-01", "2021-12-31"),
     "val":   ("2022-01-01", "2024-12-31"),
+}
+
+SPLIT_LABELS: dict[str, str] = {
+    "train": "train_2014_2020",
+    "test":  "test_2021",
+    "val":   "val_2022_2024",
 }
 
 # ── Internal report buffer ─────────────────────────────────────────────────────
@@ -314,6 +319,20 @@ def step_d_outliers(adj: pd.DataFrame) -> pd.DataFrame:
     """
     _section("Step D — Outlier handling")
 
+    # ── Pre-pass: interpolate isolated NaN prices ─────────────────────────────
+    # Step C allows assets with NaN-price streaks ≤ NAN_PRICE_MAX_DAYS.
+    # Isolated NaN days (e.g. a single missing feed day) must be filled
+    # before price reconstruction or cumprod() propagates NaN forward.
+    # Linear interpolation between two valid prices is the correct treatment
+    # for a single missing trading day — it is NOT forward-filling returns.
+    n_nan_before = int(adj.isna().sum().sum())
+    if n_nan_before:
+        adj = adj.interpolate(method="linear", limit_direction="both")
+        n_nan_after = int(adj.isna().sum().sum())
+        _log(f"  Pre-pass — Interpolated {n_nan_before - n_nan_after} "
+             f"isolated NaN price(s)  "
+             f"({n_nan_before} → {n_nan_after} NaN cells)")
+
     # ── Pass 1: 100× price-jump removal ───────────────────────────────────────
     ratio     = adj / adj.shift(1)
     jump_mask = (ratio >= PRICE_JUMP_FACTOR) | (ratio <= 1 / PRICE_JUMP_FACTOR)
@@ -408,7 +427,8 @@ def _final_checks(adj: pd.DataFrame, vol: pd.DataFrame) -> None:
 def split_and_save(df: pd.DataFrame, name: str) -> None:
     for split, (s, e) in WINDOWS.items():
         subset = df.loc[s:e]
-        path   = os.path.join(DATA_DIR, f"{name}_{split}.csv")
+        label  = SPLIT_LABELS[split]
+        path   = os.path.join(DATA_DIR, f"{name}_{label}.csv")
         subset.to_csv(path)
         _log(f"  Saved {path}  ({len(subset)} rows × {len(df.columns)} tickers)")
 
@@ -446,15 +466,15 @@ def run_pipeline() -> tuple[pd.DataFrame, pd.DataFrame]:
     # ── Persist ───────────────────────────────────────────────────────────────
     _section("Saving outputs")
 
-    adj.to_csv(os.path.join(DATA_DIR, "adj_close_clean_full.csv"))
-    vol.to_csv(os.path.join(DATA_DIR, "volume_clean_full.csv"))
-    _log(f"  Saved data/adj_close_clean_full.csv  ({len(adj)} rows)")
-    _log(f"  Saved data/volume_clean_full.csv     ({len(vol)} rows)")
+    adj.to_csv(os.path.join(DATA_DIR, "prices_2014_2024.csv"))
+    vol.to_csv(os.path.join(DATA_DIR, "volume_2014_2024.csv"))
+    _log(f"  Saved data/prices_2014_2024.csv  ({len(adj)} rows)")
+    _log(f"  Saved data/volume_2014_2024.csv  ({len(vol)} rows)")
 
-    _log("\n  Splitting adj_close_clean:")
-    split_and_save(adj, "adj_close_clean")
-    _log("\n  Splitting volume_clean:")
-    split_and_save(vol, "volume_clean")
+    _log("\n  Splitting clean prices:")
+    split_and_save(adj, "prices")
+    _log("\n  Splitting clean volume:")
+    split_and_save(vol, "volume")
 
     # ── Write report ──────────────────────────────────────────────────────────
     with open(REPORT_PATH, "w") as f:

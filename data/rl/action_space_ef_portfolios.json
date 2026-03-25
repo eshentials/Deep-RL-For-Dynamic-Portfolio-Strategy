@@ -1,0 +1,211 @@
+[
+  {
+    "action_id": 0,
+    "risk_label": "cash",
+    "target_return": 0.067,
+    "exp_return": 0.067,
+    "exp_vol": 0.0,
+    "sharpe": 0.0,
+    "weights": {
+      "RELIANCE.NS": 0.0,
+      "TCS.NS": 0.0,
+      "HDFCBANK.NS": 0.0,
+      "INFY.NS": 0.0,
+      "ICICIBANK.NS": 0.0,
+      "NIFTYBEES.NS": 0.0,
+      "HINDUNILVR.NS": 0.0,
+      "KOTAKBANK.NS": 0.0,
+      "CASH": 1.0
+    }
+  },
+  {
+    "action_id": 1,
+    "risk_label": "low",
+    "target_return": 0.217441,
+    "exp_return": 0.217441,
+    "exp_vol": 0.156515,
+    "sharpe": 0.961188,
+    "weights": {
+      "RELIANCE.NS": 0.06583,
+      "TCS.NS": 0.19889,
+      "HDFCBANK.NS": 0.2192,
+      "INFY.NS": 0.09986,
+      "ICICIBANK.NS": 0.0,
+      "NIFTYBEES.NS": 0.10964,
+      "HINDUNILVR.NS": 0.26198,
+      "KOTAKBANK.NS": 0.0446,
+      "CASH": 0.0
+    }
+  },
+  {
+    "action_id": 2,
+    "risk_label": "low",
+    "target_return": 0.220432,
+    "exp_return": 0.220427,
+    "exp_vol": 0.156584,
+    "sharpe": 0.979844,
+    "weights": {
+      "RELIANCE.NS": 0.07003,
+      "TCS.NS": 0.19347,
+      "HDFCBANK.NS": 0.22278,
+      "INFY.NS": 0.1,
+      "ICICIBANK.NS": 0.0,
+      "NIFTYBEES.NS": 0.09397,
+      "HINDUNILVR.NS": 0.26713,
+      "KOTAKBANK.NS": 0.0526,
+      "CASH": 2e-05
+    }
+  },
+  {
+    "action_id": 3,
+    "risk_label": "medium-low",
+    "target_return": 0.223423,
+    "exp_return": 0.223421,
+    "exp_vol": 0.156799,
+    "sharpe": 0.997586,
+    "weights": {
+      "RELIANCE.NS": 0.07424,
+      "TCS.NS": 0.18805,
+      "HDFCBANK.NS": 0.22636,
+      "INFY.NS": 0.10014,
+      "ICICIBANK.NS": 0.0,
+      "NIFTYBEES.NS": 0.07831,
+      "HINDUNILVR.NS": 0.27229,
+      "KOTAKBANK.NS": 0.0606,
+      "CASH": 1e-05
+    }
+  },
+  {
+    "action_id": 4,
+    "risk_label": "medium-low",
+    "target_return": 0.226414,
+    "exp_return": 0.226415,
+    "exp_vol": 0.157158,
+    "sharpe": 1.014363,
+    "weights": {
+      "RELIANCE.NS": 0.078449,
+      "TCS.NS": 0.182638,
+      "HDFCBANK.NS": 0.229938,
+      "INFY.NS": 0.100279,
+      "ICICIBANK.NS": 0.0,
+      "NIFTYBEES.NS": 0.062649,
+      "HINDUNILVR.NS": 0.277447,
+      "KOTAKBANK.NS": 0.068599,
+      "CASH": 0.0
+    }
+  },
+  {
+    "action_id": 5,
+    "risk_label": "medium",
+    "target_return": 0.229405,
+    "exp_return": 0.229407,
+    "exp_vol": 0.157655,
+    "sharpe": 1.030142,
+    "weights": {
+      "RELIANCE.NS": 0.082659,
+      "TCS.NS": 0.177218,
+      "HDFCBANK.NS": 0.233518,
+      "INFY.NS": 0.100419,
+      "ICICIBANK.NS": 0.0,
+      "NIFTYBEES.NS": 0.04698,
+      "HINDUNILVR.NS": 0.282607,
+      "KOTAKBANK.NS": 0.076599,
+      "CASH": 0.0
+    }
+  },
+  {
+    "action_id": 6,
+    "risk_label": "medium",
+    "target_return": 0.232396,
+    "exp_return": 0.232395,
+    "exp_vol": 0.15829,
+    "sharpe": 1.044886,
+    "weights": {
+      "RELIANCE.NS": 0.08686,
+      "TCS.NS": 0.1718,
+      "HDFCBANK.NS": 0.2371,
+      "INFY.NS": 0.10056,
+      "ICICIBANK.NS": 0.0,
+      "NIFTYBEES.NS": 0.03132,
+      "HINDUNILVR.NS": 0.28776,
+      "KOTAKBANK.NS": 0.0846,
+      "CASH": 0.0
+    }
+  },
+  {
+    "action_id": 7,
+    "risk_label": "medium-high",
+    "target_return": 0.235387,
+    "exp_return": 0.235385,
+    "exp_vol": 0.159064,
+    "sharpe": 1.058599,
+    "weights": {
+      "RELIANCE.NS": 0.09107,
+      "TCS.NS": 0.16638,
+      "HDFCBANK.NS": 0.24068,
+      "INFY.NS": 0.1007,
+      "ICICIBANK.NS": 0.0,
+      "NIFTYBEES.NS": 0.01565,
+      "HINDUNILVR.NS": 0.29292,
+      "KOTAKBANK.NS": 0.09259,
+      "CASH": 1e-05
+    }
+  },
+  {
+    "action_id": 8,
+    "risk_label": "medium-high",
+    "target_return": 0.238378,
+    "exp_return": 0.238375,
+    "exp_vol": 0.159974,
+    "sharpe": 1.071269,
+    "weights": {
+      "RELIANCE.NS": 0.09528,
+      "TCS.NS": 0.16094,
+      "HDFCBANK.NS": 0.24425,
+      "INFY.NS": 0.10084,
+      "ICICIBANK.NS": 0.0,
+      "NIFTYBEES.NS": 0.0,
+      "HINDUNILVR.NS": 0.29808,
+      "KOTAKBANK.NS": 0.1006,
+      "CASH": 1e-05
+    }
+  },
+  {
+    "action_id": 9,
+    "risk_label": "high",
+    "target_return": 0.241369,
+    "exp_return": 0.241369,
+    "exp_vol": 0.161205,
+    "sharpe": 1.08166,
+    "weights": {
+      "RELIANCE.NS": 0.10186,
+      "TCS.NS": 0.13549,
+      "HDFCBANK.NS": 0.23821,
+      "INFY.NS": 0.09404,
+      "ICICIBANK.NS": 0.0,
+      "NIFTYBEES.NS": 0.0,
+      "HINDUNILVR.NS": 0.30778,
+      "KOTAKBANK.NS": 0.12262,
+      "CASH": 0.0
+    }
+  },
+  {
+    "action_id": 10,
+    "risk_label": "high",
+    "target_return": 0.24436,
+    "exp_return": 0.24436,
+    "exp_vol": 0.162928,
+    "sharpe": 1.088577,
+    "weights": {
+      "RELIANCE.NS": 0.10843,
+      "TCS.NS": 0.11004,
+      "HDFCBANK.NS": 0.23217,
+      "INFY.NS": 0.08725,
+      "ICICIBANK.NS": 0.0,
+      "NIFTYBEES.NS": 0.0,
+      "HINDUNILVR.NS": 0.31748,
+      "KOTAKBANK.NS": 0.14463,
+      "CASH": 0.0
+    }
+  }
+]

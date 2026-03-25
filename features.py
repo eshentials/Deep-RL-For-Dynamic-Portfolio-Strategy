@@ -44,13 +44,20 @@ os.makedirs(FEATURE_DIR, exist_ok=True)
 
 SPLITS = ("train", "test", "val")
 
+SPLIT_LABELS: dict[str, str] = {
+    "train": "train_2014_2020",
+    "test":  "test_2021",
+    "val":   "val_2022_2024",
+}
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 # HELPERS
 # ══════════════════════════════════════════════════════════════════════════════
 
 def _load_prices(split: str) -> pd.DataFrame:
-    path = os.path.join(DATA_DIR, f"adj_close_clean_{split}.csv")
+    label = SPLIT_LABELS[split]
+    path  = os.path.join(DATA_DIR, f"prices_{label}.csv")
     if not os.path.exists(path):
         raise FileNotFoundError(
             f"{path} not found. Run preprocess.py first."
@@ -481,29 +488,31 @@ def build_features(split: str, verbose: bool = True) -> FeatureBundle:
 # ══════════════════════════════════════════════════════════════════════════════
 
 def save_bundle(bundle: FeatureBundle) -> None:
-    """Save features as compressed .npz + CSVs for fast loading."""
-    s = bundle.split
-    d = FEATURE_DIR
+    """Save features as CSV / npy for fast loading."""
+    s     = bundle.split
+    label = SPLIT_LABELS[s]
+    d     = FEATURE_DIR
 
-    bundle.log_ret.to_csv(os.path.join(d,   f"log_ret_{s}.csv"))
-    bundle.volatility.to_csv(os.path.join(d, f"volatility_{s}.csv"))
-    np.save(os.path.join(d, f"cov_{s}.npy"), bundle.cov)
+    bundle.log_ret.to_csv(os.path.join(d,   f"log_returns_{label}.csv"))
+    bundle.volatility.to_csv(os.path.join(d, f"volatility_30d_{label}.csv"))
+    np.save(os.path.join(d, f"covariance_90d_{label}.npy"), bundle.cov)
 
     print(f"  Saved features for split='{s}' to {d}/")
 
 
 def load_bundle(split: str) -> FeatureBundle:
     """Re-load a previously saved FeatureBundle (skips recomputation)."""
+    label    = SPLIT_LABELS[split]
     prices   = _load_prices(split)
     log_ret  = pd.read_csv(
-        os.path.join(FEATURE_DIR, f"log_ret_{split}.csv"),
+        os.path.join(FEATURE_DIR, f"log_returns_{label}.csv"),
         index_col=0, parse_dates=True,
     )
     vol = pd.read_csv(
-        os.path.join(FEATURE_DIR, f"volatility_{split}.csv"),
+        os.path.join(FEATURE_DIR, f"volatility_30d_{label}.csv"),
         index_col=0, parse_dates=True,
     )
-    cov = np.load(os.path.join(FEATURE_DIR, f"cov_{split}.npy"))
+    cov = np.load(os.path.join(FEATURE_DIR, f"covariance_90d_{label}.npy"))
 
     return FeatureBundle(
         split=split, tickers=list(prices.columns),

@@ -68,13 +68,20 @@ EPS        = 1e-8
 SPLITS     = ("train", "test", "val")
 TRADING_DAYS = 252
 
+SPLIT_LABELS: dict[str, str] = {
+    "train": "train_2014_2020",
+    "test":  "test_2021",
+    "val":   "val_2022_2024",
+}
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 # SECTION 1 — STACKED OBSERVATION WINDOW
 # ══════════════════════════════════════════════════════════════════════════════
 
 def _load_feature_csv(name: str, split: str) -> pd.DataFrame:
-    path = os.path.join(FEATURE_DIR, f"{name}_{split}.csv")
+    label = SPLIT_LABELS[split]
+    path  = os.path.join(FEATURE_DIR, f"{name}_{label}.csv")
     if not os.path.exists(path):
         raise FileNotFoundError(
             f"{path} not found. Run features.py first."
@@ -83,7 +90,8 @@ def _load_feature_csv(name: str, split: str) -> pd.DataFrame:
 
 
 def _load_volume(split: str) -> pd.DataFrame:
-    path = os.path.join(DATA_DIR, f"volume_clean_{split}.csv")
+    label = SPLIT_LABELS[split]
+    path  = os.path.join(DATA_DIR, f"volume_{label}.csv")
     if not os.path.exists(path):
         raise FileNotFoundError(
             f"{path} not found. Run preprocess.py first."
@@ -132,8 +140,8 @@ def build_observation_stack(split: str,
     obs[t, d, i, f] = feature f for asset i, d days before t
                       (obs[t, 0, :, :] = oldest; obs[t, -1, :, :] = most recent)
     """
-    log_ret  = _load_feature_csv("log_ret",    split)
-    roll_vol = _load_feature_csv("volatility", split)
+    log_ret  = _load_feature_csv("log_returns",    split)
+    roll_vol = _load_feature_csv("volatility_30d", split)
     volume   = _load_volume(split)
 
     # Align all three DataFrames to the same index
@@ -275,7 +283,8 @@ def build_efficient_frontier_actions(split: str = "train",
     EF portfolios reduces the action space to K integers while retaining
     economically meaningful diversity (from near-cash to aggressive growth).
     """
-    prices_path = os.path.join(DATA_DIR, f"adj_close_clean_{split}.csv")
+    label       = SPLIT_LABELS[split]
+    prices_path = os.path.join(DATA_DIR, f"prices_{label}.csv")
     if not os.path.exists(prices_path):
         raise FileNotFoundError(
             f"{prices_path} not found. Run preprocess.py first."
@@ -390,13 +399,11 @@ def build_efficient_frontier_actions(split: str = "train",
 def save_action_space(portfolios: list[EFPortfolio],
                        split: str = "train") -> None:
     """Persist action space as JSON (readable) and NPZ (fast load)."""
-    # JSON — human-readable
-    json_path = os.path.join(RL_DIR, f"action_space_{split}.json")
+    json_path = os.path.join(RL_DIR, "action_space_ef_portfolios.json")
     with open(json_path, "w") as f:
         json.dump([p.to_dict() for p in portfolios], f, indent=2)
 
-    # NPZ — fast numpy load for the RL environment
-    npz_path = os.path.join(RL_DIR, f"action_space_{split}.npz")
+    npz_path      = os.path.join(RL_DIR, "action_space_ef_portfolios.npz")
     weight_matrix = np.stack([p.weights for p in portfolios])   # (K+1, N+1)
     np.savez(npz_path,
              weights=weight_matrix,
@@ -412,7 +419,7 @@ def save_action_space(portfolios: list[EFPortfolio],
 
 def load_action_space(split: str = "train") -> np.ndarray:
     """Load the (K+1, N+1) weight matrix from disk."""
-    npz = np.load(os.path.join(RL_DIR, f"action_space_{split}.npz"))
+    npz = np.load(os.path.join(RL_DIR, "action_space_ef_portfolios.npz"))
     return npz["weights"]
 
 
@@ -538,10 +545,10 @@ if __name__ == "__main__":
         try:
             obs, mask = build_observation_stack(split)
             obs_stacks[split] = (obs, mask)
-            # Save
-            np.save(os.path.join(RL_DIR, f"obs_{split}.npy"),  obs)
-            np.save(os.path.join(RL_DIR, f"mask_{split}.npy"), mask)
-            print(f"    Saved obs_{split}.npy  mask_{split}.npy")
+            label = SPLIT_LABELS[split]
+            np.save(os.path.join(RL_DIR, f"observations_{label}.npy"),  obs)
+            np.save(os.path.join(RL_DIR, f"valid_mask_{label}.npy"), mask)
+            print(f"    Saved observations_{label}.npy  valid_mask_{label}.npy")
         except FileNotFoundError as exc:
             print(f"    ✗  {exc}")
 

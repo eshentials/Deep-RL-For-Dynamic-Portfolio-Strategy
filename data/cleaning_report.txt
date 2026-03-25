@@ -1,8 +1,8 @@
 ============================================================
   Deep-RL Portfolio — Data Cleaning Pipeline
-  Run: 2026-03-25 11:44:29
+  Run: 2026-03-25 22:46:59
 ============================================================
-  Loading raw equity from data/equity_raw_full.csv …
+  Loading raw equity from data/raw_ohlcv_2014_2024.csv …
 
 ────────────────────────────────────────────────────────────
   Step A — Corporate-action adjustment (Adj Close)
@@ -52,6 +52,7 @@
 ────────────────────────────────────────────────────────────
   Step D — Outlier handling
 ────────────────────────────────────────────────────────────
+  Pre-pass — Interpolated 2 isolated NaN price(s)  (2 → 0 NaN cells)
   Pass 1 — No 100× price jumps detected. ✓
 
   Pass 2 — Winsorising 2 observation(s) with |return| > 40%:
@@ -88,15 +89,15 @@
 ────────────────────────────────────────────────────────────
   Saving outputs
 ────────────────────────────────────────────────────────────
-  Saved data/adj_close_clean_full.csv  (2710 rows)
-  Saved data/volume_clean_full.csv     (2710 rows)
+  Saved data/prices_2014_2024.csv  (2710 rows)
+  Saved data/volume_2014_2024.csv  (2710 rows)
 
-  Splitting adj_close_clean:
-  Saved data/adj_close_clean_train.csv  (1724 rows × 8 tickers)
-  Saved data/adj_close_clean_test.csv  (248 rows × 8 tickers)
-  Saved data/adj_close_clean_val.csv  (738 rows × 8 tickers)
+  Splitting clean prices:
+  Saved data/prices_train_2014_2020.csv  (1724 rows × 8 tickers)
+  Saved data/prices_test_2021.csv  (248 rows × 8 tickers)
+  Saved data/prices_val_2022_2024.csv  (738 rows × 8 tickers)
 
-  Splitting volume_clean:
-  Saved data/volume_clean_train.csv  (1724 rows × 8 tickers)
-  Saved data/volume_clean_test.csv  (248 rows × 8 tickers)
-  Saved data/volume_clean_val.csv  (738 rows × 8 tickers)
+  Splitting clean volume:
+  Saved data/volume_train_2014_2020.csv  (1724 rows × 8 tickers)
+  Saved data/volume_test_2021.csv  (248 rows × 8 tickers)
+  Saved data/volume_val_2022_2024.csv  (738 rows × 8 tickers)

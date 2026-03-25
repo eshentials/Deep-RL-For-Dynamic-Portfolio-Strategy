@@ -67,6 +67,13 @@ WINDOWS: dict[str, tuple[str, str]] = {
     "val":   ("2022-01-01", "2024-12-31"),
 }
 
+# Human-readable filename suffixes for each split
+SPLIT_LABELS: dict[str, str] = {
+    "train": "train_2014_2020",
+    "test":  "test_2021",
+    "val":   "val_2022_2024",
+}
+
 # ── Quality thresholds ─────────────────────────────────────────────────────────
 MISSING_ROW_THRESHOLD   = 0.20   # drop date if > 20 % assets missing
 ZERO_VOL_MAX_DAYS       = 3      # remove asset if zero-volume streak > this
@@ -417,7 +424,8 @@ def run_quality_pipeline(equity_df: pd.DataFrame
 def split_and_save(df: pd.DataFrame, name: str) -> None:
     for split, (s, e) in WINDOWS.items():
         subset = df.loc[s:e]
-        path   = os.path.join(OUTPUT_DIR, f"{name}_{split}.csv")
+        label  = SPLIT_LABELS[split]
+        path   = os.path.join(OUTPUT_DIR, f"{name}_{label}.csv")
         subset.to_csv(path)
         print(f"  Saved {path}  ({len(subset)} rows)")
 
@@ -454,7 +462,7 @@ if __name__ == "__main__":
     equity_raw = download_equity(EQUITY_TICKERS, FULL_START, FULL_END)
     if equity_raw.empty:
         raise RuntimeError("No equity data downloaded. Check internet connection.")
-    equity_raw.to_csv(os.path.join(OUTPUT_DIR, "equity_raw_full.csv"))
+    equity_raw.to_csv(os.path.join(OUTPUT_DIR, "raw_ohlcv_2014_2024.csv"))
     print(f"\n  Raw equity shape: {equity_raw.shape}")
 
     # ── B. Download macro ──────────────────────────────────────────────────────
@@ -464,7 +472,7 @@ if __name__ == "__main__":
     print("=" * 60)
     macro_df = download_macro(MACRO_TICKERS, FULL_START, FULL_END)
     if not macro_df.empty:
-        macro_df.to_csv(os.path.join(OUTPUT_DIR, "macro_full.csv"))
+        macro_df.to_csv(os.path.join(OUTPUT_DIR, "macro_2014_2024.csv"))
         split_and_save(macro_df, "macro")
 
     # ── C. Data-quality pipeline ───────────────────────────────────────────────
@@ -475,13 +483,13 @@ if __name__ == "__main__":
     adj_clean, vol_clean = run_quality_pipeline(equity_raw)
 
     # ── D. Persist ─────────────────────────────────────────────────────────────
-    adj_clean.to_csv(os.path.join(OUTPUT_DIR, "adj_close_clean_full.csv"))
-    vol_clean.to_csv(os.path.join(OUTPUT_DIR, "volume_clean_full.csv"))
+    adj_clean.to_csv(os.path.join(OUTPUT_DIR, "prices_2014_2024.csv"))
+    vol_clean.to_csv(os.path.join(OUTPUT_DIR, "volume_2014_2024.csv"))
 
     print("\nSplitting clean Adj Close:")
-    split_and_save(adj_clean, "adj_close_clean")
+    split_and_save(adj_clean, "prices")
     print("\nSplitting clean Volume:")
-    split_and_save(vol_clean, "volume_clean")
+    split_and_save(vol_clean, "volume")
 
     print_summary(adj_clean, vol_clean, macro_df)
     print("\nAll files written to ./data/")
