@@ -11,6 +11,8 @@ Data-quality pipeline:
   Step 2 – Use Close as Adj Close equivalent
   Step 3 – Remove defective assets
   Step 4 – Outlier handling
+
+  NOT USED IN THE PROJECT, FINAL USAGE WAS DATASET.PY
 """
 
 from __future__ import annotations
