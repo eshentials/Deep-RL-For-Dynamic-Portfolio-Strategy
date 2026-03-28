@@ -71,6 +71,37 @@ DATA_DIR    = "data"
 FEATURE_DIR = os.path.join(DATA_DIR, "features")
 MACRO_PATH  = os.path.join(DATA_DIR, "macro_2014_2024.csv")
 
+# ── Transaction cost ──────────────────────────────────────────────────────────
+# Flat 0.1% applied to total turnover (sum of |Δw| across stock positions).
+# Covers brokerage + STT + exchange charges on NSE at a discount broker.
+# Usage in env.step():
+#   cost = transaction_cost(w_old, w_new)   # fraction of NAV
+#   reward = gross_return - cost
+TRANSACTION_COST_RATE: float = 0.001   # 0.1 %
+
+
+def transaction_cost(w_old: np.ndarray, w_new: np.ndarray) -> float:
+    """
+    Flat-rate transaction cost as a fraction of portfolio NAV.
+
+    turnover = Σ |w_new[i] − w_old[i]|   (stock positions only, cash excluded)
+    cost     = TRANSACTION_COST_RATE × turnover
+
+    The cash slot is the last element of both weight vectors and is excluded
+    because moving money to/from cash has no direct brokerage or STT cost.
+
+    Parameters
+    ──────────
+    w_old : (N+1,) weights before rebalancing  (N stocks + 1 cash)
+    w_new : (N+1,) weights after  rebalancing
+
+    Returns
+    ───────
+    float — cost as a fraction of NAV (subtract from gross return for net reward)
+    """
+    turnover = float(np.abs(w_new[:-1] - w_old[:-1]).sum())
+    return TRANSACTION_COST_RATE * turnover
+
 NIFTYBEES_TICKER = "NIFTYBEES.NS"
 MACRO_WINDOW     = 5      # look-back for 5-day macro changes
 EPS              = 1e-8
