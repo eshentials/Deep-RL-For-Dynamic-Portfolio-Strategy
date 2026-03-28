@@ -3,13 +3,18 @@ features.py — Feature engineering for Deep-RL portfolio state space.
 
 Computes and validates every feature the RL environment needs:
 
-  Feature              Shape per step        Notes
-  ─────────────────────────────────────────────────────────────────────
-  Log returns          (T, N)                window of LOOKBACK days
-  Rolling volatility   (T, N)                30-day annualised σ
-  Rolling covariance   (T, N, N)             90-day Ledoit-Wolf shrunken
-  Portfolio weights    (T, N+1)              N stocks + cash, sums to 1
-  Drawdown             (T,)                  portfolio-level peak-to-trough
+  Feature                   Shape per step        Notes
+  ──────────────────────────────────────────────────────────────────────
+  Log returns               (T, N)                window of LOOKBACK days
+  Rolling volatility 30d    (T, N)                annualised σ (existing)
+  Rolling covariance 90d    (T, N, N)             Ledoit-Wolf shrunken
+  Portfolio weights         (T, N+1)              N stocks + cash, sums to 1
+  Drawdown                  (T,)                  portfolio-level peak-to-trough
+  ── Per-asset features (new) ──────────────────────────────────────────
+  Daily simple returns      (T, N)                (P_t − P_{t-1}) / P_{t-1}
+  5-day momentum            (T, N)                (P_t / P_{t-5}) − 1
+  20-day realized vol       (T, N)                annualised std of daily returns
+  MA 50/200 spread          (T, N)                (MA50 − MA200) / MA200
 
 All outputs are finite (no NaN, no Inf) after the warm-up period.
 The module can be run standalone to validate and cache features to disk.
@@ -30,13 +35,19 @@ warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 # ── Hyper-parameters ──────────────────────────────────────────────────────────
 LOOKBACK_RETURN  = 20    # days of log-return history fed to the RL state
-VOL_WINDOW       = 30    # rolling window for volatility
+VOL_WINDOW       = 30    # rolling window for 30-day annualised volatility
 COV_WINDOW       = 90    # rolling window for covariance / LW shrinkage
 TRADING_DAYS     = 252   # annualisation factor
 EPS              = 1e-8  # numerical epsilon (replace zero std, avoid /0)
 EWMA_SPAN        = 5     # EWMA span for drawdown smoothing
 COV_CLIP         = 1.0   # clip individual covariance entries to ± this
 WEIGHT_TOL       = 1e-6  # floating-point drift threshold for weight sum
+
+# ── Per-asset feature windows ─────────────────────────────────────────────────
+MOM_WINDOW       = 5     # 5-day return momentum window
+REALVOL_WINDOW   = 20    # 20-day realized volatility window
+MA_SHORT         = 50    # short moving-average period
+MA_LONG          = 200   # long moving-average period (drives warm-up on full series)
 
 DATA_DIR    = "data"
 FEATURE_DIR = os.path.join(DATA_DIR, "features")
@@ -58,6 +69,18 @@ SPLIT_LABELS: dict[str, str] = {
 def _load_prices(split: str) -> pd.DataFrame:
     label = SPLIT_LABELS[split]
     path  = os.path.join(DATA_DIR, f"prices_{label}.csv")
+    if not os.path.exists(path):
+        raise FileNotFoundError(
+            f"{path} not found. Run preprocess.py first."
+        )
+    df = pd.read_csv(path, index_col=0, parse_dates=True)
+    df.index.name = "Date"
+    return df
+
+
+def _load_full_prices() -> pd.DataFrame:
+    """Load the complete 2014-2024 price series (needed for MA200 warm-up)."""
+    path = os.path.join(DATA_DIR, "prices_2014_2024.csv")
     if not os.path.exists(path):
         raise FileNotFoundError(
             f"{path} not found. Run preprocess.py first."
@@ -133,6 +156,128 @@ def compute_rolling_volatility(log_ret: pd.DataFrame,
     vol = vol.replace(0.0, EPS).clip(lower=EPS, upper=10.0)
 
     return vol
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# PER-ASSET FEATURES A — DAILY SIMPLE RETURNS
+# ══════════════════════════════════════════════════════════════════════════════
+
+def compute_simple_returns(prices: pd.DataFrame) -> pd.DataFrame:
+    """
+    Daily simple returns: r_t = (P_t − P_{t-1}) / P_{t-1}.
+
+    Why simple returns here (not log)?
+    ────────────────────────────────────
+    · Directly interpretable as percentage P&L per day.
+    · MA-spread and momentum are price-ratio features — pairing them with
+      simple returns keeps all four features in the same unit space (fraction).
+    · Log returns are used separately for covariance / volatility inputs
+      where time-additivity matters.
+
+    Cleaning
+    ────────
+    · Row 0 set to 0.0 (no prior price).
+    · Clipped to [−0.5, 0.5] for NN stability (pre-cleaning winsorises to ±40%).
+    """
+    ret = prices.pct_change(fill_method=None)
+    ret.iloc[0] = 0.0
+    return ret.clip(lower=-0.5, upper=0.5)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# PER-ASSET FEATURES B — 5-DAY MOMENTUM
+# ══════════════════════════════════════════════════════════════════════════════
+
+def compute_momentum(prices: pd.DataFrame,
+                     window: int = MOM_WINDOW) -> pd.DataFrame:
+    """
+    5-day price momentum: mom_5 = (P_t / P_{t-5}) − 1.
+
+    Why 5-day momentum?
+    ─────────────────────
+    · Captures the dominant short-term (1-week) mean-reversion / momentum
+      signal that is well-documented in Indian equity markets.
+    · Short enough to be actionable by a daily-rebalancing agent, long enough
+      to filter single-day noise.
+    · Complements the MA spread (200d trend) by providing a fast signal.
+
+    Cleaning
+    ────────
+    · First (window) rows back-filled with the first valid value.
+    · Clipped to [−0.6, 0.6] — a 5-day move beyond 60% signals a data error.
+    """
+    mom = prices.pct_change(periods=window, fill_method=None)
+    mom = mom.bfill()
+    return mom.clip(lower=-0.6, upper=0.6)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# PER-ASSET FEATURES C — 20-DAY REALIZED VOLATILITY
+# ══════════════════════════════════════════════════════════════════════════════
+
+def compute_realized_volatility(simple_ret: pd.DataFrame,
+                                 window: int = REALVOL_WINDOW) -> pd.DataFrame:
+    """
+    20-day realized (annualised) volatility: σ_20 = std(r_{t-19:t}) × √252.
+
+    Why 20-day alongside the existing 30-day vol?
+    ──────────────────────────────────────────────
+    · 20-day ≈ 1 calendar month — the standard institutional risk window.
+    · 30-day (existing) uses log returns for portfolio-level hedging/covariance.
+    · 20-day uses simple returns → directly proportional to the daily P&L σ.
+    · Together they give the agent two volatility time-scales per asset.
+
+    Cleaning
+    ────────
+    · First (window-1) rows back-filled with the first valid value.
+    · Zero σ replaced with EPS; clipped to [EPS, 10].
+    """
+    rvol = simple_ret.rolling(window).std() * np.sqrt(TRADING_DAYS)
+    rvol = rvol.bfill()
+    return rvol.replace(0.0, EPS).clip(lower=EPS, upper=10.0)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# PER-ASSET FEATURES D — 50/200-DAY MA SPREAD  (trend strength)
+# ══════════════════════════════════════════════════════════════════════════════
+
+def compute_ma_spread(full_prices: pd.DataFrame,
+                      split_index: pd.DatetimeIndex,
+                      short: int = MA_SHORT,
+                      long: int  = MA_LONG) -> pd.DataFrame:
+    """
+    50/200-day MA spread: (MA_50 − MA_200) / MA_200.
+
+    Why this spread?
+    ─────────────────
+    · The 50/200 golden/death-cross is among the most cited trend indicators
+      in equity markets and is universally available as a signal.
+    · Positive → short MA above long MA → uptrend (over-weight equity).
+    · Negative → short MA below long MA → downtrend (reduce exposure / hold cash).
+    · Normalising by MA_200 makes the signal scale-free across assets with
+      very different price levels (e.g. RELIANCE at ₹3000 vs NIFTYBEES at ₹200).
+
+    Why compute on the FULL price series (not just the split)?
+    ───────────────────────────────────────────────────────────
+    MA_200 needs 200 days of price history.  The test split is only 248 rows —
+    computing on the split alone would leave ≤ 48 valid rows.  Instead we
+    compute on `prices_2014_2024.csv` (full history) and slice to `split_index`.
+    This is NOT leakage: MA at day t only uses prices ≤ t (causal).
+
+    Cleaning
+    ────────
+    · Warm-up rows (first 199 days of full series → 2014) are back-filled.
+    · Clipped to [−0.5, 0.5] — a 50% deviation of MA50 from MA200 is extreme.
+    · Result sliced to `split_index` before returning.
+    """
+    ma_short = full_prices.rolling(short).mean()
+    ma_long  = full_prices.rolling(long).mean()
+
+    spread = (ma_short - ma_long) / ma_long.replace(0.0, EPS)
+    spread = spread.bfill()
+    spread = spread.clip(lower=-0.5, upper=0.5)
+
+    return spread.loc[split_index]
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -355,14 +500,18 @@ def compute_drawdown_from_weights(adj_close: pd.DataFrame,
 @dataclass
 class FeatureBundle:
     """All pre-computed features for one data split, ready for the RL env."""
-    split:      str
-    tickers:    list[str]
-    dates:      pd.DatetimeIndex
-    prices:     pd.DataFrame        # (T, N)  Adj Close
-    log_ret:    pd.DataFrame        # (T, N)  log returns
-    volatility: pd.DataFrame        # (T, N)  annualised rolling σ
-    cov:        np.ndarray          # (T, N, N) LW-shrunken covariance
-    n_assets:   int = field(init=False)
+    split:        str
+    tickers:      list[str]
+    dates:        pd.DatetimeIndex
+    prices:       pd.DataFrame        # (T, N)  Adj Close
+    log_ret:      pd.DataFrame        # (T, N)  log returns
+    volatility:   pd.DataFrame        # (T, N)  30-day annualised σ (log-return based)
+    cov:          np.ndarray          # (T, N, N) LW-shrunken covariance
+    daily_ret:    pd.DataFrame        # (T, N)  simple daily returns
+    momentum:     pd.DataFrame        # (T, N)  5-day price momentum
+    realized_vol: pd.DataFrame        # (T, N)  20-day realized vol (annualised)
+    ma_spread:    pd.DataFrame        # (T, N)  (MA50 − MA200) / MA200
+    n_assets:     int = field(init=False)
 
     def __post_init__(self) -> None:
         self.n_assets = len(self.tickers)
@@ -378,9 +527,13 @@ class FeatureBundle:
         Components (concatenated)
         ─────────────────────────
         · log_returns[t-LOOKBACK_RETURN+1 : t+1]  flattened  (LOOKBACK × N)
-        · volatility[t]                                        (N,)
-        · cov[t] upper-triangle (no redundancy)               (N*(N+1)//2,)
+        · volatility_30d[t]                                    (N,)
+        · cov[t] lower-triangle (no redundancy)               (N*(N+1)//2,)
         · weights                                              (N+1,)
+        · daily_returns[t]                                     (N,)
+        · momentum_5d[t]                                       (N,)
+        · realized_vol_20d[t]                                  (N,)
+        · ma_spread[t]                                         (N,)
 
         Note: drawdown is computed episode-level (needs the NAV history),
         not assembled per-step here.  It is passed in by the environment.
@@ -399,6 +552,10 @@ class FeatureBundle:
             vol_t,
             cov_flat,
             weights,
+            self.daily_ret.iloc[t].values,
+            self.momentum.iloc[t].values,
+            self.realized_vol.iloc[t].values,
+            self.ma_spread.iloc[t].values,
         ]).astype(np.float32)
 
         assert np.isfinite(state).all(), (
@@ -408,13 +565,18 @@ class FeatureBundle:
 
     def state_dim(self) -> int:
         N = self.n_assets
-        return (LOOKBACK_RETURN * N) + N + (N * (N + 1) // 2) + (N + 1)
+        # log-return window + vol30d + cov lower-tri + weights
+        # + daily_ret + momentum_5d + realized_vol_20d + ma_spread
+        return (LOOKBACK_RETURN * N) + N + (N * (N + 1) // 2) + (N + 1) + 4 * N
 
 
 def build_features(split: str, verbose: bool = True) -> FeatureBundle:
     """
     Load prices for `split` and compute all features.
     Runs validation assertions before returning.
+
+    MA-spread uses the full 2014-2024 price series to avoid the 200-day
+    warm-up consuming most of the test/val splits.
     """
     def log(msg: str) -> None:
         if verbose:
@@ -429,23 +591,22 @@ def build_features(split: str, verbose: bool = True) -> FeatureBundle:
     log(f"  Prices loaded: {T} rows × {N} tickers")
 
     # ── 1. Log returns ────────────────────────────────────────────────────────
-    log(f"\n  [1/4] Log returns  (window={LOOKBACK_RETURN}d) …")
+    log(f"\n  [1/8] Log returns  (window={LOOKBACK_RETURN}d) …")
     log_ret = compute_log_returns(prices)
     _assert_finite(log_ret.values, "log_ret", after_warmup=1)
     log(f"        Mean={log_ret.iloc[1:].mean().mean():+.5f}  "
         f"Std={log_ret.iloc[1:].std().mean():.5f}")
 
-    # ── 2. Rolling volatility ─────────────────────────────────────────────────
-    log(f"\n  [2/4] Rolling volatility  (window={VOL_WINDOW}d, annualised) …")
+    # ── 2. Rolling volatility 30d ─────────────────────────────────────────────
+    log(f"\n  [2/8] Rolling volatility 30d  (window={VOL_WINDOW}d, annualised) …")
     vol = compute_rolling_volatility(log_ret, window=VOL_WINDOW)
-    _assert_finite(vol.values, "volatility")
-    vol_stats = vol.describe()
+    _assert_finite(vol.values, "volatility_30d")
     log(f"        Min={vol.values.min():.4f}  "
         f"Mean={vol.values.mean():.4f}  "
         f"Max={vol.values.max():.4f}")
 
     # ── 3. Rolling covariance (LW) ────────────────────────────────────────────
-    log(f"\n  [3/4] Rolling covariance  (LW shrinkage, window={COV_WINDOW}d) …")
+    log(f"\n  [3/8] Rolling covariance  (LW shrinkage, window={COV_WINDOW}d) …")
     cov = compute_rolling_covariance(log_ret, window=COV_WINDOW)
     _assert_finite(cov, "cov")
     diag_vals = np.array([np.diag(cov[t]) for t in range(T)])
@@ -455,21 +616,64 @@ def build_features(split: str, verbose: bool = True) -> FeatureBundle:
         f"Max={diag_vals.max():.4f}")
 
     # ── 4. Weights initialised ────────────────────────────────────────────────
-    log(f"\n  [4/4] Portfolio weights  ({N} stocks + 1 cash = {N+1} slots) …")
+    log(f"\n  [4/8] Portfolio weights  ({N} stocks + 1 cash = {N+1} slots) …")
     pw = PortfolioWeights(n_assets=N)
     w0 = pw.reset()
     assert abs(w0.sum() - 1.0) < WEIGHT_TOL
     log(f"        Initial equal weight = {w0[0]:.6f} each  (sum={w0.sum():.8f})")
+
+    # ── 5. Daily simple returns ───────────────────────────────────────────────
+    log(f"\n  [5/8] Daily simple returns …")
+    daily_ret = compute_simple_returns(prices)
+    _assert_finite(daily_ret.values, "daily_ret", after_warmup=1)
+    log(f"        Mean={daily_ret.iloc[1:].mean().mean():+.5f}  "
+        f"Std={daily_ret.iloc[1:].std().mean():.5f}")
+
+    # ── 6. 5-day momentum ─────────────────────────────────────────────────────
+    log(f"\n  [6/8] 5-day momentum …")
+    momentum = compute_momentum(prices, window=MOM_WINDOW)
+    _assert_finite(momentum.values, "momentum_5d")
+    log(f"        Mean={momentum.mean().mean():+.5f}  "
+        f"Std={momentum.std().mean():.5f}")
+
+    # ── 7. 20-day realized volatility ─────────────────────────────────────────
+    log(f"\n  [7/8] 20-day realized volatility …")
+    realized_vol = compute_realized_volatility(daily_ret, window=REALVOL_WINDOW)
+    _assert_finite(realized_vol.values, "realized_vol_20d")
+    log(f"        Min={realized_vol.values.min():.4f}  "
+        f"Mean={realized_vol.values.mean():.4f}  "
+        f"Max={realized_vol.values.max():.4f}")
+
+    # ── 8. MA 50/200 spread ───────────────────────────────────────────────────
+    # Computed on FULL 2014-2024 prices to avoid 200-day warm-up consuming the
+    # test/val splits (test has only 248 rows; 200-day warm-up → 48 usable).
+    log(f"\n  [8/8] MA spread  (MA{MA_SHORT}/MA{MA_LONG}) …")
+    full_prices = _load_full_prices()
+    full_prices = full_prices[prices.columns]          # same ticker order
+    ma_spread   = compute_ma_spread(full_prices, prices.index)
+    _assert_finite(ma_spread.values, "ma_spread")
+    log(f"        Min={ma_spread.values.min():.4f}  "
+        f"Mean={ma_spread.values.mean():.4f}  "
+        f"Max={ma_spread.values.max():.4f}")
 
     # ── State-vector dimension check ──────────────────────────────────────────
     bundle = FeatureBundle(
         split=split, tickers=list(prices.columns),
         dates=prices.index, prices=prices,
         log_ret=log_ret, volatility=vol, cov=cov,
+        daily_ret=daily_ret, momentum=momentum,
+        realized_vol=realized_vol, ma_spread=ma_spread,
     )
+    N = bundle.n_assets
     log(f"\n  State vector dim = {bundle.state_dim()}")
-    log(f"    {LOOKBACK_RETURN}d × {N} returns  +  {N} vols  +  "
-        f"{N*(N+1)//2} cov (lower-tri)  +  {N+1} weights")
+    log(f"    {LOOKBACK_RETURN}d × {N} log-returns  "
+        f"+  {N} vol30d  "
+        f"+  {N*(N+1)//2} cov (lower-tri)  "
+        f"+  {N+1} weights  "
+        f"+  {N} daily-ret  "
+        f"+  {N} mom5d  "
+        f"+  {N} rvol20d  "
+        f"+  {N} MA-spread")
 
     # ── Spot-check a live state ───────────────────────────────────────────────
     t_test = bundle.warm_up_rows()
@@ -493,9 +697,13 @@ def save_bundle(bundle: FeatureBundle) -> None:
     label = SPLIT_LABELS[s]
     d     = FEATURE_DIR
 
-    bundle.log_ret.to_csv(os.path.join(d,   f"log_returns_{label}.csv"))
-    bundle.volatility.to_csv(os.path.join(d, f"volatility_30d_{label}.csv"))
-    np.save(os.path.join(d, f"covariance_90d_{label}.npy"), bundle.cov)
+    bundle.log_ret.to_csv(os.path.join(d,       f"log_returns_{label}.csv"))
+    bundle.volatility.to_csv(os.path.join(d,    f"volatility_30d_{label}.csv"))
+    np.save(os.path.join(d,                      f"covariance_90d_{label}.npy"), bundle.cov)
+    bundle.daily_ret.to_csv(os.path.join(d,      f"daily_returns_{label}.csv"))
+    bundle.momentum.to_csv(os.path.join(d,       f"momentum_5d_{label}.csv"))
+    bundle.realized_vol.to_csv(os.path.join(d,   f"realized_vol_20d_{label}.csv"))
+    bundle.ma_spread.to_csv(os.path.join(d,      f"ma_spread_50_200_{label}.csv"))
 
     print(f"  Saved features for split='{s}' to {d}/")
 
@@ -504,20 +712,27 @@ def load_bundle(split: str) -> FeatureBundle:
     """Re-load a previously saved FeatureBundle (skips recomputation)."""
     label    = SPLIT_LABELS[split]
     prices   = _load_prices(split)
-    log_ret  = pd.read_csv(
-        os.path.join(FEATURE_DIR, f"log_returns_{label}.csv"),
-        index_col=0, parse_dates=True,
-    )
-    vol = pd.read_csv(
-        os.path.join(FEATURE_DIR, f"volatility_30d_{label}.csv"),
-        index_col=0, parse_dates=True,
-    )
-    cov = np.load(os.path.join(FEATURE_DIR, f"covariance_90d_{label}.npy"))
+
+    def _csv(name: str) -> pd.DataFrame:
+        return pd.read_csv(
+            os.path.join(FEATURE_DIR, f"{name}_{label}.csv"),
+            index_col=0, parse_dates=True,
+        )
+
+    log_ret      = _csv("log_returns")
+    vol          = _csv("volatility_30d")
+    cov          = np.load(os.path.join(FEATURE_DIR, f"covariance_90d_{label}.npy"))
+    daily_ret    = _csv("daily_returns")
+    momentum     = _csv("momentum_5d")
+    realized_vol = _csv("realized_vol_20d")
+    ma_spread    = _csv("ma_spread_50_200")
 
     return FeatureBundle(
         split=split, tickers=list(prices.columns),
         dates=prices.index, prices=prices,
         log_ret=log_ret, volatility=vol, cov=cov,
+        daily_ret=daily_ret, momentum=momentum,
+        realized_vol=realized_vol, ma_spread=ma_spread,
     )
 
 
