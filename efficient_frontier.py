@@ -1,14 +1,25 @@
 """
-efficient_frontier.py — Mean-variance efficient frontier via compressed
-                        covariance and risk-aversion parameter λ.
+efficient_frontier.py — Mean-Variance Optimizer (MVO)
 
-Solves the parametric Markowitz problem for 20 values of λ ∈ [0.1, 2.0]:
+Solves the parametric Markowitz programme for a caller-supplied λ:
 
     max  μᵀw  −  (λ / 2) wᵀ Σ̂ w
     s.t. Σwᵢ = 1,   0 ≤ wᵢ ≤ MAX_WEIGHT
 
-All inputs are extracted from the 49-dim state vector defined in state_spec.py.
-No external price data or full (T, N, N) covariance array is required.
+λ (risk-aversion) is an INPUT — this module never picks it autonomously.
+The caller (ef_optimizer.py, env.py, or any strategy) decides which λ to use
+and passes it to `optimize()`.  This keeps the math separate from the policy.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Public API
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  optimize(state, tickers, lam)            → MVOResult
+      Solve MVO for a single λ value.
+
+  scan_frontier(state, tickers, lambdas)   → list[MVOResult]
+      Solve MVO for every λ in an array — returns the full frontier curve.
+      Use this for visualisation or if the caller wants to pick across λ.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Compressed covariance  (constant-correlation model)
@@ -17,57 +28,35 @@ Compressed covariance  (constant-correlation model)
   Σ̂[i, i] = σᵢ²                         (diagonal — per-asset variance)
   Σ̂[i, j] = ρ̄ × σᵢ × σⱼ   (i ≠ j)      (off-diagonal — avg correlation)
 
-  σᵢ = vol20d[i]  from STATE.VOL20D     (annualised, already in state)
-  ρ̄  = avg_corr   from STATE.AVG_CORR   (scalar — mean pairwise corr)
+  σᵢ  from STATE.VOL20D  (8 annualised volatilities)
+  ρ̄   from STATE.AVG_CORR (1 scalar — mean pairwise correlation)
 
-  → only 9 numbers (8 σ + 1 ρ̄) instead of 36 (full 8×8 lower-triangle).
-
-  Why constant-correlation compression?
-  ──────────────────────────────────────
-  · The full LW covariance requires loading a (T, 8, 8) array (~2 000 frames
-    × 64 floats per frame), which is heavy in a tight RL inner loop.
-  · The constant-correlation model is a well-studied (Elton & Gruber 1973)
-    structural simplification that retains the dominant risk structure
-    (individual volatilities + a single market-wide correlation).
-  · It is always PSD by construction when ρ̄ ∈ (−1/(N−1), 1].
-  · For N = 8 liquid large-cap Indian stocks the pairwise correlations are
-    indeed tightly clustered (avg ≈ 0.5–0.7), making the approximation
-    particularly accurate.
+  9 numbers instead of 36 (full 8×8 lower-triangle).
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Expected-return signal
+Expected-return signal  μ
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   μᵢ = α_mom × momentum_5d[i]  +  α_trend × ma_spread[i]
 
   Both signals come from the state vector (STATE.MOM5D, STATE.MA_SPREAD).
-  · momentum_5d  → fast short-term reversal / momentum signal (~1 week)
-  · ma_spread    → slow trend-following signal (~months)
-  Tunable weights α_mom, α_trend default to 0.60 and 0.40.
-
-  Regime adjustment
-  ─────────────────
-  effective_λ = λ_base × (1 + REGIME_SCALE × |regime|)
-  · Bear (regime=−1) or Bull (regime=+1) both increase effective λ,
-    making the optimizer more risk-averse at market extremes.
-  · Neutral (regime=0) leaves λ unchanged.
-  REGIME_SCALE = 0.30 by default.
+  Tunable weights α_mom=0.60, α_trend=0.40.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-20 lambda values
+Reference λ grid  (20 values, for scanning / analysis)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   LAMBDA_VALUES = np.linspace(0.1, 2.0, 20)
 
-  λ = 0.1  → near-aggressive / return-maximising
-  λ = 1.0  → standard balanced (Sharpe-ish)
-  λ = 2.0  → near minimum-variance / conservative
+  λ → 0    : return-maximising (ignores variance)
+  λ = 1    : balanced (Sharpe-like tradeoff)
+  λ → ∞   : minimum-variance (ignores expected return)
 """
 
 from __future__ import annotations
 
 import os
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 import numpy as np
 import pandas as pd
@@ -75,22 +64,19 @@ from scipy.optimize import minimize
 
 from state_spec import STATE, extract_mvo_inputs
 
-# ── Hyper-parameters ──────────────────────────────────────────────────────────
-LAMBDA_VALUES: np.ndarray = np.linspace(0.1, 2.0, 20)  # 20 risk-aversion levels
+# ── Reference λ grid (for callers who want to scan the frontier) ──────────────
+LAMBDA_VALUES: np.ndarray = np.linspace(0.1, 2.0, 20)
 
-MAX_WEIGHT    = 0.40    # concentration limit per asset
-MIN_WEIGHT    = 0.00    # no short-selling
-RISK_FREE     = 0.067   # India 10-yr G-Sec yield (annualised)
-EPS           = 1e-9    # numerical floor
+# ── Optimisation constraints ──────────────────────────────────────────────────
+MAX_WEIGHT = 0.40    # maximum single-asset weight (concentration limit)
+MIN_WEIGHT = 0.00    # no short-selling
+RISK_FREE  = 0.067   # India 10-yr G-Sec (annualised), for Sharpe computation
 
-# Expected-return signal weights (tunable)
-ALPHA_MOM     = 0.60    # weight on 5-day momentum signal
-ALPHA_TREND   = 0.40    # weight on MA-spread trend signal
+# ── Expected-return signal weights ────────────────────────────────────────────
+ALPHA_MOM   = 0.60   # weight on 5-day momentum
+ALPHA_TREND = 0.40   # weight on MA 50/200 spread
 
-# Regime-based λ scaling  (bear/bull → more conservative)
-REGIME_SCALE  = 0.30
-
-# Paths
+# ── Paths ─────────────────────────────────────────────────────────────────────
 DATA_DIR    = "data"
 FEATURE_DIR = os.path.join(DATA_DIR, "features")
 RESULTS_DIR = os.path.join(DATA_DIR, "ef_results")
@@ -102,59 +88,54 @@ SPLIT_LABELS: dict[str, str] = {
     "val":   "val_2022_2024",
 }
 
+EPS = 1e-9
+
 
 # ══════════════════════════════════════════════════════════════════════════════
-# COMPRESSED COVARIANCE  (constant-correlation model)
+# STEP 1 — COMPRESSED COVARIANCE  (constant-correlation model)
 # ══════════════════════════════════════════════════════════════════════════════
 
 def build_compressed_covariance(vol20d: np.ndarray,
                                  avg_corr: float) -> np.ndarray:
     """
-    Build an (N, N) annualised covariance matrix from N volatilities and
-    a single average pairwise correlation (constant-correlation model).
+    Build an (N, N) annualised covariance matrix from N volatilities + 1 scalar.
 
-    Parameters
-    ──────────
-    vol20d   : (N,) annualised per-asset volatilities from STATE.VOL20D.
-    avg_corr : scalar — mean pairwise correlation from STATE.AVG_CORR.
-
-    Construction
-    ────────────
     Σ̂ = D × C × D
-    where D = diag(vol20d),  C[i,j] = ρ̄ for i≠j,  C[i,i] = 1.
+      D     = diag(vol20d)         — per-asset volatility diagonal
+      C[i,j] = ρ̄  for i ≠ j       — constant off-diagonal correlation
+      C[i,i] = 1
 
     PSD guarantee
     ─────────────
-    The constant-correlation matrix C is PSD if and only if
-        ρ̄ ≥ −1 / (N − 1).
-    For N = 8 this means ρ̄ ≥ −0.143.  We clip ρ̄ to [−0.14, 0.99]
-    before construction to guarantee PSD regardless of input noise.
+    Constant-correlation C is PSD iff ρ̄ ≥ −1/(N−1).
+    For N=8 this means ρ̄ ≥ −0.143.
+    ρ̄ is clipped to [−0.14, 0.99] before construction.
+
+    Parameters
+    ──────────
+    vol20d   : (N,) annualised per-asset volatilities  (from STATE.VOL20D)
+    avg_corr : scalar average pairwise correlation      (from STATE.AVG_CORR)
 
     Returns
     ───────
-    np.ndarray of shape (N, N), symmetric, guaranteed PSD.
+    (N, N) symmetric PSD matrix.
     """
     N       = len(vol20d)
     min_rho = -1.0 / (N - 1) + 1e-4
     rho     = float(np.clip(avg_corr, min_rho, 0.99))
 
-    # Constant-correlation matrix C
-    C = np.full((N, N), rho)
+    C       = np.full((N, N), rho)
     np.fill_diagonal(C, 1.0)
 
-    # Scale by outer product of vols: Σ̂ = D C D
-    D    = np.diag(vol20d.clip(min=EPS))
-    cov  = D @ C @ D
-
-    # Symmetrise and add tiny jitter to diagonal for numerical safety
-    cov  = 0.5 * (cov + cov.T)
-    cov += np.eye(N) * EPS
-
+    D       = np.diag(vol20d.clip(min=EPS))
+    cov     = D @ C @ D
+    cov     = 0.5 * (cov + cov.T)          # symmetrise
+    cov    += np.eye(N) * EPS              # numerical safety
     return cov
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# EXPECTED RETURNS FROM STATE VECTOR
+# STEP 2 — EXPECTED RETURNS  μ  from state vector signals
 # ══════════════════════════════════════════════════════════════════════════════
 
 def expected_returns_from_state(mvo_inputs: dict,
@@ -163,441 +144,241 @@ def expected_returns_from_state(mvo_inputs: dict,
     """
     Estimate per-asset expected returns from two state-vector signals.
 
-    Signal combination
-    ──────────────────
     μᵢ = α_mom × momentum_5d[i]  +  α_trend × ma_spread[i]
 
-    · momentum_5d[i] ∈ [−0.6, 0.6]  — already clipped in features.py
-    · ma_spread[i]   ∈ [−0.5, 0.5]  — already clipped in features.py
+    Signals are used as relative rankings (not absolute forecasts), so
+    intentionally not annualised — annualising 5-day momentum by ×50
+    produces extreme values that destabilise the solver.
 
-    Both signals are dimensionless fractions.  The combined μ is therefore
-    comparable in scale across assets and does not need re-normalisation.
-
-    Why not annualise?
-    ──────────────────
-    Annualising 5-day momentum by ×(252/5) = ×50 would produce extreme μ
-    (a 2% weekly move → 100% annual).  Keeping the signals in their natural
-    units and letting λ control the risk-return tradeoff is more stable for
-    the MVO solver.
+    Parameters
+    ──────────
+    mvo_inputs  : dict from state_spec.extract_mvo_inputs(state)
+    alpha_mom   : weight on 5-day momentum signal   (default 0.60)
+    alpha_trend : weight on MA 50/200 spread signal (default 0.40)
 
     Returns
     ───────
-    np.ndarray of shape (N,), unconstrained range (but typically ±0.3).
+    (N,) float64 array — per-asset expected return proxies.
     """
     mom   = mvo_inputs["momentum_5d"].astype(np.float64)
     trend = mvo_inputs["ma_spread"].astype(np.float64)
-    mu    = alpha_mom * mom + alpha_trend * trend
-    return mu
+    return alpha_mom * mom + alpha_trend * trend
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# SINGLE-λ MVO SOLVER
+# STEP 3 — CORE MVO FORMULA
 # ══════════════════════════════════════════════════════════════════════════════
 
-def solve_mvo_lambda(mu: np.ndarray,
-                     cov: np.ndarray,
-                     lam: float,
-                     max_weight: float = MAX_WEIGHT) -> np.ndarray:
+def solve_mvo(mu: np.ndarray,
+              cov: np.ndarray,
+              lam: float,
+              max_weight: float = MAX_WEIGHT) -> np.ndarray:
     """
-    Solve the mean-variance programme for a given risk-aversion λ:
+    Solve the mean-variance programme for the given risk-aversion λ.
 
-        min   (λ/2) wᵀ Σ̂ w  −  μᵀ w
-        s.t.  Σwᵢ = 1,   0 ≤ wᵢ ≤ max_weight
+    Objective (to minimise):
+        f(w) = (λ/2) wᵀ Σ̂ w  −  μᵀ w
 
-    Solver: scipy SLSQP — handles box + equality constraints cleanly,
-    typically converges in < 50 iterations for N = 8.
+    Constraints:
+        Σwᵢ = 1      (fully invested)
+        0 ≤ wᵢ ≤ max_weight   (no shorting, concentration cap)
 
-    Warm start: equal-weight initialisation is always feasible and close
-    to the optimum for moderate λ.  For extreme λ (near 0 or very large),
-    the solver may need a few extra iterations.
+    Solver: scipy SLSQP — handles equality + box constraints directly.
+    Gradient is supplied analytically: ∇f = λ Σ̂ w − μ
+
+    Parameters
+    ──────────
+    mu         : (N,) expected return vector
+    cov        : (N, N) covariance matrix  (compressed or full)
+    lam        : risk-aversion scalar  (caller's responsibility to supply)
+    max_weight : per-asset upper bound
 
     Returns
     ───────
-    np.ndarray of shape (N,) — stock-only weights, sum = 1.0.
-    (The cash slot is computed externally as 1 − sum(w) if MAX_WEIGHT < 1.)
+    (N,) stock weight vector, sums to 1, all entries in [0, max_weight].
+    Falls back to equal-weight if solver fails.
     """
-    N   = len(mu)
-    w0  = np.ones(N, dtype=np.float64) / N
+    N  = len(mu)
+    w0 = np.ones(N) / N                      # warm start: equal weight
 
-    def objective(w: np.ndarray) -> float:
-        return 0.5 * lam * float(w @ cov @ w) - float(mu @ w)
-
-    def gradient(w: np.ndarray) -> np.ndarray:
-        return lam * (cov @ w) - mu
-
-    constraints = [{"type": "eq", "fun": lambda w: w.sum() - 1.0}]
-    bounds      = [(MIN_WEIGHT, max_weight)] * N
+    def _obj(w):  return 0.5 * lam * float(w @ cov @ w) - float(mu @ w)
+    def _grad(w): return lam * (cov @ w) - mu
 
     result = minimize(
-        objective,
-        w0,
-        jac=gradient,
+        _obj, w0,
+        jac=_grad,
         method="SLSQP",
-        bounds=bounds,
-        constraints=constraints,
+        bounds=[(MIN_WEIGHT, max_weight)] * N,
+        constraints=[{"type": "eq", "fun": lambda w: w.sum() - 1.0}],
         options={"ftol": 1e-12, "maxiter": 2000},
     )
 
     if not result.success:
-        # Fallback: return equal-weight rather than a bad solution
-        return w0.copy()
+        return w0.copy()                      # fallback: equal weight
 
-    w = np.clip(result.x, 0.0, max_weight)
-    # Re-normalise for floating-point drift
+    w     = np.clip(result.x, 0.0, max_weight)
     w_sum = w.sum()
     return w / w_sum if w_sum > EPS else w0
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# PORTFOLIO STATISTICS
-# ══════════════════════════════════════════════════════════════════════════════
-
-def portfolio_stats(w: np.ndarray,
-                    mu: np.ndarray,
-                    cov: np.ndarray) -> tuple[float, float, float]:
-    """
-    Compute (expected_return, expected_volatility, Sharpe) for stock weights w.
-
-    Returns annualised quantities (cov is already annualised by build_compressed_covariance).
-    """
-    exp_ret = float(w @ mu)
-    exp_vol = float(np.sqrt(np.maximum(w @ cov @ w, 0.0)))
-    sharpe  = (exp_ret - RISK_FREE) / (exp_vol + EPS)
-    return exp_ret, exp_vol, sharpe
-
-
-# ══════════════════════════════════════════════════════════════════════════════
-# EFFICIENT FRONTIER RESULT
+# RESULT CONTAINER
 # ══════════════════════════════════════════════════════════════════════════════
 
 @dataclass
-class EFPoint:
-    """One point on the efficient frontier (one λ value)."""
-    lambda_idx:      int
-    lambda_base:     float          # raw λ from LAMBDA_VALUES
-    lambda_eff:      float          # regime-adjusted effective λ
-    weights:         np.ndarray     # (N,) stock-only weights
-    cash_weight:     float          # 1 − sum(weights)
-    exp_return:      float
-    exp_volatility:  float
-    sharpe:          float
-    tickers:         list[str]
+class MVOResult:
+    """
+    Output of a single MVO solve.
 
-    def to_dict(self) -> dict:
-        return {
-            "lambda_idx":     self.lambda_idx,
-            "lambda_base":    round(self.lambda_base,   4),
-            "lambda_eff":     round(self.lambda_eff,    4),
-            "exp_return":     round(self.exp_return,    6),
-            "exp_volatility": round(self.exp_volatility, 6),
-            "sharpe":         round(self.sharpe,        6),
-            "cash_weight":    round(self.cash_weight,   6),
-            "weights":        {t: round(float(w), 6)
-                               for t, w in zip(self.tickers, self.weights)},
-        }
-
-
-@dataclass
-class EfficientFrontierResult:
-    """All 20 EF points computed from a single state vector."""
+    Attributes
+    ──────────
+    lam           : risk-aversion value used  (caller-supplied)
+    weights       : (N+1,) stock weights + cash slot  (sums to 1)
+    mu            : (N,) expected return vector used in the solve
+    cov           : (N, N) compressed covariance used in the solve
+    exp_return    : μᵀ w_stocks   (annualised proxy)
+    exp_volatility: √(wᵀ Σ̂ w)   (annualised)
+    sharpe        : (exp_return − risk_free) / exp_volatility
+    tickers       : list of stock ticker strings (length N)
+    """
+    lam:           float
+    weights:       np.ndarray    # (N+1,) stocks + cash
+    mu:            np.ndarray    # (N,)
+    cov:           np.ndarray    # (N, N)
+    exp_return:    float
+    exp_volatility: float
+    sharpe:        float
     tickers:       list[str]
-    regime:        float
-    avg_corr:      float
-    points:        list[EFPoint] = field(default_factory=list)
 
-    # ── Derived properties ────────────────────────────────────────────────────
+    @property
+    def stock_weights(self) -> np.ndarray:
+        return self.weights[:-1]
 
-    def weights_matrix(self) -> np.ndarray:
-        """(20, N) array — one row per λ, stock-only weights."""
-        return np.stack([p.weights for p in self.points])
+    @property
+    def cash_weight(self) -> float:
+        return float(self.weights[-1])
 
-    def returns_curve(self) -> np.ndarray:
-        """(20,) expected return at each λ."""
-        return np.array([p.exp_return for p in self.points])
-
-    def volatility_curve(self) -> np.ndarray:
-        """(20,) expected volatility at each λ."""
-        return np.array([p.exp_volatility for p in self.points])
-
-    def sharpe_curve(self) -> np.ndarray:
-        """(20,) Sharpe ratio at each λ."""
-        return np.array([p.sharpe for p in self.points])
-
-    def best_sharpe(self) -> EFPoint:
-        """The λ with the highest Sharpe ratio."""
-        return max(self.points, key=lambda p: p.sharpe)
-
-    def at_lambda(self, lam: float) -> EFPoint:
-        """Return the EFPoint whose base λ is closest to `lam`."""
-        return min(self.points, key=lambda p: abs(p.lambda_base - lam))
-
-    def print_table(self) -> None:
-        """Print a human-readable summary table."""
-        print(f"\n  Efficient Frontier  "
-              f"(regime={self.regime:+.0f}  avg_corr={self.avg_corr:.3f})")
-        print(f"  {'λ_base':>7}  {'λ_eff':>7}  "
-              f"{'E[ret]':>8}  {'E[vol]':>8}  {'Sharpe':>7}  "
-              f"{'cash%':>6}  Top-3 holdings")
-        print("  " + "─" * 80)
-        for p in self.points:
-            top3 = sorted(
-                zip(self.tickers, p.weights),
-                key=lambda x: x[1], reverse=True
-            )[:3]
-            top3_str = "  ".join(f"{t.split('.')[0]}={w:.2f}" for t, w in top3 if w > 0.001)
-            star = " ◀" if p is self.best_sharpe() else ""
-            print(f"  {p.lambda_base:>7.2f}  {p.lambda_eff:>7.2f}  "
-                  f"{p.exp_return:>+8.4f}  {p.exp_volatility:>8.4f}  "
-                  f"{p.sharpe:>+7.3f}  "
-                  f"{p.cash_weight*100:>5.1f}%  {top3_str}{star}")
+    def summary(self) -> str:
+        top3 = sorted(zip(self.tickers, self.stock_weights),
+                      key=lambda x: x[1], reverse=True)[:3]
+        top3_str = "  ".join(f"{t.split('.')[0]}={w:.3f}" for t, w in top3 if w > 0.001)
+        return (f"λ={self.lam:.3f}  ret={self.exp_return:+.4f}  "
+                f"vol={self.exp_volatility:.4f}  Sharpe={self.sharpe:+.3f}  "
+                f"cash={self.cash_weight:.3f}  [{top3_str}]")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# MAIN BUILDER
+# PUBLIC API
 # ══════════════════════════════════════════════════════════════════════════════
 
-def build_efficient_frontier(
-    state:       np.ndarray,
-    tickers:     list[str],
-    lambda_values: np.ndarray = LAMBDA_VALUES,
-    regime_scale:  float      = REGIME_SCALE,
-    alpha_mom:     float      = ALPHA_MOM,
-    alpha_trend:   float      = ALPHA_TREND,
-    max_weight:    float      = MAX_WEIGHT,
-) -> EfficientFrontierResult:
+def optimize(state:   np.ndarray,
+             tickers: list[str],
+             lam:     float) -> MVOResult:
     """
-    Build the full efficient frontier from a 49-dim state vector.
+    Solve the MVO for a single caller-supplied λ.
 
-    Steps
-    ─────
-    1. Extract MVO inputs from the state vector (via state_spec.extract_mvo_inputs).
-    2. Build compressed (N, N) covariance from vol20d and avg_correlation.
-    3. Build expected-return vector μ from momentum_5d and ma_spread.
-    4. For each of the 20 λ values, scale by regime and solve the MVO.
-    5. Compute portfolio statistics and package into EFPoint objects.
+    This is the primary entry point.  The caller decides λ; this function
+    only executes the formula.
 
     Parameters
     ──────────
-    state        : (49,) float32 state vector — output of state_spec.build_state_vector
-    tickers      : list of N stock ticker strings (length must equal len(STATE.VOL20D))
-    lambda_values: (20,) array of base λ values  (default: np.linspace(0.1, 2.0, 20))
-    regime_scale : how much |regime| inflates effective λ  (default 0.30)
-    alpha_mom    : signal weight for 5-day momentum          (default 0.60)
-    alpha_trend  : signal weight for MA-spread               (default 0.40)
-    max_weight   : concentration cap per asset               (default 0.40)
+    state   : (49,) state vector from state_spec.build_state_vector
+    tickers : list of N stock ticker strings  (must match STATE.VOL20D length)
+    lam     : risk-aversion parameter  (e.g. from LAMBDA_VALUES[k])
 
     Returns
     ───────
-    EfficientFrontierResult with 20 EFPoint objects.
+    MVOResult with weights (N+1,) including cash slot.
     """
     assert state.shape == (STATE.DIM,), (
         f"Expected state shape ({STATE.DIM},), got {state.shape}"
     )
-
-    # ── 1. Extract MVO inputs from state vector ───────────────────────────────
-    mvo = extract_mvo_inputs(state)
-
-    vol20d   = mvo["vol20d"].astype(np.float64)
+    mvo     = extract_mvo_inputs(state)
+    vol20d  = mvo["vol20d"].astype(np.float64)
     avg_corr = mvo["avg_correlation"]
-    regime   = mvo["regime"]
 
-    # ── 2. Compressed covariance ──────────────────────────────────────────────
-    cov = build_compressed_covariance(vol20d, avg_corr)
+    cov     = build_compressed_covariance(vol20d, avg_corr)
+    mu      = expected_returns_from_state(mvo)
 
-    # ── 3. Expected returns ───────────────────────────────────────────────────
-    mu = expected_returns_from_state(mvo, alpha_mom=alpha_mom, alpha_trend=alpha_trend)
+    w_stocks = solve_mvo(mu, cov, lam)
 
-    # ── 4. Solve for each λ ───────────────────────────────────────────────────
-    result = EfficientFrontierResult(
-        tickers=tickers, regime=regime, avg_corr=avg_corr,
+    exp_ret  = float(w_stocks @ mu)
+    exp_vol  = float(np.sqrt(np.maximum(w_stocks @ cov @ w_stocks, 0.0)))
+    sharpe   = (exp_ret - RISK_FREE) / (exp_vol + EPS)
+
+    cash_w   = float(np.clip(1.0 - w_stocks.sum(), 0.0, 1.0))
+    weights  = np.append(w_stocks, cash_w)
+    weights /= weights.sum()               # normalise for float safety
+
+    return MVOResult(
+        lam=lam,
+        weights=weights.astype(np.float32),
+        mu=mu,
+        cov=cov,
+        exp_return=exp_ret,
+        exp_volatility=exp_vol,
+        sharpe=sharpe,
+        tickers=tickers,
     )
 
-    for idx, lam_base in enumerate(lambda_values):
-        # Regime adjustment: bear or bull → more conservative
-        lam_eff = float(lam_base * (1.0 + regime_scale * abs(regime)))
 
-        w         = solve_mvo_lambda(mu, cov, lam_eff, max_weight=max_weight)
-        exp_r, exp_v, sharpe = portfolio_stats(w, mu, cov)
-
-        # Cash is anything not allocated to stocks
-        cash = float(np.clip(1.0 - w.sum(), 0.0, 1.0))
-
-        result.points.append(EFPoint(
-            lambda_idx=idx,
-            lambda_base=float(lam_base),
-            lambda_eff=lam_eff,
-            weights=w,
-            cash_weight=cash,
-            exp_return=exp_r,
-            exp_volatility=exp_v,
-            sharpe=sharpe,
-            tickers=tickers,
-        ))
-
-    return result
-
-
-# ══════════════════════════════════════════════════════════════════════════════
-# STEP-LEVEL CONVENIENCE FUNCTION
-# ══════════════════════════════════════════════════════════════════════════════
-
-def optimize_from_state(
-    state:      np.ndarray,
-    tickers:    list[str],
-    lambda_idx: int   = 10,
-) -> np.ndarray:
+def scan_frontier(state:        np.ndarray,
+                  tickers:      list[str],
+                  lambda_values: np.ndarray = LAMBDA_VALUES) -> list[MVOResult]:
     """
-    Single-call interface for the RL env and MVO strategy:
-    given a state vector and a lambda index [0, 19], return (N+1,) portfolio
-    weights including a cash slot.
+    Solve MVO for every λ in `lambda_values` and return all results.
 
-    This is the function env.py and the MVO strategy should call at each step.
+    Use this when the caller wants to inspect the full frontier before
+    deciding which portfolio to use, e.g.:
+
+        results = scan_frontier(state, tickers)
+        best    = max(results, key=lambda r: r.sharpe)   # caller picks
 
     Parameters
     ──────────
-    state      : (49,) state vector from state_spec.build_state_vector
-    tickers    : list of N stock tickers (len = 8 for this project)
-    lambda_idx : which of the 20 EF points to use  (0 = aggressive, 19 = conservative)
+    state         : (49,) state vector
+    tickers       : list of N stock ticker strings
+    lambda_values : 1-D array of λ values to evaluate  (default: LAMBDA_VALUES)
 
     Returns
     ───────
-    np.ndarray of shape (N+1,) — stock weights + cash weight, sum = 1.0.
+    list of MVOResult, one per λ, in the same order as lambda_values.
     """
-    ef     = build_efficient_frontier(state, tickers)
-    pt     = ef.points[lambda_idx]
-    cash_w = np.array([pt.cash_weight], dtype=np.float32)
-    return np.concatenate([pt.weights.astype(np.float32), cash_w])
+    return [optimize(state, tickers, float(lam)) for lam in lambda_values]
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# SAVE / LOAD
+# ENTRY POINT — demonstrate the MVO on real feature data
 # ══════════════════════════════════════════════════════════════════════════════
 
-def save_ef_result(result: EfficientFrontierResult,
-                   label: str) -> None:
-    """Save the 20-point EF result to disk (NPZ + human-readable CSV)."""
-    npz_path = os.path.join(RESULTS_DIR, f"ef_portfolios_{label}.npz")
-    csv_path = os.path.join(RESULTS_DIR, f"ef_portfolios_{label}.csv")
+def _load_split_snapshot(split: str) -> tuple[np.ndarray, list[str], pd.Timestamp]:
+    """Load features for a split and return a state vector at the midpoint date."""
+    from features import load_bundle
+    from state_spec import build_state_vector, MACRO_PATH
 
-    np.savez(
-        npz_path,
-        weights=result.weights_matrix(),
-        lambdas_base=np.array([p.lambda_base for p in result.points]),
-        lambdas_eff=np.array([p.lambda_eff   for p in result.points]),
-        exp_returns=result.returns_curve(),
-        exp_vols=result.volatility_curve(),
-        sharpes=result.sharpe_curve(),
-        cash_weights=np.array([p.cash_weight for p in result.points]),
+    label  = SPLIT_LABELS[split]
+    bundle = load_bundle(split)
+    macro  = pd.read_csv(MACRO_PATH, index_col=0, parse_dates=True)
+
+    t      = len(bundle.dates) // 2          # midpoint timestep
+    date   = bundle.dates[t]
+    N      = bundle.n_assets
+    w_eq   = np.ones(N + 1) / (N + 1)
+
+    state = build_state_vector(
+        daily_ret_t = bundle.daily_ret.iloc[t].values.astype(np.float32),
+        momentum_t  = bundle.momentum.iloc[t].values.astype(np.float32),
+        vol20d_t    = bundle.realized_vol.iloc[t].values.astype(np.float32),
+        ma_spread_t = bundle.ma_spread.iloc[t].values.astype(np.float32),
+        cov_t       = bundle.cov[t],
+        weights     = w_eq[:-1].astype(np.float32),
+        tickers     = bundle.tickers,
+        macro_df    = macro,
+        t_date      = date,
+        nav_series  = np.ones(1),
+        log_ret_t   = bundle.log_ret.iloc[t].values.astype(np.float32),
     )
-
-    rows = []
-    for p in result.points:
-        row = {
-            "lambda_base": p.lambda_base,
-            "lambda_eff":  p.lambda_eff,
-            "exp_return":  p.exp_return,
-            "exp_vol":     p.exp_volatility,
-            "sharpe":      p.sharpe,
-            "cash_pct":    round(p.cash_weight * 100, 2),
-        }
-        row.update({t: round(float(w), 6) for t, w in zip(p.tickers, p.weights)})
-        rows.append(row)
-    pd.DataFrame(rows).to_csv(csv_path, index=False)
-
-    print(f"  Saved → {npz_path}")
-    print(f"  Saved → {csv_path}")
-
-
-def load_ef_weights(label: str) -> np.ndarray:
-    """Load the (20, N) weight matrix for a given split label."""
-    path = os.path.join(RESULTS_DIR, f"ef_portfolios_{label}.npz")
-    return np.load(path)["weights"]
-
-
-# ══════════════════════════════════════════════════════════════════════════════
-# ENTRY POINT — run on all three splits using real feature data
-# ══════════════════════════════════════════════════════════════════════════════
-
-def _load_split_features(split: str) -> dict:
-    """
-    Load feature CSVs for a split and return a dict of DataFrames.
-    This is used in __main__ to build realistic state vectors without
-    needing the full RL episode machinery.
-    """
-    label = SPLIT_LABELS[split]
-
-    def _csv(name: str) -> pd.DataFrame:
-        path = os.path.join(FEATURE_DIR, f"{name}_{label}.csv")
-        return pd.read_csv(path, index_col=0, parse_dates=True)
-
-    def _npy(name: str) -> np.ndarray:
-        path = os.path.join(FEATURE_DIR, f"{name}_{label}.npy")
-        return np.load(path)
-
-    return {
-        "daily_ret":    _csv("daily_returns"),
-        "momentum":     _csv("momentum_5d"),
-        "vol20d":       _csv("realized_vol_20d"),
-        "ma_spread":    _csv("ma_spread_50_200"),
-        "cov_array":    _npy("covariance_90d"),       # (T, N, N) — used only for avg_corr
-        "tickers":      list(_csv("daily_returns").columns),
-    }
-
-
-def _state_from_features(feats: dict, t: int) -> np.ndarray:
-    """
-    Construct a minimal 49-dim state vector at row index t from feature dicts.
-
-    For the standalone demo we synthesise the cross-asset, macro, and portfolio
-    groups from the available feature data so that STATE slice indices are
-    respected exactly.  The RL environment will supply these via
-    state_spec.build_state_vector() at every step.
-    """
-    N = len(feats["tickers"])
-
-    # Per-asset group (32 scalars)
-    daily_ret  = feats["daily_ret"].iloc[t].values.astype(np.float32)
-    momentum   = feats["momentum"].iloc[t].values.astype(np.float32)
-    vol20d     = feats["vol20d"].iloc[t].values.astype(np.float32)
-    ma_spread  = feats["ma_spread"].iloc[t].values.astype(np.float32)
-    per_asset  = np.concatenate([daily_ret, momentum, vol20d, ma_spread])
-
-    # Cross-asset group (3 scalars) — derive avg_corr from snapshot cov matrix
-    cov_t   = feats["cov_array"][t]
-    std_vec = np.sqrt(np.diag(cov_t)).clip(min=EPS)
-    corr    = cov_t / np.outer(std_vec, std_vec)
-    np.fill_diagonal(corr, 0.0)
-    iu       = np.triu_indices(N, k=1)
-    avg_corr = float(corr[iu].mean())
-
-    w_eq     = np.ones(N) / N
-    port_vol = float(np.sqrt(w_eq @ cov_t @ w_eq))
-
-    # Niftybees correlation
-    from state_spec import NIFTYBEES_TICKER
-    tickers = feats["tickers"]
-    if NIFTYBEES_TICKER in tickers:
-        idx = tickers.index(NIFTYBEES_TICKER)
-        np.fill_diagonal(corr, 1.0)
-        nifty_corr = float(np.delete(corr[idx], idx).mean())
-    else:
-        np.fill_diagonal(corr, 1.0)
-        nifty_corr = avg_corr
-
-    cross_asset = np.array([avg_corr, port_vol, nifty_corr], dtype=np.float32)
-
-    # Macro group (4 scalars) — neutral placeholders for standalone demo
-    macro = np.array([0.0, 0.0, 0.0, 0.0], dtype=np.float32)
-
-    # Portfolio group (10 scalars) — equal-weight, no history
-    weights   = w_eq.astype(np.float32)
-    pnl       = np.array([0.0], dtype=np.float32)
-    drawdown  = np.array([0.0], dtype=np.float32)
-    portfolio = np.concatenate([weights, pnl, drawdown])
-
-    state = np.concatenate([per_asset, cross_asset, macro, portfolio])
-    assert state.shape == (STATE.DIM,), f"Expected {STATE.DIM}, got {state.shape}"
-    return state
+    return state, bundle.tickers, date
 
 
 if __name__ == "__main__":
@@ -606,72 +387,69 @@ if __name__ == "__main__":
         "ICICIBANK.NS", "NIFTYBEES.NS", "HINDUNILVR.NS", "KOTAKBANK.NS",
     ]
 
-    print("=" * 75)
-    print("  Efficient Frontier  —  compressed covariance, 20 λ values")
-    print("=" * 75)
-    print(f"\n  λ grid : {LAMBDA_VALUES.round(3).tolist()}")
-    print(f"  N      : {len(TICKERS)} assets")
-    print(f"  Model  : constant-correlation Σ̂  "
-          f"(9 params instead of 36)")
-    print(f"  Regime : effective_λ = λ × (1 + {REGIME_SCALE} × |regime|)")
+    print("=" * 70)
+    print("  Mean-Variance Optimizer  —  formula: max μᵀw − (λ/2) wᵀΣ̂w")
+    print("=" * 70)
+    print(f"  Constraints : 0 ≤ wᵢ ≤ {MAX_WEIGHT}   Σwᵢ = 1")
+    print(f"  Covariance  : compressed (9 params = 8 σ + 1 ρ̄)")
+    print(f"  λ grid      : {len(LAMBDA_VALUES)} values  "
+          f"[{LAMBDA_VALUES[0]:.1f} … {LAMBDA_VALUES[-1]:.1f}]")
 
     for split in ("train", "test", "val"):
-        print(f"\n{'─' * 75}")
+        print(f"\n{'─' * 70}")
         print(f"  Split: {split}  ({SPLIT_LABELS[split]})")
-        print(f"{'─' * 75}")
+        print(f"{'─' * 70}")
 
         try:
-            feats = _load_split_features(split)
-            tickers = feats["tickers"]
-            T = len(feats["daily_ret"])
+            state, tickers, date = _load_split_snapshot(split)
+            mvo = extract_mvo_inputs(state)
 
-            # Pick a representative mid-point timestep
-            t_mid = T // 2
-            date  = feats["daily_ret"].index[t_mid]
-            print(f"\n  Representative date : {date.date()}  (row {t_mid} / {T})")
+            print(f"  Date: {date.date()}  |  "
+                  f"vol20d mean={mvo['vol20d'].mean():.4f}  "
+                  f"avg_corr={mvo['avg_correlation']:.4f}  "
+                  f"regime={mvo['regime']:+.0f}")
 
-            state = _state_from_features(feats, t_mid)
-            mvo   = extract_mvo_inputs(state)
-
-            print(f"  vol20d (mean)       : {mvo['vol20d'].mean():.4f}  (annualised)")
-            print(f"  avg_correlation     : {mvo['avg_correlation']:.4f}")
-            print(f"  regime              : {mvo['regime']:+.0f}")
-
-            # Build compressed covariance and show compression stats
-            cov_full   = feats["cov_array"][t_mid]
-            cov_comp   = build_compressed_covariance(
+            # ── Show compression stats ─────────────────────────────────────────
+            from features import load_bundle
+            bundle = load_bundle(split)
+            t_mid  = len(bundle.dates) // 2
+            cov_full = bundle.cov[t_mid]
+            cov_comp = build_compressed_covariance(
                 mvo["vol20d"].astype(np.float64), mvo["avg_correlation"]
             )
-            full_params = (len(tickers) * (len(tickers) + 1)) // 2
-            print(f"\n  Covariance compression:")
-            print(f"    Full LW matrix  : {full_params} independent params  "
-                  f"(lower-tri of {len(tickers)}×{len(tickers)})")
-            print(f"    Compressed model: {len(tickers) + 1} params  "
-                  f"({len(tickers)} σᵢ + 1 ρ̄)")
-            frob_err = np.linalg.norm(cov_full - cov_comp, 'fro')
-            frob_ref = np.linalg.norm(cov_full, 'fro')
-            print(f"    Frobenius error : {frob_err:.6f}  "
-                  f"(relative {frob_err/frob_ref*100:.2f}%)")
+            N_assets = len(tickers)
+            full_params = (N_assets * (N_assets + 1)) // 2
+            frob_err = np.linalg.norm(cov_full - cov_comp, "fro")
+            frob_ref = np.linalg.norm(cov_full, "fro")
+            print(f"  Covariance: {full_params} params → 9 params  "
+                  f"(Frobenius error {frob_err/frob_ref*100:.1f}%)")
 
-            # Run the frontier
-            ef = build_efficient_frontier(state, tickers)
-            ef.print_table()
+            # ── Scan the full frontier and print the table ─────────────────────
+            results = scan_frontier(state, tickers)
 
-            # Best-Sharpe summary
-            best = ef.best_sharpe()
-            print(f"\n  Best Sharpe → λ={best.lambda_base:.2f}  "
-                  f"(idx={best.lambda_idx})  "
-                  f"Sharpe={best.sharpe:.3f}  "
-                  f"ret={best.exp_return:+.4f}  "
-                  f"vol={best.exp_volatility:.4f}")
+            print(f"\n  {'λ':>6}  {'E[ret]':>8}  {'E[vol]':>8}  "
+                  f"{'Sharpe':>7}  {'cash%':>6}  Top holdings")
+            print(f"  {'─'*66}")
+            for r in results:
+                top3 = sorted(zip(tickers, r.stock_weights),
+                              key=lambda x: x[1], reverse=True)[:3]
+                top3_str = "  ".join(
+                    f"{t.split('.')[0]}={w:.2f}" for t, w in top3 if w > 0.001
+                )
+                print(f"  {r.lam:>6.2f}  {r.exp_return:>+8.4f}  "
+                      f"{r.exp_volatility:>8.4f}  {r.sharpe:>+7.3f}  "
+                      f"{r.cash_weight*100:>5.1f}%  {top3_str}")
 
-            # Save
-            save_ef_result(ef, SPLIT_LABELS[split])
+            # ── Show effect of caller-chosen λ ─────────────────────────────────
+            print(f"\n  Caller-supplied λ examples:")
+            for lam_example in [0.1, 1.0, 2.0]:
+                r = optimize(state, tickers, lam_example)
+                print(f"    λ = {lam_example:.1f}  →  {r.summary()}")
 
         except FileNotFoundError as exc:
             print(f"  ✗  {exc}")
 
-    print(f"\n{'=' * 75}")
-    print(f"  Results saved to ./{RESULTS_DIR}/")
-    print(f"  Import via:  from efficient_frontier import build_efficient_frontier")
-    print(f"               from efficient_frontier import optimize_from_state")
+    print(f"\n{'=' * 70}")
+    print("  API:  from efficient_frontier import optimize, scan_frontier")
+    print("        result = optimize(state, tickers, lam=0.8)  # caller picks λ")
+    print("        results = scan_frontier(state, tickers)      # view full curve")
