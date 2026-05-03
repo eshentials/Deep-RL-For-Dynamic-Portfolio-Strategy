@@ -77,7 +77,7 @@ MACRO_PATH  = os.path.join(DATA_DIR, "macro_2014_2024.csv")
 # Usage in env.step():
 #   cost = transaction_cost(w_old, w_new)   # fraction of NAV
 #   reward = gross_return - cost
-TRANSACTION_COST_RATE: float = 0.001   # 0.1 %
+TRANSACTION_COST_RATE: float = 0.002   # 0.1 %
 
 
 def transaction_cost(w_old: np.ndarray, w_new: np.ndarray) -> float:

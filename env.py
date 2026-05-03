@@ -27,7 +27,7 @@ Observation space: Box(-5, 5, shape=(49,), dtype=float32)
 
 Transaction cost (STATIC):
   cost = TRANSACTION_COST_RATE × Σ|Δwᵢ|   (stock positions only)
-  TRANSACTION_COST_RATE = 0.001  (0.1%) — defined once in state_spec.py.
+  TRANSACTION_COST_RATE = 0.002  (0.1%) — defined once in state_spec.py.
   This is a fixed hyperparameter and is NOT learnable or configurable
   from inside the environment.
 """
@@ -54,15 +54,12 @@ from state_spec import (
 from efficient_frontier import optimize, LAMBDA_VALUES
 
 # ── Action-space constants ─────────────────────────────────────────────────────
-HOLDING_PERIODS: list[int] = [1, 5, 10, 21, 63]   # trading days
+HOLDING_PERIODS: list[int] = [3, 5, 10, 21, 63]   # trading days
 N_LAMBDA: int = len(LAMBDA_VALUES)                 # 20
 N_HOLD:   int = len(HOLDING_PERIODS)               # 5
 
 # ── Observation clipping (prevents extreme values blowing up the policy net) ──
 OBS_CLIP: float = 5.0
-
-# ── Reward shaping ────────────────────────────────────────────────────────────
-DRAWDOWN_PENALTY_SCALE: float = 0.5   # multiplier on current drawdown in reward
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -162,6 +159,17 @@ class PortfolioEnv(gym.Env):
         )
         return np.clip(state, -OBS_CLIP, OBS_CLIP).astype(np.float32)
 
+    def _benchmark_log_return(self, t_start: int, t_end: int) -> float:
+        """
+        Simple benchmark: equal-weighted portfolio of assets (no cash).
+        """
+        log_ret = 0.0
+        for t in range(t_start, t_end):
+            r = self.bundle.daily_ret.iloc[t].values.astype(np.float64)
+            bench_r = float(np.mean(r))
+            log_ret += float(np.log1p(bench_r))
+        return log_ret
+
     def _simulate_holding(self, target_w: np.ndarray,
                           hold_days: int) -> tuple[float, np.ndarray]:
         """
@@ -194,12 +202,13 @@ class PortfolioEnv(gym.Env):
     # ── Gymnasium API ──────────────────────────────────────────────────────────
 
     def reset(self, *, seed: int | None = None,
-              options: dict | None = None) -> tuple[np.ndarray, dict]:
+            options: dict | None = None) -> tuple[np.ndarray, dict]:
         super().reset(seed=seed)
 
         self.t             = self.warm_up
         self.nav           = 1.0
         self.peak_nav      = 1.0
+        self.prev_drawdown = 0.0   # ✅ NEW
         self.nav_history   = [1.0]
         self.current_w     = self._equal_weights()
         self.total_tc      = 0.0
@@ -255,19 +264,32 @@ class PortfolioEnv(gym.Env):
         cum_log_ret, _ = self._simulate_holding(target_w, hold_days)
 
         # ── 4. Reward ──────────────────────────────────────────────────────────
-        # Base: cumulative log return over the holding period, minus TC paid
-        reward = cum_log_ret - tc
 
-        # Drawdown penalty: discourage large peak-to-trough losses
+        t_after = self.t
+        t_before = max(t_after - hold_days, self.warm_up)
+
+        # --- Primary signal: excess return vs benchmark ---
+        benchmark_log_ret = self._benchmark_log_return(t_before, t_after)
+        excess_log_ret    = cum_log_ret - benchmark_log_ret
+
+        # Normalize per day (critical for PPO stability)
+        trading_days_span = max(t_after - t_before, 1)
+        excess_return = excess_log_ret / trading_days_span
+
+        # --- Drawdown change (NOT level) ---
         drawdown = (self.nav - self.peak_nav) / (self.peak_nav + EPS)
-        if drawdown < 0:
-            reward += DRAWDOWN_PENALTY_SCALE * drawdown   # adds negative value
+        drawdown_change = drawdown - self.prev_drawdown
+        self.prev_drawdown = drawdown
 
-        # Optional: normalise to per-day equivalent for cross-period comparability
-        actual_hold = max(self.t - self.warm_up - self.episode_steps, 1)
-        if self.reward_scale and hold_days > 1:
-            reward /= hold_days
+        # --- Final reward ---
+        rolling_vol = np.std(self.nav_history[-20:]) + 1e-6
 
+        reward = (
+            excess_return / rolling_vol
+            - 0.1 * tc
+        )
+        reward -= 0.01 * (1 / hold_days)
+        
         self.episode_steps += 1
 
         # ── 5. Termination ─────────────────────────────────────────────────────
