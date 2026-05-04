@@ -1,0 +1,14 @@
+# Deep-RL Portfolio — Python dependencies
+# Install with: pip install -r requirements.txt
+
+numpy==2.1.2
+pandas==2.2.3
+requests==2.32.4
+yfinance==0.2.57
+scikit-learn==1.8.0
+scipy==1.17.1
+PyPortfolioOpt==1.6.0
+gymnasium==1.0.2
+stable-baselines3==1.8.0
+tqdm>=4.66
+rich>=13.0

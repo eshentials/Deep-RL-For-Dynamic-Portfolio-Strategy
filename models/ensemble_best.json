@@ -1,0 +1,12 @@
+{
+  "algo": "a2c",
+  "utility": "mv",
+  "median_sharpe": 8.363262100812406,
+  "mean_sharpe": 8.363262100812406,
+  "sharpe_dist": [
+    8.363262100812406
+  ],
+  "model_path": "models/smart_a2c_mv_latest",
+  "selection_split": "train_tail",
+  "tail_frac": 0.2
+}
