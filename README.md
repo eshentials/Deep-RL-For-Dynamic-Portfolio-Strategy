@@ -49,9 +49,6 @@ venv\Scripts\activate      # On Windows
 
 5. Install dependencies
 pip install -r requirements.txt
-▶️ How to Run
-🔹 Train the model
-python train.py
 
 This will:
 
@@ -75,24 +72,18 @@ Typical outputs include:
 💰 Cumulative returns
 ⚖️ Comparison with baseline strategies (e.g., Buy & Hold)
 
-Example (replace with your actual results):
-
-Final Portfolio Value: 1.85x
-Sharpe Ratio: 1.42
-Max Drawdown: 12.3%
-
 State: Market features (prices, indicators, etc.)
 Action: Portfolio allocation weights
 Reward: Portfolio return (adjusted for transaction costs)
 Agent: Deep RL model (e.g., DDPG / PPO / custom architecture)
 
-⚠️ Challenges Addressed
+Challenges Addressed
 Market volatility
 Overfitting to historical data
 Transaction cost impact
 Exploration vs exploitation
 
-🔮 Future Improvements
+ Future Improvements
 Add more assets (multi-market support)
 Incorporate sentiment/news data
 Use advanced RL models (Transformer-based RL)
