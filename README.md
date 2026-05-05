@@ -98,14 +98,6 @@ Incorporate sentiment/news data
 Use advanced RL models (Transformer-based RL)
 Real-time trading integration
 
-🤝 Contributing
-Contributions are welcome!
-
-Fork the repo
-Create a new branch
-Make changes
-Submit a pull request
-📜 License
 
 This project is licensed under the MIT License.
 
