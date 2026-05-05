@@ -2,7 +2,7 @@
 
 This project implements a Deep Reinforcement Learning (DRL) framework for dynamic portfolio management. The goal is to learn optimal asset allocation strategies over time by maximizing returns while considering transaction costs and market dynamics.
 
-Bash script command: bash run_train_and_evaluate.sh or ./run_train_and_evaluate.sh
+Bash script command: bash run_train_and_evaluate.sh or ./run_train_and_evaluate.sh . The PPO model runs first then the smart tangency mix. (train.py and smart_train.py). 
 
 🚀 Overview
 
@@ -82,15 +82,6 @@ Market volatility
 Overfitting to historical data
 Transaction cost impact
 Exploration vs exploitation
-
- Future Improvements
-Add more assets (multi-market support)
-Incorporate sentiment/news data
-Use advanced RL models (Transformer-based RL)
-Real-time trading integration
-
-
-This project is licensed under the MIT License.
 
 👤 Author
 
