@@ -51,9 +51,6 @@ venv\Scripts\activate      # On Windows
 
 5. Install dependencies
 pip install -r requirements.txt
-▶️ How to Run
-🔹 Train the model
-python train.py
 
 This will:
 
@@ -77,11 +74,6 @@ Typical outputs include:
 💰 Cumulative returns
 ⚖️ Comparison with baseline strategies (e.g., Buy & Hold)
 
-Example (replace with your actual results):
-
-Final Portfolio Value: 1.85x
-Sharpe Ratio: 1.42
-Max Drawdown: 12.3%
 
 State: Market features (prices, indicators, etc.)
 Action: Portfolio allocation weights
