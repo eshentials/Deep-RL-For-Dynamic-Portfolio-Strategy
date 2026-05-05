@@ -80,14 +80,6 @@ Action: Portfolio allocation weights
 Reward: Portfolio return (adjusted for transaction costs)
 Agent: Deep RL model (PPO and smart tangency)
 
-⚠️ Challenges Addressed
-Market volatility
-Overfitting to historical data
-Transaction cost impact
-Exploration vs exploitation
-
-
-This project is licensed under the MIT License.
 
 👤 Author
 
