@@ -78,7 +78,7 @@ Typical outputs include:
 State: Market features (prices, indicators, etc.)
 Action: Portfolio allocation weights
 Reward: Portfolio return (adjusted for transaction costs)
-Agent: Deep RL model (e.g., DDPG / PPO / custom architecture)
+Agent: Deep RL model (PPO and smart tangency)
 
 ⚠️ Challenges Addressed
 Market volatility
