@@ -2,6 +2,10 @@
 
 This project implements a Deep Reinforcement Learning (DRL) framework for dynamic portfolio management. The goal is to learn optimal asset allocation strategies over time by maximizing returns while considering transaction costs and market dynamics.
 
+
+PLEASE NOTE : final model implementation is on the dynamic_model branch. It contains both the smart tangency and the ppo model. This is the baseline static model. The bash script is also present in the same. 
+
+
 🚀 Overview
 
 Traditional portfolio strategies rely on static allocation or handcrafted rules. This project leverages Deep Reinforcement Learning to:
