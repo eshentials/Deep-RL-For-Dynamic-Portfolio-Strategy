@@ -271,12 +271,14 @@ DSR_ETA: float = 1.0 / 252.0
 DSR_WEIGHT: float = 0.1
 
 # ── [BF-6] Participation bonus scale for bull regime ──────────────────────────
-# [RT-4] Raised 8.0 → 15.0. At old scale, a 0.5% daily return contributed only
-#         +0.04 to reward — easily swamped by TC and turnover penalties. At 15×,
-#         the same return contributes +0.075, making participation unambiguously
-#         worth the cost of deploying capital. This creates a clear gradient:
-#         participate → positive return → large bonus > TC cost.
-BULL_PARTICIPATION_SCALE: float = 18.0
+# Scales positive bull log-return; multiplied by actual_exposure (below) so
+# the same return pays more when the portfolio is more invested.
+BULL_PARTICIPATION_SCALE: float = 24.0
+
+# ── Bull allocation shaping (additive): reward equity above a threshold ──────
+# bonus = scale * max(0, exposure - threshold) / trading_days_span  (bull only)
+BULL_ALLOCATION_BONUS_SCALE: float = 3.0
+BULL_ALLOCATION_THRESHOLD: float = 0.80
 
 # ── [BF-7] Momentum-alignment bonus ───────────────────────────────────────────
 MOMENTUM_ALIGNMENT_SCALE: float = 4.0
@@ -299,7 +301,7 @@ BULL_LOW_LAM_TURNOVER_RELIEF: float = 0.40
 # At 2×, a 0.1% daily return edge over benchmark contributes:
 #   bull: 2 * 7.5 * 0.001 = +0.015 vs old +0.0075
 # This makes small daily alpha clearly visible to the policy gradient.
-R_LR_MULTIPLIER: float = 3.0
+R_LR_MULTIPLIER: float = 3.5
 
 # ── [RT-2] MDD penalty scale — halves the fear signal ────────────────────────
 # Applied at reward assembly: R_mdd_scaled = MDD_PENALTY_SCALE * R_mdd.
@@ -310,15 +312,12 @@ R_LR_MULTIPLIER: float = 3.0
 # New: 0.5 * drawdown_weight * (-sqrt(MDD))  e.g. bull: -0.025 * sqrt(MDD)
 MDD_PENALTY_SCALE: float = 0.5
 
-# ── [RT-5] Bull hard exposure floor penalty ───────────────────────────────────
-# Additional quadratic penalty when actual_exposure < BULL_EXPOSURE_FLOOR in bull.
-# The existing exposure_penalty (exposure_weight=0.15, one-sided) is too soft.
-# This hard floor makes sub-80% exposure in bull genuinely costly:
-#   70% exposure → -(3.0 * 0.10²) = -0.030 per step
-#   60% exposure → -(3.0 * 0.20²) = -0.120 per step
-# Combined with the softer exposure_penalty, the gradient is steep below 80%.
-BULL_EXPOSURE_FLOOR: float  = 0.95
-BULL_FLOOR_PENALTY_SCALE: float = 3.0
+# ── [RT-5] Bull hard exposure floor penalty (softer guardrail vs growth terms) ─
+BULL_EXPOSURE_FLOOR: float = 0.85
+BULL_FLOOR_PENALTY_SCALE: float = 1.25
+
+# ── Less cash-penalty stacking in bull (allocation bonuses steer equity) ─────
+CASH_PENALTY_BULL_RELIEF: float = 0.72
 
 # ── [RT-6] Global turnover penalty relief ─────────────────────────────────────
 # All regimes: effective_turnover_weight *= GLOBAL_TURNOVER_RELIEF before
@@ -344,9 +343,9 @@ SPLIT_LABELS: dict[str, str] = {
 # turnover_weight → base; multiplied by GLOBAL_TURNOVER_RELIEF then [LA-4] in bull
 REGIME_REWARD_PARAMS: dict[str, dict] = {
     "bull": dict(
-        alpha_weight    = 12.5,   # [BF-10]; effective growth scale = 7.5 * R_LR_MULTIPLIER = 15.0
+        alpha_weight    = 14.0,   # stronger R_lr weight in bull (growth signal)
         drawdown_weight = 0.05,  # effective MDD scale = 0.05 * MDD_PENALTY_SCALE = 0.025
-        exposure_weight = 0.05,  # [BF-4]; soft one-sided; hard floor via BULL_FLOOR_PENALTY_SCALE
+        exposure_weight = 0.035, # slightly softer vs floor/cash to reduce triple-stacking
         exposure_target = 1.00,
         turnover_weight = 0.04,  # effective = 0.01 * GLOBAL_TURNOVER_RELIEF * (1 - [LA-4])
     ),
@@ -896,26 +895,32 @@ class PortfolioEnv(gym.Env):
             # Symmetric quadratic: penalise any deviation from regime target.
             exposure_penalty = rp["exposure_weight"] * exposure_gap ** 2
 
-        # [RT-5] Bull hard exposure floor penalty ─────────────────────────────
-        # Additional steep quadratic penalty when below BULL_EXPOSURE_FLOOR (80%).
-        # This fires on top of the soft exposure_penalty above, creating a
-        # combined convex penalty surface that strongly discourages sub-80% equity
-        # in bull markets. The gradient steepens as exposure drops further:
-        #   80% → penalty = 0 (floor just met)
-        #   70% → -(3.0 * 0.10²) = -0.030
-        #   60% → -(3.0 * 0.20²) = -0.120 (dominant term in reward)
+        # [RT-5] Bull hard exposure floor penalty (mild vs growth / participation).
         if regime == "bull":
             floor_gap              = actual_exposure - BULL_EXPOSURE_FLOOR
             bull_floor_penalty     = BULL_FLOOR_PENALTY_SCALE * min(floor_gap, 0.0) ** 2
         else:
             bull_floor_penalty     = 0.0
 
-        # [BF-6] Participation bonus — reward for positive absolute return in bull.
-        # [RT-4] Scale raised 8.0 → 15.0 so the bonus dominates TC at normal return levels.
+        # [BF-6] Participation — positive bull log return, scaled by equity deployment.
+        # Same per-day return yields larger bonus when actual_exposure is higher.
         if regime == "bull" and cum_log_ret > 0:
-            participation_bonus = BULL_PARTICIPATION_SCALE * cum_log_ret / trading_days_span
+            participation_bonus = (
+                BULL_PARTICIPATION_SCALE
+                * (cum_log_ret / trading_days_span)
+                * float(np.clip(actual_exposure, 0.0, 1.0))
+            )
         else:
             participation_bonus = 0.0
+
+        # Explicit bull allocation bonus: reward equity above threshold (additive shaping).
+        bull_allocation_bonus = 0.0
+        if regime == "bull":
+            bull_allocation_bonus = (
+                BULL_ALLOCATION_BONUS_SCALE
+                * max(0.0, actual_exposure - BULL_ALLOCATION_THRESHOLD)
+                / trading_days_span
+            )
 
         # [BF-7] Momentum-alignment bonus — in bull, reward holding high-momentum stocks.
         if regime == "bull":
@@ -978,6 +983,8 @@ class PortfolioEnv(gym.Env):
             CASH_OPPORTUNITY_PENALTY * trading_days_span * max(cash_weight - cash_floor, 0.0)
             if is_positive_regime else 0.0
         )
+        if regime == "bull" and cash_penalty > 0.0:
+            cash_penalty *= CASH_PENALTY_BULL_RELIEF
 
         # ── Regime-conditioned reward — all terms explicit ─────────────────────
         #
@@ -996,17 +1003,18 @@ class PortfolioEnv(gym.Env):
         #   ∂reward/∂turnover ≈ 2× less negative (RT-6)
         # → agent is pushed hard toward high-return, fully-invested positions
         reward = (
-            rp["alpha_weight"]       * R_lr                 # [RT-1] 2× growth pressure
+            rp["alpha_weight"]       * R_lr                 # growth (stronger in bull via alpha_weight)
             + DSR_WEIGHT             * R_dsr                 # risk-adjustment
             + rp["drawdown_weight"]  * R_mdd                 # [RT-2] 0.5× MDD fear
-            + participation_bonus                         # [BF-6][RT-4] zero non-bull                                 # [BF-7] zero in non-bull
+            + participation_bonus                            # [BF-6] bull: return × exposure
+            + bull_allocation_bonus                          # bull: equity above threshold
             + lambda_aggression_bonus                        # [LA-2] zero in non-bull
             - lambda_defensiveness_penalty                   # [LA-3] zero in non-bull
             - 0.0002* tc
             - exposure_penalty                               # [BF-5] asymmetric in bull
-            - bull_floor_penalty                             # [RT-5] zero in non-bull
+            - bull_floor_penalty                             # [RT-5] soft guardrail in bull
             - effective_turnover_weight * turnover           # [LA-4][RT-6] relief applied
-            - cash_penalty                                   # [BF-8][RT-3] 4× stronger
+            - cash_penalty                                   # [BF-8][RT-3]; relieved in bull
         )
 
         # Per-day amortisation so all steps are directly comparable for PPO.
@@ -1059,6 +1067,7 @@ class PortfolioEnv(gym.Env):
             "R_mdd":                         R_mdd,
             "max_drawdown":                  self.max_drawdown,
             "participation_bonus":           participation_bonus,
+            "bull_allocation_bonus":         bull_allocation_bonus,
             "momentum_bonus":                momentum_bonus,
             "lambda_aggression_bonus":       lambda_aggression_bonus,       # [LA-2]
             "lambda_defensiveness_penalty":  lambda_defensiveness_penalty,  # [LA-3]
