@@ -79,3 +79,12 @@ def test_files_are_combined_and_conflicts_rejected(tmp_path):
     pd.DataFrame({"Date": ["2020-01-08"], "Yield": [6.0]}).to_csv(b, index=False)
     with pytest.raises(ValueError):
         load_yields([a, b])
+
+
+def test_auction_yield_applies_only_to_later_sessions():
+    sessions = pd.bdate_range("2022-01-03", periods=6)
+    y = pd.Series([0.04, 0.08], index=[sessions[0], sessions[3]])   # new auction on session 3
+    acc = daily_accrual(y, sessions)["accrual"].to_numpy()
+    one_day = (1.04) ** (1 / 365) - 1
+    assert acc[3] == pytest.approx(one_day, rel=1e-12)              # interval ending at the auction close: old rate
+    assert acc[4] == pytest.approx((1.08) ** (1 / 365) - 1, rel=1e-12)

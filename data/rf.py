@@ -19,6 +19,7 @@ Run:  python -m data.rf               # build from data/raw/rbi/ (refuses if cov
 """
 from __future__ import annotations
 
+import re
 import sys
 
 import numpy as np
@@ -101,8 +102,45 @@ def parse_rbi(path) -> pd.Series:
     return out
 
 
+_PDF_ROW = re.compile(r"^(\d{2}-[A-Za-z]{3}-\d{4})\s+(\d{2}-[A-Za-z]{3}-\d{4})\s+(.+)$")
+
+
+def parse_rbi_pdf(path) -> pd.Series:
+    """RBI 'Auctions of 91-Day Government of India Treasury Bills' PDF (DBIE/WSS layout).
+
+    Every auction row has 16 columns (missing values printed as '-'); column 13 is the
+    implicit yield at cut-off price (percent, actual/365). Auctions with no accepted
+    bids print '-' there and are skipped, so the previous yield carries forward.
+    """
+    from pypdf import PdfReader
+    dates, vals, bad = [], [], 0
+    for page in PdfReader(str(path)).pages:
+        for line in (page.extract_text() or "").splitlines():
+            m = _PDF_ROW.match(line.strip())
+            if not m:
+                continue
+            toks = [m.group(1), m.group(2)] + m.group(3).split()
+            if len(toks) != 16:
+                bad += 1
+                continue
+            if toks[12] in ("-", ""):
+                continue
+            try:
+                vals.append(float(toks[12].replace(",", "")))
+                dates.append(pd.to_datetime(m.group(1), format="%d-%b-%Y"))
+            except ValueError:
+                bad += 1
+    out = pd.Series(vals, index=pd.DatetimeIndex(dates)).sort_index()
+    out = out[(out > 0) & (out < 30)]
+    out = out[~out.index.duplicated(keep="last")] / 100.0
+    rng = f"{out.index.min().date()}..{out.index.max().date()}" if len(out) else "no rows"
+    print(f"parsed {len(out)} auction yields from {getattr(path, 'name', path)} (PDF; "
+          f"{bad} malformed rows skipped), {rng}")
+    return out
+
+
 def load_yields(files) -> pd.Series:
-    parts = [parse_rbi(f) for f in files]
+    parts = [parse_rbi_pdf(f) if str(f).lower().endswith(".pdf") else parse_rbi(f) for f in files]
     parts = [p for p in parts if len(p)]
     if not parts:
         raise ValueError("no auction yields parsed from data/raw/rbi/")
@@ -131,16 +169,20 @@ def coverage_problems(yields: pd.Series, freeze: pd.Timestamp) -> list[str]:
 
 
 def daily_accrual(yields: pd.Series, sessions: pd.DatetimeIndex) -> pd.DataFrame:
-    y = yields.reindex(yields.index.union(sessions)).ffill().reindex(sessions)
+    """`yield` at session t = latest auction on or before t. The accrual for the
+    interval (t-1, t] uses the yield known at the close of t-1, so an auction's yield
+    only affects later sessions (protocol: 'from its result date to later sessions')."""
+    y = yields.reindex(yields.index.union(sessions)).ffill().reindex(sessions).to_numpy()
     days = np.r_[1, np.diff(sessions.values).astype("timedelta64[D]").astype(int)]
-    acc = (1.0 + y.to_numpy()) ** (days / 365.0) - 1.0
-    return pd.DataFrame({"yield": y.to_numpy(), "accrual": acc}, index=sessions)
+    y_prev = np.r_[y[:1], y[:-1]]
+    acc = (1.0 + y_prev) ** (days / 365.0) - 1.0
+    return pd.DataFrame({"yield": y, "accrual": acc}, index=sessions)
 
 
 def build(provisional: bool = False) -> pd.DataFrame:
     sessions = pd.read_parquet(PROC / "market.parquet").index
     freeze = pd.Timestamp(load()["data"]["freeze"])
-    files = sorted(p for p in RAW.glob("*") if p.suffix.lower() in (".xls", ".xlsx", ".csv")) if RAW.exists() else []
+    files = sorted(p for p in RAW.glob("*") if p.suffix.lower() in (".xls", ".xlsx", ".csv", ".pdf")) if RAW.exists() else []
     if provisional or not files:
         print("WARNING: writing a PROVISIONAL constant "
               f"{PROVISIONAL_RATE:.1%} series for development runs only.")
@@ -149,6 +191,7 @@ def build(provisional: bool = False) -> pd.DataFrame:
         MARKER.write_text("risk-free series is provisional; add the RBI 91-day T-bill export\n")
         return out
     yields = load_yields(files)
+    yields = yields[yields.index >= pd.Timestamp("2012-01-01")]  # the study needs mid-2012 onward
     probs = coverage_problems(yields, freeze)
     if probs:
         raise SystemExit("refusing to build the risk-free series (outputs unchanged):\n  - " + "\n  - ".join(probs))

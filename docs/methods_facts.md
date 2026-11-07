@@ -14,7 +14,7 @@ Generated from `config/protocol.yaml` (SHA-256 `c97977a4a4bbb055...`) and the da
   - TMPV 2025-10-14: demerger, discovered 400.0 vs prev close 660.75; ex-date return -40.15% -> -1.14%.
   - TRENT 2026-01-01: split boundary artifact, split 1.5 on 2026-06-04; raw return -33.05% -> +0.43%.
 - Benchmark (NIFTYBEES adjusted close): 3 sessions repaired (vendor level glitch or missing). 3 genuine tracking gaps are kept and logged.
-- Risk-free rate: RBI 91-day Treasury bill primary auction cut-off yield (weekly), carried forward, accrued over calendar days / 365. Status: PROVISIONAL placeholder, RBI file not yet added.
+- Risk-free rate: RBI 91-day Treasury bill primary auction cut-off yield (weekly), carried forward, accrued over calendar days / 365. Status: RBI series loaded.
 
 ## Portfolio, costs and execution
 
