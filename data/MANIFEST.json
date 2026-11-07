@@ -1,0 +1,381 @@
+{
+ "files": {
+  "data/processed/benchmark_repairs.csv": {
+   "bytes": 200,
+   "sha256": "bd3ced5376af043707a5930d92bd5b152268cddc284b631dfccf3df3be1e4032",
+   "source": "Derived by this repository's builders"
+  },
+  "data/processed/benchmark_tracking_deviations.csv": {
+   "bytes": 248,
+   "sha256": "5aeebfe94296595ab9229df2abd4a0891acd3aa87cb06121937da36fb0fd7ec2",
+   "source": "Derived by this repository's builders"
+  },
+  "data/processed/engine.npz": {
+   "bytes": 3523904,
+   "sha256": "8f0e812859623498fda26be60105d986ff6274d37cd2f327a026c91f2262d5d6",
+   "source": "Derived by this repository's builders"
+  },
+  "data/processed/market.parquet": {
+   "bytes": 147002,
+   "sha256": "49457808357f7a2c69d2e4b49aeac6576110ce571498dc796774e3cba43d2dce",
+   "source": "Derived by this repository's builders"
+  },
+  "data/processed/price_jumps_explained.csv": {
+   "bytes": 2192,
+   "sha256": "6949a853d553908cc9ae20d1782e4ec789e5b1408f7458dfc8c3388e0ba90edf",
+   "source": "Derived by this repository's builders"
+  },
+  "data/processed/price_qa.csv": {
+   "bytes": 3837,
+   "sha256": "b861845708c6656c21e3594d73372e8761ede9df417dd9b4a4a168b6e5de3838",
+   "source": "Derived by this repository's builders"
+  },
+  "data/processed/price_repairs.csv": {
+   "bytes": 958,
+   "sha256": "b14a5f281c71bcfc5a749cd91d3f2860bb4624d485d4d3cad7f928381797078e",
+   "source": "Derived by this repository's builders"
+  },
+  "data/processed/prices_adjusted.parquet": {
+   "bytes": 2008536,
+   "sha256": "5e10dcc6f7a69ec65484df1d98068e3443b4056727e7bf4e68a141d1bf972671",
+   "source": "Derived by this repository's builders"
+  },
+  "data/processed/rf.parquet": {
+   "bytes": 34922,
+   "sha256": "fd85db6145e0f996c6b8d6f429e048e9813680d6fe2a6fd51d9be661006d888f",
+   "source": "Derived by this repository's builders"
+  },
+  "data/processed/rf_PROVISIONAL": {
+   "bytes": 66,
+   "sha256": "830ed4af8e27303964c7c93ec93f490242a1ae5263308be2c76497d89ce45db2",
+   "source": "Derived by this repository's builders"
+  },
+  "data/raw/market/yahoo_market_adj_close.csv": {
+   "bytes": 286953,
+   "sha256": "72ce38ac13558a45e40c04fff0ead9974ea5e8373cc66c4b2167da0ad04ca17f",
+   "source": "Yahoo Finance via yfinance (^NSEI, NIFTYBEES.NS, ^INDIAVIX, INR=X)"
+  },
+  "data/raw/market/yahoo_market_close.csv": {
+   "bytes": 286953,
+   "sha256": "72ce38ac13558a45e40c04fff0ead9974ea5e8373cc66c4b2167da0ad04ca17f",
+   "source": "Yahoo Finance via yfinance (^NSEI, NIFTYBEES.NS, ^INDIAVIX, INR=X)"
+  },
+  "data/raw/market/yahoo_market_volume.csv": {
+   "bytes": 134618,
+   "sha256": "b0dfe83e91d456b2b79c34ba556b916e85cee3ea9c603215a08e32a44b4f5292",
+   "source": "Yahoo Finance via yfinance (^NSEI, NIFTYBEES.NS, ^INDIAVIX, INR=X)"
+  },
+  "data/raw/prices/yahoo_adj_close.csv": {
+   "bytes": 4925885,
+   "sha256": "74b80b9525e9845334ef4439da98fd71cc06c7a9d9330380322c0f06d3c234c1",
+   "source": "Yahoo Finance via yfinance (constituent adjusted closes)"
+  },
+  "data/raw/prices/yahoo_close.csv": {
+   "bytes": 4526011,
+   "sha256": "83ee8813cfd8f7069f7c080dc52ab474f8937a79f3a951aebfa5deec239776e0",
+   "source": "Yahoo Finance via yfinance (constituent adjusted closes)"
+  },
+  "data/raw/prices/yahoo_splits.csv": {
+   "bytes": 5397,
+   "sha256": "4c36e7f2f9a8198026a01da8e83efdd76e1bc360976ad89f660f4b18db16b314",
+   "source": "Yahoo Finance via yfinance (constituent adjusted closes)"
+  },
+  "data/raw/prices/yahoo_volume.csv": {
+   "bytes": 2333705,
+   "sha256": "d0360953b13e631e26d080d6047711097c01f4ba585441ca92cd8aa255766e38",
+   "source": "Yahoo Finance via yfinance (constituent adjusted closes)"
+  },
+  "data/raw/roster_snapshots/20131013143407_www.nseindia.com.csv": {
+   "bytes": 3055,
+   "sha256": "451e662350940d9b207f925a1bef9019282216d94c2ca603da056a5b97a1a86e",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20140709093019_nseindia.com.csv": {
+   "bytes": 2850,
+   "sha256": "445795d837926310f3ec9da342de5d6273a1c5d68703c8658fb8a660eeb2baa4",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20140804030840_www.nseindia.com.csv": {
+   "bytes": 2850,
+   "sha256": "c5d527c12c0ce8e8b49b21c110384d9ca0059c3771de85fcc9a5b935bd134d57",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20141105074939_www.nseindia.com.csv": {
+   "bytes": 2866,
+   "sha256": "66743a0603380c7a00f25341572d06b04b181bef58f145c1d00b05f5492ff28e",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20150117235113_www.nseindia.com.csv": {
+   "bytes": 2866,
+   "sha256": "3a1702603c3d3f91a2188fc84af5435ed56fc04f1e2aa4642ef4bd4c6e92b9cc",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20150325075124_nseindia.com.csv": {
+   "bytes": 2866,
+   "sha256": "7d2c06e303ea8032eff66af2d47ca3b6219307347734592b3364e8874e1f3cca",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20150519075648_www.nseindia.com.csv": {
+   "bytes": 2866,
+   "sha256": "7d2c06e303ea8032eff66af2d47ca3b6219307347734592b3364e8874e1f3cca",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20151001064319_www.nseindia.com.csv": {
+   "bytes": 2901,
+   "sha256": "9a96dcedf1298ec49784075537dccf4a1e9c407803447382b02f9f20d0b86231",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20171016083142_niftyindices.com.csv": {
+   "bytes": 2920,
+   "sha256": "684f58aad740079458d5f204a250ac0eec98de6180d2b3121dc469ba697f0f88",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20180530101725_www.niftyindices.com.csv": {
+   "bytes": 2938,
+   "sha256": "1300ed616e536040b1379e1151383581bfe10c9fd100bb410e46f4a67f2e678d",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20180929103632_www.niftyindices.com.csv": {
+   "bytes": 2945,
+   "sha256": "ab2ba82a0eb5e4deb890cec8ebecaf4644a4ca695ebc688dbaec4d580f14e236",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20181028012125_www.nseindia.com.csv": {
+   "bytes": 2996,
+   "sha256": "f00e6a2b98c1be8da5af1b19080aaa9a75d3f09867cb94eaa1be7e611f307e99",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20191218174357_nseindia.com.csv": {
+   "bytes": 2972,
+   "sha256": "e38bacbbf034758665c855f307835fb4e51be443b3aafcf3a7b3f0eb6d57cccd",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20200910201244_www1.nseindia.com.csv": {
+   "bytes": 3032,
+   "sha256": "70d75ecb02e87bcef49dda8a8cdbc5e9f386be58da147240bac4e169bab816b7",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20201107195003_www1.nseindia.com.csv": {
+   "bytes": 3032,
+   "sha256": "35b112ba1eafc5141d058f1c31bb24a54d81a527da3818d5b31148950bca611c",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20210526021531_www.nseindia.com.json": {
+   "bytes": 53579,
+   "sha256": "33cfc85f55e3d2ba84a2ef7906823c6111b27ae3c2d83f8eafc0633d28c42dd2",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20210615183523_www.niftyindices.com.csv": {
+   "bytes": 3002,
+   "sha256": "ebf5372eba6be1318abe3d6b143af2280bb8d996b41bee7ee8d8c7b47912f646",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20210629140659_www.nseindia.com.json": {
+   "bytes": 53686,
+   "sha256": "2ded1b31db681c424b639f3067cab74be3d865f2a3190dea274696e2762548ad",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20211214114341_www.nseindia.com.json": {
+   "bytes": 53710,
+   "sha256": "150c2009812bf2760ab035643098b33734baf388b5f7ea43dcd0079672cf926d",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20220728034149_www.niftyindices.com.csv": {
+   "bytes": 3404,
+   "sha256": "4f4435c0f0ea12a5f09711afc755d246092aa9f6848d83b492db1f9a00138044",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20230126060250_archives.nseindia.com.csv": {
+   "bytes": 3402,
+   "sha256": "6291c898e93077ba72aa42e9b10c8a49ea259a3c541ed98f24445f36ece16397",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20230413073051_www.nseindia.com.json": {
+   "bytes": 53752,
+   "sha256": "71067f895123b5a2c14cc71d401ddb3b78bc78a4346dabc30f71ff6398330e59",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20230522051228_archives.nseindia.com.csv": {
+   "bytes": 3402,
+   "sha256": "6291c898e93077ba72aa42e9b10c8a49ea259a3c541ed98f24445f36ece16397",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20231025143230_www.nseindia.com.json": {
+   "bytes": 52788,
+   "sha256": "8a3e09ececd58c11c449004659ec30254dcd752090c47e7fdc8bd3c58c5af1ec",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20240205222833_archives.nseindia.com.csv": {
+   "bytes": 3378,
+   "sha256": "c28d945bb2e23ad7a3ae4f8e1319010c9796d252de07aefed5d93f53112d03ba",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20240210145006_www.nseindia.com.json": {
+   "bytes": 58913,
+   "sha256": "c47a6ddd19635e6215812e35eb46951dd3e181444ed2191b780e93d6735e13ad",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20240406053120_www.nseindia.com.json": {
+   "bytes": 60642,
+   "sha256": "404ca30be30bc06fe1cefd1a24713b538cf05874663e5b2fdd92c9294cf8e28c",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20240410213808_www.nseindia.com.json": {
+   "bytes": 60642,
+   "sha256": "404ca30be30bc06fe1cefd1a24713b538cf05874663e5b2fdd92c9294cf8e28c",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20240413031247_www.nseindia.com.json": {
+   "bytes": 60642,
+   "sha256": "404ca30be30bc06fe1cefd1a24713b538cf05874663e5b2fdd92c9294cf8e28c",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20240524073805_www.niftyindices.com.csv": {
+   "bytes": 3406,
+   "sha256": "04e18d679f517fcad1eae56b80c97f45616f78214e5ab517b28254de72e2c51f",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20240604075835_www.nseindia.com.json": {
+   "bytes": 60642,
+   "sha256": "404ca30be30bc06fe1cefd1a24713b538cf05874663e5b2fdd92c9294cf8e28c",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20240622055418_www.nseindia.com.json": {
+   "bytes": 60642,
+   "sha256": "404ca30be30bc06fe1cefd1a24713b538cf05874663e5b2fdd92c9294cf8e28c",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20241106063423_www.nseindia.com.json": {
+   "bytes": 63463,
+   "sha256": "cf741e57b1d9b4713fd76273f248a6408b0f39700e6506bb5131ac73dcb4c2ed",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20241110013717_www.niftyindices.com.csv": {
+   "bytes": 3393,
+   "sha256": "222a52f838bff623244be25592931e9b064a1375ac2fbc0ba23241aab25a0db5",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20250416133101_www.nseindia.com.json": {
+   "bytes": 63463,
+   "sha256": "cf741e57b1d9b4713fd76273f248a6408b0f39700e6506bb5131ac73dcb4c2ed",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20250428190705_www.nseindia.com.json": {
+   "bytes": 63452,
+   "sha256": "8a0362b61d4490cc5423ce9b5944a588a7db51a35608997c0174d84fb1b5cb48",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20250430054741_www.nseindia.com.json": {
+   "bytes": 63444,
+   "sha256": "2589998a095f2e9513e7cfe89ca043464432e335982020c705443e28822ae0f3",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20250807042704_archives.nseindia.com.csv": {
+   "bytes": 3357,
+   "sha256": "61f828a822c403fc73aa61a130b89696ea37d9ecbfb60ff27e370fd3a51c9fd8",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20260123100306_www.nseindia.com.json": {
+   "bytes": 64777,
+   "sha256": "d24beb6d4e265bc3c8e0222393676223e8e6de5b4af4c78c8474b8178dff0246",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20260319063900_www.nseindia.com.json": {
+   "bytes": 64972,
+   "sha256": "e5228a693b4f55d307780f68402ea26a9c6a6d6e4a9f1c98e0045df5b1910c37",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20260406142530_www.nseindia.com.json": {
+   "bytes": 64897,
+   "sha256": "f58b3e5c884d99563436bbcabe2692f1988fe4cc307589715f02724ec474364b",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20260505071639_www.nseindia.com.json": {
+   "bytes": 64905,
+   "sha256": "3c13433033aec1506eca8a87cb2838d0637592835a011aed00df32488aab1df5",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20260513102131_www.nseindia.com.json": {
+   "bytes": 64914,
+   "sha256": "7a0df5fc985d6f6199e081ea49dd65a87db36fea96071cd0d1d7544742a84faa",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20260514053536_www.nseindia.com.json": {
+   "bytes": 64843,
+   "sha256": "986071f7c31ff56395fd3c0bdcbdb16bce78ccb3d634511b2b34b708d1d50c8a",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20260518041154_www.nseindia.com.json": {
+   "bytes": 64867,
+   "sha256": "b5b4007a64ad46c3371fd3d9a928540a5607a561f4d119a1ef8b6a6fbc3326dd",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20260519050036_www.nseindia.com.json": {
+   "bytes": 64818,
+   "sha256": "694c513141b41e669f7e8148ee1fc8cf27bb2266e88b0e77fe020a80b22d069f",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20260519164007_www.nseindia.com.json": {
+   "bytes": 64926,
+   "sha256": "8cf0f9398e06fee6576c777aab1bc10e126583f661cb45b824e39ffa389cc32a",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20260520095344_www.nseindia.com.json": {
+   "bytes": 65150,
+   "sha256": "05754f84e9f6db314d7dccd6ec654b78c45c5b28abf953390e8fc8ba27738476",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20260522043522_www.nseindia.com.json": {
+   "bytes": 64734,
+   "sha256": "67b22d0b5898bd7d2577e153bd379b0c0acec894fc5d3656ad88100e01c7b866",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20260621143009_nsearchives.nseindia.com.csv": {
+   "bytes": 3352,
+   "sha256": "9fb8832853c279448d2bc05f0e7dd5f460ed2ff35332fea8c40fc1250362ad28",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/20261015151352_www.niftyindices.com.csv": {
+   "bytes": 3344,
+   "sha256": "f5ba4027d935ae72879d5c24bbebf0e8439ec8ed504ffdf4175fde69206244b3",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/raw/roster_snapshots/cdx_captures.csv": {
+   "bytes": 15904,
+   "sha256": "3ba5b4e2c440baad36251bfdde6e016d6c63d8877a197e722be3eeed1db9d719",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)"
+  },
+  "data/roster/changes.csv": {
+   "bytes": 11722,
+   "sha256": "926714eeb3ba07894bb4b5cf6c9f7d3c5eb6cbba00829a420aaafe4cfd24d242",
+   "source": "Derived: roster snapshots, dated change events, membership intervals"
+  },
+  "data/roster/membership_daily.parquet": {
+   "bytes": 71147,
+   "sha256": "dc4f9176103e1c39be56e9264a2e68d1caf254fa4d1a2d868ae34ff764b19a0d",
+   "source": "Derived: roster snapshots, dated change events, membership intervals"
+  },
+  "data/roster/membership_intervals.csv": {
+   "bytes": 3832,
+   "sha256": "6fa31ed9c1695f0104228c693b9bda92fe1131429a83d9deb288122c6cd2dc61",
+   "source": "Derived: roster snapshots, dated change events, membership intervals"
+  },
+  "data/roster/snapshot_index.csv": {
+   "bytes": 11526,
+   "sha256": "9acd2abeb08fe31168666e5c0004282aa85eaaf5fdce81e496e355fa66683b5c",
+   "source": "Derived: roster snapshots, dated change events, membership intervals"
+  },
+  "data/roster/snapshot_members.csv": {
+   "bytes": 335948,
+   "sha256": "d33d91b939dd664c4c06ceb97f9674f762228273436f26d015140aa7501b8efc",
+   "source": "Derived: roster snapshots, dated change events, membership intervals"
+  },
+  "data/roster/validation.csv": {
+   "bytes": 6054,
+   "sha256": "6679db6e2b50abc2c0f6e85d8efce7d2979f0eac3fd72a1360024a3232f57382",
+   "source": "Derived: roster snapshots, dated change events, membership intervals"
+  }
+ },
+ "generated_utc": "2026-11-07T13:01:41Z",
+ "protocol_sha256": "c97977a4a4bbb055fd90e01bdc956a50b719f27a215661018bc04599f92a33a8"
+}

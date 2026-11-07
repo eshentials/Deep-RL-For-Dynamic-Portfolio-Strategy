@@ -1,0 +1,5 @@
+symbol,ticker,date,kind,detail,source
+ITC,ITC.NS,2025-01-06,demerger,discovered 455.6 vs prev close 481.6; ex-date return -4.55% -> -2.84%,https://es.tradingview.com/news/moneycontrol:e51894f6e094b:0-itc-hotels-demerger-itc-discovered-price-at-rs-455-6-down-rs-27-following-special-pre-open-session
+RELIANCE,RELIANCE.NS,2023-07-20,demerger,discovered 2580.0 vs prev close 2841.85; ex-date return -0.12% -> +1.54%,https://www.businesstoday.in/markets/company-stock/story/ril-share-price-settles-at-rs-2580-in-special-pre-open-session-jio-financial-at-rs-26185-390528-2023-07-20
+TMPV,TMPV.NS,2025-10-14,demerger,discovered 400.0 vs prev close 660.75; ex-date return -40.15% -> -1.14%,https://www.autocarpro.in/news/tata-motors-stock-adjusts-to-demerger-shares-of-pv-unit-start-trading-at-rs-400-129224
+TRENT,TRENT.NS,2026-01-01,split_boundary_artifact,split 1.5 on 2026-06-04; raw return -33.05% -> +0.43%,Yahoo split record (data/raw/prices/yahoo_splits.csv)

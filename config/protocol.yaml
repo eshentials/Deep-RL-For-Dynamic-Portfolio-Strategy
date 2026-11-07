@@ -1,0 +1,99 @@
+# Machine-readable protocol. Code reads ONLY this file; protocol.md quotes its SHA-256.
+# Any change after tag protocol-v1 makes train/run_test.py refuse to run.
+version: 1
+study: "RL as a risk-budget controller: PPO exposure and horizon control over risk parity, point-in-time Nifty 50, walk-forward 2019-2026"
+
+data:
+  price_start: "2012-07-01"     # warm-up for the 252-session index high and the 120-session covariance
+  study_start: "2014-01-01"
+  freeze: "2026-11-06"          # last session on or before this date
+  universe: nifty50
+  min_coverage: 0.98            # share of member sessions with a price, else the symbol is excluded
+  jump_flag: 0.25               # |daily return| above this needs an explanation, else excluded
+  index: "^NSEI"                # index features
+  benchmark: "NIFTYBEES.NS"     # total-return benchmark (adjusted close)
+  benchmark_glitch_threshold: 0.20   # |log(ETF/index ratio) - trailing median| above this = vendor glitch, level imputed from index growth
+  benchmark_deviation_log: 0.03      # genuine ETF/index return gaps above this are kept and logged
+  vix: "^INDIAVIX"
+  fx: "INR=X"                   # lagged one session: Yahoo's FX close falls after the NSE close
+  delisting_rule: "exit at last traded price"
+  delisting_haircut_sensitivity: -0.30
+
+risk_free:
+  series: "RBI 91-day Treasury bill primary auction cut-off yield (weekly)"
+  fill: "forward-fill each auction yield from its result date to later sessions"
+  day_count: 365                # cash accrues (1 + y)^(calendar days / 365) - 1 between sessions
+
+portfolio:
+  allocator: erc                # equal risk contribution, Spinu convex formulation
+  cov_window: 120               # sessions; complete window required for eligibility
+  cov_estimator: ledoit_wolf
+  cost_bps: 10                  # per unit of one-way turnover sum|dw|, charged on NAV
+  execution: close_t            # decide and trade at close t, earn from t+1
+  exposure_grid: [0.5, 0.7, 0.85, 1.0]
+  horizon_grid: [5, 21]
+  year_boundary_rebalance: true # every test year is governed only by its own fold's policy
+
+reward:
+  kappa: 1.0                    # fixed for the one-week protocol (not tuned)
+  scale: 100.0
+
+state:
+  market_features: [idx_vol20, idx_vol60, idx_vol_ratio, idx_mom21, idx_mom63, idx_dd252,
+                    avg_corr60, vix, vix_chg5, fx_chg21_lag1]
+  path_features: [exposure, own_dd, own_vol20]
+  zscore: train_window          # market features standardised with the fold's training-window stats
+  clip: 5.0
+
+folds:
+  test_years: [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
+  train_start_year: 2014        # train = 2014..Y-3
+  n_val_years: 2                # validate = Y-2, Y-1
+  previously_seen: [2022, 2023, 2024, 2025, 2026]
+
+training:
+  algo: ppo                     # a2c hook exists, not run in this protocol
+  seeds: [0, 1, 2, 3, 4]
+  total_steps: 200000
+  eval_every: 10000             # checkpoint score = mean annualised Sharpe over the two validation years
+  episode_sessions: 252         # random windows inside the training years, start in cash
+  ppo:
+    learning_rate: 3.0e-4
+    n_steps: 1024
+    batch_size: 64
+    n_epochs: 10
+    gamma: 1.0
+    gae_lambda: 0.95
+    clip_range: 0.2
+    ent_coef: 0.01
+    vf_coef: 0.5
+    max_grad_norm: 0.5
+    net_arch: [64, 64]
+  torch_threads: 1
+  workers: 5
+
+ensemble:
+  exposure: mean
+  horizon: median
+
+baselines:
+  vol_target:
+    targets: [0.10, 0.12, 0.15]
+    horizons: [5, 21]
+    vol_window: 60              # realised vol of the unlevered risk-parity portfolio
+    floor: 0.5                  # primary rule; the unfloored rule (floor 0) is secondary
+    cap: 1.0
+  equal_weight: {rebalance: monthly}
+  fixed_exposures: [0.5, 0.7, 0.85, 1.0]
+  fixed_exposure_horizon: 21
+  random_policy: {n_seeds: 100}
+  best_fixed_action: {select_on: validation}
+
+evaluation:
+  test_start: "2019-01-01"
+  primary: {strategy: ppo_ensemble, baseline: vol_target_floored, metric: sharpe, sided: greater}
+  bootstrap: {kind: paired_circular_block, block: 20, draws: 10000, seed: 20261107}
+  alpha: 0.05
+  secondary: {metrics: [max_drawdown, calmar], against: [equal_weight, niftybees]}
+  sensitivities: [execution_lag_1, cost_20bps, vol_target_unfloored, delisting_haircut]
+  drawdown_episode_years: [2020, 2025]

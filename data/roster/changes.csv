@@ -1,0 +1,80 @@
+effective_date,action,symbol,reason,confidence,source
+2014-03-28,add,TECHM,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs27022014.pdf
+2014-03-28,add,MCDOWELL-N,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs27022014.pdf
+2014-03-28,remove,JPASSOCIAT,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs27022014.pdf
+2014-03-28,remove,RANBAXY,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs27022014.pdf
+2014-09-19,add,ZEEL,semi-annual review,high,https://www.business-standard.com/amp/article/pti-stories/zee-entertainment-to-replace-usl-in-nifty-from-sep-19-114082100413_1.html
+2014-09-19,remove,MCDOWELL-N,semi-annual review,high,https://www.business-standard.com/amp/article/pti-stories/zee-entertainment-to-replace-usl-in-nifty-from-sep-19-114082100413_1.html
+2015-03-27,add,IDEA,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs20022015.pdf
+2015-03-27,add,YESBANK,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs20022015.pdf
+2015-03-27,remove,DLF,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs20022015.pdf
+2015-03-27,remove,JINDALSTEL,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs20022015.pdf
+2015-05-29,add,BOSCHLTD,ad-hoc (IDFC demerger),high,https://www.business-standard.com/amp/article/pti-stories/idfc-to-sign-out-of-nifty-tomorrow-bosch-in-115052800523_1.html
+2015-05-29,remove,IDFC,ad-hoc (IDFC demerger),high,https://www.business-standard.com/amp/article/pti-stories/idfc-to-sign-out-of-nifty-tomorrow-bosch-in-115052800523_1.html
+2015-09-28,add,ADANIPORTS,semi-annual review,high,https://www.business-standard.com/article/news-cm/apsez-gains-in-early-trade-on-entry-into-50-unit-cnx-nifty-115092800124_1.html
+2015-09-28,remove,NMDC,semi-annual review,high,https://www.business-standard.com/article/news-cm/apsez-gains-in-early-trade-on-entry-into-50-unit-cnx-nifty-115092800124_1.html
+2016-04-01,add,AUROPHARMA,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs22022016_2.pdf
+2016-04-01,add,EICHERMOT,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs22022016_2.pdf
+2016-04-01,add,INFRATEL,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs22022016_2.pdf
+2016-04-01,add,TATAMTRDVR,semi-annual review (DVR admitted as an additional security: 51 securities),high,https://niftyindices.com/Press_Release/ind_prs22022016_2.pdf
+2016-04-01,remove,CAIRN,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs22022016_2.pdf
+2016-04-01,remove,PNB,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs22022016_2.pdf
+2016-04-01,remove,VEDL,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs22022016_2.pdf
+2016-09-30,none,,semi-annual review: no NIFTY 50 change evidenced; snapshot difference 2016-03-10 to 2017-10-16 is fully explained by the other notices,medium,https://mondovisione.com/_assets/files/IISL_Index_Dashboard_SEP2016.pdf
+2017-03-31,add,IBULHSGFIN,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs16022017.pdf
+2017-03-31,add,IOC,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs16022017.pdf
+2017-03-31,remove,BHEL,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs16022017.pdf
+2017-03-31,remove,IDEA,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs16022017.pdf
+2017-05-26,add,VEDL,ad-hoc (Grasim scheme of arrangement),high,https://web.archive.org/web/20260616174825/https://www.niftyindices.com/Press_Release/ind_prs27042017.pdf
+2017-05-26,remove,GRASIM,ad-hoc (Grasim scheme of arrangement),high,https://web.archive.org/web/20260616174825/https://www.niftyindices.com/Press_Release/ind_prs27042017.pdf
+2017-09-29,add,BAJFINANCE,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs28082017.pdf
+2017-09-29,add,HINDPETRO,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs28082017.pdf
+2017-09-29,add,UPL,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs28082017.pdf
+2017-09-29,remove,ACC,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs28082017.pdf
+2017-09-29,remove,BANKBARODA,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs28082017.pdf
+2017-09-29,remove,TATAPOWER,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs28082017.pdf
+2017-09-29,remove,TATAMTRDVR,semi-annual review (back to 50 securities),high,https://niftyindices.com/Press_Release/ind_prs28082017.pdf
+2018-04-02,add,BAJAJFINSV,semi-annual review,high,https://business-standard.com/article/markets/bajaj-finserv-grasim-and-titan-to-be-part-of-nifty-50-index-from-april-2-118022101285_1.html
+2018-04-02,add,GRASIM,semi-annual review,high,https://business-standard.com/article/markets/bajaj-finserv-grasim-and-titan-to-be-part-of-nifty-50-index-from-april-2-118022101285_1.html
+2018-04-02,add,TITAN,semi-annual review,high,https://business-standard.com/article/markets/bajaj-finserv-grasim-and-titan-to-be-part-of-nifty-50-index-from-april-2-118022101285_1.html
+2018-04-02,remove,AMBUJACEM,semi-annual review,high,https://business-standard.com/article/markets/bajaj-finserv-grasim-and-titan-to-be-part-of-nifty-50-index-from-april-2-118022101285_1.html
+2018-04-02,remove,AUROPHARMA,semi-annual review,high,https://business-standard.com/article/markets/bajaj-finserv-grasim-and-titan-to-be-part-of-nifty-50-index-from-april-2-118022101285_1.html
+2018-04-02,remove,BOSCHLTD,semi-annual review,high,https://business-standard.com/article/markets/bajaj-finserv-grasim-and-titan-to-be-part-of-nifty-50-index-from-april-2-118022101285_1.html
+2018-09-28,add,JSWSTEEL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082018.pdf
+2018-09-28,remove,LUPIN,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082018.pdf
+2019-03-29,add,BRITANNIA,semi-annual review,high,https://www.business-standard.com/amp/article/markets/britannia-industries-gains-on-inclusion-in-nifty-50-from-march-29-119022600173_1.html
+2019-03-29,remove,HINDPETRO,semi-annual review,high,https://www.business-standard.com/amp/article/markets/britannia-industries-gains-on-inclusion-in-nifty-50-from-march-29-119022600173_1.html
+2019-09-27,add,NESTLEIND,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs28082019.pdf
+2019-09-27,remove,IBULHSGFIN,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs28082019.pdf
+2020-03-19,add,SHREECEM,ad-hoc (Yes Bank exclusion brought forward from Mar 27),high,https://www.business-standard.com/amp/article/pti-stories/yes-bank-to-be-excluded-from-nifty-50-nifty-bank-from-mar-19-120031600291_1.html
+2020-03-19,remove,YESBANK,ad-hoc (Yes Bank exclusion brought forward from Mar 27),high,https://www.business-standard.com/amp/article/pti-stories/yes-bank-to-be-excluded-from-nifty-50-nifty-bank-from-mar-19-120031600291_1.html
+2020-07-31,add,HDFCLIFE,ad-hoc (Vedanta proposed delisting),high,https://www.bloombergquint.com/amp/markets/hdfc-life-insurance-to-replace-vedanta-in-nifty-50-index
+2020-07-31,remove,VEDL,ad-hoc (Vedanta proposed delisting),high,https://www.bloombergquint.com/amp/markets/hdfc-life-insurance-to-replace-vedanta-in-nifty-50-index
+2020-09-25,add,DIVISLAB,semi-annual review,high,https://www.business-standard.com/amp/article/markets/sbi-life-divi-s-laboratories-to-move-in-nifty-50-index-from-sept-25-120082001839_1.html
+2020-09-25,add,SBILIFE,semi-annual review,high,https://www.business-standard.com/amp/article/markets/sbi-life-divi-s-laboratories-to-move-in-nifty-50-index-from-sept-25-120082001839_1.html
+2020-09-25,remove,INFRATEL,semi-annual review,high,https://www.business-standard.com/amp/article/markets/sbi-life-divi-s-laboratories-to-move-in-nifty-50-index-from-sept-25-120082001839_1.html
+2020-09-25,remove,ZEEL,semi-annual review,high,https://www.business-standard.com/amp/article/markets/sbi-life-divi-s-laboratories-to-move-in-nifty-50-index-from-sept-25-120082001839_1.html
+2021-03-31,add,TATACONSUM,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs23022021.pdf
+2021-03-31,remove,GAIL,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs23022021.pdf
+2022-03-31,add,APOLLOHOSP,semi-annual review,high,https://www.business-standard.com/amp/article/markets/ioc-to-be-dropped-from-nifty-50-from-mar-31-apollo-hospitals-to-move-in-122022401748_1.html
+2022-03-31,remove,IOC,semi-annual review,high,https://www.business-standard.com/amp/article/markets/ioc-to-be-dropped-from-nifty-50-from-mar-31-apollo-hospitals-to-move-in-122022401748_1.html
+2022-09-30,add,ADANIENT,semi-annual review,high,https://www.businesstoday.in/markets/company-stock/story/adani-enterprises-to-be-included-in-nifty-50-replaces-shree-cement-346175-2022-09-01
+2022-09-30,remove,SHREECEM,semi-annual review,high,https://www.businesstoday.in/markets/company-stock/story/adani-enterprises-to-be-included-in-nifty-50-replaces-shree-cement-346175-2022-09-01
+2023-07-13,add,LTIM,ad-hoc (HDFC merged into HDFC Bank),high,https://in.marketscreener.com/quote/stock/LTIMINDTREE-LIMITED-31496899/news/LTIMindtree-to-replace-HDFC-in-India-s-Nifty-50-index-on-July-13-44264118
+2023-07-13,remove,HDFC,ad-hoc (HDFC merged into HDFC Bank),high,https://in.marketscreener.com/quote/stock/LTIMINDTREE-LIMITED-31496899/news/LTIMindtree-to-replace-HDFC-in-India-s-Nifty-50-index-on-July-13-44264118
+2024-03-28,add,SHRIRAMFIN,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28022024.pdf
+2024-03-28,remove,UPL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28022024.pdf
+2024-09-30,add,BEL,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs23082024.pdf
+2024-09-30,add,TRENT,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs23082024.pdf
+2024-09-30,remove,DIVISLAB,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs23082024.pdf
+2024-09-30,remove,LTIM,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs23082024.pdf
+2025-03-28,add,ETERNAL,semi-annual review (entered as ZOMATO; same ISIN),high,https://www.business-standard.com/amp/markets/capital-market-news/jio-financial-zomato-to-become-part-of-nifty-50-index-125022200248_1.html
+2025-03-28,add,JIOFIN,semi-annual review,high,https://www.business-standard.com/amp/markets/capital-market-news/jio-financial-zomato-to-become-part-of-nifty-50-index-125022200248_1.html
+2025-03-28,remove,BPCL,semi-annual review,high,https://www.business-standard.com/amp/markets/capital-market-news/jio-financial-zomato-to-become-part-of-nifty-50-index-125022200248_1.html
+2025-03-28,remove,BRITANNIA,semi-annual review,high,https://www.business-standard.com/amp/markets/capital-market-news/jio-financial-zomato-to-become-part-of-nifty-50-index-125022200248_1.html
+2025-09-30,add,INDIGO,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs22082025.pdf
+2025-09-30,add,MAXHEALTH,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs22082025.pdf
+2025-09-30,remove,HEROMOTOCO,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs22082025.pdf
+2025-09-30,remove,INDUSINDBK,semi-annual review,high,https://niftyindices.com/Press_Release/ind_prs22082025.pdf
+2026-09-30,add,BSE,semi-annual review,high,https://businesstoday.in/markets/stocks/story/bse-to-replace-wipro-in-nifty-50-index-from-september-30-all-you-need-to-know-558467-2026-09-29
+2026-09-30,remove,WIPRO,semi-annual review,high,https://businesstoday.in/markets/stocks/story/bse-to-replace-wipro-in-nifty-50-index-from-september-30-all-you-need-to-know-558467-2026-09-29
