@@ -85,6 +85,11 @@
    "sha256": "d0360953b13e631e26d080d6047711097c01f4ba585441ca92cd8aa255766e38",
    "source": "Yahoo Finance via yfinance (constituent adjusted closes)"
   },
+  "data/raw/rbi/rbi_handbook_2025-26_table218_91day_auctions.xlsx": {
+   "bytes": 14594,
+   "sha256": "391ce6cc51421607d915e886d03c42abf016770e1a0d01222b9651393ccd630a",
+   "source": "Reserve Bank of India 91-day T-bill auction cut-off yields: Handbook 2025-26 Table 218 (rbidocs.rbi.org.in, downloaded by hand) plus a DBIE export"
+  },
   "data/raw/roster_snapshots/20131013143407_www.nseindia.com.csv": {
    "bytes": 3055,
    "sha256": "451e662350940d9b207f925a1bef9019282216d94c2ca603da056a5b97a1a86e",
@@ -376,6 +381,6 @@
    "source": "Derived: roster snapshots, dated change events, membership intervals"
   }
  },
- "generated_utc": "2026-11-07T13:11:44Z",
+ "generated_utc": "2026-11-07T13:31:29Z",
  "protocol_sha256": "c97977a4a4bbb055fd90e01bdc956a50b719f27a215661018bc04599f92a33a8"
 }

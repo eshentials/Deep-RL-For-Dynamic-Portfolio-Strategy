@@ -18,7 +18,7 @@ SOURCES = {
     "data/raw/roster_snapshots": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)",
     "data/raw/market": "Yahoo Finance via yfinance (^NSEI, NIFTYBEES.NS, ^INDIAVIX, INR=X)",
     "data/raw/prices": "Yahoo Finance via yfinance (constituent adjusted closes)",
-    "data/raw/rbi": "Reserve Bank of India, 91-day T-bill auction cut-off yields (DBIE export)",
+    "data/raw/rbi": "Reserve Bank of India 91-day T-bill auction cut-off yields: Handbook 2025-26 Table 218 (rbidocs.rbi.org.in, downloaded by hand) plus a DBIE export",
     "data/roster": "Derived: roster snapshots, dated change events, membership intervals",
     "data/processed": "Derived by this repository's builders",
 }
