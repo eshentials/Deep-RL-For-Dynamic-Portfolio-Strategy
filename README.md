@@ -38,6 +38,17 @@ pytest -q
 
 Post-unblinding analyses are in `results/exploratory/` (`python -m eval.exploratory`) and are labelled exploratory. Any further analysis must be logged in `ledger.csv`. Use kind `exploratory` for re-reading the test returns, or `sensitivity` for any new strategy variant, which counts as a trial in the Deflated Sharpe.
 
+## Paper
+
+`paper/main.tex` is the working draft. Every number and table in it is generated from the committed results, so rebuild both together:
+
+```bash
+python -m eval.paper_numbers                 # writes paper/generated/ (macros and tables)
+cd paper && tectonic -X compile main.tex     # writes paper/main.pdf
+```
+
+Figures come straight from `results/figures/`. Check `paper/refs.bib` against the publishers before submission.
+
 ## Data notes
 
 - **Roster.** 87 symbols were in the index between 2014-01-01 and the freeze.
