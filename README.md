@@ -29,12 +29,14 @@ python -m data.manifest --verify   # hashes
 pytest -q
 ```
 
-## Finishing the run (in this order)
+## Status (2026-11-07): protocol complete
 
-1. Put the RBI 91-day T-bill export in `data/raw/rbi/`. Then run `python -m data.rf`, `python -m data.panel` and `python -m data.manifest`, and commit.
-2. All authors sign `protocol.md`. Record the `config/protocol.yaml` SHA-256 there, commit, and run `git tag protocol-v1`.
-3. Run `python -m train.walk_forward --protocol` (40 runs, about 20 minutes). Commit `runs/protocol/`.
-4. Run `python -m train.run_test --protocol`. This is the single test run. It writes `results/` and appends to `ledger.csv`.
+1. Risk-free series built from RBI's 91-day T-bill auction table (3762ab8).
+2. Protocol signed by all three authors and tagged `protocol-v1` (9b4c81e).
+3. Protocol training, 8 folds x 5 seeds x 200k steps, committed in `runs/protocol/` (30e9463).
+4. The single test run (20a1adb): `results/report.md`, with tables in `results/tables/` and figures in `results/figures/`.
+
+Post-unblinding analyses are in `results/exploratory/` (`python -m eval.exploratory`) and are labelled exploratory. Any further analysis must be logged in `ledger.csv`. Use kind `exploratory` for re-reading the test returns, or `sensitivity` for any new strategy variant, which counts as a trial in the Deflated Sharpe.
 
 ## Data notes
 
