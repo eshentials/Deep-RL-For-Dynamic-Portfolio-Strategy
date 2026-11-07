@@ -1,8 +1,8 @@
 # Pre-registered protocol: RL as a risk-budget controller
 
-**Status: DRAFT.** This becomes binding when every author has signed below and the commit is tagged `protocol-v1`. Until then, no strategy may be scored on any test year (2019 onward). `train/run_test.py` enforces this: it refuses to run unless the tag exists, `config/protocol.yaml` is unchanged since the tag, and the working tree is clean.
+**Status: REGISTERED as `protocol-v1` on 2026-11-07.** All authors have signed below. No strategy was scored on any test year (2019 onward) before registration. Protocol runs (`train/walk_forward.py --protocol` and `train/run_test.py --protocol`) refuse to start unless the tag exists, `config/protocol.yaml` is unchanged since the tag, the working tree is clean, and the risk-free series is the RBI one rather than the development placeholder.
 
-The machine-readable version is `config/protocol.yaml`. The code reads only that file. At tagging, its SHA-256 is recorded here: `(filled at tag time)`. If this document and the yaml ever disagree, the yaml at the tag governs, and the disagreement is reported as a deviation.
+The machine-readable version is `config/protocol.yaml`. The code reads only that file. At tagging, its SHA-256 is recorded here: `c97977a4a4bbb055fd90e01bdc956a50b719f27a215661018bc04599f92a33a8`. If this document and the yaml ever disagree, the yaml at the tag governs, and the disagreement is reported as a deviation.
 
 ## 1. Question and hypotheses
 
@@ -159,4 +159,8 @@ Each author adds their name and date. The tag is created only after all authors 
 
 | Author | Date |
 |---|---|
-| | |
+| Eshani Parulekar | 2026-11-07 |
+| Dhruv Pande | 2026-11-07 |
+| Rishaan Damani | 2026-11-07 |
+
+Signatures were collected outside the repository and recorded here on Rishaan Damani's confirmation.
