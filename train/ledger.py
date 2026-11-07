@@ -17,7 +17,8 @@ from config import ROOT, protocol_hash
 LEDGER = ROOT / "ledger.csv"
 COLUMNS = ["id", "time_utc", "git_sha", "protocol_sha256", "kind", "description",
            "folds", "seeds", "steps", "val_sharpe_mean", "touched_test", "counts_as_trial", "notes"]
-KINDS = {"prior_work", "dev_smoke", "ppo_config", "baseline_grid", "test_run", "sensitivity"}
+KINDS = {"prior_work", "dev_smoke", "ppo_config", "baseline_grid", "test_run", "sensitivity",
+         "exploratory"}  # exploratory: post-unblinding analysis, never a trial
 
 
 def _git_sha() -> str:
