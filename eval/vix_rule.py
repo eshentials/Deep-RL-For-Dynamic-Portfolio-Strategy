@@ -14,7 +14,8 @@ The ledger row is written before any test-year score is computed, as kind
 `sensitivity` (a new strategy variant), so it counts as a trial in the Deflated Sharpe.
 Outputs: results/exploratory/vix_rule/.
 
-Run:  python -m eval.vix_rule
+Run:  python -m eval.vix_rule                 # score once (appends a ledger row)
+      python -m eval.vix_rule --readme-only   # rebuild README.md from the saved outputs
 """
 from __future__ import annotations
 
@@ -69,8 +70,8 @@ def session_exposure(dec: pd.DataFrame, dates: pd.DatetimeIndex) -> pd.Series:
 
 def _table(df: pd.DataFrame, cols: list[str], fmt: dict) -> list[str]:
     out = ["| " + " | ".join(cols) + " |", "|" + "---|" * len(cols)]
-    for r in df.itertuples(index=False):
-        out.append("| " + " | ".join(fmt.get(c, str)(getattr(r, c)) for c in cols) + " |")
+    for r in df[cols].to_dict("records"):
+        out.append("| " + " | ".join(fmt.get(c, str)(r[c]) for c in cols) + " |")
     return out
 
 
@@ -153,18 +154,28 @@ def main():
                "ppo_dsr_with_prior_now": d_prior["dsr"]}
     (OUT / "summary.json").write_text(json.dumps(summary, indent=1, default=float))
 
+    write_readme()
+
+
+def write_readme() -> None:
+    """Markdown summary rebuilt from the saved outputs (no scoring, no ledger row)."""
+    sel = json.loads((OUT / "selections.json").read_text())
+    comb = pd.read_csv(OUT / "combined.csv")
+    splits = pd.read_csv(OUT / "splits.csv")
+    py = pd.read_csv(OUT / "per_year_sharpe.csv")
+    s = json.loads((OUT / "summary.json").read_text())
+    tc = s["trial_counts_now"]
     f3 = lambda x: f"{x:+.3f}"  # noqa: E731
-    sel_rows = pd.DataFrame([{"fold": y, "threshold": f"{s['params']['threshold'] * 100:.0f}",
-                              "horizon": s["params"]["horizon"], "val_sharpe": s["val_sharpe"]}
-                             for y, s in sel.items()])
-    comb = combined.reset_index().rename(columns={"index": "strategy"})
+    sel_rows = pd.DataFrame([{"fold": y, "threshold": f"{v['params']['threshold'] * 100:.0f}",
+                              "horizon": v["params"]["horizon"], "val_sharpe": v["val_sharpe"]}
+                             for y, v in sel.items()])
     comb["strategy"] = comb["strategy"].map(NAMES)
     lines = ["# VIX threshold rule (post-hoc, exploratory)", "",
              "Not pre-registered. Designed after the test run showed PPO's exposure rising with India VIX, and "
-             "fixed in `eval/vix_rule.py` before it was run: exposure 1.0 when India VIX at the decision close is at "
-             "or above a threshold, else 0.5; threshold {15, 20, 25} x horizon {5, 21} chosen per fold on the two "
-             "validation years. Logged in ledger.csv before evaluation and counted as a trial.", "",
-             "## Selected per fold", ""]
+             "fixed in `eval/vix_rule.py` (commit 3453d9f) before it was run: exposure 1.0 when India VIX at the "
+             "decision close is at or above a threshold, else 0.5; threshold {15, 20, 25} x horizon {5, 21} chosen "
+             "per fold on the two validation years. Logged in ledger.csv before evaluation and counted as a trial.",
+             "", "## Selected per fold", ""]
     lines += _table(sel_rows, ["fold", "threshold", "horizon", "val_sharpe"], {"val_sharpe": "{:.3f}".format})
     lines += ["", "## Combined path 2019-01-01..2026-11-06", ""]
     lines += _table(comb, ["strategy", "sharpe", "cagr", "vol", "max_drawdown", "avg_exposure"],
@@ -176,18 +187,18 @@ def main():
                     {"sharpe_a": "{:.3f}".format, "sharpe_b": "{:.3f}".format, "delta": f3, "p05": f3,
                      "share_le_0": "{:.3f}".format})
     lines += ["", "## Sharpe by year", ""]
-    py = per_year.reset_index()
     lines += _table(py, list(py.columns), {c: "{:.3f}".format for c in py.columns if c != "year"})
-    lines += ["", "## Agreement with PPO",
-              "", f"Session-level exposure correlation with the PPO ensemble: {corr:+.2f}. Share of sessions on the "
-              f"same side of 0.75 exposure: {agree:.2f}.", "",
-              "## Deflated Sharpe of the PPO ensemble with the ledger as it now stands", "",
-              f"This study's trials: {tc['this_study']} (DSR {d_this['dsr']:.3f}); with recorded prior work: "
-              f"{tc['with_prior']} (DSR {d_prior['dsr']:.3f}). The protocol report computed these at the test run "
-              "with one trial; quote the counts as of submission."]
+    lines += ["", "## Agreement with PPO", "",
+              f"Session-level exposure correlation with the PPO ensemble: {s['exposure_corr_with_ppo']:+.2f}. "
+              f"Share of sessions on the same side of 0.75 exposure: {s['share_sessions_same_side_of_0.75']:.2f}.",
+              "", "## Deflated Sharpe of the PPO ensemble with the ledger as it now stands", "",
+              f"This study's trials: {tc['this_study']} (DSR {s['ppo_dsr_this_study_now']:.3f}); with recorded prior "
+              f"work: {tc['with_prior']} (DSR {s['ppo_dsr_with_prior_now']:.3f}). The protocol report computed these "
+              "at the test run with one trial; quote the counts as of submission."]
     (OUT / "README.md").write_text("\n".join(lines) + "\n")
     print("\n".join(lines))
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+    write_readme() if "--readme-only" in sys.argv else main()

@@ -1,0 +1,10 @@
+{
+ "exposure_corr_with_ppo": 0.36729241715152466,
+ "share_sessions_same_side_of_0.75": 0.7448347107438017,
+ "trial_counts_now": {
+  "this_study": 2,
+  "with_prior": 84
+ },
+ "ppo_dsr_this_study_now": 0.9565461769329667,
+ "ppo_dsr_with_prior_now": 0.41011359874009073
+}
