@@ -9,3 +9,6 @@ __pycache__/
 scratch/
 runs/tb/
 *.log
+
+# Development runs stay local; protocol runs (models + curves) are committed before the test run
+runs/dev/

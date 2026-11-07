@@ -19,13 +19,21 @@ The previous version of this project used PPO to pick the risk aversion and the 
 - **Universe.** A point-in-time Nifty 50 roster, rebuilt from dated archive copies of NSE's own constituent files: `ind_niftylist.csv` (2013-2015) and `ind_nifty50list.csv` (2016 onward), plus NSE's index API.
   - Each change is dated from NSE or niftyindices notices and carries a confidence flag (`data/roster/changes.csv`).
   - The rebuilt roster must match every archived copy on its capture date, and must hold exactly 50 members on every session apart from documented demerger placeholder days.
-- **Eligibility on session t.** The stock is a member on t, and has a complete 120-session window of returns ending at t.
+- **Eligibility at the close of session t.** Three conditions:
+  - The stock is a member for session t+1. NSE announces changes weeks ahead, and index funds trade at that same close.
+  - It has a price at t.
+  - It has a complete 120-session window of returns ending at t.
 - **Prices.** Yahoo Finance adjusted closes. A symbol is used only if, during its membership:
   - it has a price on at least 98% of sessions, and
   - it has no unexplained day with |return| > 25%.
 
   Symbols failing either test are excluded for their membership months and listed in the data appendix. This is a stated limitation.
-- **Delistings.** The position exits at the last traded price. A sensitivity check applies a -30% loss at those exits.
+- **Corporate-action repairs.** Every repair is logged with its source in `data/processed/price_repairs.csv`.
+  - A demerger the vendor did not adjust is repaired with NSE's special pre-open discovered price.
+  - A vendor split-adjustment artifact is repaired with the vendor's own split record.
+  - Large genuine moves are reviewed by hand and listed in `price_jumps_explained.csv`.
+- **Universe at registration.** 87 symbols were members between 2014-01-01 and the freeze. 81 have usable prices. Six have no usable prices and are excluded during their membership: CAIRN, HDFC, IDFC, JPASSOCIAT, RANBAXY and TATAMTRDVR. HDFC, a member until July 2023, is the material gap.
+- **Delistings.** The position exits at the last traded price. A sensitivity check applies a -30% loss at those exits. At registration no usable symbol stops trading while a member, because every such symbol lacks prices and is excluded. The sensitivity is then reported as not applicable.
 - **Benchmark.** NIFTYBEES adjusted close (total return).
   - A vendor glitch, meaning an ETF/index level ratio more than 20% off its trailing median, is replaced by the previous level times index growth, and logged.
   - Genuine tracking gaps, such as ETF premiums in crashes, are kept and logged.
@@ -45,7 +53,7 @@ The previous version of this project used PPO to pick the risk aversion and the 
   - Holdings drift between decisions.
   - A stock leaving the index is sold at the close of its last member session, and the proceeds sit in cash until the next decision.
 - **Costs.** 10 bp times one-way turnover (the sum of |Δw|), charged against NAV, including forced sales.
-- **Year boundary.** A decision is forced at the first session of each calendar year. Every test year is then governed only by its own fold's policy, and the same applies to every baseline.
+- **Year boundary.** A decision is forced at the last session of each calendar year, made by the next year's fold policy. Every return dated in year Y then comes from fold Y's decisions, and the same applies to every baseline.
 
 ## 4. The agent
 
@@ -64,7 +72,7 @@ The previous version of this project used PPO to pick the risk aversion and the 
   | Currency | USD/INR 21-session log change, lagged one session (Yahoo's FX close falls after the NSE close) |
   | The agent's own portfolio | current exposure, own drawdown, own 20-session volatility |
 
-  Market features are z-scored with each fold's training-window statistics only, then clipped to ±5.
+  Market features are z-scored with each fold's training-window statistics only, then clipped to ±5. Path features use fixed scalings: exposure as is, own drawdown ×10, own volatility ×5.
 - **Reward per holding interval.** The sum of daily excess log returns (net of costs) minus κ times max(0, drawdown at interval end minus drawdown at interval start). κ = 1 is fixed and not tuned. Rewards are scaled ×100.
 - **Training.**
   - Stable-Baselines3 PPO: MLP [64, 64], learning rate 3e-4, n_steps 1024, batch 64, 10 epochs, γ = 1, GAE λ = 0.95, clip 0.2, entropy 0.01.
@@ -93,7 +101,7 @@ The previous version of this project used PPO to pick the risk aversion and the 
 All baselines use the same engine, costs, start date (in cash, 2019-01-01) and year-boundary rule as the agent.
 
 1. **NIFTYBEES** buy-and-hold.
-2. **Equal-weight** eligible members, rebalanced on the first session of each month.
+2. **Equal-weight** eligible members, rebalanced at each month-end close.
 3. **Risk parity at fixed exposure**, e ∈ {0.5, 0.7, 0.85, 1.0}, rebalanced every 21 sessions.
 4. **Volatility targeting, the primary comparator.**
    - Exposure e = clip(σ* / σ̂60, 0.5, 1.0), where σ̂60 is the 60-session realised volatility of the unlevered risk-parity portfolio.
@@ -127,7 +135,7 @@ A2C with an identical setup is cut from this protocol. The code keeps the hook, 
 - **Future invariance.** Perturbing all data after a date t* leaves every feature, risk-parity weight, normalisation statistic, decision and NAV up to t* bit-identical.
 - **Positive control.** An oracle that sees the next interval's return must show an implausibly high Sharpe, and the same rule lagged by one interval must not.
 - **Hand checks.** Hand-computed cost trades, risk-parity identities (a diagonal covariance gives inverse-volatility weights), and the bootstrap and DSR unit tests.
-- **Development data.** All development runs use only 2014-2018 (fold 2019's training and validation years).
+- **Development data.** All development runs use only 2014-2018 (fold 2019's training and validation years). They are logged in `ledger.csv` as plumbing checks. They don't count as trials because they use the unchanged protocol configuration. `train/run_test.py --dev-dry-run` exercises the full test-and-report path on 2017-2018, never on 2019 onward.
 
 ## 9. Decision rules
 

@@ -60,7 +60,9 @@ def trial_counts() -> dict[str, int]:
     if df.empty:
         return {"this_study": 0, "with_prior": 0}
     trial = df[df["counts_as_trial"] == "True"]
-    study = trial[trial["kind"].isin(["ppo_config", "dev_smoke"])]
+    # Any PPO configuration that was trained and could have been selected counts once;
+    # plumbing checks of the unchanged protocol config are logged with counts_as_trial=False.
+    study = trial[trial["kind"].isin(["ppo_config", "dev_smoke", "sensitivity"])]
     prior = trial[trial["kind"] == "prior_work"]
     n_prior = int(pd.to_numeric(prior["notes"].str.extract(r"n_trials=(\d+)")[0]).fillna(0).sum())
     return {"this_study": len(study), "with_prior": len(study) + n_prior}
