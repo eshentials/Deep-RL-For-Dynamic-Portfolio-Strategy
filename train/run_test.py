@@ -143,6 +143,13 @@ def main(argv=None):
         end = data.last_session_of(max(years))
         year_map = {y: y for y in years}
         out = ROOT / "results"
+        # Record the attempt before any test-year score exists, so a crash and rerun
+        # cannot go unrecorded (the gate then needs this row committed to rerun).
+        from train import ledger
+        ledger.append("test_run", "protocol-v1 test run: PPO ensemble, seeds and all baselines on 2019..freeze",
+                      folds=" ".join(map(str, years)), seeds=" ".join(map(str, seeds)),
+                      touched_test=True, counts_as_trial=False,
+                      notes=f"results/; {run_tag()}; logged at start, before evaluation")
     else:
         run_dir = ROOT / a.dev_dry_run
         fl = folds(data, [2019])
@@ -165,11 +172,6 @@ def main(argv=None):
                                                    "end": str(data.dates[end].date())}, indent=1))
     from eval.report import report
     report(out)
-    if a.protocol:
-        from train import ledger
-        ledger.append("test_run", "protocol-v1 test run: PPO ensemble, seeds and all baselines on 2019..freeze",
-                      folds=" ".join(map(str, cfg["folds"]["test_years"])), seeds=" ".join(map(str, seeds)),
-                      touched_test=True, counts_as_trial=False, notes=f"results/; {run_tag()}")
     print(f"wrote {out}")
 
 
