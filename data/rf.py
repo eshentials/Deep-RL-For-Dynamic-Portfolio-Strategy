@@ -26,21 +26,39 @@ MARKER = PROC / "rf_PROVISIONAL"
 PROVISIONAL_RATE = 0.065
 
 
+def _is_yield_header(s: str) -> bool:
+    s = s.lower()
+    return ("yield" in s or "cut-off" in s or "cut off" in s or "cutoff" in s) and "amount" not in s
+
+
 def _find_columns(df: pd.DataFrame) -> tuple[str, str]:
-    date_col, yld_col = None, None
-    for c in df.columns:
-        s = str(c).lower()
-        if date_col is None and "date" in s:
-            date_col = c
-        if yld_col is None and ("91" in s and ("yield" in s or "cut" in s or "rate" in s)):
-            yld_col = c
+    """Date column and 91-day cut-off yield column. A file that holds only 91-day bills
+    (e.g. Handbook Table 218) need not repeat '91' in the column name."""
+    cols = [str(c) for c in df.columns]
+    date_col = next((c for c in df.columns if "date" in str(c).lower()), None)
+    yields = [c for c in df.columns if _is_yield_header(str(c))]
+    with_91 = [c for c in yields if "91" in str(c)]
+    yld_col = (with_91 or yields or [None])[0]
     if date_col is None or yld_col is None:
-        raise ValueError(f"could not find date / 91-day yield columns in {list(df.columns)}")
+        raise ValueError(f"could not find date / 91-day yield columns in {cols}")
     return date_col, yld_col
 
 
+def _read_table(path) -> pd.DataFrame:
+    """Read an RBI export whose header row may sit below title rows."""
+    excel = str(path).lower().endswith(("xls", "xlsx"))
+    raw = pd.read_excel(path, header=None) if excel else pd.read_csv(path, header=None)
+    for i in range(min(40, len(raw))):
+        cells = [str(v) for v in raw.iloc[i].tolist()]
+        if any("date" in c.lower() for c in cells) and any(_is_yield_header(c) for c in cells):
+            df = raw.iloc[i + 1:].copy()
+            df.columns = [c.strip() for c in cells]
+            return df
+    raise ValueError(f"no header row with a date and a yield column in the first 40 rows of {path}")
+
+
 def parse_rbi(path) -> pd.Series:
-    df = pd.read_excel(path) if str(path).lower().endswith(("xls", "xlsx")) else pd.read_csv(path)
+    df = _read_table(path)
     dcol, ycol = _find_columns(df)
     out = pd.Series(pd.to_numeric(df[ycol], errors="coerce").to_numpy(),
                     index=pd.to_datetime(df[dcol], errors="coerce", dayfirst=True))

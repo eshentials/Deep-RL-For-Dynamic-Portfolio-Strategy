@@ -32,7 +32,7 @@ pytest -q
 ## Data notes
 
 - **Roster.** 87 symbols were in the index between 2014-01-01 and the freeze.
-  - It is rebuilt from 76 archived copies of NSE's own constituent files, plus 28 dated changes, each with its notice (`data/roster/changes.csv`).
+  - It is rebuilt from 76 archived copies of NSE's own constituent files, plus 78 add/remove events on 25 effective dates, each with its source (`data/roster/changes.csv`).
   - It matches 67 of 68 snapshots exactly. The one mismatch is a stale 2015 copy of the pre-rename file (`data/roster/validation.csv`).
 - **Prices.** 81 symbols have usable Yahoo series. Six have none and are excluded during their membership: CAIRN, HDFC, IDFC, JPASSOCIAT, RANBAXY and TATAMTRDVR.
 - **Corporate-action repairs** are logged with sources in `data/processed/price_repairs.csv`: three demergers (RIL 2023, ITC 2025, Tata Motors 2025) and one Yahoo split-adjustment artifact (Trent 2026). Other large moves are reviewed genuine events (`price_jumps_explained.csv`).
