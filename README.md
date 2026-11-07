@@ -29,6 +29,13 @@ python -m data.manifest --verify   # hashes
 pytest -q
 ```
 
+## Finishing the run (in this order)
+
+1. Put the RBI 91-day T-bill export in `data/raw/rbi/`. Then run `python -m data.rf`, `python -m data.panel` and `python -m data.manifest`, and commit.
+2. All authors sign `protocol.md`. Record the `config/protocol.yaml` SHA-256 there, commit, and run `git tag protocol-v1`.
+3. Run `python -m train.walk_forward --protocol` (40 runs, about 20 minutes). Commit `runs/protocol/`.
+4. Run `python -m train.run_test --protocol`. This is the single test run. It writes `results/` and appends to `ledger.csv`.
+
 ## Data notes
 
 - **Roster.** 87 symbols were in the index between 2014-01-01 and the freeze.
