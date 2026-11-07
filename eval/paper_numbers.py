@@ -337,6 +337,8 @@ def main():
                 "ppo_config": "Protocol training, all folds", "test_run": "The single test run",
                 "exploratory": "Post-test analyses of the test returns",
                 "sensitivity": "Post-hoc VIX threshold rule"}[r.kind]
+        if r.kind == "exploratory" and "manuscript" in str(r.description):
+            desc = "Descriptive reads for the manuscript"
         n = r.notes.split("n_trials=")[1].split(";")[0] if "n_trials=" in str(r.notes) else ("1" if r.counts_as_trial == "True" else "0")
         rows.append([r.id, r.kind.replace("_", "\\_"), desc, "yes" if r.touched_test == "True" else "no", n])
     table("tab_ledger.tex", ["Row", "Kind", "What", "Touched test years", "Trials counted"], rows, "rllcr")
