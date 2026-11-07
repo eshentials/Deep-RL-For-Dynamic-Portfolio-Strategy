@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+
+# Local scratch and logs (summaries under results/ are tracked)
+scratch/
+runs/tb/
+*.log
