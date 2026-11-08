@@ -1,9 +1,11 @@
 """Numbers and tables for the manuscript, generated from the committed results.
 
 Writes paper/generated/numbers.tex (one macro per quoted figure) and one booktabs
-table per file, so the text never retypes a number. Pre-registered results come from
-results/; exploratory ones from results/exploratory/ and are labelled as such where
-the manuscript uses them.
+table per file, so the text never retypes a number. Study 1 (protocol v1, Nifty 50):
+pre-registered results from results/, exploratory ones from results/exploratory/.
+Study 2 (protocol v2, Nifty Next 50): results from studies/next50/results/; its
+macros start with Nx and its tables with tab_n50_. Exploratory reads are labelled
+as such in the manuscript and logged in ledger.csv.
 
 Run:  python -m eval.paper_numbers
 """
@@ -19,6 +21,9 @@ from config import ROOT, load, protocol_hash, require_version
 RES, EXP, VR = ROOT / "results", ROOT / "results" / "exploratory", ROOT / "results" / "exploratory" / "vix_rule"
 PROC, ROSTER = ROOT / "data" / "processed", ROOT / "data" / "roster"
 OUT = ROOT / "paper" / "generated"
+S2 = ROOT / "studies" / "next50"
+RES2, PROC2, ROSTER2, RAW2 = S2 / "results", S2 / "data" / "processed", S2 / "data" / "roster", S2 / "data" / "raw"
+V2_HASH = "217c789d"   # protocol_v2.yaml at tag protocol-v2
 
 NAME = {"ppo_ensemble": "PPO ensemble", "vol_target_floored": "Vol targeting (floor 0.5)",
         "vol_target_unfloored": "Vol targeting (no floor)", "best_fixed": "Best fixed action",
@@ -30,6 +35,8 @@ NAME = {"ppo_ensemble": "PPO ensemble", "vol_target_floored": "Vol targeting (fl
         "ppo_ensemble_cost20": "PPO ensemble, 20 bp costs", "vol_target_floored_cost20": "Vol targeting, 20 bp costs",
         "equal_weight_cost20": "Equal weight, 20 bp costs", "vix_rule": "VIX threshold rule (post hoc)",
         **{f"ppo_seed_{s}": f"PPO seed {s}" for s in range(5)}}
+NAME2 = {**NAME, "vix_rule": "VIX threshold rule (registered)", "juniorbees": "JUNIORBEES buy-and-hold",
+         "vix_rule_lag1": "VIX rule, one session late", "vix_rule_cost20": "VIX rule, 20 bp costs"}
 
 
 def num(x, nd=3, sign=False, pct=False):
@@ -292,7 +299,8 @@ def main():
     mk = pd.read_parquet(PROC / "market.parquet")
     dd = mk["nsei"] / mk["nsei"].rolling(252, min_periods=1).max() - 1
     dfc = dec.set_index("date").assign(vix=mk["vix"], dd=dd)[["exposure", "vix", "dd"]]
-    M["CorrVix"] = num(dfc.corr().loc["exposure", "vix"], 2, True)
+    corr_vix_v1 = float(dfc.corr().loc["exposure", "vix"])
+    M["CorrVix"] = num(corr_vix_v1, 2, True)
     M["CorrDD"] = num(dfc.corr().loc["exposure", "dd"], 2, True)
     M["NDecisions"] = num(len(dec), 0)
     labels = {"<15": "below 15", "15-20": "15 to 20", "20-25": "20 to 25", ">=25": "25 and above"}
@@ -341,17 +349,261 @@ def main():
         if r.kind == "exploratory" and "manuscript" in str(r.description):
             desc = "Descriptive reads for the manuscript"
         n = r.notes.split("n_trials=")[1].split(";")[0] if "n_trials=" in str(r.notes) else ("1" if r.counts_as_trial == "True" else "0")
-        rows.append([r.id, r.kind.replace("_", "\\_"), desc, "yes" if r.touched_test == "True" else "no", n])
-    table("tab_ledger.tex", ["Row", "Kind", "What", "Touched test years", "Trials counted"], rows, "rllcr")
+        proto = "earlier" if r.kind == "prior_work" else ("v2" if str(r.protocol_sha256).startswith(V2_HASH) else "v1")
+        rows.append([r.id, proto, r.kind.replace("_", "\\_"), desc, "yes" if r.touched_test == "True" else "no", n])
+    table("tab_ledger.tex", ["Row", "Protocol", "Kind", "What", "Touched test years", "Trials counted"], rows,
+          "rlllcr")
 
     # ---- Data repairs (appendix) ----
     rows = [[r.symbol, str(r.date), r.kind.replace("_", " "), r.detail.replace("->", "$\\to$").replace("%", "\\%")]
             for r in rep.itertuples()]
     table("tab_repairs.tex", ["Symbol", "Date", "Kind", "Detail"], rows, "lllp{7.2cm}")
 
+    study2(M, {"h1": h, "comb": comb, "rand": rs, "corr_vix": corr_vix_v1,
+               "vix_rule": vr_s[(vr_s.period == "2019-2026 (all)") & vr_s.comparison.str.startswith("PPO")].iloc[0],
+               "vix_rule_sr": float(vr_c.loc["vix_rule", "sharpe"])})
     (OUT / "numbers.tex").write_text("\n".join(M.lines) + "\n")
     print(f"wrote {OUT.relative_to(ROOT)}: {len(M.lines) - 1} macros, "
           f"{len(list(OUT.glob('tab_*.tex')))} tables")
+
+
+def study2(M, v1: dict):
+    """Study 2 (protocol v2, point-in-time Nifty Next 50). Registered outputs come from
+    studies/next50/results/; the exposure-VIX reads, the JUNIORBEES peak date and Study 1's
+    DSR at the current trial count are descriptive reads logged in ledger.csv."""
+    import hashlib
+
+    import yaml
+
+    from eval.dsr import dsr
+    y2 = ROOT / "config" / "protocol_v2.yaml"
+    cfg2 = yaml.safe_load(y2.read_text())
+    s = json.loads((RES2 / "summary.json").read_text())
+    info = json.loads((RES2 / "run_info.json").read_text())
+    comb = pd.read_csv(RES2 / "tables" / "combined.csv", index_col=0)
+    py = pd.read_csv(RES2 / "tables" / "per_year.csv")
+    pyd = pd.read_csv(RES2 / "tables" / "per_year_delta_sharpe.csv").set_index("year")
+    pyv = pd.read_csv(RES2 / "tables" / "per_year_delta_sharpe_vix_rule.csv").set_index("year")
+    sec = pd.read_csv(RES2 / "tables" / "secondary.csv")
+    epi = pd.read_csv(RES2 / "tables" / "drawdown_episodes.csv")
+    sel = json.loads((RES2 / "selections.json").read_text())
+    dec = pd.read_csv(RES2 / "ensemble_decisions.csv", parse_dates=["date"])
+    runs = pd.read_csv(S2 / "runs" / "protocol" / "summary.csv")
+    mk2 = pd.read_parquet(PROC2 / "market.parquet")
+
+    # ---- registration and the primary family ----
+    M["NxProtoHash"] = f"\\texttt{{{hashlib.sha256(y2.read_bytes()).hexdigest()[:16]}}}"
+    M["NxPathStart"], M["NxPathEnd"] = info["start"], info["end"]
+    M["NxSessions"] = num(s["sessions"], 0)
+    fam = s["primary_family"]
+    M["NxAlpha"] = num(fam["alpha"], 2)
+    rows = []
+    for hid, k in (("H1", "One"), ("H2", "Two")):
+        h = fam["hypotheses"][hid]
+        M[f"NxH{k}Delta"], M[f"NxH{k}CI"] = num(h["delta_sharpe"], 3, True), ci(*h["ci95"])
+        M[f"NxH{k}P"], M[f"NxH{k}Thr"] = num(h["p"], 3), num(h["holm_threshold"], 3)
+        rows.append([hid, f"PPO ensemble $-$ {NAME2[h['baseline']].replace(' (registered)', '')}",
+                     num(h["delta_sharpe"], 3, True), ci(*h["ci95"]), num(h["p"], 3), num(h["holm_threshold"], 3),
+                     "supported" if h["supported"] else "not supported"])
+    table("tab_n50_primary.tex", ["", "Comparison", "Difference", "95\\% interval", "$p$", "Holm threshold",
+                                  "Decision"], rows, "llrcrrl")
+
+    # ---- combined path ----
+    keys = {"ppo": "ppo_ensemble", "vt": "vol_target_floored", "vtu": "vol_target_unfloored", "vix": "vix_rule",
+            "best": "best_fixed", "ew": "equal_weight", "bees": "juniorbees", "rpA": "rp_fixed_0.5",
+            "rpB": "rp_fixed_0.7", "rpC": "rp_fixed_0.85", "rpD": "rp_fixed_1"}
+    for k, c in keys.items():
+        r = comb.loc[c]
+        M[f"NxSR{k}"], M[f"NxCAGR{k}"] = num(r["sharpe"]), num(r["cagr"], 1, pct=True)
+        M[f"NxVOL{k}"], M[f"NxMDD{k}"] = num(r["vol"], 1, pct=True), num(r["max_drawdown"], 1, pct=True)
+        M[f"NxCAL{k}"], M[f"NxEXP{k}"] = num(r["calmar"], 2), num(r["avg_exposure"], 2)
+    rp = comb.loc[["rp_fixed_0.5", "rp_fixed_0.7", "rp_fixed_0.85", "rp_fixed_1"], "sharpe"]
+    M["NxSRrpMin"], M["NxSRrpMax"] = num(rp.min()), num(rp.max())
+    main_rows = ["ppo_ensemble", "vol_target_floored", "vol_target_unfloored", "vix_rule", "best_fixed",
+                 "rp_fixed_0.5", "rp_fixed_0.7", "rp_fixed_0.85", "rp_fixed_1", "equal_weight", "juniorbees"]
+    rs = s["random_sharpe"]
+    rows = [[NAME2[c], num(comb.loc[c, "sharpe"]), num(comb.loc[c, "cagr"], 1, pct=True),
+             num(comb.loc[c, "vol"], 1, pct=True), num(comb.loc[c, "max_drawdown"], 1, pct=True),
+             num(comb.loc[c, "calmar"], 2), num(comb.loc[c, "costs"], 1, pct=True), num(comb.loc[c, "avg_exposure"], 2)]
+            for c in main_rows]
+    rows.append([NAME["random (median of 100)"], num(rs["median"]), "", "", "", "", "", ""])
+    table("tab_n50_combined.tex", ["Strategy", "Sharpe", "CAGR", "Vol.", "Max DD", "Calmar", "Costs", "Exposure"], rows)
+
+    # ---- robustness, random policy, DSR, secondary outcomes ----
+    seeds = comb.loc[[f"ppo_seed_{i}" for i in range(5)], "sharpe"]
+    M["NxSRseedMin"], M["NxSRseedMax"] = num(seeds.min()), num(seeds.max())
+    M["NxNSeedsBeatVT"] = str(int((seeds > comb.loc["vol_target_floored", "sharpe"]).sum()))
+    M["NxNSeedsBeatVix"] = str(int((seeds > comb.loc["vix_rule", "sharpe"]).sum()))
+    for k, c in {"ppoLag": "ppo_ensemble_lag1", "vtLag": "vol_target_floored_lag1", "vixLag": "vix_rule_lag1",
+                 "ppoCost": "ppo_ensemble_cost20", "vtCost": "vol_target_floored_cost20",
+                 "vixCost": "vix_rule_cost20"}.items():
+        M[f"NxSR{k}"] = num(comb.loc[c, "sharpe"])
+    rob = [f"ppo_seed_{i}" for i in range(5)] + ["MID", "ppo_ensemble_lag1", "vol_target_floored_lag1", "vix_rule_lag1",
+                                                 "MID", "ppo_ensemble_cost20", "vol_target_floored_cost20",
+                                                 "vix_rule_cost20", "equal_weight_cost20"]
+    rows = ["MID" if c == "MID" else [NAME2[c], num(comb.loc[c, "sharpe"]), num(comb.loc[c, "cagr"], 1, pct=True),
+                                      num(comb.loc[c, "max_drawdown"], 1, pct=True),
+                                      num(comb.loc[c, "costs"], 1, pct=True)] for c in rob]
+    table("tab_n50_robust.tex", ["Variant", "Sharpe", "CAGR", "Max DD", "Costs"], rows)
+    M["NxSRrand"], M["NxSRrandLo"], M["NxSRrandHi"] = num(rs["median"]), num(rs["p05"]), num(rs["p95"])
+    d1, d2 = s["dsr_this_study"], s["dsr_with_prior"]
+    M["NxDSRthis"], M["NxDSRthisN"] = num(d1["dsr"]), str(d1["n_trials"])
+    M["NxDSRprior"], M["NxDSRpriorN"] = num(d2["dsr"]), str(d2["n_trials"])
+    for vsk, k in {"equal_weight": "EW", "juniorbees": "Bees"}.items():
+        r = sec[(sec.vs == vsk) & (sec.metric == "max_drawdown")].iloc[0]
+        M[f"NxSecMdd{k}pp"] = num(r["delta"] * 100, 1, True)
+        M[f"NxSecMdd{k}ppCI"] = f"[{num(r['ci_lo'] * 100, 1, True)}, {num(r['ci_hi'] * 100, 1, True)}]"
+        r = sec[(sec.vs == vsk) & (sec.metric == "calmar")].iloc[0]
+        M[f"NxSecCal{k}"], M[f"NxSecCal{k}CI"] = num(r["delta"], 3, True), ci(r["ci_lo"], r["ci_hi"])
+
+    # ---- per year ----
+    wide = py.pivot_table(index="year", columns="strategy", values="sharpe")
+    M["NxNYears"] = str(len(pyd))
+    M["NxNYearsAheadVT"], M["NxNYearsAheadVix"] = str(int((pyd["delta"] > 0).sum())), str(int((pyv["delta"] > 0).sum()))
+    pos = [str(y) for y in pyd.index if pyd.loc[y, "lo"] > 0]
+    M["NxYearsCIpos"] = " and ".join(pos) if pos else "none"
+    M["NxDeltaTwenty"], M["NxDeltaTwentyCI"] = num(pyd.loc[2020, "delta"], 3, True), ci(pyd.loc[2020, "lo"], pyd.loc[2020, "hi"])
+    M["NxDeltaVixTwenty"] = num(pyv.loc[2020, "delta"], 3, True)
+    rows = []
+    for y in wide.index:
+        rows.append([str(y)] + [num(wide.loc[y, c]) for c in ["ppo_ensemble", "vol_target_floored", "vix_rule",
+                                                             "equal_weight", "juniorbees"]] +
+                    [f"{num(pyd.loc[y, 'delta'], 3, True)} {ci(pyd.loc[y, 'lo'], pyd.loc[y, 'hi'])}",
+                     f"{num(pyv.loc[y, 'delta'], 3, True)} {ci(pyv.loc[y, 'lo'], pyv.loc[y, 'hi'])}"])
+    table("tab_n50_per_year.tex", ["Year", "PPO", "Vol tgt", "VIX rule", "Equal wt", "JUNIORBEES",
+                                   "PPO $-$ VT [95\\%]", "PPO $-$ VIX rule [95\\%]"], rows, "lrrrrrcc")
+
+    # ---- the registered 2020 drawdown window; JUNIORBEES set no new high in 2025 ----
+    e20 = epi[epi.year == 2020].set_index("strategy")
+    M["NxEpiPeak"], M["NxEpiTrough"] = e20["peak"].iloc[0], e20["trough"].iloc[0]
+    for k, c in {"PPO": "ppo_ensemble", "VT": "vol_target_floored", "Vix": "vix_rule", "EW": "equal_weight",
+                 "Bees": "juniorbees", "Best": "best_fixed"}.items():
+        M[f"NxEpi{k}"] = num(e20.loc[c, "return_peak_to_trough"], 1, pct=True)
+    if (epi.year == 2025).any():
+        raise SystemExit("Study 2 now has a 2025 drawdown window; rewrite that sentence")
+    bees = mk2["bench_tr"].loc[info["start"]:"2025-12-31"]
+    peak = bees.idxmax()
+    if peak.year >= 2025:
+        raise SystemExit("JUNIORBEES peaked in 2025; the empty-window explanation no longer holds")
+    M["NxBeesPeak"] = f"{peak:%-d %B %Y}"
+
+    # ---- what the ensemble did (exploratory, ledger row) ----
+    dfc = dec.set_index("date").assign(vix=mk2["vix"])[["exposure", "vix"]]
+    corr_v2 = float(dfc.corr().loc["exposure", "vix"])
+    M["NxCorrVix"], M["NxNDecisions"] = num(corr_v2, 2, True), num(len(dec), 0)
+    M["NxExpLowVix"] = num(dfc.loc[dfc.vix < 15, "exposure"].mean(), 2)
+    M["NxExpHighVix"] = num(dfc.loc[dfc.vix >= 25, "exposure"].mean(), 2)
+
+    # ---- training ----
+    M["NxRunMinutes"] = num(runs["seconds"].mean() / 60, 1)
+    v20 = runs.loc[runs.fold == 2020, "best_val_sharpe"]
+    M["NxValTwentyMin"], M["NxValTwentyMax"] = num(v20.min(), 2, True), num(v20.max(), 2, True)
+
+    # ---- data ----
+    ch = pd.read_csv(ROSTER2 / "changes.csv")
+    val = pd.read_csv(ROSTER2 / "validation.csv")
+    ver = pd.read_csv(RAW2 / "roster_snapshots" / "verification.csv")
+    notices = pd.read_csv(RAW2 / "press_releases" / "notices.csv")
+    qa = pd.read_csv(PROC2 / "price_qa.csv")
+    jc = pd.read_csv(PROC2 / "price_jump_checks.csv")
+    rep = pd.read_csv(PROC2 / "price_repairs.csv")
+    brep = pd.read_csv(PROC2 / "benchmark_repairs.csv")
+    bdev = pd.read_csv(PROC2 / "benchmark_tracking_deviations.csv")
+    iv = pd.read_csv(ROSTER2 / "membership_intervals.csv")
+    daily = pd.read_parquet(ROSTER2 / "membership_daily.parquet")
+    kind = ch.groupby("source")["reason"].first().str.startswith("ad hoc")
+    M["NxNotices"], M["NxNoticesUsed"] = num(len(notices), 0), num(ch["source"].nunique(), 0)
+    M["NxReviews"], M["NxAdHoc"] = num(int((~kind).sum()), 0), num(int(kind.sum()), 0)
+    M["NxChanges"], M["NxChangeDates"] = num(len(ch), 0), num(ch["effective_date"].nunique(), 0)
+    M["NxReadings"], M["NxReadingsMatch"] = num(len(val), 0), num(int(val["match"].sum()), 0)
+    M["NxReadingsNext"] = num(int((val["list"] == "next50").sum()), 0)
+    M["NxReadingsHundred"] = num(int((val["list"] == "nifty100").sum()), 0)
+    M["NxCopies"], M["NxCopiesSame"] = num(len(ver), 0), num(int((ver["result"] == "identical").sum()), 0)
+    excluded = qa.loc[qa["status"] == "excluded", "symbol"].tolist()
+    M["NxSymbols"], M["NxPriced"] = num(iv["symbol"].nunique(), 0), num(int((qa["status"] == "adjusted").sum()), 0)
+    M["NxExcluded"], M["NxExcludedList"] = num(len(excluded), 0), ", ".join(excluded)
+    test = daily.loc[info["start"]:]
+    M["NxExclShare"] = num(test[excluded].to_numpy().sum() / test.to_numpy().sum(), 1, pct=True)
+    M["NxJumps"], M["NxJumpsOK"] = num(len(jc), 0), num(int(jc["accepted"].sum()), 0)
+    M["NxBenchRepairs"], M["NxBenchGaps"] = num(len(brep), 0), num(len(bdev), 0)
+    z = np.load(PROC2 / "engine.npz")
+    elig = pd.Series(z["eligible"].sum(axis=1), index=pd.DatetimeIndex(z["dates"].astype("datetime64[ns]")))["2014":]
+    M["NxEligMin"], M["NxEligMed"], M["NxEligMax"] = (num(int(elig.min()), 0), num(int(elig.median()), 0),
+                                                       num(int(elig.max()), 0))
+    dev = np.log(mk2.loc["2014-01-01":"2018-12-31", ["nsei", "index"]]).diff().dropna()
+    M["NxCorrDev"] = num(dev.corr().iloc[0, 1], 2)
+    rows = [[r.symbol, str(r.date), num(r.r_vendor, 1, True, pct=True), num(r.r_nse, 1, True, pct=True),
+             str(r.explanation).replace("%", "\\%").replace("&", "\\&")] for r in jc.itertuples()]
+    # Repairs, with the post-test audit against NSE's files (ledger row 15, results/repair_audit.csv).
+    aud = pd.read_csv(RES2 / "repair_audit.csv")
+    rows.append("MID")
+    for a in aud.itertuples():
+        what = {"demerger": "Demerger: pre-open price", "split_boundary_artifact": "Split-boundary repair"}[a.kind]
+        verdict = "matches the exchange" if a.repair_correct else (
+            "wrong: a genuine fall" + ("" if a.eligible_within_window else "; not eligible then, no effect"))
+        rows.append([a.symbol, str(a.date), num(a.r_vendor_raw, 1, True, pct=True), num(a.r_nse, 1, True, pct=True),
+                     f"{what}; repaired to {num(a.r_repaired, 1, True, pct=True)}, {verdict}"])
+    table("tab_n50_moves.tex", ["Symbol", "Date", "Vendor", "NSE", "Reviewed cause"], rows,
+          "llrr>{\\raggedright\\arraybackslash}p{7.6cm}")
+    bad = aud[~aud["repair_correct"]]
+    if len(bad) != 1 or bool(bad["eligible_within_window"].iloc[0]):
+        raise SystemExit("the repair audit changed; rewrite the paragraph on the wrong repair")
+    b0 = bad.iloc[0]
+    M["NxRepairs"] = num(len(aud), 0)
+    M["NxSplitRepairs"] = num(int((aud["kind"] == "split_boundary_artifact").sum()), 0)
+    M["NxBadRepairSym"], M["NxBadRepairDate"] = b0["symbol"], f"{pd.Timestamp(b0['date']):%-d %B %Y}"
+    M["NxBadRepairNSE"] = num(b0["r_nse"], 1, True, pct=True)
+    M["NxBadRepairRep"] = num(b0["r_repaired"], 1, True, pct=True)
+
+    # ---- folds (appendix) ----
+    vmean = runs.groupby("fold")["best_val_sharpe"].mean()
+    rows = []
+    for y in cfg2["folds"]["test_years"]:
+        f = sel[str(y)]
+        vt, bf, vr = f["vol_target_floored"]["params"], f["best_fixed"]["params"], f["vix_rule"]["params"]
+        rows.append([str(y), f"2014--{y - 3}", f"{y - 2}--{y - 1}", num(vmean[y], 2, True),
+                     f"{vt['target'] * 100:.0f}\\%, {vt['horizon']}", f"{bf['e']:.2f}, {bf['h']}",
+                     f"{vr['threshold'] * 100:.0f}, {vr['horizon']}"])
+    table("tab_n50_folds.tex", ["Test year", "Train", "Validate", "PPO val.\\ Sharpe", "Vol tgt (target, $h$)",
+                                "Best fixed ($e$, $h$)", "VIX rule (level, $h$)"], rows, "lccrccc")
+
+    # ---- the two studies side by side (Study 1's DSR at today's trial count is a logged read) ----
+    r1 = pd.read_parquet(RES / "test_returns.parquet")
+    ex1 = r1["ppo_ensemble"].to_numpy() - r1["_rf"].to_numpy()
+    n_this, n_prior = d1["n_trials"], d2["n_trials"]
+    c1, h1, vr1, rs1 = v1["comb"], v1["h1"], v1["vix_rule"], v1["rand"]
+    rp1 = c1.loc[["rp_fixed_0.5", "rp_fixed_0.7", "rp_fixed_0.85", "rp_fixed_1"], "sharpe"]
+    H = fam["hypotheses"]
+    rows = [
+        ["PPO $-$ vol targeting (registered)", f"{num(h1['delta_sharpe'], 3, True)} {ci(*h1['ci95'])}",
+         f"{num(H['H1']['delta_sharpe'], 3, True)} {ci(*H['H1']['ci95'])}"],
+        ["\\quad Registered verdict", "supported", "not supported"],
+        ["PPO $-$ VIX threshold rule", f"{num(vr1.delta, 3, True)} {ci(vr1.ci_lo, vr1.ci_hi)}",
+         f"{num(H['H2']['delta_sharpe'], 3, True)} {ci(*H['H2']['ci95'])}"],
+        ["\\quad Status of that comparison", "post hoc", "registered: not supported"],
+        "MID",
+        ["Sharpe: PPO ensemble", num(c1.loc["ppo_ensemble", "sharpe"]), num(comb.loc["ppo_ensemble", "sharpe"])],
+        ["Sharpe: VIX threshold rule", num(v1["vix_rule_sr"]), num(comb.loc["vix_rule", "sharpe"])],
+        ["Sharpe: vol targeting (floor 0.5)", num(c1.loc["vol_target_floored", "sharpe"]),
+         num(comb.loc["vol_target_floored", "sharpe"])],
+        ["Sharpe: risk parity at a fixed exposure", f"{num(rp1.min())} to {num(rp1.max())}",
+         f"{num(rp.min())} to {num(rp.max())}"],
+        ["Sharpe: equal weight", num(c1.loc["equal_weight", "sharpe"]), num(comb.loc["equal_weight", "sharpe"])],
+        ["Sharpe: index ETF", f"{num(c1.loc['niftybees', 'sharpe'])} (NIFTYBEES)",
+         f"{num(comb.loc['juniorbees', 'sharpe'])} (JUNIORBEES)"],
+        ["Sharpe: random policy, median [5th, 95th pct.]",
+         f"{num(rs1['median'])} [{num(rs1['p05'])}, {num(rs1['p95'])}]",
+         f"{num(rs['median'])} [{num(rs['p05'])}, {num(rs['p95'])}]"],
+        "MID",
+        ["Max drawdown: PPO ensemble", num(c1.loc["ppo_ensemble", "max_drawdown"], 1, pct=True),
+         num(comb.loc["ppo_ensemble", "max_drawdown"], 1, pct=True)],
+        ["Max drawdown: index ETF", num(c1.loc["niftybees", "max_drawdown"], 1, pct=True),
+         num(comb.loc["juniorbees", "max_drawdown"], 1, pct=True)],
+        ["Exposure correlation with India VIX", num(v1["corr_vix"], 2, True), num(corr_v2, 2, True)],
+        [f"Deflated Sharpe, this project ($N={n_this}$)", num(dsr(ex1, n_this)["dsr"]), num(d1["dsr"])],
+        [f"Deflated Sharpe, with earlier work ($N={n_prior}$)", num(dsr(ex1, n_prior)["dsr"]), num(d2["dsr"])],
+    ]
+    table("tab_two_studies.tex", ["", "Study 1: Nifty 50", "Study 2: Nifty Next 50"], rows, "lcc")
 
 
 if __name__ == "__main__":

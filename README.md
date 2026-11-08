@@ -54,7 +54,15 @@ python -m data.market && python -m data.rf && python -m data.prices && python -m
 python -m data.manifest --verify          # studies/next50/data/MANIFEST.json
 ```
 
-Status: registered as `protocol-v2` on 2026-11-08. All three authors signed and kept the three defaults in Section 9. One development run was made on 2014-2018 (ledger row 11). Nothing was scored on 2019 onward before the tag. Next: `train.walk_forward --protocol`, then `train.run_test --protocol`, with `RB_PROTOCOL` set.
+Status: registered as `protocol-v2` on 2026-11-08 (all three authors signed and kept the defaults in Section 9). Trained in bdac9c2 (ledger row 12) and tested once in 40b0c4b (ledger row 13).
+
+**Result: neither hypothesis supported**, so under the signed decision table the v1 result does not replicate.
+- H1 (PPO ensemble minus floored vol targeting): +0.195, 95% CI [-0.088, +0.447], p = 0.085 against a Holm threshold of 0.025.
+- H2 (PPO ensemble minus the VIX threshold rule): -0.028, p = 0.61.
+
+The report is in `studies/next50/results/report.md`. The manuscript reports both studies.
+
+Post-test data audit (ledger row 15, `studies/next50/results/repair_audit.csv`): the automatic split-boundary repair inherited from v1 fired wrongly once. On 2024-06-04, a genuine -19.2% election-day fall in CONCOR matched a later split factor and was repaired to +1.0%. CONCOR had left the index in March 2021 and was never eligible within reach of that day, so no result is affected, and the registered data are unchanged. Any future protocol should allow that repair only on the first session of a calendar year, which is where the vendor artifact occurs.
 
 ## Paper
 

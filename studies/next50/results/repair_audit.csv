@@ -1,0 +1,5 @@
+symbol,date,kind,r_vendor_raw,r_repaired,r_nse,repair_correct,eligible_within_window,bhavcopy
+CONCOR,2024-06-04,split_boundary_artifact,-0.192,0.01,-0.192,False,False,https://nsearchives.nseindia.com/content/historical/EQUITIES/2024/JUN/cm04JUN2024bhav.csv.zip
+CONCOR,2025-01-01,split_boundary_artifact,-0.2088,-0.011,-0.011,True,False,https://nsearchives.nseindia.com/content/cm/BhavCopy_NSE_CM_0_0_0_20250101_F_0000.csv.zip
+TRENT,2026-01-01,split_boundary_artifact,-0.3305,0.0043,0.0043,True,False,https://nsearchives.nseindia.com/content/cm/BhavCopy_NSE_CM_0_0_0_20260101_F_0000.csv.zip
+VEDL,2026-04-30,demerger,-0.649,-0.062,-0.062,True,True,https://nsearchives.nseindia.com/content/cm/BhavCopy_NSE_CM_0_0_0_20260430_F_0000.csv.zip

@@ -5,9 +5,11 @@
 \usepackage{microtype}
 \usepackage{amsmath,amssymb}
 \usepackage{booktabs}
+\usepackage{array}
 \usepackage{graphicx}
 \usepackage{adjustbox}
 \usepackage{float}
+\usepackage[section]{placeins}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage{xcolor}
@@ -16,9 +18,10 @@
 \input{generated/numbers.tex}
 \newcommand{\figwidth}{\linewidth}
 \newcommand{\gtab}[1]{\begin{adjustbox}{max width=\linewidth}\input{generated/#1}\end{adjustbox}}
+\newcommand{\sfig}[1]{../studies/next50/results/figures/#1}
 
 \title{Reinforcement Learning as a Risk-Budget Controller:\\
-A Pre-Registered Walk-Forward Test on Point-in-Time Nifty~50 Equities}
+Two Pre-Registered Walk-Forward Tests on Indian Equities}
 \author{Eshani Parulekar \and Dhruv Pande \and Rishaan Damani\\[2pt]
 \small Plaksha University}
 \date{\small Working draft, \today. Every number is generated from the committed results by \texttt{python -m eval.paper\_numbers}.}
@@ -27,7 +30,7 @@ A Pre-Registered Walk-Forward Test on Point-in-Time Nifty~50 Equities}
 \maketitle
 
 \begin{abstract}
-In our earlier study, a Proximal Policy Optimization (PPO) agent that chose the risk aversion and holding horizon of a mean-variance optimiser on seven Indian stocks lost to a passive index fund out of sample. Here we move the agent from return forecasting to risk control. The agent chooses only the exposure (50 to 100 per cent) and rebalance horizon (5 or 21 sessions) of an equal-risk-contribution portfolio drawn from a point-in-time Nifty~50 universe, and cash earns the Reserve Bank of India's 91-day Treasury-bill rate. Before any test year was scored we registered the protocol: walk-forward folds with test years 2019 to 2026, five seeds per fold combined in an ensemble, a common simulation engine for every strategy, and a single primary hypothesis against volatility targeting. In the single test run (\NSessions{} sessions), the ensemble's Sharpe ratio was \SRppo{} against \SRvt{} for volatility targeting, and the 5th percentile of the paired block-bootstrap difference was \HiPfive{}, so the hypothesis is supported. The deflated Sharpe ratio is \DSRnow{} counting this study's \DSRnowN{} trials and \DSRpriorNow{} once the \DSRpriorNowN{} trials recorded across our earlier work are included. Analyses made after the test qualify the result. The margin comes from the 2020 crash and recovery; the agent learned to raise exposure when India VIX is high, the opposite of volatility targeting; and a two-parameter VIX threshold rule fixed after the test cannot be distinguished from the agent. We read the evidence as a narrow pre-registered win whose economic content is contrarian volatility timing.
+In our earlier study, a Proximal Policy Optimization (PPO) agent that chose the risk aversion and holding horizon of a mean-variance optimiser on seven Indian stocks lost to a passive index fund out of sample. Here the agent controls risk only. It chooses the exposure (50 to 100 per cent) and rebalance horizon (5 or 21 sessions) of an equal-risk-contribution portfolio, and cash earns the Reserve Bank of India's 91-day Treasury-bill rate. We ran two pre-registered walk-forward tests over 2019 to 2026, each with five seeds per fold combined in an ensemble and every strategy on one simulation engine. In the first, on a point-in-time Nifty~50 universe, the ensemble's Sharpe ratio beat volatility targeting by \HiDelta{} (bootstrap 5th percentile \HiPfive{}), so its registered hypothesis was supported. Analyses made after that test found that the margin came from the 2020 crash and recovery, that the agent had learned to raise exposure after India VIX spikes, and that a two-parameter VIX threshold rule could not be distinguished from it. We then registered a second protocol that froze the whole pipeline, moved it to the point-in-time Nifty Next~50 and added the VIX rule as a second registered comparator under Holm's correction. Neither hypothesis held. The ensemble led volatility targeting by \NxHOneDelta{} ($p$ = \NxHOneP{} against a threshold of \NxHOneThr{}), and its difference from the VIX rule was \NxHTwoDelta{}. The first result therefore did not replicate. On both universes the agent bought after fear spikes, a simple rule matched it, and its drawdowns were shallower than buy-and-hold; its edge over volatility targeting held on one universe only.
 \end{abstract}
 
 \section{Introduction}
@@ -38,17 +41,17 @@ Our own earlier study is a case in point \citep{parulekar2026}. A PPO agent chos
 
 This paper moves the agent from return forecasting to risk control. The agent never forecasts individual stocks. It decides how much of an equal-risk-contribution (ERC) portfolio to hold, between half and all of it, and how long to wait before deciding again. Three things recommend this design. Risk is more predictable than returns, which is the premise of volatility timing \citep{fleming2001,moreira2017}. A strong rule already answers the same question, volatility targeting \citep{harvey2018vt}, which gives the agent a demanding and interpretable comparator. And a small discrete action space keeps the policy auditable.
 
-We built the test to be hard to fool. The Nifty~50 universe is rebuilt point in time from archived copies of the exchange's own constituent files. Cash earns the Treasury-bill rate of each date. The protocol, including the single primary hypothesis, was registered and tagged in version control before any test year was scored, and every training run and analysis is recorded in an append-only trial ledger. Models are trained walk-forward, one fold per test year from 2019 to 2026, with five seeds per fold. Test years 2022 to 2026 are flagged as previously seen, because our earlier work used them.
+We built the tests to be hard to fool. Both universes are rebuilt point in time from the exchange's own records: archived constituent files for the Nifty~50, and the index-change notices of NSE Indices, validated against every archived list we could find, for the Nifty Next~50. Cash earns the Treasury-bill rate of each date. Each protocol, including its hypotheses, was signed by all three authors and tagged in version control before any of its test years was scored, and every training run and analysis is recorded in an append-only trial ledger. Models are trained walk-forward, one fold per test year from 2019 to 2026, with five seeds per fold.
 
-The pre-registered hypothesis is supported, but narrowly. The ensemble's Sharpe ratio exceeds that of volatility targeting by \HiDelta{}, with a bootstrap 5th percentile of \HiPfive{}. The result survives a one-session execution delay and doubled costs, and all five seeds beat volatility targeting on their own. Analyses made after the test, which we label exploratory, show where the margin comes from. Most of it is earned in 2020. The agent learned to hold little exposure when India VIX is low and to raise exposure after VIX spikes. A simple VIX threshold rule, designed after the test, cannot be distinguished from it.
+The first test, on the Nifty~50, supported its registered hypothesis, narrowly. The ensemble's Sharpe ratio exceeded that of volatility targeting by \HiDelta{}, with a bootstrap 5th percentile of \HiPfive{}. Analyses made after that test, which we label exploratory, showed that most of the margin was earned in 2020, that the agent had learned to hold little exposure when India VIX was low and to raise it after spikes, and that a VIX threshold rule designed after the test could not be distinguished from it. Findings made after looking cannot be claimed as confirmatory, so we registered a second protocol. It froze every design choice, applied the pipeline to the Nifty Next~50, the 50 stocks ranked below the Nifty~50, and registered the VIX rule as a comparator. On that universe the ensemble's lead over volatility targeting was \NxHOneDelta{} (95\% interval \NxHOneCI{}) and its difference from the VIX rule \NxHTwoDelta{} (\NxHTwoCI{}). Neither hypothesis survived Holm's correction. Under the decision rule we registered in advance, the first result is reported as holding on one universe only.
 
 Our contributions are:
 \begin{itemize}
-\item a pre-registered walk-forward evaluation of an RL risk-budget controller on a point-in-time Nifty~50 panel, with code, data hashes and a trial ledger;
-\item evidence that the controller beats volatility targeting under the registered test, reported with intervals, seed-level results and deflated Sharpe ratios that count earlier trials; and
-\item an exploratory decomposition of that result: what the agent learned, where its margin comes from, and a simple rule that matches it.
+\item two pre-registered walk-forward evaluations of an RL risk-budget controller on point-in-time Indian equity universes, with code, data hashes, both protocols and a trial ledger;
+\item a registered positive result that a registered replication with the pipeline frozen did not reproduce, and the evidence for why: on both universes the agent learns contrarian volatility timing that a two-parameter rule matches; and
+\item a point-in-time Nifty Next~50 roster rebuilt from the exchange's index-change notices and validated against archived constituent lists, with every large price move checked against the exchange's daily files.
 \end{itemize}
-Section~\ref{sec:related} reviews related work, Section~\ref{sec:data} the data and Section~\ref{sec:method} the method. Section~\ref{sec:protocol} sets out the registered evaluation, Section~\ref{sec:results} its results and Section~\ref{sec:exploratory} the exploratory analyses. Section~\ref{sec:discussion} discusses limitations.
+Section~\ref{sec:related} reviews related work, Section~\ref{sec:data} the data and Section~\ref{sec:method} the method. Sections~\ref{sec:protocol} to~\ref{sec:exploratory} report Study~1 on the Nifty~50: its registered evaluation, its results and the exploratory analyses that followed. Section~\ref{sec:study2} reports Study~2 on the Nifty Next~50, and Section~\ref{sec:discussion} discusses both.
 
 \section{Related work}\label{sec:related}
 
@@ -58,7 +61,7 @@ Section~\ref{sec:related} reviews related work, Section~\ref{sec:data} the data 
 
 \paragraph{Risk parity and diversification.} The ERC portfolio equalises each asset's contribution to portfolio risk \citep{maillard2010}. We compute it with the convex formulation of \citet{spinu2013} on the shrinkage covariance estimator of \citet{ledoit2004}. Naive diversification is a hard benchmark to beat \citep{demiguel2009}, so equal weight is among our baselines.
 
-\paragraph{Evaluation practice.} Sharpe ratios are noisy and serially dependent \citep{lo2002}; we compare them with a paired block bootstrap \citep{politis1992,ledoit2008}. Selecting the best of many backtests inflates performance \citep{bailey2014notices,harvey2016}; the probabilistic and deflated Sharpe ratios correct for non-normality and for the number of trials \citep{bailey2012psr,bailey2014dsr}. In RL, results vary widely across seeds \citep{henderson2018}, and point estimates without intervals mislead \citep{agarwal2021}. Pre-registration, standard in other empirical fields, commits the analysis before the data can shape it \citep{nosek2018}.
+\paragraph{Evaluation practice.} Sharpe ratios are noisy and serially dependent \citep{lo2002}; we compare them with a paired block bootstrap \citep{politis1992,ledoit2008}. Selecting the best of many backtests inflates performance \citep{bailey2014notices,harvey2016}; the probabilistic and deflated Sharpe ratios correct for non-normality and for the number of trials \citep{bailey2012psr,bailey2014dsr}. In RL, results vary widely across seeds \citep{henderson2018}, and point estimates without intervals mislead \citep{agarwal2021}. Pre-registration, standard in other empirical fields, commits the analysis before the data can shape it \citep{nosek2018}; a registered replication on new data is the direct test of a finding that analysis after the fact has put in doubt.
 
 \section{Data}\label{sec:data}
 
@@ -68,7 +71,9 @@ Section~\ref{sec:related} reviews related work, Section~\ref{sec:data} the data 
 
 \paragraph{Benchmark, market series and cash.} NIFTYBEES, an exchange-traded fund on the Nifty~50, is the passive benchmark, using its adjusted close as a total-return series; \NBenchRepairs{} sessions with vendor errors are repaired and \NBenchGaps{} genuine tracking gaps are kept. The Nifty~50 index, India VIX and the rupee-dollar rate (lagged one session, because its close falls after the exchange's) feed the agent's state. Cash earns the cut-off yield of the RBI's weekly 91-day Treasury-bill auctions \citep{rbi91}: each yield applies from the session after its auction and accrues as $(1+y)^{d/365}-1$ over $d$ calendar days. Over the test path the yield ranged from \RfMin{} to \RfMax{} (mean \RfMean{}).
 
-\paragraph{Calendar and freeze.} A session is any date with a Nifty~50 close on Yahoo Finance. This calendar skips a few exchange sessions, such as 1~January 2019, and a return then spans the skipped day; no return is lost. The data are frozen at the last session on or before \FreezeDate{}, and every raw and processed file is listed with its SHA-256 hash.
+\paragraph{Calendar and freeze.} A session is any date with a Nifty~50 close on Yahoo Finance. This calendar skips a few exchange sessions, such as 1~January 2019, and a return then spans the skipped day; no return is lost. The data are frozen at the last session on or before \FreezeDate{}, and every raw and processed file is listed with its SHA-256 hash. Both studies use this calendar, this freeze and the same cash series.
+
+\paragraph{The second universe.} Study~2 uses the Nifty Next~50, the 50 stocks ranked 51 to 100 by free-float capitalisation; with the Nifty~50 it makes up the Nifty~100. Its archived constituent files are too sparse to rebuild membership on their own, so we rebuilt it from the exchange's index-change notices. We downloaded all \NxNotices{} equity notices that NSE Indices published from October 2013 to the freeze and searched their text for the index. The changes come from \NxNoticesUsed{} of them: the \NxReviews{} semi-annual reviews from March 2014 to September 2026 (the March 2020 review was deferred to June because of COVID-19) and \NxAdHoc{} ad hoc changes for mergers, demergers and replacements in the Nifty~50. That gives \NxChanges{} dated changes on \NxChangeDates{} dates. The roster matches all \NxReadings{} archived readings from 2014 to 2026: \NxReadingsNext{} copies of the exchange's Nifty Next~50 file and \NxReadingsHundred{} copies of its Nifty~100 file less the Study~1 roster. It holds exactly 50 members on every session and never overlaps the Nifty~50. Prices follow the Study~1 rules. Of the \NxSymbols{} members, \NxPriced{} have usable series. The other \NxExcluded{} (\NxExcludedList) are excluded while members, \NxExclShare{} of member-sessions in the test years; ICICI Prudential Life is among them only because the vendor's history now starts in July 2026, though the exchange's daily files show it trading throughout. A daily move beyond 25 per cent was accepted only if the exchange's own daily price file reproduced it and a cause was recorded; all \NxJumps{} such moves passed (Appendix~\ref{app:data}). Vendor errors were repaired as in Study~1: one demerger from the exchange's pre-open price and \NxSplitRepairs{} split-adjustment artifacts automatically. A post-test audit of these repairs against the exchange's files found one of the automatic ones wrong: on \NxBadRepairDate{} it replaced a genuine \NxBadRepairNSE{} fall in \NxBadRepairSym{}, on the day of the general-election results, with \NxBadRepairRep{}. \NxBadRepairSym{} had left the index in March 2021 and was not eligible at any point the error could reach, so no result changes; the registered data were left as they were. The benchmark is JUNIORBEES, the exchange-traded fund on the index, and the Nifty Next~50 index replaces the Nifty~50 in the agent's index features. Between \NxEligMin{} and \NxEligMax{} stocks are eligible on each session (median \NxEligMed{}). The two indices are closely related: their daily returns correlated \NxCorrDev{} over 2014 to 2018.
 
 \section{Method}\label{sec:method}
 
@@ -88,7 +93,7 @@ At each decision the agent picks an exposure $e \in \{0.5, 0.7, 0.85, 1.0\}$ and
 \begin{equation}
 R = 100\left[\sum_{\tau=t+1}^{t+h} \bigl(\log(1+r_\tau) - \log(1+r^f_\tau)\bigr) - \kappa \max\bigl(0,\ D_{t+h} - D_t\bigr)\right],
 \end{equation}
-where $r_\tau$ is the strategy's return net of costs, $r^f_\tau$ the cash return, $D$ the magnitude of the strategy's drawdown from its running peak and $\kappa=1$. The state has 13 features. Ten describe the market: Nifty~50 realised volatility over 20 and 60 sessions and their ratio; index momentum over 21 and 63 sessions; the index drawdown from its 252-session high; the average pairwise correlation of eligible stocks over 60 sessions; the India VIX level and its five-session log change; and the 21-session change in the rupee-dollar rate. These are standardised with the mean and standard deviation of the fold's training years only and clipped at $\pm 5$. Three describe the agent's own portfolio: its current exposure, drawdown and 20-session volatility.
+where $r_\tau$ is the strategy's return net of costs, $r^f_\tau$ the cash return, $D$ the magnitude of the strategy's drawdown from its running peak and $\kappa=1$. The state has 13 features. Ten describe the market: the realised volatility of the universe's index (the Nifty~50 in Study~1, the Nifty Next~50 in Study~2) over 20 and 60 sessions and their ratio; index momentum over 21 and 63 sessions; the index drawdown from its 252-session high; the average pairwise correlation of eligible stocks over 60 sessions; the India VIX level and its five-session log change; and the 21-session change in the rupee-dollar rate. These are standardised with the mean and standard deviation of the fold's training years only and clipped at $\pm 5$. Three describe the agent's own portfolio: its current exposure, drawdown and 20-session volatility.
 
 We train with PPO \citep{schulman2017ppo} in Stable-Baselines3 \citep{raffin2021sb3}, using a $64\times 64$ network, learning rate $3\times 10^{-4}$, 1{,}024 steps per update, minibatches of 64, ten epochs, discount 1, generalised advantage estimation with $\lambda = 0.95$ \citep{schulman2016gae}, clip range 0.2 and entropy coefficient 0.01. Training episodes are random 252-session windows within the training years, each starting in cash.
 
@@ -106,7 +111,7 @@ the best fixed action, chosen per fold on validation;
 a random policy over the agent's eight actions (100 seeds); and
 volatility targeting. Volatility targeting sets $e_t = \mathrm{clip}(\tau/\hat\sigma_t,\ 0.5,\ 1)$, where $\hat\sigma_t$ is the realised volatility of the unlevered ERC portfolio over 60 sessions; the target $\tau \in \{10, 12, 15\}$ per cent and horizon $h \in \{5, 21\}$ are chosen per fold on validation by the same criterion as the agent's checkpoints. The same rule without the floor is a secondary baseline.
 
-\section{Pre-registered evaluation}\label{sec:protocol}
+\section{Study 1: pre-registered evaluation on the Nifty 50}\label{sec:protocol}
 
 \paragraph{Registration.} The protocol (\texttt{protocol.md}, mirrored by \texttt{config/protocol.yaml}, SHA-256 prefix \ProtoHash{}) was signed by all three authors and tagged \texttt{protocol-v1} on 7~November 2026, before any test year was scored. The test script refuses to run unless the tag exists, the configuration is unchanged since the tag, the working tree is clean and the cash series is the RBI one, and it writes its ledger entry before computing any test-year score. It was run once.
 
@@ -118,7 +123,7 @@ volatility targeting. Volatility targeting sets $e_t = \mathrm{clip}(\tau/\hat\s
 
 \paragraph{Correctness checks.} Before any training, the test suite established that perturbing every series after a date leaves all features, weights, standardisation statistics, decisions and net asset values before it bit-identical; that an oracle policy shown the next interval's return earns an absurd Sharpe ratio, and loses its edge when lagged one interval, so returns are credited after decisions; that costs match hand-computed trades; that the allocator returns inverse-volatility weights for a diagonal covariance and equal risk contributions to within $10^{-4}$; and that the statistics reproduce published examples. Development runs used only 2014 to 2018.
 
-\section{Results}\label{sec:results}
+\section{Study 1: results}\label{sec:results}
 
 \subsection{The primary test}
 
@@ -192,7 +197,7 @@ The ensemble is ahead of volatility targeting in \NYearsAhead{} of the \NYears{}
 
 All \NSeedsBeatVT{} seeds beat volatility targeting on their own, with Sharpe ratios from \SRseedMin{} to \SRseedMax{} (Table~\ref{tab:robust}, Figure~\ref{fig:seeds}). Executing every trade one session late leaves the ensemble's Sharpe ratio at \SRppoLag{} (volatility targeting: \SRvtLag{}); an edge that relied on same-session information would shrink under the delay. With costs doubled to 20 basis points, the ensemble's Sharpe ratio is \SRppoCost{} and volatility targeting's \SRvtCost{}. The unfloored volatility rule scores \SRvtu{}. One hundred random policies over the same actions have a median Sharpe ratio of \SRrand{} and a 5th to 95th percentile range of \SRrandLo{} to \SRrandHi{}; the ensemble lies above that range.
 
-The ensemble's daily Sharpe ratio is \SRdaily{}, with skewness \Skew{} and kurtosis \Kurt{}. With the single trial this study had run at the time of the test, its DSR is \DSRthis{}. Counting all \DSRpriorN{} trials in the ledger, including those of our earlier work, it is \DSRprior{}. After the post-hoc rule of Section~\ref{sec:vixrule}, which we count as a trial, the figures are \DSRnow{} (\DSRnowN{} trials) and \DSRpriorNow{} (\DSRpriorNowN{} trials).
+The ensemble's daily Sharpe ratio is \SRdaily{}, with skewness \Skew{} and kurtosis \Kurt{}. With the single trial this study had run at the time of the test, its DSR is \DSRthis{}. Counting all \DSRpriorN{} trials in the ledger, including those of our earlier work, it is \DSRprior{}. After the post-hoc rule of Section~\ref{sec:vixrule}, which we count as a trial, the figures are \DSRnow{} (\DSRnowN{} trials) and \DSRpriorNow{} (\DSRpriorNowN{} trials); Table~\ref{tab:twostudies} gives them at the project's final count.
 
 \subsection{Drawdown episodes}
 
@@ -205,9 +210,9 @@ The ensemble's daily Sharpe ratio is \SRdaily{}, with skewness \Skew{} and kurto
 
 The protocol fixed two windows: NIFTYBEES's deepest fall whose peak lies in 2020, and the same for 2025 (Table~\ref{tab:episodes}). From \EpiPeak{} to \EpiTrough{}, the ensemble lost \EpiPPO{}, against \EpiVT{} for volatility targeting, \EpiEW{} for equal weight and \EpiBees{} for NIFTYBEES. The 2025 window turned out to be a small dip (\EpiTwentyFiveBees{} for NIFTYBEES), because the larger 2024--25 correction peaked in September 2024. Over that correction, from \DeepThreePeak{} to \DeepThreeTrough{}, the ensemble lost \DeepThreePPO{}, against \DeepThreeVT{} for volatility targeting and \DeepThreeBees{} for NIFTYBEES.
 
-\section{Exploratory analyses}\label{sec:exploratory}
+\section{Study 1: exploratory analyses}\label{sec:exploratory}
 
-Everything in this section was decided after the test run. Each analysis is recorded in the ledger, and none can change the verdict on H1.
+Everything in this section was decided after the Study~1 test run. Each analysis is recorded in the ledger, and none can change the verdict on H1. Together they motivated Study~2.
 
 \subsection{What the agent learned}
 
@@ -251,21 +256,125 @@ Without 2020, the ensemble's lead over volatility targeting falls to \ExNoDelta{
 
 To ask whether the agent does more than buy after VIX spikes, we designed one rule after the test, committed it to the repository before running it, recorded it in the ledger before it touched any test year, and count it as a trial. The rule holds full exposure when India VIX at the decision close is at or above a threshold and the 0.5 floor otherwise; the threshold (15, 20 or 25) and horizon (5 or 21 sessions) are chosen per fold on validation, like the other tuned baselines.
 
-The rule's Sharpe ratio is \VRsr{} (Table~\ref{tab:vixrule}). The ensemble's lead over it is \VRdelta{}, with a 95\% interval of \VRci{}, so the two cannot be told apart; the rule's own lead over volatility targeting, \VRvsVT{} \VRvsVTci{}, is not significant either. Outside 2020 the rule is ahead of the ensemble (\VRnoRule{} against \VRnoPPO{}); in 2020 the ensemble is ahead (\VRtwentyPPO{} against \VRtwentyRule{}). Between January and April 2020 the two made their \NCrashDates{} decisions on the same dates and differed once: on \CrashDiffDate{}, with India VIX at \VixCrash{}, the rule moved to exposure \VRCrashExp{} and the ensemble to \PPOCrashExp{}. The rule's maximum drawdown is \VRmdd{}. Their exposures correlate \VRcorr{} session by session, so the ensemble is not simply this rule; but most of its measured edge over the rule comes from 2020, where the two policies differ by a single decision.
+The rule's Sharpe ratio is \VRsr{} (Table~\ref{tab:vixrule}). The ensemble's lead over it is \VRdelta{}, with a 95\% interval of \VRci{}, so the two cannot be told apart; the rule's own lead over volatility targeting, \VRvsVT{} \VRvsVTci{}, is not significant either. Outside 2020 the rule is ahead of the ensemble (\VRnoRule{} against \VRnoPPO{}); in 2020 the ensemble is ahead (\VRtwentyPPO{} against \VRtwentyRule{}). Between January and April 2020 the two made their \NCrashDates{} decisions on the same dates and differed once: on \CrashDiffDate{}, with India VIX at \VixCrash{}, the rule moved to exposure \VRCrashExp{} and the ensemble to \PPOCrashExp{}. The rule's maximum drawdown is \VRmdd{}. Their exposures correlate \VRcorr{} session by session, so the ensemble is not simply this rule; but most of its measured edge over the rule comes from 2020, where the two policies differ by a single decision. Because the rule was designed after the test, Study~2 registered it in advance as a comparator.
+
+\section{Study 2: a registered replication on the Nifty Next 50}\label{sec:study2}
+
+\subsection{Protocol}
+
+The analyses of Section~\ref{sec:exploratory} were made after the test, so they cannot be claimed as confirmatory. We therefore registered a second protocol (\texttt{protocol\_v2.md}, mirrored by \texttt{config/\allowbreak protocol\_v2.yaml}, whose SHA-256 begins \NxProtoHash{}). All three authors signed it, and it was tagged \texttt{protocol-v2} on 8~November 2026, before any Nifty Next~50 test year was scored. It freezes every element of Study~1: the allocator, costs, execution, actions, reward, state, PPO settings, seeds, checkpoint selection, ensemble rule, folds, baselines, statistics and data freeze. A unit test fails if the configuration differs from Study~1's anywhere other than in the registered changes. Those are the universe and its index and benchmark (Section~\ref{sec:data}), and two additions.
+
+First, the VIX threshold rule of Section~\ref{sec:vixrule} is a registered baseline, with the grid committed before the rule was first run. It holds full exposure when India VIX at the decision close is at or above a threshold and 0.5 otherwise; the threshold (15, 20 or 25) and horizon (5 or 21 sessions) are chosen per fold on validation, like every tuned baseline. Second, there are two primary hypotheses:
+\begin{itemize}
+\item H1: the ensemble's Sharpe ratio exceeds that of floored volatility targeting on the combined test path (a replication of Study~1's H1);
+\item H2: the ensemble's Sharpe ratio exceeds that of the VIX threshold rule.
+\end{itemize}
+Each is tested with Study~1's paired block bootstrap, and its $p$-value is the share of draws at or below zero. Holm's procedure holds the family-wise error rate at \NxAlpha{}: the smaller $p$ must be at most 0.025 and, if it is, the larger at most 0.05. The protocol also fixed what the paper would say for each outcome (Table~\ref{tab:decision}). Every test year is labelled previously seen, because Study~1 examined the same market path. Before registration we ran one development training on fold 2019's years (2014 to 2018) and a dry run of the test code on 2017 and 2018; nothing was scored on 2019 onward.
+
+\begin{table}[!htbp]
+\centering\small
+\caption{The decision rule registered with Study~2, before its test.}
+\label{tab:decision}
+\begin{tabular}{llp{9.2cm}}
+\toprule
+H1 & H2 & What the paper reports \\
+\midrule
+Supported & Supported & The edge over volatility targeting replicates on new stocks, and PPO beats the simplest rule describing its behaviour. \\
+Supported & Not supported & The edge replicates, but there is no evidence that PPO does more than a VIX threshold rule. \\
+Not supported & Supported & Reported as is; Study~1's H1 stands as a result on one universe. \\
+Not supported & Not supported & The Study~1 result does not replicate. The abstract says so, and Study~1's H1 is reported as holding on one universe only. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Results}
+
+\begin{table}[!htbp]
+\centering\small
+\caption{Study~2's primary hypotheses, tested once on the combined path with Holm's procedure at a family-wise $\alpha$ of \NxAlpha{}.}
+\label{tab:primary2}
+\gtab{tab_n50_primary.tex}
+\end{table}
+
+Neither hypothesis is supported (Table~\ref{tab:primary2}). The ensemble's Sharpe ratio exceeds that of volatility targeting by \NxHOneDelta{} (95\% interval \NxHOneCI{}), with $p$ = \NxHOneP{} against a Holm threshold of \NxHOneThr{}; it would not have passed Study~1's single-hypothesis rule either. Against the VIX threshold rule the difference is \NxHTwoDelta{} (\NxHTwoCI{}, $p$ = \NxHTwoP{}). The last row of Table~\ref{tab:decision} applies.
+
+\begin{table}[!htbp]
+\centering\small
+\caption{Study~2's combined test path, \NxPathStart{} to \NxPathEnd{} (\NxSessions{} sessions). Columns as in Table~\ref{tab:combined}.}
+\label{tab:combined2}
+\gtab{tab_n50_combined.tex}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\figwidth]{\sfig{equity.pdf}}
+\caption{Study~2: growth of one rupee over the test path, log scale.}
+\label{fig:equity2}
+\end{figure}
+
+Table~\ref{tab:combined2} and Figure~\ref{fig:equity2} report the combined path. The ensemble's Sharpe ratio, \NxSRppo{}, is below the VIX rule's \NxSRvix{} and only slightly above risk parity at a fixed exposure (\NxSRrpMin{} to \NxSRrpMax{}). It lies inside the 5th to 95th percentile range of the random policies (\NxSRrandLo{} to \NxSRrandHi{}, median \NxSRrand{}). The two volatility-targeting rules are again the weakest risk-parity strategies (\NxSRvt{} with the floor and \NxSRvtu{} without; average exposure \NxEXPvt{} and \NxEXPvtu{}). The ensemble's maximum drawdown, \NxMDDppo{}, is shallower than volatility targeting's (\NxMDDvt{}), the VIX rule's (\NxMDDvix{}) and JUNIORBEES's (\NxMDDbees{}). On the registered secondary outcomes it was shallower than equal weight's by \NxSecMddEWpp{} percentage points (95\% interval \NxSecMddEWppCI) and than JUNIORBEES's by \NxSecMddBeespp{} (\NxSecMddBeesppCI). The Calmar differences, \NxSecCalEW{} \NxSecCalEWCI{} and \NxSecCalBees{} \NxSecCalBeesCI{}, are not significant.
+
+\begin{table}[!htbp]
+\centering\small
+\caption{Study~2: Sharpe ratio by test year, with each year's difference and 95\% bootstrap interval against volatility targeting and the VIX rule. Every year was previously seen in Study~1.}
+\label{tab:peryear2}
+\gtab{tab_n50_per_year.tex}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\figwidth]{\sfig{per_year_delta_sharpe.pdf}}\\[4pt]
+\includegraphics[width=\figwidth]{\sfig{per_year_delta_sharpe_vix_rule.pdf}}
+\caption{Study~2: Sharpe difference by test year, PPO ensemble minus volatility targeting (top) and minus the VIX rule (bottom), with 95\% bootstrap intervals.}
+\label{fig:peryear2}
+\end{figure}
+
+By year (Table~\ref{tab:peryear2}, Figure~\ref{fig:peryear2}), the ensemble is ahead of volatility targeting in \NxNYearsAheadVT{} of the \NxNYears{} years, with intervals excluding zero in \NxYearsCIpos{}; the largest gap is again 2020 (\NxDeltaTwenty{} \NxDeltaTwentyCI{}). It is ahead of the VIX rule in \NxNYearsAheadVix{} of the \NxNYears{} years, 2020 among them (\NxDeltaVixTwenty{}). As in Study~1, fold 2020's checkpoints all had negative validation Sharpe ratios (\NxValTwentyMin{} to \NxValTwentyMax{}).
+
+\begin{table}[!htbp]
+\centering\small
+\caption{Study~2: pre-registered robustness checks.}
+\label{tab:robust2}
+\gtab{tab_n50_robust.tex}
+\end{table}
+
+All \NxNSeedsBeatVT{} seeds beat volatility targeting, but only \NxNSeedsBeatVix{} beat the VIX rule; seed Sharpe ratios range from \NxSRseedMin{} to \NxSRseedMax{} (Table~\ref{tab:robust2}). With every trade one session late the ensemble scores \NxSRppoLag{} (volatility targeting \NxSRvtLag{}, VIX rule \NxSRvixLag{}); with 20 basis point costs, \NxSRppoCost{}, \NxSRvtCost{} and \NxSRvixCost{}. The deflated Sharpe ratio is \NxDSRthis{} counting this project's \NxDSRthisN{} trials and \NxDSRprior{} counting all \NxDSRpriorN{}. Over the registered 2020 window, from \NxEpiPeak{} to \NxEpiTrough{}, the ensemble lost \NxEpiPPO{}, volatility targeting \NxEpiVT{}, the VIX rule \NxEpiVix{}, equal weight \NxEpiEW{} and JUNIORBEES \NxEpiBees{}; the best fixed action, at half exposure, lost \NxEpiBest{}. JUNIORBEES set no new high in 2025 (its last peak before 2026 was on \NxBeesPeak{}), so the registered 2025 window is empty.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\figwidth]{\sfig{exposure_vs_vix.pdf}}
+\caption{Study~2: India VIX (top) and the exposure chosen by the PPO ensemble (bottom).}
+\label{fig:vix2}
+\end{figure}
+
+The agent behaved as it did in Study~1 (Figure~\ref{fig:vix2}). Across its \NxNDecisions{} decisions, its exposure correlates \NxCorrVix{} with India VIX at the decision, against \CorrVix{} in Study~1, and its mean exposure was \NxExpLowVix{} with VIX below 15 and \NxExpHighVix{} with VIX at 25 or above. These are descriptive reads made after the test and logged in the ledger.
+
+\subsection{The two studies side by side}
+
+\begin{table}[!htbp]
+\centering\small
+\caption{Both studies on the same test years. Intervals are 95\% paired block-bootstrap intervals. The deflated Sharpe ratios use the project's final trial count for both studies.}
+\label{tab:twostudies}
+\gtab{tab_two_studies.tex}
+\end{table}
+
+Table~\ref{tab:twostudies} sets the studies side by side. The ensemble's lead over volatility targeting kept its sign but shrank from \HiDelta{} to \NxHOneDelta{}, and its interval now includes zero. The VIX rule, a post-hoc comparison in Study~1 and a registered one in Study~2, cannot be distinguished from the agent in either. Volatility targeting trails risk parity at every fixed exposure in both. What is consistent across the two universes is the agent's behaviour and its shallow drawdowns, not its Sharpe ratio.
 
 \section{Discussion}\label{sec:discussion}
 
-\paragraph{What the evidence supports.} The registered hypothesis passed, with little room: the bootstrap 5th percentile is \HiPfive{} and the lower end of the two-sided interval is zero. Volatility targeting proved a weak comparator in this sample, below every fixed-exposure risk-parity portfolio, consistent with the out-of-sample findings of \citet{cederburg2020}. Against the passive baselines the ensemble's Sharpe advantage is not significant, though its drawdowns are clearly shallower. The deflated Sharpe ratio depends on how trials are counted: \DSRnow{} for this study alone and \DSRpriorNow{} once our earlier attempts are included. We think the second number is the honest one, and we encourage other RL studies to count trials across a project's history, not only within its final paper.
+\paragraph{What the evidence supports.} Two registered tests disagree. The Nifty~50 test supported H1 with no room to spare. The Nifty Next~50 test, run with every design choice frozen, did not, although the point estimate kept its sign and the ensemble led volatility targeting in every year. The VIX threshold rule, designed after the first test and registered for the second, matched the agent on both universes. We registered in advance what we would conclude from this outcome, and we conclude it. The edge over volatility targeting held on one universe only, and we find no evidence that the agent does more than a VIX threshold rule. The deflated Sharpe ratios point the same way: once our earlier work is counted, they fall below one half in both studies (Table~\ref{tab:twostudies}). We think counting trials across a project's history, not only within its final paper, is the honest practice, and we encourage other RL studies to adopt it.
 
-\paragraph{What the agent learned.} The agent learned contrarian volatility timing: low exposure in calm markets and high exposure after fear spikes. This is consistent with evidence that high implied volatility and variance risk premia precede higher equity returns \citep{whaley2000,bollerslev2009}, but our sample cannot separate a risk premium from the particular sequence of crashes and recoveries in 2019--2026. One V-shaped crash supplies most of the margin. A policy that buys after spikes is rewarded by quick recoveries and would be punished by slow, deep declines, of which the test path has none. A simple rule captures much of the behaviour; the agent's distinct contribution over that rule is not established.
+\paragraph{Why volatility targeting was a low bar.} In both universes volatility targeting had a lower Sharpe ratio than risk parity at every fixed exposure. Its targets of 10 to 15 per cent are above the risk-parity portfolio's own volatility in calm markets, so the rule sits near full exposure and cuts exposure only after volatility has risen; in this sample that meant selling after crashes and buying back late. A policy that does anything else after a spike clears this bar easily, which is consistent with the out-of-sample weakness of volatility-managed portfolios reported by \citet{cederburg2020}. The comparisons against fixed-exposure risk parity and against the VIX rule are more informative, and the agent's advantage over both is small or absent.
 
-\paragraph{Limitations.} The test covers one market and index over eight years, five of them previously seen. Six index members, among them HDFC until July 2023, have no price series and are excluded while members. Prices come from a public vendor; we repaired the errors we found, and the session calendar omits a few exchange sessions. Costs are proportional, without market impact or taxes. The exposure floor of 0.5, shared by the agent and volatility targeting, limits downside protection by design. To fit a one-week build we fixed the drawdown penalty at $\kappa=1$ and dropped an A2C comparison and a test on the Nifty Next~50; the ledger records these choices. The analyses of Section~\ref{sec:exploratory} were chosen after seeing the test results.
+\paragraph{What the agent learned.} On both universes the agent learned contrarian volatility timing: low exposure in calm markets and high exposure after fear spikes. This is consistent with evidence that high implied volatility and variance risk premia precede higher equity returns \citep{whaley2000,bollerslev2009}. But both studies share one market path with one V-shaped crash. A policy that buys after spikes is rewarded by quick recoveries and would be punished by slow, deep declines, of which the sample has none. Its one consistent benefit, drawdowns shallower than buy-and-hold in both studies, is shared by simpler strategies: risk parity held at half exposure fell less in both.
 
-\paragraph{What would change the conclusion.} The decisive next test is the same frozen pipeline on a fresh universe, such as the Nifty Next~50, with the VIX threshold rule registered in advance as a comparator, and on a longer history that includes slow bear markets such as 2008.
+\paragraph{Limitations.} Both studies cover the same eight years, so Study~2 tests whether the first result depends on the particular stocks, not whether it holds in another period; the two indices correlated \NxCorrDev{} before the test period, and India VIX is common to both. Six Nifty~50 members and \NxExcluded{} Nifty Next~50 members have no usable price series and are excluded while members. Prices come from a public vendor, checked against the exchange's daily files only for moves beyond 25 per cent. Costs are proportional, without market impact or taxes. The exposure floor of 0.5, shared by the agent, volatility targeting and the VIX rule, limits downside protection by design. We fixed the drawdown penalty at $\kappa=1$ and did not run the A2C comparison; the ledger records these choices.
+
+\paragraph{What would change the conclusion.} A longer history that includes slow bear markets, such as 2008, and other markets with their own volatility indices. We would register the VIX threshold rule, or a richer rule built from the same features, as a comparator from the start. In this project the decisive comparison was one we had not thought to register first.
 
 \section{Conclusion}
 
-Moving an RL agent from return forecasting to risk control turned a clear loss into a narrow pre-registered win over volatility targeting on point-in-time Nifty~50 equities. The win is real under the registered test but concentrated in 2020, and what the agent learned, raising exposure after fear spikes, is largely available from a two-parameter rule. We report it as such. Code, data hashes, the protocol, the trial ledger and every number in this paper are available in the project repository.\footnote{\url{https://github.com/eshentials/Deep-RL-For-Dynamic-Portfolio-Strategy}, branch \texttt{risk-budget-controller}; protocol tag \texttt{protocol-v1}.}
+Moving an RL agent from return forecasting to risk control turned a clear loss into a narrow pre-registered win over volatility targeting on the Nifty~50. A second registered test, with the pipeline frozen, did not reproduce that win on the Nifty Next~50, and on both universes a two-parameter VIX threshold rule matched the agent. What the agent learned, raising exposure after fear spikes, is consistent across the two universes, but we find no evidence that the learning adds anything a simple rule does not. We report the first result as holding on one universe only. Code, data hashes, both protocols, the trial ledger and every number in this paper are in the project repository.\footnote{\url{https://github.com/eshentials/Deep-RL-For-Dynamic-Portfolio-Strategy}, branch \texttt{risk-budget-controller}; protocol tags \texttt{protocol-v1} and \texttt{protocol-v2}.}
 
 % TODO(authors): author contributions; acknowledgements; use of AI tools, as required by the venue.
 
@@ -278,15 +387,21 @@ Moving an RL agent from return forecasting to risk control turned a clear loss i
 
 \begin{table}[H]
 \centering\small
-\caption{Walk-forward folds. The PPO column is the mean over five seeds of the best validation Sharpe ratio. Volatility targeting, the best fixed action and the post-hoc VIX rule were each chosen on the same validation years. $^\dagger$Previously seen.}
+\caption{Study~1 walk-forward folds. The PPO column is the mean over five seeds of the best validation Sharpe ratio. Volatility targeting, the best fixed action and the post-hoc VIX rule were each chosen on the same validation years. $^\dagger$Previously seen.}
 \gtab{tab_folds.tex}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\caption{Study~2 walk-forward folds, as in the previous table; here the VIX rule is a registered baseline. Every test year was previously seen in Study~1.}
+\gtab{tab_n50_folds.tex}
 \end{table}
 
 \section{Trial ledger}\label{app:ledger}
 
 \begin{table}[H]
 \centering\small
-\caption{Rows of \texttt{ledger.csv}. ``Trials counted'' is what enters the deflated Sharpe ratio. Development checks reran the registered configuration on fold 2019's training and validation years only and are not counted.}
+\caption{Rows of \texttt{ledger.csv}, by protocol. ``Trials counted'' is what enters the deflated Sharpe ratio. Development checks reran the registered configuration on fold 2019's training and validation years only and are not counted.}
 \gtab{tab_ledger.tex}
 \end{table}
 
@@ -294,8 +409,14 @@ Moving an RL agent from return forecasting to risk control turned a clear loss i
 
 \begin{table}[H]
 \centering\small
-\caption{Corporate-action repairs. Demergers use the exchange's special pre-open discovered price; the split artifact is a vendor adjustment at a year boundary.}
+\caption{Study~1 corporate-action repairs. Demergers use the exchange's special pre-open discovered price; the split artifact is a vendor adjustment at a year boundary.}
 \gtab{tab_repairs.tex}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\caption{Study~2: every daily move beyond 25 per cent during membership, with the vendor's return, the return from the exchange's own daily file (close over previous close) and the reviewed cause. A move counted as genuine only if both returns agreed within 1.5 percentage points and a cause was recorded. Below the line, the \NxRepairs{} repairs and the post-test audit of each against the exchange's file (close over the special pre-open price for the demerger).}
+\gtab{tab_n50_moves.tex}
 \end{table}
 
 \end{document}

@@ -1,0 +1,24 @@
+\begin{tabular}{lcc}
+\toprule
+ & Study 1: Nifty 50 & Study 2: Nifty Next 50 \\
+\midrule
+PPO $-$ vol targeting (registered) & $+0.320$ [$+0.000$, $+0.620$] & $+0.195$ [$-0.088$, $+0.447$] \\
+\quad Registered verdict & supported & not supported \\
+PPO $-$ VIX threshold rule & $+0.151$ [$-0.220$, $+0.417$] & $-0.028$ [$-0.325$, $+0.213$] \\
+\quad Status of that comparison & post hoc & registered: not supported \\
+\midrule
+Sharpe: PPO ensemble & $0.808$ & $0.639$ \\
+Sharpe: VIX threshold rule & $0.658$ & $0.667$ \\
+Sharpe: vol targeting (floor 0.5) & $0.488$ & $0.444$ \\
+Sharpe: risk parity at a fixed exposure & $0.611$ to $0.624$ & $0.596$ to $0.602$ \\
+Sharpe: equal weight & $0.662$ & $0.552$ \\
+Sharpe: index ETF & $0.503$ (NIFTYBEES) & $0.514$ (JUNIORBEES) \\
+Sharpe: random policy, median [5th, 95th pct.] & $0.567$ [$0.410$, $0.759$] & $0.538$ [$0.383$, $0.688$] \\
+\midrule
+Max drawdown: PPO ensemble & $-20.7\%$ & $-27.5\%$ \\
+Max drawdown: index ETF & $-36.3\%$ & $-34.5\%$ \\
+Exposure correlation with India VIX & $+0.62$ & $+0.42$ \\
+Deflated Sharpe, this project ($N=3$) & $0.916$ & $0.813$ \\
+Deflated Sharpe, with earlier work ($N=85$) & $0.408$ & $0.248$ \\
+\bottomrule
+\end{tabular}
