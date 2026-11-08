@@ -1,6 +1,6 @@
 # Pre-registered protocol v2: the frozen pipeline on the Nifty Next 50
 
-**Status: DRAFT, not registered.** It becomes protocol v2 when all three authors sign below. Then `config/protocol_v2.yaml` is committed unchanged, its SHA-256 is recorded here, and the tag `protocol-v2` is created. No strategy has been scored on any Nifty Next 50 session from 2019 onward, and none will be before the tag. The gated runs (`train/walk_forward.py --protocol` and `train/run_test.py --protocol`, run with `RB_PROTOCOL=protocol_v2.yaml`) refuse to start without the tag, with a changed yaml, or with a dirty tree.
+**Status: REGISTERED as `protocol-v2` on 2026-11-08.** All three authors have signed below. `config/protocol_v2.yaml` is unchanged since the reviewed draft (commit 50e47d9). Its SHA-256 is `217c789dd2a95d9dab7bd1eea3be42e5bec385c74e29c2abde097605f6c4157a`. No strategy was scored on any Nifty Next 50 session from 2019 onward before registration. The gated runs (`train/walk_forward.py --protocol` and `train/run_test.py --protocol`, run with `RB_PROTOCOL=protocol_v2.yaml`) refuse to start without the tag, with a changed yaml, or with a dirty tree.
 
 The machine-readable version is `config/protocol_v2.yaml`, and the code reads only that file. If this document and the yaml disagree, the yaml at the tag governs.
 
@@ -155,7 +155,7 @@ These are as in v1 Section 9. In addition, whatever v2 shows, it is reported in 
 
 ## 9. Choices for the authors before signing
 
-The draft takes the first option in each case.
+The draft takes the first option in each case. **Decided at sign-off: the authors kept all three first options**, so the yaml stands as drafted.
 
 1. **Vol-targeting grid.** Keep v1's grid (frozen), or scale the targets to each universe's volatility. Scaling makes the comparator stronger but breaks the frozen pipeline.
 2. **Price gaps.** Keep v1's rule, or fill the nine excluded symbols from NSE bhavcopy closes. Filling gives fewer exclusions but adds a second price source that v1 did not use.
@@ -167,11 +167,13 @@ Each author adds their name and date. The tag is created only after all authors 
 
 | Author | Date |
 |---|---|
-| Eshani Parulekar | |
-| Dhruv Pande | |
-| Rishaan Damani | |
+| Eshani Parulekar | 2026-11-08 |
+| Dhruv Pande | 2026-11-08 |
+| Rishaan Damani | 2026-11-08 |
 
-At registration: `config/protocol_v2.yaml` SHA-256 `(recorded at tagging)`, tag `protocol-v2`.
+Signatures were collected outside the repository and recorded here on Rishaan Damani's confirmation.
+
+At registration: `config/protocol_v2.yaml` SHA-256 `217c789dd2a95d9dab7bd1eea3be42e5bec385c74e29c2abde097605f6c4157a`, tag `protocol-v2`.
 
 After the tag:
 

@@ -54,7 +54,7 @@ python -m data.market && python -m data.rf && python -m data.prices && python -m
 python -m data.manifest --verify          # studies/next50/data/MANIFEST.json
 ```
 
-Status: data built and validated (50e47d9). One development run was made on 2014-2018 (ledger row 11). Nothing has been scored on 2019 onward. After all three authors sign, tag `protocol-v2` and run `train.walk_forward --protocol`, then `train.run_test --protocol`, with `RB_PROTOCOL` set.
+Status: registered as `protocol-v2` on 2026-11-08. All three authors signed and kept the three defaults in Section 9. One development run was made on 2014-2018 (ledger row 11). Nothing was scored on 2019 onward before the tag. Next: `train.walk_forward --protocol`, then `train.run_test --protocol`, with `RB_PROTOCOL` set.
 
 ## Paper
 
