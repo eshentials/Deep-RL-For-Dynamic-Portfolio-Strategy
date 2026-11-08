@@ -2535,6 +2535,11 @@
    "sha256": "d3192da12138f1b0a68f5f027af54c32eb1987b1c2bab904d5d951757a413cad",
    "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
   },
+  "studies/next50/data/raw/roster_snapshots/verification.csv": {
+   "bytes": 4899,
+   "sha256": "8677127f71e0c5bbd41a653d8ea4b87e81b645eb53cf0673eb5406310a09c952",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
   "studies/next50/data/roster/changes.csv": {
    "bytes": 39942,
    "sha256": "b784ea567552394c4d1bcfd3bf624e7ba506f714ae8a9fdc4195287ea38a8fae",
@@ -2581,6 +2586,6 @@
    "source": "Derived: snapshot tables, dated change events, membership intervals, validation"
   }
  },
- "generated_utc": "2026-11-08T07:21:41Z",
+ "generated_utc": "2026-11-08T08:08:55Z",
  "protocol_sha256": "217c789dd2a95d9dab7bd1eea3be42e5bec385c74e29c2abde097605f6c4157a"
 }

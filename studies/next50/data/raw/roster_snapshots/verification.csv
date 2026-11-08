@@ -1,0 +1,37 @@
+capture_ts,file,result,note,checked_utc
+20130119065158,20130119065158_www.nseindia.com_ind_jrniftylist.csv,identical,,"2026-11-08 (interrupted run, log)"
+20130508065307,20130508065307_www.nseindia.com_ind_jrniftylist.csv,identical,,"2026-11-08 (interrupted run, log)"
+20140404002103,20140404002103_www.nseindia.com_ind_jrniftylist.csv,identical,,"2026-11-08 (interrupted run, log)"
+20150317103330,20150317103330_www.nseindia.com_ind_jrniftylist.csv,identical,,"2026-11-08 (interrupted run, log)"
+20151119104725,20151119104725_www.nseindia.com_ind_jrniftylist.csv,identical,,"2026-11-08 (interrupted run, log)"
+20180228113140,20180228113140_www.niftyindices.com_ind_niftynext50list.csv,identical,,"2026-11-08 (interrupted run, log)"
+20180501120944,20180501120944_www.niftyindices.com_ind_niftynext50list.csv,identical,,"2026-11-08 (interrupted run, log)"
+20180702185142,20180702185142_www.niftyindices.com_ind_niftynext50list.csv,identical,,"2026-11-08 (interrupted run, log)"
+20190201210120,20190201210120_niftyindices.com_ind_niftynext50list.csv,identical,,"2026-11-08 (interrupted run, log)"
+20230812210156,20230812210156_www.niftyindices.com_ind_niftynext50list.csv,identical,,"2026-11-08 (interrupted run, log)"
+20250119054908,20250119054908_niftyindices.com_ind_niftynext50list.csv,identical,,"2026-11-08 (interrupted run, log)"
+20250715140024,20250715140024_www.niftyindices.com_ind_niftynext50list.csv,identical,,"2026-11-08 (interrupted run, log)"
+20250914225515,20250914225515_www.niftyindices.com_ind_niftynext50list.csv,identical,,"2026-11-08 (interrupted run, log)"
+20251022222830,20251022222830_www.niftyindices.com_ind_niftynext50list.csv,identical,,"2026-11-08 (interrupted run, log)"
+20260827161548,20260827161548_www.niftyindices.com_ind_niftynext50list.csv,identical,,"2026-11-08 (interrupted run, log)"
+20260930150752,20260930150752_www.niftyindices.com_ind_niftynext50list.csv,identical,,"2026-11-08 (interrupted run, log)"
+20211113201824,20211113201824_archives.nseindia.com_ind_niftynext50list.csv,identical,,"2026-11-08 (interrupted run, log)"
+20230424220213,20230424220213_archives.nseindia.com_ind_niftynext50list.csv,identical,,"2026-11-08 (interrupted run, log)"
+20240819102411,20240819102411_nsearchives.nseindia.com_ind_niftynext50list.csv,identical,,"2026-11-08 (interrupted run, log)"
+20260621143020,20260621143020_nsearchives.nseindia.com_ind_niftynext50list.csv,identical,,"2026-11-08 (interrupted run, log)"
+20130119062113,20130119062113_www.nseindia.com_ind_cnx100list.csv,identical,,"2026-11-08 (interrupted run, log)"
+20130508081955,20130508081955_www.nseindia.com_ind_cnx100list.csv,identical,,"2026-11-08 (interrupted run, log)"
+20130818225616,20130818225616_www.nseindia.com_ind_cnx100list.csv,identical,,"2026-11-08 (interrupted run, log)"
+20140122091423,20140122091423_nseindia.com_ind_cnx100list.csv,identical,,"2026-11-08 (interrupted run, log)"
+20140404010827,20140404010827_www.nseindia.com_ind_cnx100list.csv,not re-servable,"redirects to https://web.archive.org/web/20140122091423id_/http://nseindia.com/content/indices/ind_cnx100list.csv; archive now redirects to the 2014-01-22 capture; the cached copy differs from that one by exactly the 2014-03-28 review's CNX 100 changes (IDBI, JPASSOCIAT out; INFRATEL, INGVYSYABK in; ind_prs27022014.pdf), so it is a post-review list consistent with its 2014-04-04 date",2026-11-08T08:05:47Z
+20150317093557,20150317093557_www.nseindia.com_ind_cnx100list.csv,identical,,2026-11-08T08:05:59Z
+20190517060409,20190517060409_www.nseindia.com_ind_nifty100list.csv,identical,,2026-11-08T08:06:10Z
+20230803073553,20230803073553_archives.nseindia.com_ind_nifty100list.csv,identical,,2026-11-08T08:06:24Z
+20171102031755,20171102031755_www.niftyindices.com_ind_nifty100list.csv,identical,,2026-11-08T08:06:35Z
+20180603160802,20180603160802_niftyindices.com_ind_nifty100list.csv,identical,,2026-11-08T08:06:47Z
+20180803145347,20180803145347_niftyindices.com_ind_nifty100list.csv,identical,,2026-11-08T08:06:58Z
+20181210040426,20181210040426_www.niftyindices.com_ind_nifty100list.csv,identical,,2026-11-08T08:07:31Z
+20190201164539,20190201164539_niftyindices.com_ind_nifty100list.csv,identical,,2026-11-08T08:07:42Z
+20260827161608,20260827161608_www.niftyindices.com_ind_nifty100list.csv,identical,,2026-11-08T08:07:54Z
+20260930150812,20260930150812_www.niftyindices.com_ind_nifty100list.csv,identical,,2026-11-08T08:08:05Z
+20181009161119,20181009161119_www.niftyindices.com_ind_nifty100list.csv,not re-servable,"redirects to https://web.archive.org/web/20181210040426id_/http://www.niftyindices.com/IndexConstituent/ind_nifty100list.csv; archive now redirects to the 2018-12-10 capture; the cached copy has the same 100 members as that capture and no Nifty 50 or Next 50 change took effect between the two dates, so the reading's membership is correct for 2018-10-09 whichever capture the bytes are",2026-11-08T08:08:45Z

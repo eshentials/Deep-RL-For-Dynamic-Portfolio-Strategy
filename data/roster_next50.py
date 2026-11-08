@@ -359,6 +359,22 @@ def _snap_path(ts: str, original: str) -> "Path":
     return SNAP_DIR / f"{ts}_{host}_{stem}.csv"
 
 
+class CaptureRedirected(RuntimeError):
+    """The archive no longer serves this exact capture and redirects to another one."""
+
+
+# Cached copies the archive no longer serves exactly, with the evidence that the cached bytes are
+# the capture named (not the one the archive now redirects to).
+REVERIFY_NOTES = {
+    "20140404010827": "archive now redirects to the 2014-01-22 capture; the cached copy differs from that one by "
+                      "exactly the 2014-03-28 review's CNX 100 changes (IDBI, JPASSOCIAT out; INFRATEL, INGVYSYABK "
+                      "in; ind_prs27022014.pdf), so it is a post-review list consistent with its 2014-04-04 date",
+    "20181009161119": "archive now redirects to the 2018-12-10 capture; the cached copy has the same 100 members as "
+                      "that capture and no Nifty 50 or Next 50 change took effect between the two dates, so the "
+                      "reading's membership is correct for 2018-10-09 whichever capture the bytes are",
+}
+
+
 def served_capture(ts: str, original: str) -> bytes:
     """Bytes of exactly the capture asked for. The archive has once answered a request for one
     capture with a later one (a 2024 timestamp served the 2026-06-21 file), so the served
@@ -371,6 +387,8 @@ def served_capture(ts: str, original: str) -> bytes:
             served = r.headers.get("Memento-Datetime")
             if r.status_code == 200 and served and pd.Timestamp(served).strftime("%Y%m%d%H%M%S") == ts:
                 return r.content
+            if 300 <= r.status_code < 400:     # the archive points elsewhere: retrying will not change that
+                raise CaptureRedirected(r.headers.get("Location", ""))
             last = f"HTTP {r.status_code}, served {served}"
         except requests.RequestException as e:   # a refused connection is the archive's rate limit
             last = repr(e)[:120]
@@ -379,19 +397,29 @@ def served_capture(ts: str, original: str) -> bytes:
 
 
 def verify_snapshots() -> pd.DataFrame:
-    """Re-fetch every cached archive copy under the Memento guard and compare bytes."""
+    """Re-fetch every cached archive copy under the Memento guard and compare bytes. Results are
+    kept in roster_snapshots/verification.csv, so an interrupted check resumes where it stopped."""
+    out = SNAP_DIR / "verification.csv"
+    cols = ["capture_ts", "file", "result", "note", "checked_utc"]
+    done = pd.read_csv(out, dtype=str).fillna("") if out.exists() else pd.DataFrame(columns=cols)
     caps = pd.read_csv(SNAP_DIR / "cdx_captures.csv", dtype=str)
     caps = caps[caps["statuscode"] == "200"].drop_duplicates(["timestamp", "original"])
-    rows = []
     for c in caps.itertuples():
         path = _snap_path(c.timestamp, c.original)
-        if not path.exists():
+        if not path.exists() or path.name in set(done["file"]):
             continue
-        fresh = served_capture(c.timestamp, c.original)
-        rows.append({"capture_ts": c.timestamp, "file": path.name, "identical": fresh == path.read_bytes()})
-        print(rows[-1], flush=True)
+        try:
+            same = served_capture(c.timestamp, c.original) == path.read_bytes()
+            result, note = ("identical" if same else "DIFFERS"), ""
+        except CaptureRedirected as e:
+            result, note = "not re-servable", f"redirects to {e}; " + REVERIFY_NOTES.get(c.timestamp, "UNEXPLAINED")
+        row = {"capture_ts": c.timestamp, "file": path.name, "result": result, "note": note,
+               "checked_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")}
+        done = pd.concat([done, pd.DataFrame([row])], ignore_index=True)
+        done[cols].to_csv(out, index=False)
+        print(row, flush=True)
         time.sleep(10)
-    return pd.DataFrame(rows)
+    return done
 
 
 def snapshots() -> pd.DataFrame:
@@ -604,8 +632,9 @@ if __name__ == "__main__":
         print(snapshots().to_string())
     elif cmd == "verify":
         v = verify_snapshots()
-        print(v.to_string(index=False))
-        print(f"{int(v['identical'].sum())}/{len(v)} cached copies identical to the guarded fetch")
+        print(v["result"].value_counts().to_string())
+        bad = v[(v["result"] == "DIFFERS") | v["note"].str.contains("UNEXPLAINED")]
+        print(f"{len(v)} cached copies checked; problems: {len(bad)}")
     elif cmd == "build":
         ch = build_changes()
         print(f"changes: {len(ch)} rows on {ch['effective_date'].nunique()} dates "

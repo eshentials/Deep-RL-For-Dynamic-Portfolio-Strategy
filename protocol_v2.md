@@ -81,7 +81,9 @@ Only these differ, and each is marked `v2:` in the yaml:
 - Two reading rules are documented:
   - Demerger placeholders are dropped inside their notice-dated windows, as in v1: Siemens Energy in 2025 and four Vedanta entities in 2026.
   - Tata Motors' DVR share is dropped from Nifty 100 readings. It is a 101st line in 2017 to 2019 copies of that file but never appears in a Next 50 copy.
-- Archive copies are fetched only when the archive's Memento-Datetime equals the requested capture, because the archive once served a 2026 copy for a 2024 capture.
+- Archive copies are fetched only when the archive's Memento-Datetime equals the requested capture, because the archive once served a 2026 copy for a 2024 capture. Every cached copy was then re-fetched under that check (`roster_snapshots/verification.csv`):
+  - 34 of 36 are byte-identical.
+  - The archive no longer serves the other two exactly. Both are shown consistent with their dates: the 2014-04-04 copy carries exactly the 28 March 2014 review's changes, and the 2018-10-09 copy's members are the same as at the next capture, with no change in between.
 
 **Prices.** The vendor and rules are the same as v1: Yahoo adjusted closes, at least 98% coverage over membership, and no unexplained day beyond ±25%.
 
@@ -107,7 +109,7 @@ All 13 such days passed (`price_jump_checks.csv`). Demergers are repaired rather
 - The risk-free file is byte-identical to v1's.
 - Between 45 and 50 stocks are eligible on every session.
 
-**Hashes.** `studies/next50/data/MANIFEST.json` lists 516 files. `RB_PROTOCOL=protocol_v2.yaml python -m data.manifest --verify` must pass at the tag.
+**Hashes.** `studies/next50/data/MANIFEST.json` lists 517 files. `RB_PROTOCOL=protocol_v2.yaml python -m data.manifest --verify` must pass at the tag.
 
 ## 4. Baselines
 
