@@ -1,0 +1,9 @@
+{
+ "fold": 2019,
+ "seed": 3,
+ "steps": 200000,
+ "best_step": 80000,
+ "best_val_sharpe": 1.3456731056094615,
+ "seconds": 130.5,
+ "run_tag": "f69f1c2-217c789d"
+}
