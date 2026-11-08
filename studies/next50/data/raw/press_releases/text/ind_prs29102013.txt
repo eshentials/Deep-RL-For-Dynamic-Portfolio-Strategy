@@ -1,0 +1,105 @@
+       IISL
+       INDIA INDEX SERVICES & PRODUCTS LIMITED
+
+                                   PRESS RELEASE
+
+Securities of Marico Ltd. will be traded on ex-entitlement basis on National Stock Exchange
+with effect from November 01, 2013 on account of Scheme of Arrangement between Marico
+Ltd. (Demerged Company) and Marico Kaya Enterprises Limited. (Resulting Company)
+
+The Index Maintenance Sub-Committee has decided to make the following changes in
+various indices in this regard which will become effective from November 01, 2013.
+
+(1)    CNX 200 Index
+
+The following company is being excluded:
+
+  Sr. No. Company Name                                    Symbol
+    1     Marico Ltd.                                     MARICO
+
+The following company is being included:
+
+  Sr. No. Company Name                                    Symbol
+    1     Great Eastern Shipping Co. Ltd.                 GESHIP
+
+
+(2)    CNX 500 Index
+
+The following company is being excluded:
+
+  Sr. No. Company Name                                    Symbol
+    1     Marico Ltd.                                     MARICO
+
+The following company is being included:
+
+  Sr. No. Company Name                                    Symbol
+     1    NDTV Ltd.                                       NDTV
+
+
+(3)    CNX Alpha Index
+
+The following company is being excluded:
+
+  Sr. No. Company Name                                    Symbol
+    1     Marico Ltd.                                     MARICO
+The following company is being included:
+
+  Sr. No. Company Name                                 Symbol
+     1    Tata Motors Ltd.                             TATAMOTORS
+
+
+(4)    CNX Consumption Index
+
+The following company is being excluded:
+
+  Sr. No. Company Name                                 Symbol
+    1     Marico Ltd.                                  MARICO
+
+The following company is being included:
+
+  Sr. No. Company Name                                 Symbol
+    1     Cadila Healthcare Ltd.                       CADILAHC
+
+
+(5)    CNX FMCG Index
+
+The following company is being excluded:
+
+ Sr. No. Company Name                                   Symbol
+   1     Marico Ltd.                                    MARICO
+
+The following company is being included:
+
+ Sr. No. Company Name                                   Symbol
+   1     Procter & Gamble Hygiene & Health Care Ltd.    PGHH
+
+
+(6)    CNX Low Volatility Index
+
+The following company is being excluded:
+
+ Sr. No. Company Name                                   Symbol
+   1     Marico Ltd.                                    MARICO
+
+
+The following company is being included:
+
+ Sr. No. Company Name                                  Symbol
+   1     Thermax Ltd.                                  THERMAX
+(7)    CNX Midcap Index
+
+The following company is being excluded:
+
+ Sr. No. Company Name                      Symbol
+   1     Marico Ltd.                       MARICO
+
+
+The following company is being included:
+
+ Sr. No. Company Name                      Symbol
+   1     Power Finance Corporation Ltd.    PFC
+
+
+Place: Mumbai
+Date: October 29, 2013
+

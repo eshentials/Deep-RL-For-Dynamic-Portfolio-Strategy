@@ -1,0 +1,720 @@
+[OCR: tesseract --psm 6 on 300 dpi pages; check symbols against the PDF]
+
+© NSE India@ a
+A guiding li
+a iin
+PRESS RELEASE
+Mumbai, August 23, 2021
+Revision in criteria and replacements in Indices
+The Index Maintenance Sub-Committee (Equity) of NSE Indices Limited has decided to make
+the changes in eligibility criteria of Nifty indices and replacement of stocks in various indices as
+part of its periodic review as listed hereunder. These changes shall become effective from
+September 30, 2021 (close of September 29, 2021).
+A. Revision in the eligibility criteria for inclusion of stocks in NIFTY indices:
+‘Exiting sd Revised
+All equity shares that are traded (listed | All equity shares, REITs and InvITs that
+& traded and not listed but permitted to | are traded (listed & traded and not listed
+trade) at the National Stock Exchange | but permitted to trade) at the National
+(NSE) are eligible for inclusion in the | Stock Exchange (NSE) are eligible for
+NIFTY indices. inclusion in the NIFTY indices.
+B. Revision in criteria of NIFTY Pharma index:
+Existing Method Proposed Method
+Select the top 10 stocks|1)Top 20 stocks based on_ six-month
+based on six-month average | average free-float market capitalization that
+free-float market | are available for trading in NSE’s Futures &
+capitalization within the | Options (F&O)
+Stock Selection | sector
+criteria 2) In case the number of stocks selected in
+the Step 1 above is less than 20, then the
+deficit number of stocks are selected based
+on six-month average free-float market
+capitalization
+
+© NSE India@ ae,
+A guiding ligh ~
+Indices shining brig , ye
+eS em
+Existing Method Proposed Method
+A non-member — eligible | 1) Stocks that are available for trading in
+stock will be included in the | F&O segment are compulsorily included in
+index only if its six-month | the index and will replace the smallest index
+average free-float market | constituents which are not available for
+capitalization is 1.5 times trading in F&O segment subject to maximum
+the six-month average free- of 20 stocks in the index
+re et aaa 2) In case all the stocks within the index are
+° e  smaties! Index | available for F&O trading and there is a non-
+constituent member eligible F&O stock, such stock will
+be included in the index only if its six-month
+— average free-float market capitalization is at
+Reconstitution least 1.5 times the six-month average free-
+float market capitalization of the smallest
+index constituent
+3) Non-member eligible stocks which are
+not available for trading in F&O segment will
+be included if its six-month average free-
+float market capitalization is at least 1.5
+times the six-month average free-float
+market capitalization of the smallest index
+constituent which Is not available for trading
+in F&O segment
+C. Semi-annual review of indices:
+1) NIFTY Next 50
+The following companies are being excluded:
+| Sr.No. | Company Name Symbol
+Abbott India Ltd. ABBOTINDIA
+Alkem Laboratories Ltd. ALKEM
+MRF Lid.
+| 4 | Petronet LNG Ltd. PETRONET
+
+Q N S = India@ a,
+ipsa sean Migs
+eS ee
+
+| Sr.No.| CompanyName | Symbol
+
+The following companies are being included:
+
+| Sr.No.| CompanyName | Symbol
+
+| 4 | Plindustriesttd. YE PEIND
+
+2) NIFTY 500
+
+The following companies are being excluded:
+
+| Sr.No.| CompanyName |S Symbol
+
+4 | DishTVindialtd, YF SHTV
+
+| 6 | FutureConsumerltd. | FCONSUMER
+
+8 |GEPowerIndaltd, SGPC
+
+9 [GilletteIndialtd. —~—~=S=S~*~*~*~GULLETTIBNSCC*
+
+Q N S = India@ a,
+naires sean Migs
+eS ee
+
+| Sr.No.| CompanyName | Symbol
+
+The following companies are being included:
+
+| Sr.No.| CompanyName | Symbol
+
+4 | Embassy Office Parks REIT ———SSC*EMBASSY
+
+6 | Fertilisers and Chemicals Travancore Lid. FACT
+
+8 | Home First Finance Company IndiaLtd. | HOMEFIRST __|
+
+9 | Indian Railway Finance Corporation Ltd. [| IRFC
+
+The above replacements will also be applicable to NIFTY500 Multicap 50:25:25 Index.
+
+© NSE India@ ae,
+A guiding ligh ~
+I 000m
+3) NIFTY 100
+The following companies are being excluded:
+| Sr. No. | Company Name Symbol
+Abbott India Ltd. ABBOTINDIA
+Alkem Laboratories Ltd. ALKEM
+MRF Lid.
+| 4 | Petronet LNG Ltd. PETRONET
+United Breweries Ltd.
+The following companies are being included:
+| Sr. No. | Company Name Symbol
+Bank of Baroda BANKBARODA
+Cholamandalam Investment and Fin. Co. Ltd. | CHOLAFIN
+Jindal Steel & Power Ltd. JINDALSTEL
+| 4 | Pl Industries Ltd. PIIND
+Steel Authority of India Ltd. SAIL
+The above replacements will also be applicable to NIFTY100 Equal Weight Index.
+4) NIFTY Midcap 150
+The following companies are being excluded:
+| Sr.No. | Company Name Symbol
+Akzo Nobel India Ltd. AKZOINDIA
+AstraZenca Pharma India Ltd. ASTRAZEN
+Bank of Baroda BANKBARODA
+| oa | Bombay Burmah Trading Corporation Ltd. BBTC
+CESC Ltd. CESC
+| 6 | Cholamandalam Investment and Fin. Co. Ltd. | CHOLAFIN
+CreditAccess Grameen Ltd. CREDITACC
+| 8 | Gillette India Ltd. GILLETTE
+
+Q N SE India@ a,
+naires sean Migs
+eS ee
+
+| Sr.No.| CompanyName | Symbol
+
+| 9 |GodrejAgrovetltd. | GODREJAGRO
+
+The following companies are being included:
+
+| Sr.No.| CompanyName |S Symbol
+
+4 __|AlkylAmines Chemicals Utd. __———~«(ALKYLAMINE_|
+
+| 6 |BlueDartexpressLtd, | BLUEDART
+
+8 [Hindustan CopperLid. —~—=~=SC*INDCOPPER
+
+9 [IndianBank —SSS~*~SINDIAN
+
+Q N SE India@ a,
+naires sean Migs
+eS ee
+
+| Sr.No.| CompanyName | Symbol
+
+5) NIFTY Smallcap 250
+
+The following companies are being excluded:
+
+| Sr.No.| CompanyName | Symbol
+
+4 Balmer Lawrie &Co.Ltd. ——~—=S~SCBALMLAWRIE
+
+6 [Blue DartExpressLid. —=SC~@BLUEDART iC
+
+8 | Dishman CarbogenAmeislid. —~=DCALSSC
+
+9 [Future ConsumerLid. ——=—=S*~ CONSUMER ‘|
+
+Q N SE India@ a,
+naires sean Migs
+eS ee
+
+| Sr.No.| CompanyName | Symbol
+
+The following companies are being included:
+
+| Sr.No.| CompanyName |S Symbol
+
+4 | Brookfield India RealEstate Trust ——=BIRET
+
+6 | CGPowerand industrial Solutions Lid. __(|CGPOWER__|
+
+8 | Equitas Small Finance Bank Ltd. | EQUITASBNK _|
+
+9 | Fertilisers and Chemicals Travancore Lid. [FACT
+
+Q N S = India@ a,
+naires sean Migs
+eS ee
+
+| Sr.No.| CompanyName | Symbol
+
+6) NIFTY Midcap 50
+
+The following companies are being excluded:
+
+| Sr.No.| CompanyName | Symbol
+
+4 | Cholamandalam Investment and Fin. Co.Ltd. |CHOLAFIN |
+
+6 Jindal Stesl& Powerltd. ~~ SINDALSTEL
+
+8 | RBLBanklid —SS*~*~S~RBLBANK CS
+
+| 9 _|Steel Authority ofIndialtd, SAL
+
+The following companies are being included:
+
+| Sr.No.| CompanyName |S Symbol
+
+4 (GujaratGasltd. ——=S~*~S~S~S GALT
+
+6 MphasiSitd SS~*~S*~sMPHASTS
+
+Q N S = India@ a,
+naires sean Migs
+Dr
+
+| Sr.No.| = CompanyName |S Symbol
+
+| 8 | PetronetLNGLtd, = PETRONET
+
+9 |Trentltd TRENT
+
+7) NIFTY Midcap 100
+
+The following companies are being excluded:
+
+| Sr.No.| = CompanyName |S Symbol
+
+4 | Cholamandalam Investment and Fin. Co.Ltd. |CHOLAFIN |
+
+6 | Indiabulls Housing Finance Ltd. | IBULHSGFIN
+
+8 |Plindustiesttd. ——SSSS~*~—RLEND CS
+
+9 [Steel Authority ofIndialid. ——=S=~SAYLS CSCS
+
+The following companies are being included:
+
+| Sr.No.) CompanyName | Symbol
+
+4 |IndianBank CL INDIANB
+
+6 MRF SSC*sMRSC
+
+| 8 | PetronetLNGLtd, ST PETRONET
+
+9 | TataCommunicationsLid. == TATACOMM
+
+Q N S = India@ a,
+naires sean Migs
+I 000m
+
+8) NIFTY Smallcap 50
+
+The following companies are being excluded:
+
+/Sr.Nol CompanyName | Symbol
+
+4 [Bharat Dynamicsttd SSS~—WOSCCS
+
+_ 6 |FutureRetailltd, RETAIL
+
+8 _|KajariaCeramicstid. —=S~S~KASRIACER
+
+9 | NationalAluminium Co.Ltd. | NATIONALUM
+
+The following companies are being included:
+
+/Sr.Nol CompanyName |S Symbol
+
+4 [Central Bankofindia—~=SC~ENTRALBK
+
+6 (HEG Ltd HEG
+
+8 | Indiabulls HousingFinance Lid. _—=«(BULSGFIN. |
+
+9 Indian Energy Exchangeltd. ——SSSSTEX
+
+Q N SE India@ a,
+naires sean Migs
+eS ee
+
+/Sr.No| CompanyName | Symbol
+
+9) NIFTY Smallcap 100
+
+The following companies are being excluded:
+
+| Sr.No.| CompanyName | Symbol
+
+4 [Blue Dart Expressitd, ——=S~SCi@LUEDART.
+
+6 | Caplin Point Laboratories Lid. _—~«(CAPLIPOINT _|
+
+8 | FutureRetailltd. SS SS~*~*~SRETATLSOC
+
+9 [Godfrey Phillips Indialid. _—~—~—~—~«(GODFRYPHLP_‘|
+
+Q N SE India@ a,
+naires sean Migs
+eS ee
+| Sr.No.| CompanyName | Symbol
+The following companies are being included:
+| Sr.No.| CompanyName |S Symbol
+4 _|BankofMaharashtra, ——~—=~=S*SMAWABANK
+6 [Central Bankofindia——~=S~CENTRALBK SC
+—8_|DCMShriramlid. ——=SS~S~S~SCMSHRTRAM
+9 /HFCLI SS~<“C~S*~SCSPSCS
+
+© NSE India@ ae
+A guiding ligh ~
+Indices shining bright” ye
+a rm
+10) NIFTY 200
+The following companies are being excluded:
+| Sr. No. | Company Name Symbol
+Abbott India Ltd. ABBOTINDIA
+Bombay Burmah Trading Corporation Ltd. BBTC
+CESC Ltd. CESC
+| 4 | Godrej Agrovet Ltd. GODREJAGRO
+Indiabulls Housing Finance Ltd. IBULHSGFIN
+| 6 | V-Guard Industries Ltd. VGUARD
+The following companies are being included:
+| Sr.No. | Company Name Symbol
+Astral Ltd. ASTRAL
+Hindustan Copper Ltd. HINDCOPPER
+Indian Bank INDIANB
+| oa | Indian Railway Finance Corporation Ltd. IRFC
+National Aluminium Co. Ltd. NATIONALUM
+| 6 | Tata Communications Ltd. TATACOMM
+11) NIFTY LargeMidcap 250
+The following companies are being excluded:
+| Sr. No. | Company Name Symbol
+Akzo Nobel India Ltd. AKZOINDIA
+AstraZenca Pharma India Ltd. ASTRAZEN
+Bombay Burmah Trading Corporation Ltd. BBTC
+| 4 | CESC Ltd. CESC
+CreditAccess Grameen Ltd. CREDITACC
+| 6 | Gillette India Ltd. GILLETTE
+Godrej Agrovet Ltd. GODREJAGRO
+|g | IDBI Bank Ltd. IDBI
+| 9 | IIFL Wealth Management Ltd. IIFLWAM
+
+Q N S = India@ a,
+naires sean Migs
+eS ee
+
+| Sr.No.| CompanyName | Symbol
+
+The following companies are being included:
+
+| Sr.No.| CompanyName | Symbol
+
+4 [Blue Dart Expressitd, ——=S~S*~SCi@LUEDART.
+
+6 [Hindustan CopperLid. —~—~=~=S=*INDCOPPER
+
+8 [Indian Railway Finance Corporation Lid. | IRFC
+
+9 | Kajaria Ceramics Lid. = KASARIACER
+
+12) NIFTY MidSmallcap 400
+
+The following companies are being excluded:
+
+| Sr.No.| CompanyName |S Symbol
+
+| 4 | BlissGVSPharmaltd, | BLISSGVS
+
+Q N SE India@ a,
+naires sean Migs
+eS ee
+
+| Sr.No.| CompanyName | Symbol
+
+6 [DishTVIndialtd. ——SSSDISHTV
+
+8 |FutureConsumerlid. ———=—=S*~RCONSUMER
+
+|_9 _ | Garden Reach Shipbuilders & Engineers Ltd. |GRSE
+
+The following companies are being included:
+
+| Sr.No.| CompanyName | Symbol
+
+4 | Brookfield India RealEstate Trust _—=|BIRET
+
+| _6 [Embassy Office ParksREIT | EMBASSY
+
+Q N SE India@ a,
+naires sean Migs
+eS ee
+
+| Sr.No.| CompanyName | Symbol
+
+8 __| Fertilisers and Chemicals Travancore Lid. FACT
+
+9 [Hathway Cable & Datacomltd. =| HATHWAY _—_—‘|
+
+13) NIFTY Microcap 250
+
+The following companies are being excluded:
+
+| Sr.No.| CompanyName | Symbol
+
+| 4 | ApexFrozenFoods ltd. APEX
+
+6 | CG Power and Industrial Solutions Lid. | CGPOWER _|
+
+Q N SE India@ a,
+naa sean Migs
+Dr
+| Sr.No.| = CompanyName | Symbol
+__8 | Fertilisers and Chemicals Travancore Ltd. | FACT
+| 9 [FiemIndustriesLtd =| FIEMIND
+| 40 |[TexmacoRail&Eng Ltd. = TEXRATL
+
+Q N SE India@ a,
+naires sean Migs
+I 000m
+
+The following companies are being included:
+
+| Sr.No.| CompanyName | Symbol
+
+4 | Barbeque Nation Hospitality Ltd. _—«(BARBEQUE —_—
+
+_ 6 |DenNetworksLtd DEN
+
+8 __|DishmanCarbogenAmcisttd —~—=«(DCALSSCS
+
+| 9 | EasyTripPlannersLtd. =F EASEMYTRIP
+
+© NSE India@ a
+A guiding ligh F
+Indices shining brigt ip:
+a
+| Sr. No. | Company Name Symbol
+SMS Pharmaceuticals Ltd. SMSPHARMA
+Stove Kraft Ltd. STOVEKRAFT
+Subex Ltd. SUBEXLTD
+Sundaram Clayton Ltd. SUNCLAYLTD
+Suryoday Small Finance Bank Ltd. SURYODAY
+Swan Energy Ltd. SWANENERGY
+Tata Investment Corporation Ltd. TATAINVEST
+TV Today Network Ltd. TVTODAY
+| 40 | VST Industries Ltd. VSTIND
+14) NIFTY FMCG
+The following company is being excluded:
+| Sr. No. | Company Name Symbol
+Jubilant Foodworks Ltd. JUBLFOOD
+The following company is being included:
+| Sr.No. | Company Name Symbol
+Radico Khaitan Ltd RADICO
+15) NIFTY Healthcare
+The following companies are being excluded:
+| Sr. No. | Company Name Symbol
+Abbott India Ltd. ABBOTINDIA
+Fortis Healthcare Ltd. FORTIS
+NATCO Pharma Ltd. NATCOPHARM
+| 4 | Sanofi India Ltd. SANOFI
+
+© NSE India@ ae,
+A guiding ligh F
+Indices shining brigt ip:
+I 000m
+The following companies are being included:
+| Sr. No. | Company Name Symbol
+Alembic Pharmaceuticals Ltd. APLLTD
+Granules India Ltd. GRANULES
+Metropolis Healthcare Ltd. METROPOLIS
+| 4 Strides Pharma Science Ltd. STAR
+16) NIFTY IT
+The following company is being excluded:
+| Sr. No. | Company Name Symbol
+Oracle Financial Services Software Ltd. OFSS
+The following company is being included:
+| Sr.No. | Company Name Symbol
+L&T Technology Services Ltd. LTTS
+17) NIFTY Media
+The following companies are being excluded:
+| Sr. No. | Company Name Symbol
+D.B.Corp Ltd. DBCORP
+Jagran Prakashan Ltd. JAGRAN
+TV Today Network Ltd. TVTODAY
+The following companies are being included:
+| Sr.No. | Company Name Symbol
+Hathway Cable & Datacom Ltd. HATHWAY
+Nazara Technologies Ltd. NAZARA
+Saregama India Ltd SAREGAMA
+
+© NSE India@ ae,
+A guiding ligh ~
+I 000m
+18) NIFTY Metal
+The following company is being excluded:
+| Sr. No. | Company Name Symbol
+MOIL Ltd. MOIL
+The following company is being included:
+| Sr. No. | Company Name Symbol
+Hindustan Copper Ltd. HINDCOPPER
+19) NIFTY Pharma
+The following companies are being included:
+| Sr.No. | Company Name Symbol
+Abbott India Ltd. ABBOTINDIA
+Alembic Pharmaceuticals Ltd. APLLTD
+Gland Pharma Ltd. GLAND
+| 4 Glenmark Pharmaceuticals Ltd. GLENMARK
+Granules India Ltd. GRANULES
+| 6 | Ipca Laboratories Ltd. IPCALAB
+Laurus Labs Ltd. LAURUSLABS
+|g | NATCO Pharma Ltd. NATCOPHARM
+| 9 | Pfizer Ltd. PFIZER
+Strides Pharma Science Ltd. STAR
+No exclusion is being made from the index.
+20) NIFTY Private Bank
+The following company is being excluded:
+| Sr. No. | Company Name Symbol
+Yes Bank Ltd. YESBANK
+
+© NSE India@ ae,
+A guiding ligh ~
+Indices shining brigt ip:
+I 000m
+The following company is being included:
+| Sr. No. | Company Name Symbol
+City Union Bank Ltd.
+21) NIFTY Realty
+The following companies are being excluded:
+| Sr. No. | Company Name Symbol
+Hemisphere Properties India Ltd. HEMIPROP
+Sobha Ltd. SOBHA
+Sunteck Realty Ltd. SUNTECK
+The following companies are being included:
+| Sr. No. | Company Name Symbol
+Brookfield India Real Estate Trust BIRET
+Embassy Office Parks REIT EMBASSY
+Mindspace Business Parks REIT MINDSPACE
+22) NIFTY Oil & Gas
+The following company is being excluded:
+| Sr. No. | Company Name Symbol
+Gulf Oil Lubricants India Ltd. GULFOILLUB
+The following company is being included:
+| Sr.No. | Company Name Symbol
+Mangalore Refinery & Petrochemicals Ltd. MRPL
+
+© NSE India@ ae,
+A guiding ligh ~
+Indices shining brigt ip:
+I 000m
+23) NIFTY Commodities
+The following companies are being excluded:
+| Sr. No. | Company Name Symbol
+Hindustan Zinc Ltd. HINDZINC
+Torrent Power Ltd. TORNTPOWER
+The following companies are being included:
+| Sr.No. | Company Name Symbol
+SRF Lid
+Steel Authority of India Ltd. SAIL
+24) NIFTY Energy
+The following company Is being excluded:
+| Sr. No. | Company Name Symbol
+Hindustan Petroleum Corporation Ltd. HINDPETRO
+The following company is being included:
+| Sr.No. | Company Name Symbol
+Adani Transmission Ltd. ADANITRANS
+25) NIFTY Infrastructure
+The following company is being excluded:
+| Sr. No. | Company Name Symbol
+Exide Industries Ltd. EXIDEIND
+The following company is being included:
+| Sr. No. | Company Name Symbol
+Godrej Properties Ltd. GODREJPROP
+
+© NSE India@ ae,
+A guiding ligh ~
+Indices shining brigt ip:
+I 000m
+26) NIFTY MNC
+The following companies are being excluded:
+| Sr. No. | Company Name Symbol
+CRISIL Ltd. CRISIL
+Nippon Life India Asset Management Ltd. NAM-INDIA
+The following companies are being included:
+| Sr.No. | Company Name Symbol
+Gland Pharma Ltd. GLAND
+United Breweries Ltd.
+27) NIFTY Services Sector
+The following company is being excluded:
+| Sr. No. | Company Name Symbol
+Petronet LNG Ltd. PETRONET
+The following company is being included:
+| Sr.No. | Company Name Symbol
+Apollo Hospitals Enterprise Ltd. APOLLOHOSP
+28) NIFTY100 Liquid 15
+The following companies are being excluded:
+| Sr. No. | Company Name Symbol
+ICICI Bank Ltd. ICICIBANK
+Larsen & Toubro Ltd
+
+© NSE India@ ae,
+A guiding ligh ~
+Indices shining brigt ip:
+I 000m
+The following companies are being included:
+| Sr. No. | Company Name Symbol
+HCL Technologies Ltd. HCLTECH
+Mahindra & Mahindra Ltd.
+29) NIFTY Midcap Liquid 15
+The following companies are being excluded:
+| Sr.No. | Company Name Symbol
+Cholamandalam Investment and Fin. Co. Ltd. | CHOLAFIN
+RBL Bank Ltd. RBLBANK
+The following companies are being included:
+| Sr. No. | Company Name Symbol
+AU Small Finance Bank Ltd. AUBANK
+Tata Power Co. Ltd. TATAPOWER
+30) NIFTY Tata Group 25% Cap
+The following company is being excluded:
+| Sr. No. | Company Name Symbol
+Indian Hotels Co. Ltd. INDHOTEL
+The following company is being included:
+| Sr. No. | Company Name Symbol
+Tata Communications Ltd. TATACOMM
+
+© NSE India@ ae,
+A guiding ligh p<
+Indices shining brig , ye
+I 000m
+31) NIFTY Growth Sectors 15
+The following company is being excluded:
+| Sr.No. | Company Name Symbol
+Aurobindo Pharma Ltd. AUROPHARMA
+The following company is being included:
+| Sr. No. | Company Name Symbol
+Sun Pharmaceutical Industries Ltd. SUNPHARMA
+32) NIFTY SME EMERGE
+The following companies are being excluded:
+| Sr.No. | Company Name Symbol
+A and M Jumbo Bags Ltd. AMJUMBO
+Globe International Carriers Ltd. GICL
+Uravi T and Wedge Lamps Ltd. URAVI
+The following companies are being included:
+| Sr.No. | Company Name Symbol
+Abhishek Integrations Ltd. AILIMITED
+Aurangabad Distillery Ltd. AURDIS
+Crown Lifters Ltd. CROWN
+| 4a | KKV Agro Powers Ltd. KKVAPOW
+Manav Infra Projects Ltd. MANAV
+| 6 | Narmada Agrobase Ltd. NARMADA
+Spectrum Electrical Industries Ltd. SPECTRUM
+|g | Transwind Infra Ltd. TRANSWIND
+| 9 | Walpar Nutritions Ltd. WALPAR
+No changes are being made in NIFTY 50, NIFTY50 Equal Weight, NIFTY Auto, NIFTY Bank,
+NIFTY Consumer Durables, NIFTY Financial Services, NIFTY Financial Services 25/50,
+NIFTY PSU Bank, NIFTY India Consumption, NIFTY PSE, NIFTY Aditya Birla Group, NIFTY
+Mahindra Group and NIFTY Tata Group indices.
+
+€) NSE India@
+Indices A guiding gh ea
+I im
+
+About National Stock Exchange of India Limited (NSE):
+National Stock Exchange of India (NSE) is the world’s largest derivatives exchange by trading
+volume (contracts) as per the statistics maintained by Futures Industry Association (FIA) for
+calendar year 2020. NSE is ranked 4th in the world in the cash equities by number of trades
+as per the statistics maintained by the World Federation of Exchanges (WFE) for calendar
+year 2020. NSE was the first exchange in India to implement electronic or screen-based
+trading. It began operations in 1994 and Is ranked as the largest stock exchange in India in
+terms of total and average daily turnover for equity shares every year since 1995, based on
+SEBI data. NSE has a fully-integrated business model comprising exchange listings, trading
+services, clearing and settlement services, indices, market data feeds, technology solutions
+and financial education offerings. NSE also oversees compliance by trading, clearing
+members and listed companies with the rules and regulations of SEBI and the exchange.
+NSE is a pioneer in technology and ensures the reliability and performance of its systems
+through a culture of innovation and investment in technology.
+For more information, please visit: www.nseindia.com
+About NSE Indices Limited:
+NSE Indices Limited (formerly known as India Index Services & Products Ltd. - IISL), a subsidiary
+of NSE, provides a variety of indices and index related services for the capital markets. The
+company focuses on the index as a core product. The company owns and manages a portfolio of
+indices under the NIFTY brand of NSE, including the flagship index, the NIFTY 50. NIFTY equity
+indices comprises of broad-based benchmark indices, sectoral indices, strategy indices,
+thematic indices and customised indices. NSE Indices Limited also maintains fixed income
+indices based on Government of India securities, corporate bonds, money market instruments
+and hybrid indices. Many investment products based on NIFTY indices have been developed
+within India and abroad. These include index based derivatives traded on NSE, NSE IFSC and
+Singapore Exchange Ltd. (SGX) and a number of index funds and exchange traded funds. The
+flagship 'NIFTY 50' index is widely tracked and traded as the benchmark for Indian Capital
+Markets.
+For more information, please visit: www.niftyindices.com
+
+© NSE India@ ae.
+A guiding ligh ~\4
+Indices shining brig J ea
+a iim
+For any clarifications please contact:
+Arijit Sengupta Kumar Kartikey
+Chief Marketing & Communications Officer Chief Manager, Corporate Communication
+Mobile: +91-9820340485 Mobile: +91-9819549984
+Email id: asengupta@nse.co.in Email id: kumark@nse.co.in

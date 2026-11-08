@@ -1,0 +1,163 @@
+IISL
+INDIA INDEX SERVICES & PRODUCTS LIMITED
+
+                                                              Date: August 24, 2015
+
+                                PRESS RELEASE
+
+The Index Maintenance Sub-Committee has decided to make the following replacements
+in various indices on account of proposed schemes of arrangement for demerger of Max
+India Ltd. and Crompton Greaves Ltd. These changes shall become effective from
+September 28, 2015 (close of September 24, 2015).
+
+
+1)     CNX Nifty Junior Index
+
+The following company is being excluded:
+
+ Sr. No. Company Name                                   Symbol
+   1     Crompton Greaves Ltd.                          CROMPGREAV
+
+The following company is being included:
+
+ Sr. No. Company Name                                   Symbol
+    1    Ashok Leyland Ltd.                             ASHOKLEY
+
+
+2)     CNX 100 Index
+
+The following company is being excluded:
+
+ Sr. No. Company Name                                   Symbol
+   1     Crompton Greaves Ltd.                          CROMPGREAV
+
+The following company is being included:
+
+ Sr. No. Company Name                                   Symbol
+    1    Ashok Leyland Ltd.                             ASHOKLEY
+
+The above replacement will also be applicable to CNX 100 Equal Weight Index.
+
+
+3)     CNX 200 Index
+
+The following companies are being excluded:
+
+ Sr. No. Company Name                                   Symbol
+    1    Crompton Greaves Ltd.                          CROMPGREAV
+    2    Max India Ltd.                                 MAX
+The following companies are being included:
+
+ Sr. No. Company Name                         Symbol
+   1     Balkrishna Industries Ltd.           BALKRISIND
+   2     Kajaria Ceramics Ltd.                KAJARIACER
+
+
+4)     CNX 500 Index
+
+The following companies are being excluded:
+
+ Sr. No. Company Name                         Symbol
+   1     Crompton Greaves Ltd.                CROMPGREAV
+   2     Max India Ltd.                       MAX
+
+The following companies are being included:
+
+ Sr. No. Company Name                         Symbol
+   1     Adlabs Entertainment Ltd.            ADLABS
+   2     Eveready Industries India Ltd.       EVEREADY
+
+
+5)     LIX15 Midcap Index
+
+The following company is being excluded:
+
+ Sr. No. Company Name                         Symbol
+   1     Crompton Greaves Ltd.                CROMPGREAV
+
+The following company is being included:
+
+ Sr. No. Company Name                         Symbol
+    1    Havells India Ltd.                   HAVELLS
+
+
+6)     Nifty Midcap 50 Index
+
+The following company is being excluded:
+
+ Sr. No. Company Name                         Symbol
+   1     Crompton Greaves Ltd.                CROMPGREAV
+
+The following company is being included:
+
+ Sr. No. Company Name                         Symbol
+   1     South Indian Bank Ltd.               SOUTHBANK
+7)     CNX Midcap Index
+
+The following companies are being excluded:
+
+ Sr. No. Company Name                                    Symbol
+   1     Crompton Greaves Ltd.                           CROMPGREAV
+   2     Max India Ltd.                                  MAX
+
+The following companies are being included:
+
+ Sr. No. Company Name                                    Symbol
+   1     Page Industries Ltd.                            PAGEIND
+   2     Persistent Systems Ltd.                         PERSISTENT
+
+
+8)     CNX Infrastructure Index
+
+The following company is being excluded and no inclusion shall be made:
+
+ Sr. No. Company Name                                    Symbol
+   1     Crompton Greaves Ltd.                           CROMPGREAV
+
+
+9)     CNX Dividend Opportunities Index
+
+The following company is being excluded:
+
+ Sr. No. Company Name                                    Symbol
+   1     Max India Ltd.                                  MAX
+
+The following company is being included:
+
+ Sr. No. Company Name                                    Symbol
+    1    Indian Oil Corporation Ltd.                     IOC
+
+
+10)    CNX High Beta Index
+
+The following company is being excluded:
+
+ Sr. No. Company Name                                    Symbol
+   1     Crompton Greaves Ltd.                           CROMPGREAV
+
+The following company is being included:
+
+ Sr. No. Company Name                                    Symbol
+    1    Apollo Tyres Ltd.                               APOLLOTYRE
+For more details, contact:
+Arindam Saha
+Head - Corporate Communications
+cc_nse@nse.co.in
++91–(022)–2659 8164
+
+About IISL: IISL, a NSE group company, provides wide array of indices and index
+related services for the capital markets. It maintains more than 100 equity & fixed
+income based indices as well as investment & risk management tools etc. Along with
+NSE, many such products are traded on overseas exchanges like Singapore Exchange
+(SGX), Chicago Mercantile Exchange (CME) and Osaka Securities Exchange (OSE).
+IISL also actively maintains large number of index and exchange traded funds.
+
+About NSE: In its 20 year history, NSE has transformed the capital market, based on
+technology, innovation, high standards of governance and management practices.
+NSE's business practices and high levels of integrity have earned it the trust of the
+financial markets worldwide. Besides being a platform of choice for all exchange
+traded financial products In India, NSE’s flagship index, the Nifty 50, has become a
+benchmark national level economic parameter. Since inception, the exchange has
+been covered extensively by global media and has won many accolades as recognition
+of this remarkable journey.
+

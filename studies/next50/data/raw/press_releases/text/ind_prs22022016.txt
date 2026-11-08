@@ -1,0 +1,150 @@
+                                                                       Date: February 22, 2016
+
+                                     PRESS RELEASE
+
+                      Changes in Index Maintenance Guidelines
+
+Mumbai: India Index Services & Products Ltd. (IISL), a group company of NSE, the
+leading stock exchange in India, in its continuous efforts to align with the global industry
+best practices hereby announces revision in stock selection criteria for various indices,
+methodology for calculation of total return index and operational guidelines governing
+index maintenance.
+
+A. Stock selection criteria:
+1) Inclusion of securities with Differential Voting Rights :
+   The equity securities with Differential Voting Rights (DVRs) would be eligible for
+   inclusion in an index subject to fulfilment of the eligibility criteria as given below:
+
+   a. Market capitalization criteria shall be measured at a company level by aggregating
+      the market capitalization of individual class of security meeting the liquidity criteria
+      for the respective index
+   b. Free float of DVR equity class share should be at least 10% of the free-float market
+      capitalization of a company (voting equity class share and DVR equity class share)
+      and 100% free-float market capitalization of the last security in respective index.
+      This requirement shall be applicable only to those indices that are calculated based
+      on market capitalization methodology
+   c. Each class of security issued by a company should meet the liquidity criteria
+      applicable for the respective indices
+   d. DVR shares will be considered for inclusion only in broad market, sector, and
+      thematic indices which are based on market capitalization methodology
+   e. Upon inclusion of DVRs in the index, the index may not have fixed number of
+      securities. For example, if DVR of an existing Nifty 50 constituent is included in
+      Nifty 50, the Nifty 50 index will have 51 securities but continue to have 50
+      companies
+   f. It is likely that DVR is eligible for inclusion in the index whereas the full voting
+      rights security class is ineligible. In such scenario, the DVRs shall be included in
+      the index irrespective of whether full voting rights share class is part of index
+
+2) F&O criteria for stocks in Nifty 50 and Nifty Bank index:
+   In order to become eligible for inclusion in Nifty 50 and Nifty Bank index, a stock must
+   be available for trading in NSE’s Futures & Options segment.
+
+3) Removal of minimum free-float requirement of 10%:
+   In view of the regulatory requirement of maintaining minimum 25% public
+   shareholding for listed companies, the criteria of minimum free-float requirement of
+   10% shall not be applicable for any index.
+
+
+
+
+                                                                                            1
+4) Eligible universe for selection of stocks in existing Broad Market and Sectoral
+   indices:
+   The selection of constituents for each of these indices shall be made from the universe
+   of companies that rank within top 800 based on both average daily turnover and
+   average daily full market capitalization.
+
+5) Eligible universe for selection of stocks in Nifty Midcap Liquid 15 index:
+   The selection of stocks for Nifty Midcap Liquid 15 index shall be made from Nifty
+   Midcap 50 index.
+
+
+B. Methodology for calculating total return index calculation:
+   Effective April 1, 2016, the formula for computation of total return index will be
+   revised as given in the methodology document on Nifty broad market indices at IISL
+   Publications.
+
+
+C. Operational guidelines governing index maintenance:
+Effective February 26, 2016, operational guidelines governing index maintenance will be
+revised as given hereunder:
+
+Corporate Action        Existing Policy                  Revised Policy
+Investable   Weight     The IWF is rounded to six        The IWF will be rounded to
+Factors      (IWFs)     decimals.                        two decimals.
+Review                  For example: 0.608794            For example: 0.61
+                        The IWFs are reviewed on a       The IWFs will be reviewed
+                        quarterly basis and implemented  on a quarterly basis and
+                        on second Monday of February,    implemented     from     first
+                        May, August and November after   working day after F&O
+                        providing five working days’     expiry of February, May,
+                        prior notice.                    August and November after
+                                                         providing five working days’
+                                                         prior notice.
+                        Change in IWF by 5% or more is No change.
+                        implemented as soon as possible
+                        after providing five working
+                        days’ prior notice.
+Shares rebalancing      Change in shares of less than 5% Change in shares of less than
+                        is implemented on second 5% will be made on quarterly
+                        Monday of each month after basis and implemented from
+                        providing five working days’ first working day after F&O
+                        prior notice.                    expiry of February, May,
+                                                         August and November after
+                                                         providing five working days’
+                                                         prior notice.
+
+
+                                                                                        2
+                     Change in shares that results into      No change.
+                     change in the free-float market
+                     capitalisation by 5% or more will
+                     be implemented as soon as
+                     possible after providing five
+                     working days’ notice period.
+Indices with capping Indices are presently capped at         Indices will be capped at the
+methodology          the time of change in divisors          time of change in divisors as
+                     after providing five working            per existing policy.
+                     days’ prior notice.
+                                                             Additionally, capping will be
+                                                             done on quarterly basis and
+                                                             implemented      from    first
+                                                             working day after F&O
+                                                             expiry of February, May,
+                                                             August and November after
+                                                             providing five working days’
+                                                             prior notice.
+
+…………………
+For more details, contact:
+Arindam Saha
+Head - Corporate Communications
+iisl@nse.co.in
+Mo: 09930019202 | Direct: +91 (022) – 2659 8164
+
+
+About NSE: In its 20 year history, NSE has transformed the capital market, based on
+technology, innovation, high standards of governance and management practices. NSE's
+business practices and high levels of integrity have earned it the trust of the financial
+markets worldwide. Besides being a platform of choice for all exchange traded financial
+products in India, NSE’s flagship index, the Nifty 50, has become a benchmark national
+level economic parameter. Since inception, the exchange has been covered extensively by
+global media and has won many accolades as recognition of this remarkable journey.
+
+About IISL: India Index Services & Products Ltd. (IISL), a NSE group company, was setup
+in May 1998 to provide a variety of indices and index related services for the capital
+markets. IISL is India's first specialised company focused upon the index as a core product.
+IISL maintains more than 100 equity indices comprising broad-based benchmark indices,
+sectoral indices and customised indices. IISL also maintains fixed income indices based on
+Government of India bonds. Many investment and risk management products based on
+IISL indices have been developed in the recent past, within India and abroad. These include
+index based derivatives traded on NSE, Singapore Exchange Ltd. (SGX), Chicago
+Mercantile Exchange Inc. (CME) and Osaka Exchange Inc. (OSE) and a number of index
+funds and exchange traded funds. The flagship 'Nifty 50' index is widely tracked and traded
+as the benchmark for Indian Capital Markets.
+
+
+
+
+                                                                                          3
+

@@ -1,0 +1,5 @@
+symbol,ticker,date,kind,detail,source
+CONCOR,CONCOR.NS,2024-06-04,split_boundary_artifact,split 1.25 on 2025-07-04; raw return -19.20% -> +1.00%,Yahoo split record (data/raw/prices/yahoo_splits.csv)
+CONCOR,CONCOR.NS,2025-01-01,split_boundary_artifact,split 1.25 on 2025-07-04; raw return -20.88% -> -1.10%,Yahoo split record (data/raw/prices/yahoo_splits.csv)
+TRENT,TRENT.NS,2026-01-01,split_boundary_artifact,split 1.5 on 2026-06-04; raw return -33.05% -> +0.43%,Yahoo split record (data/raw/prices/yahoo_splits.csv)
+VEDL,VEDL.NS,2026-04-30,demerger,discovered 289.5 vs prev close 773.6; ex-date return -64.90% -> -6.20%,https://nsearchives.nseindia.com/content/cm/BhavCopy_NSE_CM_0_0_0_20260430_F_0000.csv.zip (open = special pre-open price); https://www.multibagg.ai/market-pulse/articles/vedanta-ex-demerger-price-fall-cmol1h3tirvh6pg0j4wog395i

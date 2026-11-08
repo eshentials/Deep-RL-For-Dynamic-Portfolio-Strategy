@@ -1,0 +1,85 @@
+       IISL
+       INDIA INDEX SERVICES & PRODUCTS LIMITED
+
+                                  PRESS RELEASE
+
+Trading in the equity shares of Castrol (India) Limited shall be suspended with effect from
+February 28, 2014 on account of capital reduction in the company. The Index Maintenance
+Sub-Committee has decided to make the following changes in various indices. These
+changes shall become effective from February 28, 2014.
+
+(1)    CNX 200 Index
+
+The following company is being excluded:
+
+  Sr. No. Company Name                                    Symbol
+    1     Castrol (India) Ltd.                            CASTROL
+
+The following company is being included:
+
+  Sr. No. Company Name                                    Symbol
+    1     Supreme Industries Ltd.                         SUPREMEIND
+
+(2)    CNX 500 Index
+
+The following company is being excluded:
+
+  Sr. No. Company Name                                    Symbol
+    1     Castrol (India) Ltd.                            CASTROL
+
+The following company is being included:
+
+  Sr. No. Company Name                                    Symbol
+    1     Jyothy Laboratories Ltd.                        JYOTHYLAB
+
+(3)    CNX Midcap Index
+
+The following company is being excluded:
+
+  Sr. No. Company Name                                    Symbol
+    1     Castrol (India) Ltd.                            CASTROL
+
+The following company is being included:
+
+  Sr. No. Company Name                                    Symbol
+    1     Justdial Ltd.                                   JUSTDIAL
+(4)    CNX Dividend Opportunities Index
+
+The following company is being excluded:
+
+  Sr. No. Company Name                               Symbol
+    1     Castrol (India) Ltd.                       CASTROL
+
+The following company is being included:
+
+  Sr. No. Company Name                               Symbol
+    1     Bank of India                              BANKINDIA
+
+(5)    CNX Low Volatility Index
+
+The following company is being excluded:
+
+  Sr. No. Company Name                               Symbol
+    1     Castrol (India) Ltd.                       CASTROL
+
+The following company is being included:
+
+  Sr. No. Company Name                               Symbol
+    1     Torrent Pharmaceuticals Ltd.               TORNTPHARM
+
+(6)    CNX MNC Index
+
+The following company is being excluded:
+
+  Sr. No. Company Name                               Symbol
+    1     Castrol (India) Ltd.                       CASTROL
+
+The following company is being included:
+
+  Sr. No. Company Name                               Symbol
+    1     GlaxoSmithkline Consumer Healthcare Ltd.   GSKCONS
+
+
+Place: Mumbai
+Date: February 21, 2014
+

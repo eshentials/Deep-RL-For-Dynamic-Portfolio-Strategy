@@ -1,0 +1,68 @@
+       IISL
+       INDIA INDEX SERVICES & PRODUCTS LIMITED
+
+                                 PRESS RELEASE
+
+The Index Maintenance Sub-Committee has decided to make the following change in the
+indices on account of proposed scheme of demerger and transfer of real estate undertaking
+of Arvind Ltd. into Arvind Infrastructure Ltd.
+
+The changes in CNX 200, CNX 500, CNX Midcap and CNX Alpha index shall be effective
+from February 2, 2015 (close of January 30, 2015) and change in Nifty Midcap 50 index
+shall be effective from February 23, 2015 (close of February 20, 2015).
+
+1. CNX 200 index:
+
+The following company is being excluded:
+ Sr. No.               Company Name                       Symbol
+    1      Arvind Ltd.                                 ARVIND
+
+The following company is being included:
+ Sr. No.               Company Name                       Symbol
+    1      CRISIL Ltd.                                 CRISIL
+
+
+2. CNX 500 index:
+
+The following company is being excluded:
+ Sr. No.               Company Name                       Symbol
+    1      Arvind Ltd.                                 ARVIND
+
+The following company is being included:
+ Sr. No.               Company Name                       Symbol
+    1      La Opala RG Ltd.                            LAOPALA
+
+
+3. CNX Midcap index:
+
+The following company is being excluded:
+ Sr. No.               Company Name                       Symbol
+    1      Arvind Ltd.                                 ARVIND
+
+The following company is being included:
+ Sr. No.               Company Name                       Symbol
+    1      SKS Microfinance Ltd.                       SKSMICRO
+4. CNX Alpha index:
+
+The following company is being excluded:
+ Sr. No.               Company Name           Symbol
+    1      Arvind Ltd.                     ARVIND
+
+The following company is being included:
+ Sr. No.                 Company Name         Symbol
+    1      Bharti Infratel Ltd.            INFRATEL
+
+5. Nifty Midcap 50 index:
+
+The following company is being excluded:
+ Sr. No.               Company Name           Symbol
+    1      Arvind Ltd.                     ARVIND
+
+The following company is being included:
+ Sr. No.               Company Name           Symbol
+    1      TVS Motor Company Ltd.          TVSMOTOR
+
+
+Place: Mumbai
+Date: January 23, 2015
+

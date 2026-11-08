@@ -19,7 +19,7 @@ from multiprocessing import get_context
 import numpy as np
 import pandas as pd
 
-from config import ROOT, load
+from config import ROOT, describe, load, study_root
 from train.common import RUNS, PPOPolicy, folds, protocol_gate, run_tag
 
 
@@ -45,7 +45,7 @@ def train_one(task: tuple) -> dict:
                         episode_sessions=tr["episode_sessions"], cost_bps=pf["cost_bps"],
                         clip=cfg["state"]["clip"])
     env.reset(seed=seed)
-    out = ROOT / out_dir
+    out = study_root() / out_dir
     out.mkdir(parents=True, exist_ok=True)
 
     class ValCallback(BaseCallback):
@@ -117,7 +117,8 @@ def main(argv=None):
 
     tasks = [(y, s, steps, f"runs/{base}/fold_{y}/seed_{s}") for y in fold_years for s in seeds]
     workers = min(a.workers or tr["workers"], len(tasks))
-    print(f"{len(tasks)} runs x {steps} steps on {workers} workers -> runs/{base}")
+    run_rel = (RUNS / base).relative_to(ROOT)
+    print(f"protocol {describe()}: {len(tasks)} runs x {steps} steps on {workers} workers -> {run_rel}")
     t0 = time.time()
     with get_context("spawn").Pool(workers) as pool:
         results = []
@@ -130,12 +131,14 @@ def main(argv=None):
     print(f"done in {(time.time() - t0) / 60:.1f} min")
 
     from train import ledger
-    ledger.append("ppo_config" if a.protocol else "dev_smoke",
-                  f"PPO kappa={cfg['reward']['kappa']} steps={steps}",
+    desc = f"PPO kappa={cfg['reward']['kappa']} steps={steps}"
+    if cfg["version"] != 1:
+        desc = f"protocol-v{cfg['version']} {cfg['data']['universe']}: {desc}"
+    ledger.append("ppo_config" if a.protocol else "dev_smoke", desc,
                   folds=" ".join(map(str, fold_years)), seeds=" ".join(map(str, seeds)),
                   steps=str(steps), val_sharpe_mean=float(res["best_val_sharpe"].mean()),
                   touched_test=False, counts_as_trial=bool(a.protocol),
-                  notes=(f"runs/{base}; rf={'RBI' if a.protocol else 'PROVISIONAL'}"
+                  notes=(f"{run_rel}; rf={'RBI' if a.protocol else 'PROVISIONAL'}"
                          + ("" if a.protocol else "; plumbing check with the protocol config, not a selectable variant")))
 
 

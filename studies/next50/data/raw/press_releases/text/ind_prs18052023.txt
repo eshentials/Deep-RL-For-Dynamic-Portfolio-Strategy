@@ -1,0 +1,57 @@
+PRESS RELEASE
+Mumbai, May 18, 2023
+
+
+
+                           Revision in Nifty Multi Asset Indices
+     NSE Indices Limited had launched two new Multi Asset Indices vide press release dated April 19,
+     2023. In order to provide a longer index history to users, NSE Indices Limited has decided to revise
+     the base date of the Nifty Multi Asset Indices as mentioned hereunder.
+      Index Name                                      Existing                         Revised
+      Nifty Multi Asset – Equity : Arbitrage :        Base date: July 01, 2019         Base date: April 01, 2010
+      REITs/InvITs (50:40:10)                         Base Value: 1000                 Base Value: 1000
+      Nifty Multi Asset – Equity : Debt : Arbitrage   Base date: July 01, 2019         Base date: April 01, 2010
+      : REITs/InvITs (50:20:20:10)                    Base Value: 1000                 Base Value: 1000
+
+
+     The exposure to various asset classes since April 01, 2010, are as mentioned below:
+                           Nifty Multi Asset – Equity : Arbitrage :    Nifty Multi Asset – Equity : Debt :
+      Index Name
+                                   REITs/InvITs (50:40:10)           Arbitrage : REITs/InvITs (50:20:20:10)
+                          April 01, 2010, to July       02,   2019, April 01, 2010, to July      02,   2019,
+           Period
+                          July 01, 2019         onwards             July 01, 2019         onwards
+         Nifty 500                55%                   50%                 56%                  50%
+          Nifty 50
+                                  45%                     40%                    22%                     20%
+         Arbitrage
+       Nifty Medium
+                                    -                       -                    22%                     20%
+       Duration Debt
+            Nifty
+                                    -                     10%                     -                      10%
+       REITs/InvITs
+
+
+     The returns of the indices from July 01, 2019, shall remain the same as before.
+     For more information on index methodology and factsheet, please visit us at www.niftyindices.com
+     or www.nseindia.com
+
+
+     About NSE Indices Limited:
+     NSE Indices Limited (formerly known as India Index Services & Products Ltd. - IISL), a subsidiary
+     of NSE, provides a variety of indices and index related services for the capital markets. The company
+     focuses on the index as a core product. The company owns and manages a portfolio of indices under
+     the Nifty brand of NSE, including the flagship index, the Nifty 50. Nifty equity indices comprises of
+broad-based benchmark indices, sectoral indices, strategy indices, thematic indices and customised
+indices. NSE Indices Limited also maintains fixed income indices based on Government of India
+securities, corporate bonds, money market instruments and hybrid indices. Many investment products
+based on Nifty indices have been developed within India and abroad. These include index based
+derivatives traded on NSE, NSE IFSC and Singapore Exchange Ltd. (SGX) and a number of index
+funds and exchange traded funds. The flagship 'Nifty 50' index is widely tracked and traded as the
+benchmark for Indian Capital Markets.
+
+For more information, please visit: www.niftyindices.com
+Press contact:
+Email ID: cc@nse.co.in
+

@@ -25,10 +25,10 @@ import sys
 import numpy as np
 import pandas as pd
 
-from config import ROOT, load
+from config import ROOT, load, study_root
 
-RAW = ROOT / "data" / "raw" / "rbi"
-PROC = ROOT / "data" / "processed"
+RAW = ROOT / "data" / "raw" / "rbi"   # shared by every study: one RBI series
+PROC = study_root() / "data" / "processed"
 MARKER = PROC / "rf_PROVISIONAL"
 PROVISIONAL_RATE = 0.065
 REQUIRED_FROM = pd.Timestamp("2013-11-01")  # first decisions are at the 2013 year-end close

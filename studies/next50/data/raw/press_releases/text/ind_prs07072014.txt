@@ -1,0 +1,73 @@
+       IISL
+       INDIA INDEX SERVICES & PRODUCTS LIMITED
+
+                                 PRESS RELEASE
+
+The Index Maintenance Sub-Committee has decided to make the following changes in
+CNX Alpha, CNX High Beta and CNX Low Volatility indices as part of the quarterly
+review. The changes shall become effective from July 14, 2014 (close of July 11, 2014).
+
+(1)    CNX Alpha Index
+
+The following companies are being excluded:
+
+  Sr. No.   Company Name                                  Symbol
+    1       Bajaj Finance Ltd.                            BAJFINANCE
+    2       Dabur India Ltd.                              DABUR
+    3       Dr. Reddy's Laboratories Ltd.                 DRREDDY
+    4       Idea Cellular Ltd.                            IDEA
+    5       Lupin Ltd.                                    LUPIN
+    6       Mahindra & Mahindra Financial Services Ltd.   M&MFIN
+    7       Reliance Communications Ltd.                  RCOM
+    8       Sun Pharmaceutical Industries Ltd.            SUNPHARMA
+    9       Tata Motors Ltd.                              TATAMOTORS
+   10       United Spirits Ltd.                           MCDOWELL-N
+   11       Zee Entertainment Enterprises Ltd.            ZEEL
+
+The following companies are being included:
+
+  Sr. No.   Company Name                                  Symbol
+    1       AIA Engineering Ltd.                          AIAENG
+    2       Gujarat Gas Co. Ltd.                          GUJRATGAS
+    3       GVK Power & Infrastructures Ltd.              GVKPIL
+    4       Info Edge (India) Ltd.                        NAUKRI
+    5       Justdial Ltd.                                 JUSTDIAL
+    6       NCC Ltd.                                      NCC
+    7       SRF Ltd.                                      SRF
+    8       Suzlon Energy Ltd.                            SUZLON
+    9       Tata Communications Ltd.                      TATACOMM
+   10       UPL Ltd.                                      UPL
+   11       Va Tech Wabag Ltd.                            WABAG
+(2)    CNX High Beta Index
+
+The following company is being excluded:
+
+  Sr. No. Company Name                            Symbol
+    1     Jindal Steel & Power Ltd.               JINDALSTEL
+
+The following company is being included:
+
+  Sr. No. Company Name                            Symbol
+    1     NCC Ltd.                                NCC
+
+
+(3)    CNX Low Volatility Index
+
+The following companies are being excluded:
+
+  Sr. No.   Company Name                          Symbol
+    1       Religare Enterprises Ltd.             RELIGARE
+    2       Thermax Ltd.                          THERMAX
+    3       Trent Ltd.                            TRENT
+
+The following companies are being included:
+
+  Sr. No.   Company Name                          Symbol
+    1       Container Corporation of India Ltd.   CONCOR
+    2       Infosys Ltd.                          INFY
+    3       Marico Ltd.                           MARICO
+
+
+Place: Mumbai
+Date: July 7, 2014
+

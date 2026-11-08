@@ -1,0 +1,82 @@
+       IISL
+       INDIA INDEX SERVICES & PRODUCTS LIMITED
+
+                                 PRESS RELEASE
+The Index Maintenance Sub-Committee has decided to make the following changes in CNX
+Alpha, CNX High Beta and CNX Low Volatility indices as part of the quarterly review. The
+changes shall become effective from April 15, 2014 (close of April 11, 2014).
+
+(1)    CNX Alpha Index
+
+The following companies are being excluded:
+
+  Sr. No.   Company Name                                Symbol
+    1       Aditya Birla Nuvo Ltd.                      ABIRLANUVO
+    2       Apollo Hospitals Enterprises Ltd.           APOLLOHOSP
+    3       Asian Paints Ltd.                           ASIANPAINT
+    4       Emami Ltd.                                  EMAMILTD
+    5       Godrej Consumer Products Ltd.               GODREJCP
+    6       GlaxoSmithkline Consumer Healthcare Ltd.    GSKCONS
+    7       IndusInd Bank Ltd.                          INDUSINDBK
+    8       ING Vysya Bank Ltd.                         INGVYSYABK
+    9       I T C Ltd.                                  ITC
+   10       Piramal Enterprises Ltd.                    PEL
+   11       Pidilite Industries Ltd.                    PIDILITIND
+   12       Shriram City Union Finance Ltd.             SHRIRAMCIT
+
+The following companies are being included:
+
+  Sr. No.   Company Name                                Symbol
+    1       Aban Offshore Ltd.                          ABAN
+    2       Amtek Auto Ltd.                             AMTEKAUTO
+    3       Apollo Tyres Ltd.                           APOLLOTYRE
+    4       Arvind Ltd.                                 ARVIND
+    5       Balkrishna Industries Ltd.                  BALKRISIND
+    6       Bharat Forge Ltd.                           BHARATFORG
+    7       CESC Ltd.                                   CESC
+    8       eClerx Services Ltd.                        ECLERX
+    9       Gujarat Pipavav Port Ltd.                   GPPL
+   10       Hexaware Technologies Ltd.                  HEXAWARE
+   11       PI Industries Ltd.                          PIIND
+   12       Voltas Ltd.                                 VOLTAS
+(2)    CNX High Beta Index
+
+The following companies are being excluded:
+
+  Sr. No.   Company Name                          Symbol
+    1       Adani Power Ltd.                      ADANIPOWER
+    2       Shree Renuka Sugars Ltd.              RENUKA
+    3       Steel Authority of India Ltd.         SAIL
+    4       Suzlon Energy Ltd.                    SUZLON
+
+The following companies are being included:
+
+  Sr. No.   Company Name                          Symbol
+    1       Allahabad Bank                        ALBK
+    2       Jindal Saw Ltd.                       JINDALSAW
+    3       Jaypee Infratech Ltd.                 JPINFRATEC
+    4       Larsen & Toubro Ltd.                  LT
+
+
+(3)    CNX Low Volatility Index
+
+The following companies are being excluded:
+
+  Sr. No.   Company Name                          Symbol
+    1       Bhushan Steel Ltd.                    BHUSANSTL
+    2       Container Corporation of India Ltd.   CONCOR
+    3       Fortis Healthcare Ltd.                FORTIS
+    4       S.E. Investments Ltd.                 SEINV
+
+The following companies are being included:
+
+  Sr. No.   Company Name                          Symbol
+    1       Ipca Laboratories Ltd.                IPCALAB
+    2       Page Industries Ltd.                  PAGEIND
+    3       Pidilite Industries Ltd.              PIDILITIND
+    4       Religare Enterprises Ltd.             RELIGARE
+
+
+Place: Mumbai
+Date: April 03, 2014
+

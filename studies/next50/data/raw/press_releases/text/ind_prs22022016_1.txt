@@ -1,0 +1,155 @@
+                                                                   Date: February 22, 2016
+
+                                   PRESS RELEASE
+
+                   New Structure for Nifty Broad Market Indices
+
+Mumbai: India Index Services & Products Ltd. (IISL), a group company of NSE, the
+leading stock exchange in India, in its endeavor to align with industry best practices,
+today announced new structure of Nifty broad market indices. The existing index
+structure is enhanced to efficiently represent the large, mid and small market
+capitalisation segments of the Indian capital market.
+
+The new structure constitutes 11 indices, of which 5 are new indices launched by IISL.
+The change in constituents of existing indices and publication of new indices will be
+effective from April 01, 2016.
+
+ No     Index Name                    Existing/New
+ 1      Nifty 500                     Existing
+ 2      Nifty 100                     Existing
+ 3      Nifty Midcap 150              New
+ 4      Nifty Smallcap 250            New
+ 5      Nifty 50                      Existing
+ 6      Nifty Next 50                 Existing
+ 7      Nifty Midcap 50               Existing
+ 8      Nifty Full Midcap 100         New
+ 9      Nifty Smallcap 50             New
+ 10     Nifty Full Smallcap 100       New
+ 11     Nifty 200                     Existing
+
+The Nifty 500 index will comprise of top 500 companies based on full market
+capitalisation meeting the eligibility criteria. The constituents of Nifty 500 index are
+then classified based on full market capitalization into 3 indices namely Nifty 100,
+Nifty Midcap 150 and Nifty Smallcap 250. The constituents of these indices are
+classified into sub-indices based on liquidity and market capitalisation criteria.
+
+“The new structure ensures that a company will be classified into only one of the
+segments viz large, mid and small market capitalisation and provide better reflection of
+the performance of the respective segments. With the launch of Nifty Smallcap 50
+index, IISL will have 50 stock index in each of the three segments. The launch of new
+indices and the index restructuring will facilitate introduction of investment products.”
+said Mr. Mukesh Agarwal, CEO, IISL.
+
+The stock selection criteria for five indices viz. Nifty 500, Nifty 100, Nifty Next 50,
+Nifty Midcap 50 and Nifty 200 has been revised as per the new index structure. For
+changes in stock selection criteria for existing indices please refer to a separate press
+release on “Changes in index maintenance guidelines” dated February 22, 2016.
+
+IISL will initially publish values of all the new indices at end of the day and
+subsequently disseminate online along with existing indices. IISL also announces
+                                                                                       1
+rebranding of existing Nifty Midcap 100 and Nifty Smallcap 100 indices. These
+indices will be published under the new names Nifty Free Float Midcap 100 and Nifty
+Free Float Smallcap 100 respectively.
+
+
+                               Nifty Broad Indices Structure
+
+
+
+
+Brief description of the 11 indices is as under:
+
+1. Nifty 500:
+Nifty 500 represents the top 500 companies based on full market capitalisation meeting
+the eligibility criteria.
+
+2. Nifty 100:
+Nifty 100 represents top 100 companies based on full market capitalisation from Nifty
+500. This index intends to measure the performance of large market capitalisation
+companies.
+
+3. Nifty Midcap 150:
+Nifty Midcap 150 represents the next 150 companies (companies ranked 101-250)
+based on full market capitalisation from Nifty 500. This index intends to measure the
+performance of mid market capitalisation companies.
+
+4. Nifty Smallcap 250:
+Nifty Smallcap 250 represents the balance 250 companies (companies ranked 251-500)
+from Nifty 500. This index intends to measure the performance of small market
+capitalisation companies.
+
+5. Nifty 50:
+Nifty 50 represents 50 large capitalisation and liquid companies having average impact
+cost of 0.50% or less for 90% of the observations for a basket size of Rs. 2 Crores. The
+constituents should have derivative contracts available on NSE.
+
+                                                                                       2
+6. Nifty Next 50:
+Nifty Next 50 represents the balance 50 companies from Nifty 100 after excluding the
+Nifty 50 companies.
+
+7. Nifty Midcap 50:
+Nifty Midcap 50 represents top 50 companies based on full market capitalisation from
+Nifty Midcap 150 index and on which derivative contracts are available on NSE.
+
+8. Nifty Full Midcap 100:
+It includes all the companies from Nifty Midcap 50. Remaining companies are selected
+based on average daily turnover from Nifty Midcap 150 index.
+
+9. Nifty Smallcap 50:
+Nifty Smallcap 50 represents top 50 companies selected based on average daily
+turnover from top 100 companies selected based on full market capitalisation in Nifty
+Smallcap 250 index.
+
+10. Nifty Full Smallcap 100:
+It includes all the companies from Nifty Smallcap 50. Remaining companies are
+selected based on average daily turnover from top 150 companies selected based on
+full market capitalisation from Nifty Smallcap 250 index.
+
+11. Nifty 200:
+Nifty 200 represents all the companies forming part of Nifty 100 and Nifty Midcap
+Full 100 index.
+
+
+For detailed methodology, please refer to the methodology document on Nifty broad
+market indices at IISL Publications.
+
+…………………
+For more details, contact:
+Arindam Saha
+Head - Corporate Communications
+iisl@nse.co.in
+Mo: 09930019202 | Direct: +91 (022) – 2659 8164
+
+
+
+About NSE: In its 20 year history, NSE has transformed the capital market, based on
+technology, innovation, high standards of governance and management practices.
+NSE's business practices and high levels of integrity have earned it the trust of the
+financial markets worldwide. Besides being a platform of choice for all exchange
+traded financial products in India, NSE’s flagship index, the Nifty 50, has become a
+benchmark national level economic parameter. Since inception, the exchange has been
+covered extensively by global media and has won many accolades as recognition of
+this remarkable journey.
+
+
+                                                                                   3
+About IISL: India Index Services & Products Ltd. (IISL), a NSE group company, was
+setup in May 1998 to provide a variety of indices and index related services for the
+capital markets. IISL is India's first specialised company focused upon the index as a
+core product. IISL maintains more than 100 equity indices comprising broad-based
+benchmark indices, sectoral indices and customised indices. IISL also maintains fixed
+income indices based on Government of India bonds. Many investment and risk
+management products based on IISL indices have been developed in the recent past,
+within India and abroad. These include index based derivatives traded on NSE,
+Singapore Exchange Ltd. (SGX), Chicago Mercantile Exchange Inc. (CME) and Osaka
+Exchange Inc. (OSE) and a number of index funds and exchange traded funds. The
+flagship 'Nifty 50' index is widely tracked and traded as the benchmark for Indian
+Capital Markets.
+
+
+
+
+                                                                                    4
+

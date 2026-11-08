@@ -1,0 +1,98 @@
+       IISL
+       INDIA INDEX SERVICES & PRODUCTS LIMITED
+
+                                PRESS RELEASE
+
+The Index Maintenance Sub-Committee has decided to make the following changes in the
+indices to be effective from February 2, 2015 (close of January 30, 2015) on account of
+proposed scheme of arrangements for amalgamation of ING Vysya Bank Ltd. with Kotak
+Mahindra Bank Ltd. and Gujarat Gas Company Ltd. with GSPC Distribution Networks Ltd.
+
+1. CNX Nifty Junior index:
+
+The following company is being excluded:
+ Sr. No.               Company Name                      Symbol
+    1      ING Vysya Bank Ltd.                        INGVYSYABK
+
+The following company is being included:
+ Sr. No.               Company Name                      Symbol
+    1      Eicher Motors Ltd.                         EICHERMOT
+
+2. CNX 100 index:
+
+The following company is being excluded:
+ Sr. No.               Company Name                      Symbol
+    1      ING Vysya Bank Ltd.                        INGVYSYABK
+
+The following company is being included:
+ Sr. No.               Company Name                      Symbol
+    1      Eicher Motors Ltd.                         EICHERMOT
+
+Note: The replacement in CNX 100 will also be applicable to CNX 100 Equal Weight
+Index.
+
+3. CNX 200 index:
+
+The following company is being excluded:
+ Sr. No.               Company Name                      Symbol
+    1      ING Vysya Bank Ltd.                        INGVYSYABK
+
+The following company is being included:
+ Sr. No.                Company Name                     Symbol
+    1      Bajaj Finserv Ltd.                         BAJAJFINSV
+4. CNX 500 index:
+
+The following companies are being excluded:
+ Sr. No.               Company Name                Symbol
+    1      Gujarat Gas Co. Ltd.                 GUJRATGAS
+    2      ING Vysya Bank Ltd.                  INGVYSYABK
+
+The following companies are being included:
+ Sr. No.               Company Name                Symbol
+    1      Dynamatic Technologies Ltd.          DYNAMATECH
+    2      MBL Infrastructures Ltd.             MBLINFRA
+
+5. CNX Midcap index:
+
+The following company is being excluded:
+ Sr. No.               Company Name                Symbol
+    1      ING Vysya Bank Ltd.                  INGVYSYABK
+
+The following company is being included:
+ Sr. No.               Company Name                Symbol
+    1      TVS Motor Company Ltd.               TVSMOTOR
+
+6. CNX Smallcap index:
+
+The following company is being excluded:
+ Sr. No.               Company Name                Symbol
+    1      Gujarat Gas Co. Ltd.                 GUJRATGAS
+
+The following company is being included:
+ Sr. No.               Company Name                Symbol
+    1      Ceat Ltd.                            CEATLTD
+
+7. CNX Alpha index:
+
+The following company is being excluded:
+ Sr. No.               Company Name                Symbol
+    1      Gujarat Gas Co. Ltd.                 GUJRATGAS
+
+The following company is being included:
+ Sr. No.                Company Name                  Symbol
+    1      IRB Infrastructure Developers Ltd.   IRB
+8. CNX Low Volatility index:
+
+The following company is being excluded:
+ Sr. No.               Company Name           Symbol
+    1      ING Vysya Bank Ltd.             INGVYSYABK
+
+The following company is being included:
+ Sr. No.               Company Name           Symbol
+    1      IndusInd Bank Ltd.              INDUSINDBK
+
+
+
+Place: Mumbai
+Date: January 21, 2015
+

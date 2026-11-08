@@ -1,0 +1,309 @@
+effective_date,action,symbol,reason,confidence,source,notice_date
+2014-03-28,remove,IDBI,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs27022014.pdf,2014-02-27
+2014-03-28,remove,MCDOWELL-N,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs27022014.pdf,2014-02-27
+2014-03-28,remove,TECHM,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs27022014.pdf,2014-02-27
+2014-03-28,add,INFRATEL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs27022014.pdf,2014-02-27
+2014-03-28,add,INGVYSYABK,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs27022014.pdf,2014-02-27
+2014-03-28,add,RANBAXY,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs27022014.pdf,2014-02-27
+2014-09-19,remove,MPHASIS,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs20082014.pdf,2014-08-20
+2014-09-19,remove,ZEEL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs20082014.pdf,2014-08-20
+2014-09-19,add,AUROPHARMA,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs20082014.pdf,2014-08-20
+2014-09-19,add,MOTHERSUMI,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs20082014.pdf,2014-08-20
+2014-11-28,remove,RANBAXY,ad hoc: Ranbaxy amalgamation with Sun Pharma,high,https://www.niftyindices.com/Press_Release/ind_prs18112014.pdf,2014-11-18
+2014-11-28,add,RELINFRA,ad hoc: Ranbaxy amalgamation with Sun Pharma,high,https://www.niftyindices.com/Press_Release/ind_prs18112014.pdf,2014-11-18
+2015-02-02,remove,INGVYSYABK,ad hoc: ING Vysya Bank amalgamation with Kotak Mahindra Bank,high,https://www.niftyindices.com/Press_Release/ind_prs21012015.pdf,2015-01-21
+2015-02-02,add,EICHERMOT,ad hoc: ING Vysya Bank amalgamation with Kotak Mahindra Bank,high,https://www.niftyindices.com/Press_Release/ind_prs21012015.pdf,2015-01-21
+2015-03-27,remove,IDEA,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs20022015.pdf,2015-02-20
+2015-03-27,remove,YESBANK,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs20022015.pdf,2015-02-20
+2015-03-27,add,IBULHSGFIN,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs20022015.pdf,2015-02-20
+2015-03-27,add,MCDOWELL-N,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs20022015.pdf,2015-02-20
+2015-05-29,remove,ADANIENT,ad hoc: Bosch to CNX Nifty in place of IDFC; Adani Enterprises replaced,high,https://www.niftyindices.com/Press_Release/ind_prs29042015.pdf,2015-04-29
+2015-05-29,remove,BOSCHLTD,ad hoc: Bosch to CNX Nifty in place of IDFC; Adani Enterprises replaced,high,https://www.niftyindices.com/Press_Release/ind_prs29042015.pdf,2015-04-29
+2015-05-29,add,BRITANNIA,ad hoc: Bosch to CNX Nifty in place of IDFC; Adani Enterprises replaced,high,https://www.niftyindices.com/Press_Release/ind_prs29042015.pdf,2015-04-29
+2015-05-29,add,MRF,ad hoc: Bosch to CNX Nifty in place of IDFC; Adani Enterprises replaced,high,https://www.niftyindices.com/Press_Release/ind_prs29042015.pdf,2015-04-29
+2015-09-28,remove,ADANIPORTS,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs12082015.pdf,2015-08-12
+2015-09-28,remove,CROMPGREAV,ad hoc: Crompton Greaves demerger (effective with the review date),high,https://www.niftyindices.com/Press_Release/ind_prs24082015.pdf,2015-08-24
+2015-09-28,remove,RPOWER,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs12082015.pdf,2015-08-12
+2015-09-28,remove,UNIONBANK,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs12082015.pdf,2015-08-12
+2015-09-28,add,ASHOKLEY,ad hoc: Crompton Greaves demerger (effective with the review date),high,https://www.niftyindices.com/Press_Release/ind_prs24082015.pdf,2015-08-24
+2015-09-28,add,MARICO,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs12082015.pdf,2015-08-12
+2015-09-28,add,NMDC,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs12082015.pdf,2015-08-12
+2015-09-28,add,SUNDARMFIN,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs12082015.pdf,2015-08-12
+2015-10-19,remove,ABIRLANUVO,ad hoc: Aditya Birla Nuvo demerger of the Madura undertaking,high,https://www.niftyindices.com/Press_Release/ind_prs18092015.pdf,2015-09-18
+2015-10-19,add,IOC,ad hoc: Aditya Birla Nuvo demerger of the Madura undertaking,high,https://www.niftyindices.com/Press_Release/ind_prs18092015.pdf,2015-09-18
+2016-04-01,remove,AUROPHARMA,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,remove,BAJAJHLDNG,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,remove,BANKINDIA,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,remove,CANBK,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,remove,EICHERMOT,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,remove,EXIDEIND,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,remove,FEDERALBNK,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,remove,INFRATEL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,remove,M&MFIN,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,remove,MRF,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,remove,PETRONET,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,remove,RELCAPITAL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,remove,RELINFRA,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,remove,SUNDARMFIN,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,remove,TATACHEM,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,remove,TATAGLOBAL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,add,ABB,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,add,BAJFINANCE,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,add,BEL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,add,CADILAHC,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,add,CAIRN,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,add,CASTROLIND,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,add,DLF,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,add,EMAMILTD,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,add,HINDZINC,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,add,NHPC,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,add,PGHH,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,add,PIDILITIND,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,add,PNB,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,add,SHREECEM,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,add,TORNTPHARM,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-04-01,add,VEDL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22022016_2.pdf,2016-02-22
+2016-09-30,remove,RCOM,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs12082016.pdf,2016-08-12
+2016-09-30,remove,RECLTD,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs12082016.pdf,2016-08-12
+2016-09-30,add,INDIGO,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs12082016.pdf,2016-08-12
+2016-09-30,add,PEL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs12082016.pdf,2016-08-12
+2016-11-15,remove,CAIRN,ad hoc: Cairn India amalgamation into Vedanta,high,https://www.niftyindices.com/Press_Release/ind_prs17102016.pdf,2016-10-17
+2016-11-15,add,HAVELLS,ad hoc: Cairn India amalgamation into Vedanta,high,https://www.niftyindices.com/Press_Release/ind_prs17102016.pdf,2016-10-17
+2017-03-31,remove,APOLLOHOSP,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs16022017.pdf,2017-02-16
+2017-03-31,remove,BHARATFORG,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs16022017.pdf,2017-02-16
+2017-03-31,remove,CASTROLIND,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs16022017.pdf,2017-02-16
+2017-03-31,remove,IBULHSGFIN,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs16022017.pdf,2017-02-16
+2017-03-31,remove,IOC,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs16022017.pdf,2017-02-16
+2017-03-31,add,BHEL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs16022017.pdf,2017-02-16
+2017-03-31,add,ICICIPRULI,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs16022017.pdf,2017-02-16
+2017-03-31,add,IDEA,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs16022017.pdf,2017-02-16
+2017-03-31,add,PETRONET,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs16022017.pdf,2017-02-16
+2017-03-31,add,RECLTD,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs16022017.pdf,2017-02-16
+2017-05-26,remove,VEDL,ad hoc: Aditya Birla Nuvo merger with Grasim; Vedanta to Nifty 50,high,https://www.niftyindices.com/Press_Release/ind_prs27042017.pdf,2017-04-27
+2017-05-26,add,SUNTV,ad hoc: Aditya Birla Nuvo merger with Grasim; Vedanta to Nifty 50,high,https://www.niftyindices.com/Press_Release/ind_prs27042017.pdf,2017-04-27
+2017-09-29,remove,BAJFINANCE,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082017.pdf,2017-08-28
+2017-09-29,remove,DIVISLAB,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082017.pdf,2017-08-28
+2017-09-29,remove,HINDPETRO,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082017.pdf,2017-08-28
+2017-09-29,remove,UBL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082017.pdf,2017-08-28
+2017-09-29,remove,UPL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082017.pdf,2017-08-28
+2017-09-29,add,ACC,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082017.pdf,2017-08-28
+2017-09-29,add,BANKBARODA,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082017.pdf,2017-08-28
+2017-09-29,add,DMART,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082017.pdf,2017-08-28
+2017-09-29,add,MRF,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082017.pdf,2017-08-28
+2017-09-29,add,TATAPOWER,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082017.pdf,2017-08-28
+2018-04-02,remove,BAJAJFINSV,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022018.pdf,2018-02-21
+2018-04-02,remove,GLAXO,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022018.pdf,2018-02-21
+2018-04-02,remove,GLENMARK,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022018.pdf,2018-02-21
+2018-04-02,remove,GSKCONS,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022018.pdf,2018-02-21
+2018-04-02,remove,TATAPOWER,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022018.pdf,2018-02-21
+2018-04-02,remove,TITAN,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022018.pdf,2018-02-21
+2018-04-02,remove,TORNTPHARM,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022018.pdf,2018-02-21
+2018-04-02,add,ABCAPITAL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022018.pdf,2018-02-21
+2018-04-02,add,AMBUJACEM,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022018.pdf,2018-02-21
+2018-04-02,add,AUROPHARMA,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022018.pdf,2018-02-21
+2018-04-02,add,BOSCHLTD,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022018.pdf,2018-02-21
+2018-04-02,add,GICRE,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022018.pdf,2018-02-21
+2018-04-02,add,L&TFH,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022018.pdf,2018-02-21
+2018-04-02,add,SBILIFE,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022018.pdf,2018-02-21
+2018-09-28,remove,CUMMINSIND,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082018.pdf,2018-08-28
+2018-09-28,remove,EMAMILTD,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082018.pdf,2018-08-28
+2018-09-28,remove,JSWSTEEL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082018.pdf,2018-08-28
+2018-09-28,remove,PFC,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082018.pdf,2018-08-28
+2018-09-28,remove,PNB,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082018.pdf,2018-08-28
+2018-09-28,remove,RECLTD,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082018.pdf,2018-08-28
+2018-09-28,add,BANDHANBNK,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082018.pdf,2018-08-28
+2018-09-28,add,BIOCON,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082018.pdf,2018-08-28
+2018-09-28,add,HDFCLIFE,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082018.pdf,2018-08-28
+2018-09-28,add,ICICIGI,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082018.pdf,2018-08-28
+2018-09-28,add,LUPIN,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082018.pdf,2018-08-28
+2018-09-28,add,NIACL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082018.pdf,2018-08-28
+2019-03-29,remove,ABCAPITAL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs25022019.pdf,2019-02-25
+2019-03-29,remove,BEL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs25022019.pdf,2019-02-25
+2019-03-29,remove,BRITANNIA,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs25022019.pdf,2019-02-25
+2019-03-29,remove,LICHSGFIN,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs25022019.pdf,2019-02-25
+2019-03-29,remove,OIL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs25022019.pdf,2019-02-25
+2019-03-29,remove,SUNTV,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs25022019.pdf,2019-02-25
+2019-03-29,add,BAJAJHLDNG,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs25022019.pdf,2019-02-25
+2019-03-29,add,DIVISLAB,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs25022019.pdf,2019-02-25
+2019-03-29,add,HDFCAMC,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs25022019.pdf,2019-02-25
+2019-03-29,add,HINDPETRO,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs25022019.pdf,2019-02-25
+2019-03-29,add,PAGEIND,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs25022019.pdf,2019-02-25
+2019-03-29,add,UBL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs25022019.pdf,2019-02-25
+2019-09-27,remove,ABB,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082019.pdf,2019-08-28
+2019-09-27,remove,BHEL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082019.pdf,2019-08-28
+2019-09-27,remove,MRF,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082019.pdf,2019-08-28
+2019-09-27,remove,SAIL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082019.pdf,2019-08-28
+2019-09-27,add,BERGEPAINT,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082019.pdf,2019-08-28
+2019-09-27,add,IBULHSGFIN,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082019.pdf,2019-08-28
+2019-09-27,add,PFC,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082019.pdf,2019-08-28
+2019-09-27,add,PNB,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28082019.pdf,2019-08-28
+2020-03-19,remove,SHREECEM,ad hoc: Yes Bank removal brought forward; Shree Cement to Nifty 50,high,https://www.niftyindices.com/Press_Release/ind_prs16032020.pdf,2020-03-16
+2020-03-19,add,ADANITRANS,ad hoc: Yes Bank removal brought forward; Shree Cement to Nifty 50,high,https://www.niftyindices.com/Press_Release/ind_prs16032020.pdf,2020-03-16
+2020-06-26,remove,ASHOKLEY,"semi-annual review (March 2020 review deferred, COVID-19)",high,https://www.niftyindices.com/Press_Release/ind_prs10062020.pdf,2020-06-10
+2020-06-26,remove,IBULHSGFIN,"semi-annual review (March 2020 review deferred, COVID-19)",high,https://www.niftyindices.com/Press_Release/ind_prs10062020.pdf,2020-06-10
+2020-06-26,remove,IDEA,"semi-annual review (March 2020 review deferred, COVID-19)",high,https://www.niftyindices.com/Press_Release/ind_prs10062020.pdf,2020-06-10
+2020-06-26,remove,L&TFH,"semi-annual review (March 2020 review deferred, COVID-19)",high,https://www.niftyindices.com/Press_Release/ind_prs10062020.pdf,2020-06-10
+2020-06-26,remove,NIACL,"semi-annual review (March 2020 review deferred, COVID-19)",high,https://www.niftyindices.com/Press_Release/ind_prs10062020.pdf,2020-06-10
+2020-06-26,add,ABBOTINDIA,"semi-annual review (March 2020 review deferred, COVID-19)",high,https://www.niftyindices.com/Press_Release/ind_prs10062020.pdf,2020-06-10
+2020-06-26,add,IGL,"semi-annual review (March 2020 review deferred, COVID-19)",high,https://www.niftyindices.com/Press_Release/ind_prs10062020.pdf,2020-06-10
+2020-06-26,add,MUTHOOTFIN,"semi-annual review (March 2020 review deferred, COVID-19)",high,https://www.niftyindices.com/Press_Release/ind_prs10062020.pdf,2020-06-10
+2020-06-26,add,NAUKRI,"semi-annual review (March 2020 review deferred, COVID-19)",high,https://www.niftyindices.com/Press_Release/ind_prs10062020.pdf,2020-06-10
+2020-06-26,add,TORNTPHARM,"semi-annual review (March 2020 review deferred, COVID-19)",high,https://www.niftyindices.com/Press_Release/ind_prs10062020.pdf,2020-06-10
+2020-07-31,remove,HDFCLIFE,ad hoc: Vedanta proposed delisting; HDFC Life to Nifty 50,high,https://www.niftyindices.com/Press_Release/ind_prs02072020_1.pdf,2020-07-02
+2020-07-31,add,SBICARD,ad hoc: Vedanta proposed delisting; HDFC Life to Nifty 50,high,https://www.niftyindices.com/Press_Release/ind_prs02072020_1.pdf,2020-07-02
+2020-09-25,remove,DIVISLAB,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs20082020.pdf,2020-08-20
+2020-09-25,remove,NHPC,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs20082020.pdf,2020-08-20
+2020-09-25,remove,PAGEIND,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs20082020.pdf,2020-08-20
+2020-09-25,remove,SBILIFE,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs20082020.pdf,2020-08-20
+2020-09-25,remove,SRTRANSFIN,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs20082020.pdf,2020-08-20
+2020-09-25,add,ADANIGREEN,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs20082020.pdf,2020-08-20
+2020-09-25,add,ALKEM,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs20082020.pdf,2020-08-20
+2020-09-25,add,INFRATEL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs20082020.pdf,2020-08-20
+2020-09-25,add,LTI,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs20082020.pdf,2020-08-20
+2020-09-25,add,TATACONSUM,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs20082020.pdf,2020-08-20
+2021-03-31,remove,BANKBARODA,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022021.pdf,2021-02-23
+2021-03-31,remove,CONCOR,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022021.pdf,2021-02-23
+2021-03-31,remove,GICRE,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022021.pdf,2021-02-23
+2021-03-31,remove,HINDZINC,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022021.pdf,2021-02-23
+2021-03-31,remove,OFSS,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022021.pdf,2021-02-23
+2021-03-31,remove,PFC,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022021.pdf,2021-02-23
+2021-03-31,remove,TATACONSUM,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022021.pdf,2021-02-23
+2021-03-31,add,ADANIENT,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022021.pdf,2021-02-23
+2021-03-31,add,APOLLOHOSP,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022021.pdf,2021-02-23
+2021-03-31,add,GAIL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022021.pdf,2021-02-23
+2021-03-31,add,JUBLFOOD,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022021.pdf,2021-02-23
+2021-03-31,add,MRF,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022021.pdf,2021-02-23
+2021-03-31,add,VEDL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022021.pdf,2021-02-23
+2021-03-31,add,YESBANK,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022021.pdf,2021-02-23
+2021-06-30,remove,MOTHERSUMI,ad hoc: Motherson Sumi demerger of the domestic wiring harness business,high,https://www.niftyindices.com/Press_Release/ind_prs15062021.pdf,2021-06-15
+2021-06-30,add,GLAND,ad hoc: Motherson Sumi demerger of the domestic wiring harness business,high,https://www.niftyindices.com/Press_Release/ind_prs15062021.pdf,2021-06-15
+2021-09-30,remove,ABBOTINDIA,semi-annual review (image-only notice; rows read from the rendered pages),high,https://www.niftyindices.com/Press_Release/ind_prs23082021.pdf,2021-08-23
+2021-09-30,remove,ALKEM,semi-annual review (image-only notice; rows read from the rendered pages),high,https://www.niftyindices.com/Press_Release/ind_prs23082021.pdf,2021-08-23
+2021-09-30,remove,MRF,semi-annual review (image-only notice; rows read from the rendered pages),high,https://www.niftyindices.com/Press_Release/ind_prs23082021.pdf,2021-08-23
+2021-09-30,remove,PETRONET,semi-annual review (image-only notice; rows read from the rendered pages),high,https://www.niftyindices.com/Press_Release/ind_prs23082021.pdf,2021-08-23
+2021-09-30,remove,UBL,semi-annual review (image-only notice; rows read from the rendered pages),high,https://www.niftyindices.com/Press_Release/ind_prs23082021.pdf,2021-08-23
+2021-09-30,add,BANKBARODA,semi-annual review (image-only notice; rows read from the rendered pages),high,https://www.niftyindices.com/Press_Release/ind_prs23082021.pdf,2021-08-23
+2021-09-30,add,CHOLAFIN,semi-annual review (image-only notice; rows read from the rendered pages),high,https://www.niftyindices.com/Press_Release/ind_prs23082021.pdf,2021-08-23
+2021-09-30,add,JINDALSTEL,semi-annual review (image-only notice; rows read from the rendered pages),high,https://www.niftyindices.com/Press_Release/ind_prs23082021.pdf,2021-08-23
+2021-09-30,add,PIIND,semi-annual review (image-only notice; rows read from the rendered pages),high,https://www.niftyindices.com/Press_Release/ind_prs23082021.pdf,2021-08-23
+2021-09-30,add,SAIL,semi-annual review (image-only notice; rows read from the rendered pages),high,https://www.niftyindices.com/Press_Release/ind_prs23082021.pdf,2021-08-23
+2022-03-31,remove,APOLLOHOSP,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs24022022_1.pdf,2022-02-24
+2022-03-31,remove,AUROPHARMA,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs24022022_1.pdf,2022-02-24
+2022-03-31,remove,HINDPETRO,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs24022022_1.pdf,2022-02-24
+2022-03-31,remove,IGL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs24022022_1.pdf,2022-02-24
+2022-03-31,remove,JINDALSTEL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs24022022_1.pdf,2022-02-24
+2022-03-31,remove,YESBANK,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs24022022_1.pdf,2022-02-24
+2022-03-31,add,IOC,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs24022022_1.pdf,2022-02-24
+2022-03-31,add,MINDTREE,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs24022022_1.pdf,2022-02-24
+2022-03-31,add,NYKAA,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs24022022_1.pdf,2022-02-24
+2022-03-31,add,PAYTM,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs24022022_1.pdf,2022-02-24
+2022-03-31,add,SRF,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs24022022_1.pdf,2022-02-24
+2022-03-31,add,ZOMATO,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs24022022_1.pdf,2022-02-24
+2022-08-08,remove,NMDC,ad hoc: NMDC and Piramal Enterprises demergers,high,https://www.niftyindices.com/Press_Release/ind_prs11072022.pdf,2022-07-11
+2022-08-08,remove,PEL,ad hoc: NMDC and Piramal Enterprises demergers,high,https://www.niftyindices.com/Press_Release/ind_prs11072022.pdf,2022-07-11
+2022-08-08,add,LICI,ad hoc: NMDC and Piramal Enterprises demergers,high,https://www.niftyindices.com/Press_Release/ind_prs11072022.pdf,2022-07-11
+2022-08-08,add,TATAPOWER,ad hoc: NMDC and Piramal Enterprises demergers,high,https://www.niftyindices.com/Press_Release/ind_prs11072022.pdf,2022-07-11
+2022-09-30,remove,ADANIENT,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs01092022.pdf,2022-09-01
+2022-09-30,remove,JUBLFOOD,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs01092022.pdf,2022-09-01
+2022-09-30,remove,LUPIN,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs01092022.pdf,2022-09-01
+2022-09-30,remove,MINDTREE,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs01092022.pdf,2022-09-01
+2022-09-30,remove,PNB,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs01092022.pdf,2022-09-01
+2022-09-30,remove,SAIL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs01092022.pdf,2022-09-01
+2022-09-30,remove,ZYDUSLIFE,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs01092022.pdf,2022-09-01
+2022-09-30,add,ATGL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs01092022.pdf,2022-09-01
+2022-09-30,add,BEL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs01092022.pdf,2022-09-01
+2022-09-30,add,HAL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs01092022.pdf,2022-09-01
+2022-09-30,add,IRCTC,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs01092022.pdf,2022-09-01
+2022-09-30,add,MOTHERSON,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs01092022.pdf,2022-09-01
+2022-09-30,add,MPHASIS,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs01092022.pdf,2022-09-01
+2022-09-30,add,SHREECEM,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs01092022.pdf,2022-09-01
+2023-03-31,remove,BANDHANBNK,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs17022023_1.pdf,2023-02-17
+2023-03-31,remove,BIOCON,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs17022023_1.pdf,2023-02-17
+2023-03-31,remove,GLAND,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs17022023_1.pdf,2023-02-17
+2023-03-31,remove,MPHASIS,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs17022023_1.pdf,2023-02-17
+2023-03-31,remove,PAYTM,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs17022023_1.pdf,2023-02-17
+2023-03-31,add,ABB,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs17022023_1.pdf,2023-02-17
+2023-03-31,add,AWL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs17022023_1.pdf,2023-02-17
+2023-03-31,add,CANBK,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs17022023_1.pdf,2023-02-17
+2023-03-31,add,PAGEIND,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs17022023_1.pdf,2023-02-17
+2023-03-31,add,VBL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs17022023_1.pdf,2023-02-17
+2023-07-13,remove,LTIM,ad hoc: HDFC amalgamation with HDFC Bank; LTIMindtree to Nifty 50,high,https://www.niftyindices.com/Press_Release/ind_prs04072023.pdf,2023-07-04
+2023-07-13,add,JINDALSTEL,ad hoc: HDFC amalgamation with HDFC Bank; LTIMindtree to Nifty 50,high,https://www.niftyindices.com/Press_Release/ind_prs04072023.pdf,2023-07-04
+2023-09-29,remove,ACC,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs17082023.pdf,2023-08-17
+2023-09-29,remove,HDFCAMC,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs17082023.pdf,2023-08-17
+2023-09-29,remove,INDUSTOWER,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs17082023.pdf,2023-08-17
+2023-09-29,remove,NYKAA,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs17082023.pdf,2023-08-17
+2023-09-29,remove,PAGEIND,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs17082023.pdf,2023-08-17
+2023-09-29,add,PNB,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs17082023.pdf,2023-08-17
+2023-09-29,add,SHRIRAMFIN,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs17082023.pdf,2023-08-17
+2023-09-29,add,TRENT,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs17082023.pdf,2023-08-17
+2023-09-29,add,TVSMOTOR,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs17082023.pdf,2023-08-17
+2023-09-29,add,ZYDUSLIFE,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs17082023.pdf,2023-08-17
+2024-03-28,remove,AWL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28022024.pdf,2024-02-28
+2024-03-28,remove,MUTHOOTFIN,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28022024.pdf,2024-02-28
+2024-03-28,remove,PGHH,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28022024.pdf,2024-02-28
+2024-03-28,remove,PIIND,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28022024.pdf,2024-02-28
+2024-03-28,remove,SHRIRAMFIN,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28022024.pdf,2024-02-28
+2024-03-28,add,ADANIPOWER,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28022024.pdf,2024-02-28
+2024-03-28,add,IRFC,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28022024.pdf,2024-02-28
+2024-03-28,add,JIOFIN,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28022024.pdf,2024-02-28
+2024-03-28,add,PFC,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28022024.pdf,2024-02-28
+2024-03-28,add,RECLTD,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs28022024.pdf,2024-02-28
+2024-09-30,remove,BEL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23082024.pdf,2024-08-23
+2024-09-30,remove,BERGEPAINT,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23082024.pdf,2024-08-23
+2024-09-30,remove,COLPAL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23082024.pdf,2024-08-23
+2024-09-30,remove,MARICO,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23082024.pdf,2024-08-23
+2024-09-30,remove,SBICARD,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23082024.pdf,2024-08-23
+2024-09-30,remove,SRF,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23082024.pdf,2024-08-23
+2024-09-30,remove,TRENT,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23082024.pdf,2024-08-23
+2024-09-30,add,BHEL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23082024.pdf,2024-08-23
+2024-09-30,add,DIVISLAB,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23082024.pdf,2024-08-23
+2024-09-30,add,JSWENERGY,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23082024.pdf,2024-08-23
+2024-09-30,add,LODHA,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23082024.pdf,2024-08-23
+2024-09-30,add,LTIM,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23082024.pdf,2024-08-23
+2024-09-30,add,NHPC,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23082024.pdf,2024-08-23
+2024-09-30,add,UNIONBANK,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23082024.pdf,2024-08-23
+2025-03-28,remove,ATGL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022025.pdf,2025-02-21
+2025-03-28,remove,BHEL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022025.pdf,2025-02-21
+2025-03-28,remove,IRCTC,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022025.pdf,2025-02-21
+2025-03-28,remove,JIOFIN,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022025.pdf,2025-02-21
+2025-03-28,remove,NHPC,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022025.pdf,2025-02-21
+2025-03-28,remove,UNIONBANK,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022025.pdf,2025-02-21
+2025-03-28,remove,ZOMATO,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022025.pdf,2025-02-21
+2025-03-28,add,BAJAJHFL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022025.pdf,2025-02-21
+2025-03-28,add,BPCL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022025.pdf,2025-02-21
+2025-03-28,add,BRITANNIA,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022025.pdf,2025-02-21
+2025-03-28,add,CGPOWER,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022025.pdf,2025-02-21
+2025-03-28,add,HYUNDAI,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022025.pdf,2025-02-21
+2025-03-28,add,INDHOTEL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022025.pdf,2025-02-21
+2025-03-28,add,SWIGGY,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs21022025.pdf,2025-02-21
+2025-09-30,remove,DABUR,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22082025.pdf,2025-08-22
+2025-09-30,remove,ICICIPRULI,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22082025.pdf,2025-08-22
+2025-09-30,remove,INDIGO,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22082025.pdf,2025-08-22
+2025-09-30,remove,SWIGGY,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22082025.pdf,2025-08-22
+2025-09-30,add,ENRIN,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22082025.pdf,2025-08-22
+2025-09-30,add,HINDZINC,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22082025.pdf,2025-08-22
+2025-09-30,add,MAZDOCK,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22082025.pdf,2025-08-22
+2025-09-30,add,SOLARINDS,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs22082025.pdf,2025-08-22
+2026-03-30,remove,BAJAJHFL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022026.pdf,2026-02-23
+2026-03-30,remove,HAVELLS,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022026.pdf,2026-02-23
+2026-03-30,remove,ICICIGI,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022026.pdf,2026-02-23
+2026-03-30,remove,JSWENERGY,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022026.pdf,2026-02-23
+2026-03-30,remove,LICI,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022026.pdf,2026-02-23
+2026-03-30,remove,NAUKRI,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022026.pdf,2026-02-23
+2026-03-30,add,CUMMINSIND,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022026.pdf,2026-02-23
+2026-03-30,add,HDFCAMC,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022026.pdf,2026-02-23
+2026-03-30,add,MUTHOOTFIN,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022026.pdf,2026-02-23
+2026-03-30,add,TATACAP,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022026.pdf,2026-02-23
+2026-03-30,add,TMCV,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022026.pdf,2026-02-23
+2026-03-30,add,UNIONBANK,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs23022026.pdf,2026-02-23
+2026-09-30,remove,INDHOTEL,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs10082026.pdf,2026-08-10
+2026-09-30,remove,LODHA,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs10082026.pdf,2026-08-10
+2026-09-30,remove,RECLTD,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs10082026.pdf,2026-08-10
+2026-09-30,remove,SHREECEM,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs10082026.pdf,2026-08-10
+2026-09-30,remove,UNITDSPR,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs10082026.pdf,2026-08-10
+2026-09-30,add,IDEA,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs10082026.pdf,2026-08-10
+2026-09-30,add,POLYCAB,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs10082026.pdf,2026-08-10
+2026-09-30,add,POWERINDIA,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs10082026.pdf,2026-08-10
+2026-09-30,add,VAML,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs10082026.pdf,2026-08-10
+2026-09-30,add,WIPRO,semi-annual review,high,https://www.niftyindices.com/Press_Release/ind_prs10082026.pdf,2026-08-10

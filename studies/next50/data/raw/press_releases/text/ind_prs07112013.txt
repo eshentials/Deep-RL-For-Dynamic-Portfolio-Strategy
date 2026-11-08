@@ -1,0 +1,65 @@
+       IISL
+       INDIA INDEX SERVICES & PRODUCTS LIMITED
+
+
+                                  PRESS RELEASE
+
+The Index Maintenance Sub-Committee has decided to make the following changes in
+various indices to be effective from November 15, 2013 on account of:
+
+1) Proposed voluntary delisting of Fresenius Kabi Oncology Limited; and
+2) Proposed scheme of arrangement for demerger of Welspun Corp Limited
+
+1) CNX 200 Index
+
+The following company is being excluded:
+
+ Sr. No.                 Company Name                          Symbol
+    1      Welspun Corp Limited                            WELCORP
+
+The following company is being included:
+
+ Sr. No.                  Company Name                          Symbol
+    1      Indiabulls Housing Finance Limited              IBULHSGFIN
+
+2) CNX 500 Index
+
+The following companies are being excluded:
+
+ Sr. No.                  Company Name                         Symbol
+    1      Fresenius Kabi Oncology Limited                 FKONCO
+    2      Welspun Corp Limited                            WELCORP
+
+The following companies are being included:
+
+ Sr. No.                   Company Name                          Symbol
+    1      Future Retail Limited                           FRL
+    2      Raj Television Network Limited                  RAJTV
+
+3) CNX Smallcap Index
+
+The following company is being excluded:
+
+ Sr. No.                 Company Name                          Symbol
+    1      Welspun Corp Limited                            WELCORP
+The following company is being included:
+
+ Sr. No.                   Company Name          Symbol
+    1      Future Retail Limited           FRL
+
+4) CNX Metal Index
+
+The following company is being excluded:
+
+ Sr. No.                 Company Name          Symbol
+    1      Welspun Corp Limited            WELCORP
+
+The following company is being included:
+
+ Sr. No.                 Company Name           Symbol
+    1      Hindustan Copper Limited        HINDCOPPER
+
+
+Place: Mumbai
+Date: November 07, 2013
+

@@ -1,0 +1,67 @@
+       IISL
+       INDIA INDEX SERVICES & PRODUCTS LIMITED
+
+                                 PRESS RELEASE
+
+The Index Maintenance Sub-Committee has decided to make the following changes in
+CNX Alpha, CNX High Beta and CNX Low Volatility indices as part of the quarterly
+review. The changes shall become effective from October 14, 2014 (close of October 13,
+2014).
+
+(1)    CNX Alpha Index
+
+The following companies are being excluded:
+
+  Sr. No.   Company Name                                 Symbol
+    1       Biocon Ltd.                                  BIOCON
+    2       Delta Corp Ltd.                              DELTACORP
+    3       Ess Dee Aluminium Ltd.                       ESSDEE
+    4       GVK Power & Infrastructures Ltd.             GVKPIL
+    5       Hexaware Technologies Ltd.                   HEXAWARE
+    6       Ipca Laboratories Ltd.                       IPCALAB
+    7       KPIT Technologies Ltd.                       KPIT
+    8       Tata Consultancy Services Ltd.               TCS
+
+The following companies are being included:
+
+  Sr. No.   Company Name                                 Symbol
+    1       Atul Ltd.                                    ATUL
+    2       BEML Ltd.                                    BEML
+    3       CARE Ltd.                                    CARERATING
+    4       Cox & Kings Ltd.                             COX&KINGS
+    5       Finolex Cables Ltd.                          FINCABLES
+    6       Himachal Futurastic Com Ltd.                 HFCL
+    7       JK Lakshmi Cement Ltd.                       JKLAKSHMI
+    8       Sintex Industries Ltd.                       SINTEX
+
+
+(2)    CNX High Beta Index
+
+The following company is being excluded:
+
+  Sr. No. Company Name                                   Symbol
+    1     Future Retail Ltd.                             FRL
+The following company is being included:
+
+  Sr. No. Company Name                        Symbol
+    1     Hindustan Construction Co. Ltd.     HCC
+
+
+(3)    CNX Low Volatility Index
+
+The following companies are being excluded:
+
+  Sr. No. Company Name                        Symbol
+    1     Bharat Electronics Ltd.             BEL
+    2     Godrej Consumer Products Ltd.       GODREJCP
+
+The following companies are being included:
+
+  Sr. No. Company Name                        Symbol
+    1     Tech Mahindra Ltd.                  TECHM
+    2     Wipro Ltd.                          WIPRO
+
+
+Place: Mumbai
+Date: October 8, 2014
+

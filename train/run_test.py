@@ -22,11 +22,11 @@ import numpy as np
 import pandas as pd
 
 from baselines import rules
-from baselines.select import select_best_fixed, select_vol_target
-from config import ROOT, load
+from baselines.select import select_best_fixed, select_vix_rule, select_vol_target
+from config import ROOT, describe, load, protocol_tag, study_root
 from env.build import equal_weights
 from env.engine import run
-from train.common import Ensemble, FoldSwitch, PPOPolicy, folds, protocol_gate, run_tag
+from train.common import RUNS, Ensemble, FoldSwitch, PPOPolicy, folds, protocol_gate, run_tag
 
 
 def load_models(run_dir: Path, fold_years, seeds):
@@ -72,26 +72,37 @@ def evaluate(data, fold_list, models, seeds, start, end, year_map, bench_tr):
         selections[fy] = {"vol_target_floored": select_vol_target(data, f, bl["vol_target"]["floor"]),
                           "vol_target_unfloored": select_vol_target(data, f, 0.0),
                           "best_fixed": select_best_fixed(data, f)}
+        if "vix_rule" in bl:  # protocol v2: registered comparator for H2
+            selections[fy]["vix_rule"] = select_vix_rule(data, f)
 
     def vt(kind):
         return lambda f: rules.vol_target(data, **_vt_kwargs(selections[f.test_year][kind]["params"]))
     add("vol_target_floored", per_year_policy(vt("vol_target_floored")), cost_bps=cost)
     add("vol_target_unfloored", per_year_policy(vt("vol_target_unfloored")), cost_bps=cost)
+    def vix(f):
+        return rules.vix_threshold(data, **selections[f.test_year]["vix_rule"]["params"])
+    if "vix_rule" in bl:
+        add("vix_rule", per_year_policy(vix), cost_bps=cost)
     add("best_fixed", per_year_policy(
         lambda f: rules.fixed(**_fx(selections[f.test_year]["best_fixed"]["params"]))), cost_bps=cost)
     for e in bl["fixed_exposures"]:
         add(f"rp_fixed_{e:g}", rules.fixed(e, bl["fixed_exposure_horizon"]), cost_bps=cost)
     add("equal_weight", rules.month_end_horizon(data), cost_bps=cost, weights=equal_weights(data.eligible))
-    strategies["niftybees"] = rules.benchmark_buy_and_hold(bench_tr, data, start, end, cost)
-    extras["niftybees"] = {"costs": cost / 1e4, "turnover": 1.0, "avg_exposure": 1.0}
+    bk = cfg["data"].get("benchmark_key", "niftybees")
+    strategies[bk] = rules.benchmark_buy_and_hold(bench_tr, data, start, end, cost)
+    extras[bk] = {"costs": cost / 1e4, "turnover": 1.0, "avg_exposure": 1.0}
     for k in range(bl["random_policy"]["n_seeds"]):
         add(f"random_{k}", rules.random_policy(pf["exposure_grid"], pf["horizon_grid"], seed=k), cost_bps=cost)
 
     # Pre-registered sensitivities.
     add("ppo_ensemble_lag1", per_year_policy(ens), cost_bps=cost, lag=1)
     add("vol_target_floored_lag1", per_year_policy(vt("vol_target_floored")), cost_bps=cost, lag=1)
+    if "vix_rule" in bl:
+        add("vix_rule_lag1", per_year_policy(vix), cost_bps=cost, lag=1)
     add("ppo_ensemble_cost20", per_year_policy(ens), cost_bps=20)
     add("vol_target_floored_cost20", per_year_policy(vt("vol_target_floored")), cost_bps=20)
+    if "vix_rule" in bl:
+        add("vix_rule_cost20", per_year_policy(vix), cost_bps=20)
     add("equal_weight_cost20", rules.month_end_horizon(data), cost_bps=20, weights=equal_weights(data.eligible))
     n_delist = int(data.delist_mask[start:end + 1].sum())
     extras["_delisting_haircut"] = {"applicable": n_delist > 0, "delisting_exits_on_path": n_delist}
@@ -129,7 +140,8 @@ def main(argv=None):
     cfg = load()
     from data.panel import load_engine
     data = load_engine()
-    bench = pd.read_parquet(ROOT / "data" / "processed" / "market.parquet")["bench_tr"]
+    bench = pd.read_parquet(study_root() / "data" / "processed" / "market.parquet")["bench_tr"]
+    print(f"protocol {describe()}")
     seeds = cfg["training"]["seeds"]
 
     if a.protocol:
@@ -138,18 +150,19 @@ def main(argv=None):
             sys.exit("refusing the test run:\n  - " + "\n  - ".join(problems))
         years = cfg["folds"]["test_years"]
         fl = folds(data, years)
-        models = load_models(ROOT / "runs" / "protocol", years, seeds)
+        models = load_models(RUNS / "protocol", years, seeds)
         start = data.last_session_before(min(years))
         end = data.last_session_of(max(years))
         year_map = {y: y for y in years}
-        out = ROOT / "results"
+        out = study_root() / "results"
         # Record the attempt before any test-year score exists, so a crash and rerun
         # cannot go unrecorded (the gate then needs this row committed to rerun).
         from train import ledger
-        ledger.append("test_run", "protocol-v1 test run: PPO ensemble, seeds and all baselines on 2019..freeze",
+        what = "" if cfg["version"] == 1 else f" ({cfg['data']['universe']})"
+        ledger.append("test_run", f"{protocol_tag()} test run{what}: PPO ensemble, seeds and all baselines on 2019..freeze",
                       folds=" ".join(map(str, years)), seeds=" ".join(map(str, seeds)),
                       touched_test=True, counts_as_trial=False,
-                      notes=f"results/; {run_tag()}; logged at start, before evaluation")
+                      notes=f"{out.relative_to(ROOT)}/; {run_tag()}; logged at start, before evaluation")
     else:
         run_dir = ROOT / a.dev_dry_run
         fl = folds(data, [2019])

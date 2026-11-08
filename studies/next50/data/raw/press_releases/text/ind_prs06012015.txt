@@ -1,0 +1,74 @@
+       IISL
+       INDIA INDEX SERVICES & PRODUCTS LIMITED
+
+                                  PRESS RELEASE
+
+The Index Maintenance Sub-Committee has decided to make the following changes in
+CNX Alpha, CNX High Beta and CNX Low Volatility indices as part of the quarterly
+review. The changes shall become effective from January 12, 2015 (close of January 9,
+2015).
+
+(1)    CNX Alpha Index
+
+The following companies are being excluded:
+
+  Sr. No.   Company Name                                Symbol
+    1       Aban Offshore Ltd.                          ABAN
+    2       CESC Ltd.                                   CESC
+    3       Cyient Ltd.                                 CYIENT
+    4       eClerx Services Ltd.                        ECLERX
+    5       Escorts Ltd.                                ESCORTS
+    6       HCL Technologies Ltd.                       HCLTECH
+    7       Justdial Ltd.                               JUSTDIAL
+    8       NATCO Pharma Ltd.                           NATCOPHARM
+    9       Suzlon Energy Ltd.                          SUZLON
+   10       Tata Communications Ltd.                    TATACOMM
+
+The following companies are being included:
+
+  Sr. No.   Company Name                                Symbol
+    1       Ashok Leyland Ltd.                          ASHOKLEY
+    2       Bharat Electronics Ltd.                     BEL
+    3       Ceat Ltd.                                   CEATLTD
+    4       Gateway Distriparks Ltd.                    GDL
+    5       Gruh Finance Ltd.                           GRUH
+    6       Monsanto India Ltd.                         MONSANTO
+    7       Strides Arcolab Ltd.                        STAR
+    8       Torrent Pharmaceuticals Ltd.                TORNTPHARM
+    9       Whirlpool of India Ltd.                     WHIRLPOOL
+   10       Wockhardt Ltd.                              WOCKPHARMA
+(2)    CNX High Beta Index
+
+The following companies are being excluded:
+
+  Sr. No.   Company Name                         Symbol
+    1       Dena Bank                            DENABANK
+    2       Hindustan Construction Co. Ltd.      HCC
+    3       Jaiprakash Power Ventures Ltd.       JPPOWER
+    4       Jaypee Infratech Ltd.                JPINFRATEC
+    5       TV18 Broadcast Ltd.                  TV18BRDCST
+
+The following companies are being included:
+
+  Sr. No.   Company Name                         Symbol
+    1       Andhra Bank                          ANDHRABANK
+    2       Crompton Greaves Ltd.                CROMPGREAV
+    3       India Cements Ltd.                   INDIACEM
+    4       Jain Irrigation Systems Ltd.         JISLJALEQS
+    5       Voltas Ltd.                          VOLTAS
+
+(3)    CNX Low Volatility Index
+
+The following company is being excluded:
+
+  Sr. No. Company Name                           Symbol
+    1     Glaxosmithkline Pharmaceuticals Ltd.   GLAXO
+
+The following company is being included:
+
+  Sr. No. Company Name                           Symbol
+    1     Bharti Airtel Ltd.                     BHARTIARTL
+
+Place: Mumbai
+Date: January 6, 2015
+

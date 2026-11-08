@@ -1,0 +1,20 @@
+       IISL
+       INDIA INDEX SERVICES & PRODUCTS LIMITED
+
+
+                                  PRESS RELEASE
+
+On account of non availability of Futures and Options contracts on Punj Lloyd Limited,
+the Index Maintenance Sub-Committee has decided to make the following change in
+CNX Infrastructure Index to be effective from December 06, 2013.
+
+The following company is being excluded without any inclusion:
+
+ Sr. No.   Company Name                              Symbol
+    1      Punj Lloyd Limited                        PUNJLLOYD
+
+
+Place: Mumbai
+
+Date: November 07, 2013
+

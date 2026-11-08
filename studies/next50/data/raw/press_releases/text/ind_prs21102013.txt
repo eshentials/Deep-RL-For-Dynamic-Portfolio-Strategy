@@ -1,0 +1,30 @@
+       IISL
+       INDIA INDEX SERVICES & PRODUCTS LIMITED
+
+
+                                  PRESS RELEASE
+
+The Index Maintenance Sub-Committee has decided to make the following changes in CNX
+Dividend Opportunities Index during its periodic review. These changes shall become
+effective from October 28, 2013.
+
+The following companies are being excluded:
+
+ Sr. No.                  Company Name                       Symbol
+   1       Alstom India Ltd.                             AIL
+   2       Gujarat Gas Co. Ltd.                          GUJRATGAS
+   3       LIC Housing Finance Ltd.                      LICHSGFIN
+   4       Piramal Enterprises Ltd.                      PEL
+
+The following companies are being included:
+
+ Sr. No.                   Company Name                     Symbol
+    1      Central Bank of India                         CENTRALBK
+    2      Coal India Ltd.                               COALINDIA
+    3      Max India Ltd.                                MAX
+    4      NMDC Ltd.                                     NMDC
+
+
+Place: Mumbai
+Date: October 21, 2013
+

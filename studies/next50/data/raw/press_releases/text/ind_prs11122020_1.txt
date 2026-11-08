@@ -1,0 +1,149 @@
+                                         Press Release
+                                                                                       December 11, 2020
+
+
+ Revision in methodology of Nifty100 ESG and Nifty100 Enhanced ESG indices
+
+
+The Index Maintenance Sub-Committee (Equity) of NSE Indices Limited has decided to make
+the following revision to the methodology of the Nifty100 ESG and Nifty100 Enhanced ESG
+indices.
+
+The change shall become effective from January 1, 2021 (close of December 31, 2020).
+
+Proposed Methodology changes for Nifty100 ESG Index
+   Parameter                   Existing method                           Proposed method
+ Parent Index      •   Nifty 100                                •   Same as existing method
+ Exclusions        •   Companies engaged in the business        •   Same as existing method
+                       of tobacco, alcohol, controversial
+                       weapons and gambling operations
+                       are excluded. Controversial
+                       Weapons include chemical weapons,
+                       biological weapons, anti-personnel
+                       mines and cluster bombs.
+                       Information for excluding
+                       companies based controversial
+                       weapons is provided by
+                       Sustainalytics
+                   •   Companies with controversy
+                       category of 4 and 5 shall be
+                       excluded (scale: 1-5, category 1
+                       being least controversial)
+ Sustainalytics’   •   ESG Score                                •   ESG Risk Score
+ ESG metric
+ used
+ Weighting         •   Each constituent within sector is tilt   •   Each constituent is tilt weighted
+                       weighted based on ESG score i.e. the         based on its Modified ESG Risk
+                       constituent weight is derived from           Score i.e. the constituent weight
+                       its free float market capitalization         is derived from its Normalised
+                       and ESG score                                Modified ESG Risk Score and
+                     •   Weight of sectors will be based on            square root of its free float
+                         free float market capitalization of the       market capitalisation
+                         eligible constituents
+                     •   Sector with weight > 25% in the               (Please see Methodology
+                         parent index, is capped in the ESG            document for detailed
+                         Indices at the same weight as that in         explanation)
+                         the parent index
+                     •   Sector with weights < 25% in the          •   Sector and stock caps will be
+                         parent index, will be capped at 25%           applied as follows:
+                         in the ESG Indices (in case of                    o   Sector with weight >=
+                         breach)                                               25% in the parent index
+                     •   Constituent weight is capped at 10%                   will be capped in the
+                                                                               ESG Indices at the same
+                                                                               weight as that in the
+                                                                               parent index
+                                                                           o   Sector with weight <
+                                                                               25% in the parent index,
+                                                                               will be capped at 25% in
+                                                                               the ESG Indices (in case
+                                                                               of breach)
+                                                                           o   Constituent weight is
+                                                                               capped at the lower of
+                                                                               8% or 5 times the weight
+                                                                               of the stock in the index
+                                                                               based only on free float
+                                                                               Mcap
+
+
+Proposed Methodology changes for Nifty100 Enhanced ESG Index
+
+
+   Parameter                 Existing method                             Proposed method
+ Parent Index        •   Nifty100 ESG Index                •     Same as existing method
+ Sustainalytics’     •   ESG Score                         •     ESG Risk Score
+ ESG metric used
+ Stock Eligibility   •   For inclusion in NIFTY100 •             Companies in the Severe ESG Risk
+                         Enhanced ESG Index, the                 category as per Sustainalytics (ie.
+                         company        should     have          companies with ESG Risk Score >= 40)
+                normalized ESG score of at           are ineligible for inclusion to the
+                least 50%                            Nifty100 Enhanced ESG Index
+Weighting   •   Each     constituent      within •   Each constituent is tilt weighted based
+                sector is tilt weighted based        on its Modified ESG Risk Score i.e. the
+                on     ESG     score   i.e.   the    constituent weight is derived from its
+                constituent weight is derived        Normalised Modified ESG Risk score
+                from its free float market           and square root of its free float market
+                capitalization and ESG score         capitalisation
+            •   Weight of sectors will be
+                based on free float market           (Please see Methodology document for
+                capitalization of the eligible       detailed explanation)
+                constituents
+            •   Sector with weight > 25% in •        Sector and stock caps will be applied as
+                the parent index, is capped in       follows:
+                the ESG Indices at the same              o   Sector with weight >= 25% in
+                weight as that in the parent                 the parent index will be capped
+                index                                        in the ESG Indices at the same
+            •   Sector with weights < 25% in                 weight as that in the parent
+                the parent index, will be                    index
+                capped at 25% in the ESG                 o   Sector with weight < 25% in the
+                Indices (in case of breach)                  parent index, will be capped at
+            •   Constituent weight is capped                 25% in the ESG Indices (in case
+                at 10%                                       of breach)
+                                                         o   Constituent weight is capped at
+                                                             the lower of 8% or 5 times the
+                                                             weight of the stock in the index
+                                                             based only on free float Mcap
+About National Stock Exchange of India Limited (NSE):
+
+National Stock Exchange of India Ltd. (NSE) is the world’s largest derivatives exchange by
+trading volume as per the statistics published by Futures Industry Association (FIA) for 2019
+and ranked 3rd in the world in the cash equities segment by number of trades as per the statistics
+published by the World Federation of Exchanges (WFE). NSE was the first exchange in India
+to implement electronic or screen-based trading. It began operations in 1994 and is ranked as
+the largest stock exchange in India in terms of total and average daily turnover for equity shares
+every year since 1995, based on SEBI data. NSE has a fully-integrated business model
+comprising exchange listings, trading services, clearing and settlement services, indices,
+market data feeds, technology solutions and financial education offerings. NSE also oversees
+compliance by trading and clearing members with the rules and regulations of the exchange.
+NSE is a pioneer in technology and ensures the reliability and performance of its systems
+through a culture of innovation and investment in technology. NSE believes that the scale and
+breadth of its products and services, sustained leadership positions across multiple asset classes
+in India and globally enable it to be highly reactive to market demands and changes and deliver
+innovation in both trading and non-trading businesses to provide high-quality data and services
+to market participants and clients.
+For more information, please visit: www.nseindia.com
+
+
+About NSE Indices Limited:
+NSE Indices Limited (formerly known as India Index Services & Products Ltd. - IISL), a subsidiary
+of NSE, provides a variety of indices and index related services for the capital markets. The
+company focuses on the index as a core product. The company owns and manages a portfolio of
+indices under the NIFTY brand of NSE, including the flagship index, the NIFTY 50. NIFTY equity
+indices comprises of broad-based benchmark indices, sectoral indices, strategy indices, thematic
+indices and customised indices. NSE Indices Limited also maintains fixed income indices based on
+Government of India securities, corporate bonds, money market instruments and hybrid indices.
+Many investment products based on NIFTY indices have been developed within India and abroad.
+These include index based derivatives traded on NSE, NSE IFSC and Singapore Exchange Ltd.
+(SGX) and a number of index funds and exchange traded funds. The flagship 'NIFTY 50' index is
+widely tracked and traded as the benchmark for Indian Capital Markets.
+
+
+For more information, please visit: www.niftyindices.com
+
+
+
+For any clarifications please contact:
+Arijit Sengupta                                      Kumar Kartikey
+Chief Marketing & Communications Officer             Chief Manager, Corporate Communication
+Mobile: +91-9820340485                               Mobile: +91-9819549984
+Email id: asengupta@nse.co.in                        Email id: kumark@nse.co.in
+

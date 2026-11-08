@@ -1,0 +1,278 @@
+                                                                       Date: August 22, 2017
+
+                                     PRESS RELEASE
+
+                      Changes in Index Maintenance Guidelines
+
+India Index Services & Products Ltd. (IISL), a NSE group company, in its continuous efforts
+to align with the global industry best practices hereby announces revision in operational
+guidelines governing index maintenance and index reconstitution as given hereunder:
+
+A. Revision in operational guidelines governing index maintenance:
+With an immediate effect, operational guidelines governing index maintenance will be
+revised as given hereunder:
+
+ Corporate Action        Existing Policy                 Revised Policy
+ Investable  Weight      The IWFs are reviewed on a      The IWFs will be reviewed
+ Factors      (IWFs)     quarterly basis and implemented on a quarterly basis and
+ Review                  from first working day after F&Oimplemented from        first
+                         expiry of February, May, August working day after F&O
+                         and November after providing    expiry of March, June,
+                         five working days’ prior notice.September and December
+                                                         after providing five working
+                                                         days’ prior notice.
+                      Change in IWF by 5% or more is No change.
+                      implemented as soon as possible
+                      after providing five working
+                      days’ prior notice.
+ Shares rebalancing   Change in shares of less than 5% Change in shares of less than
+                      is made on a quarterly basis and 5% will be made on a
+                      implemented from first working quarterly          basis     and
+                      day after F&O expiry of implemented from the first
+                      February, May, August and working day after F&O
+                      November after providing five expiry of March, June,
+                      working days’ prior notice.        September and December
+                                                         after providing five working
+                                                         days’ prior notice.
+                      Change in shares that results into Change in shares by 5% or
+                      change in the free-float market more will be implemented as
+                      capitalisation by 5% or more is soon as possible after
+                      implemented as soon as possible providing five working days’
+                      after providing five working prior notice.
+                      days’ notice period.
+ Indices with capping Indices are presently capped at Indices will be capped at the
+ methodology          the time of change in divisors time of change in divisors as
+                      after providing five working per the existing policy.
+                      days’ prior notice.
+
+                         Additionally, capping is done on Additionally, capping will be
+                         quarterly basis and implemented done on a quarterly basis and
+                       from first working day after F&O       implemented from the first
+                       expiry of February, May, August        working day after F&O
+                       and November after providing           expiry of March, June,
+                       five working days’ prior notice.       September and December
+                                                              after providing five working
+                                                              days’ prior notice.
+Equal        weighted Weightage of stocks in equal            Weightage of stocks in equal
+indices               weighted indices are presently          weighted indices will be
+                      aligned equally at the time of          aligned equally at the time of
+                      change in the index composition         change     in    the     index
+                      after providing five working            composition as per the
+                      days’ prior notice.                     existing policy.
+
+                       Additionally, they are aligned         Additionally, they will be
+                       equally on a quarterly basis and       aligned equally on a quarterly
+                       implemented from first working         basis and implemented from
+                       day after F&O expiry of                first working day after F&O
+                       February, May, August and              expiry of March, June,
+                       November after providing five          September and December
+                       working days’ prior notice.            after providing five working
+                                                              days’ prior notice.
+
+B. Revision in guidelines governing index reconstitution:
+
+1. Criteria for selection of stocks in NIFTY 50:
+
+Criteria               Existing Criteria                      Revised Criteria
+Eligible universe                      -                      Constituents of NIFTY 100
+                                                              index shall form universe for
+                                                              NIFTY 50
+Liquidity              For inclusion in the index, the        For inclusion in the index, the
+                       security should have traded at an      security should have traded at
+                       average impact cost of 0.50 % or       an average impact cost of
+                       less during the last six months, for   0.50 % or less during the last
+                       90% of the observations for            six months, for 90% of the
+                       portfolio of Rs. 2 crores.             observations for portfolio of
+                                                              Rs. 10 crores.
+Float-adjusted market Companies eligible for inclusion        Companies will be included if
+capitalization        in the NIFTY 50 must have at            free-float              market
+                      least twice the free-float market       capitalisation is 1.50 times
+                      capitalization of the current           the      free-float     market
+                      smallest index constituent.             capitalization of the smallest
+                                                              constituent in respective
+                                                              index.
+2. Eligible universe for selection of stocks:
+
+Index                          Existing Criteria               Revised Criteria
+Thematic Indices:              Companies must rank             Companies must rank
+1. NIFTY Commodities           within the top 500              within the top 800 by
+2. NIFTY Energy                companies by average free-      average      full   market
+3. NIFTY India Consumption     float market capitalisation     capitalisation and average
+4. NIFTY Infrastructure        and aggregate turnover for      daily turnover for the last
+5. NIFTY MNC                   the last six months.            six months.
+6. NIFTY PSE
+7. NIFTY Services Sector
+8. NIFTY Tata 25% Cap
+Strategy Indices:              Companies must rank             Companies must rank
+1. NIFTY            Dividend   within the top 300              within the top 300
+   Opportunities 50            companies by average free-      companies by average free-
+2. NIFTY Alpha 50              float market capitalisation     float market capitalisation
+3. NIFTY High Beta 50          and aggregate turnover for      and average daily turnover
+4. NIFTY Low Volatility 50     the last six months.            for the last six months.
+
+5. NIFTY Quality 30            Companies must rank             Companies must rank
+                               within the top 200 rank by      within the top 200 rank by
+                               free-float          market      free-float           market
+                               capitalization         and      capitalization and average
+                               aggregate turnover.             daily turnover for the last
+                                                               six months.
+Broad Market Indices:        Companies within the              Companies within the
+6. NIFTY Free-float Midcap range of 75th to 90th               range of 75th to 90th
+   100                       percentile are ranked in the      percentile shall be ranked
+                             descending      order     of      in the descending order of
+                             aggregate turnover for the        average daily turnover for
+                             last six months for final         the last six months for final
+                             selection.                        selection.
+7. NIFTY          Free-float Companies within the              Companies within the
+   Smallcap 100              range of 90th to 95th             range of 90th to 95th
+                             percentile are ranked in the      percentile shall be ranked
+                             descending      order     of      in the descending order of
+                             aggregate turnover for the        average daily turnover for
+                             last six months for final         the last six months for final
+                             selection.                        selection.
+
+3. Inclusion criteria for selection of stocks:
+
+Index                          Existing Criteria               Revised Criteria
+1. NIFTY 500                   Companies are included if       Companies        will      be
+2. NIFTY 100                   full market capitalisation is   included if full market
+3. NIFTY Midcap 150            twice of the last constituent   capitalisation is 1.50 times
+4. NIFTY Midcap 50             in respective index.            the        full       market
+                                                               capitalization     of     the
+                                                               smallest index constituent
+                                                               (based on full market
+                                                                 capitalization) in respective
+                                                                 index.
+1. NIFTY Commodities             Companies are included if       Companies will be
+2. NIFTY Energy                  free-float          market      included if free-float
+3. NIFTY India Consumption       capitalisation is twice of      market capitalisation is
+4. NIFTY Infrastructure          the last constituent in         1.50 times the free-float
+5. NIFTY MNC                     respective.                     market capitalization of the
+6. NIFTY PSE                                                     smallest index constituent
+7. NIFTY Services Sector                                         in respective index.
+8. NIFTY100 Liquid 15
+9. NIFTY Midcap Liquid 15
+10. NIFTY Shariah 25
+11. NIFTY Growth Sector 15
+12. NIFTY Sectoral indices
+    (excluding          NIFTY
+    Financial Services sector)
+13. NIFTY Tata Group 25%                      -                  Companies will be
+    Cap                                                          included if free-float
+                                                                 market capitalisation is
+                                                                 1.50 times the free-float
+                                                                 market capitalization of the
+                                                                 smallest index constituent
+                                                                 in the index.
+
+4. Revision in the reference date for review of strategy indices:
+
+Index                            Existing Policy                 Revised Policy
+1. NIFTY100 Low Volatility       Factors such as alpha, beta     Factors such as alpha,
+   30                            and volatility are calculated   beta and volatility will be
+2. NIFTY Alpha 50                using closing prices of last    calculated using closing
+3. NIFTY High Beta 50            one year (adjusted for          prices of last one-year
+4. NIFTY Low Volatility 50       corporate actions) period       (adjusted for corporate
+                                 ending last trading day of      actions) period ending last
+                                 January, April, July &          trading day of February,
+                                 October of each year            May, August &
+                                 respectively.                   November of each year
+                                                                 respectively.
+
+5. Revision in index reconstitution schedule:
+
+Index Review Calendar            Existing Policy                  Revised Policy
+Strategy Indices:
+1. NIFTY            Dividend     Annual in November               Annual      basis  and
+   Opportunities 50                                               implemented from first
+2. NIFTY50 Value 20*                                              working day after F&O
+3. NIFTY Quality 30                                               expiry of December
+Thematic Indices:
+1. NIFTY Corporate Group         Quarterly basis in February,     Quarterly basis and
+   indices                       May, August and November         implemented from first
+                                                                  working day after F&O
+                                                                  expiry of March, June,
+                                                                  September and December
+ Government Securities
+ Indices:                      10th of each month              1st working day of each
+ 1. NIFTY 8-13 yr G-Sec                                        month
+ 2. NIFTY 4-8 yr G-Sec
+ 3. NIFTY 11-15 yr G-Sec
+ 4. NIFTY 15 yr and above
+     G-Sec
+ 5. NIFTY Composite G-Sec
+*Additional review would be undertaken in case a constituent(s) is removed from the parent
+index (NIFTY 50 in case of NIFTY50 Value 20).
+
+Revision in guidelines governing index reconstitution will be applicable from September
+2017 rebalancing.
+
+
+About National Stock Exchange of India Limited (NSE):
+
+The National Stock Exchange (NSE) is the leading stock exchange in India and the fourth
+largest in the world by equity trading volume in 2015, according to World Federation of
+Exchanges (WFE). NSE was the first exchange in India to implement electronic or screen-
+based trading. It began operations in 1994 and is ranked as the largest stock exchange in India
+in terms of total and average daily turnover for equity shares every year since 1995, based on
+SEBI data. NSE has a fully-integrated business model comprising our exchange listings,
+trading services, clearing and settlement services, indices, market data feeds, technology
+solutions and financial education offerings. NSE also oversees compliance by trading and
+clearing members with the rules and regulations of the exchange. NSE is a pioneer in
+technology and ensures the reliability and performance of its systems through a culture of
+innovation and investment in technology. NSE believes that the scale and breadth of its
+products and services, sustained leadership positions across multiple asset classes in India
+and globally enable it to be highly reactive to market demands and changes and deliver
+innovation in both trading and non-trading businesses to provide high-quality data and
+services to market participants and clients.
+
+About India Index Services & Products Ltd. (IISL):
+
+India Index Services & Products Ltd. (IISL), a subsidiary of NSE, provides a variety of
+indices and index related services for the capital markets. IISL focuses upon the index as a
+core product. IISL owns and manages a portfolio of indices under the NIFTY brand of NSE,
+including the flagship index, the NIFTY 50. IISL equity Indices comprises of broad-based
+benchmark indices, sectoral indices, strategy indices, thematic indices and customised
+indices. IISL also maintains fixed income indices based on Government of India securities,
+corporate bonds and money market instruments. Many investment products based on IISL
+indices have been developed within India and abroad. These include index based derivatives
+traded on NSE, Singapore Exchange Ltd. (SGX), Chicago Mercantile Exchange Inc. (CME),
+Osaka Exchange Inc. (OSE), Taiwan Futures Exchange (TAIFEX) and a number of index
+funds and exchange traded funds. The flagship 'NIFTY 50' index is widely tracked and traded
+as the benchmark for Indian Capital Markets.
+
+For more information, please visit: www.niftyindices.com
+Disclaimer: National Stock Exchange of India Limited is proposing, subject to receipt of
+requisite approvals, market conditions and other considerations, an initial public offer of its
+equity shares and has filed a draft red herring prospectus dated December 28, 2016 (“DRHP”)
+with Securities and Exchange Board of India (“SEBI”). The DRHP is available on the website
+of SEBI as well as on website of the Managers, Citigroup Global Markets India Private
+Limited at http://www.online.citibank.co.in/rhtm/citigroupglobalscreen1.htm, JM Financial
+Institutional Securities Limited at www.jmfl.com, Kotak Mahindra Capital Company
+Limited at http://www.investmentbank.kotak.com, Morgan Stanley India Company Private
+Limited at http://www.morganstanley.com/about-us/global-offices/india/, HDFC Bank
+Limited at www.hdfcbank.com, ICICI Securities Limited at www.icicisecurities.com, IDFC
+Bank Limited at www.idfcbank.com and IIFL Holdings Limited at www.iiflcap.com.
+Potential investors should note that investment in equity shares involves a high degree of risk
+and for details relating to such risk, see “Risk Factors” beginning on page 19 of the DRHP.
+Potential investors should not rely on the DRHP filed with SEBI for making any investment
+decision.
+
+Any securities referred to herein have not been and will not be registered under the U.S.
+Securities Act of 1933, as amended (the “Securities Act”), and may not be offered or sold in
+the United States absent registration or an exemption from registration under the Securities
+Act. There is no intention to register any securities referred to herein in the United States or
+to make a public offering of the securities in the United States.
+
+For any clarifications please contact:
+
+Debojyoti Chatterjee
+Head, Corporate Communication & Media Relations
+Mobile: +91-9833368337
+Email id: dchatterjee@nse.co.in/ cc@nse.co.in
+
+Kumar Kartikey
+Manager, Corporate Communication
+Mobile: +91-9819549984
+Email id: kumark@nse.co.in
+

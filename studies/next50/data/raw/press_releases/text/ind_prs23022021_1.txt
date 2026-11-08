@@ -1,0 +1,260 @@
+                                     Press Release
+                                                                             February 23, 2021
+
+       Changes in index maintenance guidelines, criteria and methodology
+The Index Maintenance Sub-Committee (Equity) of NSE Indices Limited has decided to make
+changes as detailed below. The changes will become effective from March 31, 2021 (close of
+March 30, 2021).
+
+A. Index reconstitution and rebalancing:
+
+ Sr.
+        Description                Existing                        Revised
+ No.
+  1     Revision in the index      Replacement of stocks           Replacement of stocks
+        reconstitution date        resulting from periodic         resulting from periodic
+                                   index     reconstitution is     index reconstitution will be
+                                   implemented from the first      implemented from the last
+                                   working day after F&O           working day (beginning of
+                                   expiry of March, June,          day) of March, June,
+                                   September and December          September and December
+                                   depending upon the review       depending upon the review
+                                   frequency as may be             frequency as may be
+                                   applicable for each index.      applicable for each index.
+  2     Stock Capping              In case of capped indices,      In case of capped indices,
+                                   capping of stocks is            capping of stocks will be
+                                   currently implemented from      implemented from the last
+                                   the first working day after     working day of March,
+                                   F&O expiry of March, June,      June,     September and
+                                   September and December          December by taking into
+                                   by taking into account          account closing prices as
+                                   closing prices as on T-5        on T-3 basis, where T day
+                                   basis.                          is last working day of
+                                                                   March, June, September
+                                                                   and December.
+  3     Quarterly rebalancing      Quarterly rebalancing of        Quarterly rebalancing of
+        of shares and investible   shares and investible weight    shares and investible
+        weight factors             factors      is     currently   weight factors will be
+                                   implemented from the first      implemented from the last
+                                   working day after F&O           working day of March,
+                                   expiry of March, June,          June,     September and
+                                   September and December.         December.
+  4     Calculation of Price to    Price to earnings ratio (P/E    Price to earnings ratio (P/E
+        Earnings ratio (P/E        Ratio) is calculated by         Ratio) will be calculated by
+        Ratio) for indices         taking into consideration       taking into consideration
+                                   earnings (including profits     earnings (including profits
+                                   and losses) reported by each    and losses) reported by
+                                   index constituent in trailing   each index constituent in
+                                                                   trailing     4     quarters.
+                                 4    quarters(standalone (consolidated financials).
+                                 financials).              In case, consolidated
+                                                           financials are not available,
+                                                           standalone financials for
+                                                           trailing 4 quarters will be
+                                                           considered.
+  5    Calculation of Dividend Dividend Yield % for Dividend Yield % for
+       Yield% for indices      indices is calculated by indices will be calculated
+                               taking into consideration by          taking         into
+                               dividend amount as reported consideration total equity
+                               in company’s annual report. dividend of each company
+                                                           on rolling 12 months
+                                                           (calculated based on ex-
+                                                           dividend date) basis.
+
+B. Revision in criteria for Nifty 100 index:
+
+Parameter        Existing                            Revised
+
+Eligible         The eligible universe for NIFTY The eligible universe for NIFTY 100
+Universe         100 includes:                   includes:
+                    1. The company should be a  The company should be a
+                        constituent of NIFTY 500     constituent of NIFTY 500:
+
+                        AND                              AND
+
+                        Investible weight factor -       Investible weight factor (IWF) of
+                        (IWF) of stock should be at      stock should be at least 0.10 (10%
+                        least 0.10 (10% free float)      free float)
+
+                        OR                               OR
+
+                        6 month average free float -     6 month average free float market
+                        market capitalization of the     capitalization of the stock should
+                        stock should be at least         be at least 25% of the 6 month
+                        25% of the 6 month               average full market capitalization
+                        average      full    market      of the existing smallest index
+                        capitalization of the of the     constituent (prior to index review)
+                        existing smallest index          by full market capitalization in
+                        constituent (prior to index      NIFTY 100 as of the cut-off date
+                        review) by full market
+                        capitalization in NIFTY
+                        100 as of the cut-off date      On a prospective basis, non - F&O
+                                                         stocks are eligible for inclusion
+                                                         only if the total instances of the
+                                                         stock hitting the upper or lower
+                                                         circuit* during the past 6
+                                                         months as of the cut-off date is less
+                                                         than 20% of the number of total
+                                                         trading days over the same period
+                                                  * an instance is counted each time the
+                                                  stock hits the upper or lower price
+                                                  circuit on a given trading day. If the
+                                                  stock hits the upper and lower price
+                                                  circuit on the same trading day, it will
+                                                  be counted as two instances
+Compulsory    Rank based on average full  Rank based on average full market
+inclusions     market capitalization is among        capitalization is among top 90:
+               top 90
+                                                          AND
+              Average         full       market
+               capitalization is 1.5 times the - stock is available for trading in
+               average         full       market NSE's Futures & Options segment
+               capitalization of the smallest (F&O)
+               index constituent (based on full
+               market      capitalization)     in         OR
+               NIFTY 100 as of the cut-off
+               date                               - such stock’s Average Daily
+                                                  Turnover (ADT) is greater than the
+              In case the number of ADT of the 90 stock of the Nifty 100
+                                                                  th
+
+               compulsory exclusions exceed ranked by ADT (prior to review), as
+               those of compulsory inclusions on the cut-off date
+               in the steps above, the
+               replacements to fill up the  Average full market capitalization
+                                                      is at least 1.5 times the average
+               deficit are identified based on
+                                                      full market capitalization of the
+               below:
+                                                      smallest index constituent (based
+               - Within         the      eligible     on full market capitalization) in
+                  replacement pool of stocks          NIFTY 100 as of the cut-off date:
+                  sorted based on their full
+                  market          capitalization,         AND
+                  companies that are available
+                  for trading in NSE’s Futures - stock is available for trading in
+                  & Options segment will be NSE's Futures & Options segment
+                  first selected based on their (F&O)
+                  average        full     market
+                  capitalization                          OR
+
+                                                     - such stock’s Average Daily
+              Additional replacement stocks,        Turnover (ADT) is greater than the
+               if required, will be selected from    ADT of the 90th stock of the Nifty 100
+               the       remaining        eligible   ranked by ADT (prior to review), as
+               replacement pool stocks (ranked       on the cut-off date
+               91 to 110 based on Average Full
+               MCap) based on their Average             In case the number of compulsory
+               Daily Turnover (ADT)                      exclusions exceeds those of
+                                                         compulsory inclusions in the steps
+                                                         above, the replacements to fill up
+                                                           the deficit are identified based on
+                                                           below:
+
+                                                           - Within the eligible replacement
+                                                           pool of stocks (ranked 91 to 110
+                                                           based on Average Full MCap)
+                                                           sorted based on their full market
+                                                           capitalization, companies that are
+                                                           available for trading in NSE’s
+                                                           Futures & Options segment will
+                                                           be first selected based on their
+                                                           average full market capitalization
+
+
+                                                         Additional replacement stocks, if
+                                                          required, will be selected from the
+                                                          remaining eligible replacement
+                                                          pool stocks (ranked 91 to 110 based
+                                                          on Average Full MCap) based on
+                                                          their Average Daily Turnover
+                                                          (ADT)
+
+C. Revision in methodology for Nifty Next 50 Index:
+
+Parameter                       Existing                       Revised
+Capping for companies that      No capping                     Cumulative weight of Non-
+are not available for trading                                  F&O stocks will be capped at
+in NSE’s Futures & Options                                     15% on quarterly rebalance
+segment                                                        dates
+
+                                                               Non-F&O               stocks
+                                                               individually will be capped
+                                                               at 4.5% on quarterly
+                                                               rebalance dates
+
+D. Revision in criteria for Nifty Financial Services:
+
+Parameter                       Existing                       Revised
+F&O Eligibility                 -                              At the time of index
+                                                               reconstitution, a preference
+                                                               within each sub-sector would
+                                                               be given to stock which is
+                                                               available for trading under
+                                                               F&O segment at NSE
+E. Limits on maximum replacements per review for broad market indices:
+
+ Description                     Existing                         Revised
+ Limits on maximum               Currently different limits on    No changes are being made
+ replacements per index          maximum        number      of    to the existing limits.
+ review                          permissible replacements per
+                                 index review for broad           Additionally, the existing
+                                 market indices are defined.      limits on replacement will
+                                                                  not be applicable for
+                                 Limits on replacement are        exclusion of stocks on
+                                 not applicable for exclusion     account of stocks not
+                                 of stocks from parent index      meeting       the     minimum
+                                 and corporate events such as     eligibility criteria.
+                                 merger, spin-offs, delisting,
+                                 trading suspension etc.
+
+
+For detailed methodology, please refer to the methodology document on www.nseindia.com/
+www.niftyindices.com.
+
+
+About National Stock Exchange of India Limited (NSE):
+
+National Stock Exchange of India Ltd. (NSE) is the world’s largest derivatives exchange by
+trading volume as per the statistics published by Futures Industry Association (FIA) for 2019
+and ranked 3rd in the world in the cash equities segment by number of trades as per the statistics
+published by the World Federation of Exchanges (WFE). NSE was the first exchange in India
+to implement electronic or screen-based trading. It began operations in 1994 and is ranked as
+the largest stock exchange in India in terms of total and average daily turnover for equity shares
+every year since 1995, based on SEBI data. NSE has a fully integrated business model
+comprising exchange listings, trading services, clearing and settlement services, indices,
+market data feeds, technology solutions and financial education offerings. NSE also oversees
+compliance by trading and clearing members with the rules and regulations of the exchange.
+NSE is a pioneer in technology and ensures the reliability and performance of its systems
+through a culture of innovation and investment in technology. NSE believes that the scale and
+breadth of its products and services, sustained leadership positions across multiple asset classes
+in India and globally enable it to be highly reactive to market demands and changes and deliver
+innovation in both trading and non-trading businesses to provide high-quality data and services
+to market participants and clients.
+For more information, please visit: www.nseindia.com
+
+
+About NSE Indices Limited:
+NSE Indices Limited (formerly known as India Index Services & Products Ltd. - IISL), a subsidiary
+of NSE, provides a variety of indices and index related services for the capital markets. The
+company focuses on the index as a core product. The company owns and manages a portfolio of
+indices under the NIFTY brand of NSE, including the flagship index, the NIFTY 50. NIFTY equity
+indices comprises of broad-based benchmark indices, sectoral indices, strategy indices, thematic
+indices and customised indices. NSE Indices Limited also maintains fixed income indices based on
+Government of India securities, corporate bonds, money market instruments and hybrid indices.
+Many investment products based on NIFTY indices have been developed within India and abroad.
+These include index based derivatives traded on NSE, NSE IFSC and Singapore Exchange Ltd.
+(SGX) and a number of index funds and exchange traded funds. The flagship 'NIFTY 50' index is
+widely tracked and traded as the benchmark for Indian Capital Markets.
+
+
+For more information, please visit: www.niftyindices.com
+
+
+
+For any clarifications please contact:
+Arijit Sengupta                                  Kumar Kartikey
+Chief Marketing & Communications Officer         Chief Manager, Corporate Communication
+Mobile: +91-9820340485                           Mobile: +91-9819549984
+Email id: asengupta@nse.co.in                    Email id: kumark@nse.co.in
+

@@ -1,0 +1,133 @@
+                                                                 Date: January 11, 2016
+
+
+                                  PRESS RELEASE
+
+The Index Maintenance Sub-Committee has decided to make the following
+replacements in,
+
+A. Nifty Alpha 50, Nifty High Beta 50 and Nifty Low Volatility 50 indices as part of
+   the quarterly review, and
+
+B. Nifty 500, Nifty Smallcap 100 and Nifty High Beta 50 indices on account of
+   proposed scheme of arrangement for demerger of Power Products and
+   Transmission Grid Business from Sterlite Technologies Ltd.
+
+The changes shall become effective from January 18, 2016 (close of January 15, 2016).
+
+
+1)     Nifty Alpha 50 Index
+
+The following companies are being excluded:
+
+ Sr. No.   Company Name                                   Symbol
+    1      Alstom T&D India Ltd.                          ALSTOMT&D
+    2      Amara Raja Batteries Ltd.                      AMARAJABAT
+    3      Bajaj Corp Ltd.                                BAJAJCORP
+    4      Bharat Forge Ltd.                              BHARATFORG
+    5      DCB Bank Ltd.                                  DCBBANK
+    6      Gateway Distriparks Ltd.                       GDL
+    7      Gruh Finance Ltd.                              GRUH
+    8      NCC Ltd.                                       NCC
+    9      Repco Home Finance Ltd.                        REPCOHOME
+   10      Sadbhav Engineering Ltd.                       SADBHAV
+
+The following companies are being included:
+
+ Sr. No.   Company Name                                   Symbol
+   1       Bajaj Finserv Ltd.                             BAJAJFINSV
+   2       Future Consumer Enterprise Ltd.                FCEL
+   3       Fortis Healthcare Ltd.                         FORTIS
+   4       Kajaria Ceramics Ltd.                          KAJARIACER
+   5       KEC International Ltd.                         KEC
+   6       NIIT Technologies Ltd.                         NIITTECH
+   7       Pipavav Defence and Offshore Engn. Co. Ltd.    PIPAVAVDOC
+   8       TV18 Broadcast Ltd.                            TV18BRDCST
+   9       Vakrangee Ltd.                                 VAKRANGEE
+  10       Voltas Ltd.                                    VOLTAS
+2)     Nifty High Beta 50 Index
+
+The following companies are being excluded:
+
+ Sr. No.   Company Name                           Symbol
+    1      Sterlite Technologies Ltd.             STRTECH
+    2      Unitech Ltd.                           UNITECH
+
+The following companies are being included:
+
+ Sr. No.   Company Name                           Symbol
+    1      Indiabulls Real Estate Ltd.            IBREALEST
+    2      Tata Elxsi Ltd.                        TATAELXSI
+
+
+3)     Nifty Low Volatility 50 Index
+
+The following companies are being excluded:
+
+ Sr. No.   Company Name                           Symbol
+    1      Cadila Healthcare Ltd.                 CADILAHC
+    2      Sun Pharmaceutical Industries Ltd.     SUNPHARMA
+
+The following companies are being included:
+
+ Sr. No.   Company Name                           Symbol
+    1      NHPC Ltd.                              NHPC
+    2      Titan Company Ltd.                     TITAN
+
+
+4)     Nifty 500 Index
+
+The following company is being excluded:
+
+ Sr. No.   Company Name                           Symbol
+    1      Sterlite Technologies Ltd.             STRTECH
+
+The following company is being included:
+
+ Sr. No. Company Name                             Symbol
+   1     Schneider Electric Infrastructure Ltd.   SCHNEIDER
+
+
+5)     Nifty Smallcap 100 Index
+
+The following company is being excluded:
+
+ Sr. No.   Company Name                            Symbol
+    1      Sterlite Technologies Ltd.              STRTECH
+The following company is being included:
+
+ Sr. No. Company Name                                      Symbol
+   1     Chennai Petroleum Corporation Ltd.                CHENNPETRO
+
+
+
+For more details, contact:
+Arindam Saha
+Head - Corporate Communications
+cc@nse.co.in
+Mo: +91-9930019202 | Direct: +91-22-2659 8164
+Twitter: @NSEIndia
+
+
+About NSE: In its 20 year history, NSE has transformed the capital market, based on
+technology, innovation, high standards of governance and management practices.
+NSE's business practices and high levels of integrity have earned it the trust of the
+financial markets worldwide. Besides being a platform of choice for all exchange
+traded financial products in India, NSE’s flagship index, the Nifty 50, has become a
+benchmark national level economic parameter. Since inception, the exchange has been
+covered extensively by global media and has won many accolades as recognition of
+this remarkable journey.
+
+About IISL: India Index Services & Products Ltd. (IISL), a NSE group company, was
+setup in May 1998 to provide a variety of indices and index related services for the
+capital markets. IISL is India's first specialised company focused upon the index as a
+core product. IISL maintains more than 100 equity indices comprising broad-based
+benchmark indices, sectoral indices and customised indices. IISL also maintains fixed
+income indices based on Government of India bonds. Many investment and risk
+management products based on IISL indices have been developed in the recent past,
+within India and abroad. These include index based derivatives traded on NSE,
+Singapore Exchange Ltd. (SGX), Chicago Mercantile Exchange Inc. (CME) and Osaka
+Exchange Inc. (OSE) and a number of index funds and exchange traded funds. The
+flagship 'Nifty 50' index is widely tracked and traded as the benchmark for Indian
+Capital Markets.
+

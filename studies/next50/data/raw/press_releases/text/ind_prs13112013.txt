@@ -1,0 +1,88 @@
+`
+
+
+       IISL
+       INDIA INDEX SERVICES & PRODUCTS LIMITED
+
+
+                                    PRESS RELEASE
+
+
+This is with reference to the press release issued by IISL on November 07, 2013
+regarding changes in various indices effective November 15, 2013.
+
+National Stock Exchange of India Limited (NSE) has issued a circular (Ref. No.
+NSE/CMTR/24977) on November 13, 2013 regarding change in the trading holiday. As
+per the circular, trading holiday on November 14, 2013 is revoked and November 15,
+2013 is declared as a holiday.
+
+Pursuant to the change in trading holiday, the proposed changes in the indices shall be
+effective November 18, 2013 instead of November 15, 2013.
+
+The details of the changes are provided in annexure 1.
+
+Place: Mumbai
+Date: November 13, 2013
+`
+
+
+                                       Annexure 1:
+
+The following changes in various indices are to be effective from November 18, 2013:
+
+1) CNX 200 Index
+
+The following company is being excluded:
+
+    Sr. No.                 Company Name                         Symbol
+       1      Welspun Corp Limited                           WELCORP
+
+The following company is being included:
+
+    Sr. No.                  Company Name                         Symbol
+       1      Indiabulls Housing Finance Limited             IBULHSGFIN
+
+2) CNX 500 Index
+
+The following companies are being excluded:
+
+    Sr. No.                  Company Name                        Symbol
+       1      Fresenius Kabi Oncology Limited                FKONCO
+       2      Welspun Corp Limited                           WELCORP
+
+The following companies are being included:
+
+    Sr. No.                   Company Name                        Symbol
+       1      Future Retail Limited                          FRL
+       2      Raj Television Network Limited                 RAJTV
+
+3) CNX Smallcap Index
+
+The following company is being excluded:
+
+    Sr. No.                 Company Name                         Symbol
+       1      Welspun Corp Limited                           WELCORP
+
+The following company is being included:
+
+    Sr. No.                   Company Name                          Symbol
+       1      Future Retail Limited                          FRL
+
+
+
+
+                                                                       (PTO)
+`
+
+
+4) CNX Metal Index
+
+The following company is being excluded:
+
+ Sr. No.                 Company Name          Symbol
+    1      Welspun Corp Limited            WELCORP
+The following company is being included:
+
+    Sr. No.                 Company Name        Symbol
+       1      Hindustan Copper Limited     HINDCOPPER
+

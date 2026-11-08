@@ -1,9 +1,13 @@
 """Market series on the NSE session calendar.
 
-- Sessions: every date with a ^NSEI close (NSE trading days), price_start..freeze.
-- Benchmark: NIFTYBEES adjusted close (total return). Days where its return differs
-  from the index return by more than `benchmark_repair_threshold` get the index
-  return instead; every repair is written to data/processed/benchmark_repairs.csv.
+- Sessions: every date with a close of the calendar index (`data.calendar`, default
+  `data.index`; ^NSEI in every protocol so far), price_start..freeze.
+- Index: `data.index`, the universe's own index, for the index features. When it is
+  not the calendar index it is aligned to the calendar sessions, filled forward over
+  sessions it lacks (past values only) and flagged in `index_missing`.
+- Benchmark: the universe's ETF adjusted close (total return). Vendor level glitches
+  are repaired from index growth and genuine tracking gaps are kept; both are logged
+  (data/processed/benchmark_repairs.csv, benchmark_tracking_deviations.csv).
 - India VIX: NSE-hours series, used same-day.
 - USD/INR: last Yahoo FX close on or before each session (the one-session lag is
   applied in env/features.py, because Yahoo's FX close falls after the NSE close).
@@ -17,17 +21,19 @@ from datetime import date, timedelta
 import numpy as np
 import pandas as pd
 
-from config import ROOT, load
+from config import load, study_root
 from data import yahoo
 
-RAW = ROOT / "data" / "raw" / "market"
-PROC = ROOT / "data" / "processed"
+RAW = study_root() / "data" / "raw" / "market"
+PROC = study_root() / "data" / "processed"
 
 
 def fetch(force: bool = False) -> dict[str, pd.DataFrame]:
     cfg = load()["data"]
     RAW.mkdir(parents=True, exist_ok=True)
     tickers = [cfg["index"], cfg["benchmark"], cfg["vix"], cfg["fx"]]
+    if cfg.get("calendar", cfg["index"]) != cfg["index"]:
+        tickers.append(cfg["calendar"])
     paths = {f: RAW / f"yahoo_market_{f.replace(' ', '_').lower()}.csv" for f in yahoo.FIELDS}
     if not force and all(p.exists() for p in paths.values()):
         return {f: pd.read_csv(p, index_col="Date", parse_dates=True) for f, p in paths.items()}
@@ -44,9 +50,19 @@ def build() -> pd.DataFrame:
     close, adj = frames["Close"], frames["Adj Close"]
     freeze = pd.Timestamp(cfg["freeze"])
 
-    idx = close[cfg["index"]].dropna()
-    idx = idx[(idx.index >= pd.Timestamp(cfg["price_start"])) & (idx.index <= freeze)]
-    sessions = idx.index
+    cal_tk = cfg.get("calendar", cfg["index"])
+    cal = close[cal_tk].dropna()
+    cal = cal[(cal.index >= pd.Timestamp(cfg["price_start"])) & (cal.index <= freeze)]
+    sessions = cal.index
+    extra = {}
+    if cal_tk == cfg["index"]:
+        idx = cal
+    else:
+        raw_idx = close[cfg["index"]].reindex(sessions)
+        if pd.isna(raw_idx.iloc[0]):
+            raise SystemExit(f"{cfg['index']} has no close on the first session {sessions[0].date()}")
+        idx = raw_idx.ffill()  # past values only
+        extra = {"index": idx, "index_missing": raw_idx.isna()}
 
     bench = adj[cfg["benchmark"]].reindex(sessions)
     vix = close[cfg["vix"]].reindex(sessions)
@@ -57,7 +73,8 @@ def build() -> pd.DataFrame:
         bench, idx, cfg["benchmark_glitch_threshold"], cfg["benchmark_deviation_log"])
 
     out = pd.DataFrame({
-        "nsei": idx,
+        "nsei": cal,
+        **extra,
         "bench_tr": bench_tr,
         "bench_raw_adj": bench,
         "vix": vix.ffill(),          # ffill uses past values only
@@ -110,6 +127,9 @@ def report(df: pd.DataFrame) -> None:
     if len(devs):
         print(devs.round(4).to_string())
     print(f"VIX missing sessions (filled forward): {int(df['vix_missing'].sum())}")
+    if "index_missing" in df:
+        miss = df.index[df["index_missing"]]
+        print(f"index missing sessions (filled forward): {len(miss)} {[d.date().isoformat() for d in miss]}")
     print(f"USD/INR missing after alignment: {int(df['usdinr'].isna().sum())}")
     for y in (2019, 2020, 2025):
         s = df.loc[str(y), "bench_tr"]

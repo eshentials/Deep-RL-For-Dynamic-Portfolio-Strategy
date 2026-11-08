@@ -1,0 +1,94 @@
+       IISL
+       INDIA INDEX SERVICES & PRODUCTS LIMITED
+
+                                 PRESS RELEASE
+
+The Index Maintenance Sub-Committee has decided to make the following change in the
+various indices on account of proposed scheme of arrangements involving
+amalgamations and demergers.
+
+A. Replacements effective March 24, 2015 (close of March 23, 2015):
+
+(1)    CNX 500 Index:
+
+The following company is being excluded:
+
+ Sr. No. Company Name                                    Symbol
+   1     Balkrishna Industries Ltd.                      BALKRISIND
+
+The following company is being included:
+
+ Sr. No. Company Name                                    Symbol
+   1     ITD Cementation India Ltd.                      ITDCEM
+
+(2)    CNX Alpha Index
+
+The following company is being excluded:
+
+  Sr. No. Company Name                                 Symbol
+    1     Balkrishna Industries Ltd.                   BALKRISIND
+
+The following company is being included:
+
+  Sr. No. Company Name                                 Symbol
+     1    Manappuram Finance Ltd.                      MANAPPURAM
+
+
+B. Replacements effective March 27, 2015 (close of March 26, 2015):
+
+(1)    CNX 200 Index
+
+The following company is being excluded:
+
+  Sr. No. Company Name                                 Symbol
+     1    CMC Ltd.                                     CMC
+
+The following company is being included:
+
+  Sr. No. Company Name                                   Symbol
+    1     Cox & Kings Ltd.                               COX&KINGS
+(2)    CNX 500 Index
+
+The following companies are being excluded:
+
+ Sr. No.   Company Name                         Symbol
+   1       CMC Ltd.                             CMC
+   2       Mastek Ltd.                          MASTEK
+   3       Shasun Pharmaceuticals Ltd.          SHASUNPHAR
+
+The following companies are being included:
+
+ Sr. No.   Company Name                         Symbol
+   1       Mayur Uniquoters Ltd.                MAYURUNIQ
+   2       Munjal Showa Ltd.                    MUNJALSHOW
+   3       Suven Life Sciences Ltd.             SUVEN
+
+(3)    CNX Midcap Index
+
+The following company is being excluded:
+
+ Sr. No. Company Name                          Symbol
+   1     CMC Ltd.                              CMC
+
+The following company is being included:
+
+ Sr. No. Company Name                          Symbol
+   1     Reliance Communications Ltd.          RCOM
+
+(4)    CNX IT Index
+
+The following company is being excluded:
+
+  Sr. No. Company Name                         Symbol
+    1     CMC Ltd.                             CMC
+
+The following company is being included:
+
+  Sr. No. Company Name                         Symbol
+     1    Polaris Consulting & Services Ltd.   POLARIS
+
+
+Place: Mumbai
+
+Date: March 18, 2015
+

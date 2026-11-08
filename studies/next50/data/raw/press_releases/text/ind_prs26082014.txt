@@ -1,0 +1,143 @@
+       IISL
+       INDIA INDEX SERVICES & PRODUCTS LIMITED
+
+                                 PRESS RELEASE
+
+The Index Maintenance Sub-Committee has decided to make the following changes in
+various indices as a part of its periodic review. These changes shall become effective
+from September 26, 2014 (close of September 25, 2014).
+
+
+(1)    Nifty Midcap 50 Index
+
+The following companies are being excluded:
+
+ Sr. No.    Company Name                                Symbol
+    1       Adani Enterprises Ltd.                      ADANIENT
+    2       Adani Power Ltd.                            ADANIPOWER
+    3       Reliance Communications Ltd.                RCOM
+
+
+The following companies are being included:
+
+ Sr. No.    Company Name                                Symbol
+    1       Arvind Ltd.                                 ARVIND
+    2       Justdial Ltd.                               JUSTDIAL
+    3       L&T Finance Holdings Ltd.                   L&TFH
+
+
+
+(2)    CNX Midcap Index
+
+The following companies are being excluded:
+
+ Sr. No.   Company Name                                 Symbol
+    1      Adani Enterprises Ltd.                       ADANIENT
+    2      Adani Ports and Special Economic Zone Ltd.   ADANIPORTS
+    3      McLeod Russel India Ltd.                     MCLEODRUSS
+    4      UCO Bank                                     UCOBANK
+
+
+The following companies are being included:
+
+ Sr. No. Company Name                                   Symbol
+    1    Housing Development and Infrastructure Ltd.    HDIL
+    2    Indian Oil Corporation Ltd.                    IOC
+ Sr. No. Company Name                                    Symbol
+    3    IRB Infrastructure Developers Ltd.              IRB
+    4    Ranbaxy Laboratories Ltd.                       RANBAXY
+
+
+
+(3)    CNX Smallcap Index
+
+The following companies are being excluded:
+
+ Sr. No.   Company Name                                  Symbol
+    1      Adani Power Ltd.                              ADANIPOWER
+    2      Housing Development and Infrastructure Ltd.   HDIL
+    3      IRB Infrastructure Developers Ltd.            IRB
+    4      Mahanagar Telephone Nigam Ltd.                MTNL
+    5      Polaris Financial Technology Ltd.             POLARIS
+    6      SKS Microfinance Ltd.                         SKSMICRO
+    7      TVS Motor Company Ltd.                        TVSMOTOR
+
+
+The following companies are being included:
+
+ Sr. No.    Company Name                                 Symbol
+    1       Firstsource Solutions Ltd.                   FSL
+    2       Jaypee Infratech Ltd.                        JPINFRATEC
+    3       Kaveri Seed Company Ltd.                     KSCL
+    4       McLeod Russel India Ltd.                     MCLEODRUSS
+    5       Monsanto India Ltd.                          MONSANTO
+    6       Tata Elxsi Ltd.                              TATAELXSI
+    7       UCO Bank                                     UCOBANK
+
+
+
+(4)    CNX PSE Index
+
+The following company is being excluded:
+
+ Sr. No. Company Name                                 Symbol
+    1    Gujarat Mineral Development Corporation Ltd. GMDCLTD
+
+
+The following company is being included:
+
+ Sr. No.    Company Name                                 Symbol
+    1       Engineers India Ltd.                         ENGINERSIN
+(5)   CNX Commodities Index
+
+The following company is being excluded:
+
+ Sr. No.   Company Name                        Symbol
+    1      JSW Energy Ltd.                     JSWENERGY
+
+
+The following company is being included:
+
+ Sr. No.   Company Name                        Symbol
+    1      Indian Oil Corporation Ltd.         IOC
+
+
+
+(6)   CNX Infrastructure Index
+
+The following company is being excluded:
+
+ Sr. No.   Company Name                        Symbol
+    1      Adani Power Ltd.                    ADANIPOWER
+
+
+
+(7)   CNX IT Index
+
+The following company is being excluded:
+
+ Sr. No.   Company Name                        Symbol
+    1      Polaris Financial Technology Ltd.   POLARIS
+
+
+The following company is being included:
+
+ Sr. No.   Company Name                        Symbol
+    1      Tata Elxsi Ltd.                     TATAELXSI
+
+
+
+(8)   CNX Media Index
+
+The following companies are being excluded:
+
+ Sr. No.   Company Name                        Symbol
+    1      KSS Ltd.                            KSERASERA
+ Sr. No.   Company Name      Symbol
+    2      Prime Focus Ltd   PFOCUS
+
+
+
+Place: Mumbai
+Date: August 26, 2014
+

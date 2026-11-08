@@ -1,0 +1,118 @@
+IISL
+INDIA INDEX SERVICES & PRODUCTS LIMITED
+
+                                                            Date: September 18, 2015
+
+                                  PRESS RELEASE
+
+The Index Maintenance Sub-Committee has decided to make the following replacements
+in various indices on account of proposed scheme of arrangement for transfer by way of
+a demerger of the Madura Undertaking of the Aditya Birla Nuvo Ltd. to the Pantaloons
+Fashion & Retail Limited. The changes shall become effective from October 19, 2015
+(close of October 16, 2015).
+
+1)     CNX Nifty Junior Index
+
+The following company is being excluded:
+
+ Sr. No. Company Name                                    Symbol
+   1     Aditya Birla Nuvo Ltd.                          ABIRLANUVO
+
+The following company is being included:
+
+ Sr. No. Company Name                                    Symbol
+    1    Indian Oil Corporation Ltd.                     IOC
+
+
+2)     CNX 100 Index
+
+The following company is being excluded:
+
+ Sr. No. Company Name                                    Symbol
+   1     Aditya Birla Nuvo Ltd.                          ABIRLANUVO
+
+The following company is being included:
+
+ Sr. No. Company Name                                    Symbol
+    1    Indian Oil Corporation Ltd.                     IOC
+
+The above replacement will also be applicable to CNX 100 Equal Weight Index.
+
+
+3)     CNX 200 Index
+
+The following company is being excluded:
+
+ Sr. No. Company Name                                    Symbol
+   1     Aditya Birla Nuvo Ltd.                          ABIRLANUVO
+The following company is being included:
+
+ Sr. No. Company Name                      Symbol
+   1     Gateway Distriparks Ltd.          GDL
+
+
+4)    CNX 500 Index
+
+The following company is being excluded:
+
+ Sr. No. Company Name                      Symbol
+   1     Aditya Birla Nuvo Ltd.            ABIRLANUVO
+
+The following company is being included:
+
+ Sr. No. Company Name                      Symbol
+   1     PNC Infratech Ltd.                PNCINFRA
+
+
+5)    Nifty Midcap 50 Index
+
+The following company is being excluded:
+
+ Sr. No. Company Name                      Symbol
+   1     Aditya Birla Nuvo Ltd.            ABIRLANUVO
+
+The following company is being included:
+
+ Sr. No. Company Name                      Symbol
+   1     Ajanta Pharmaceuticals Ltd.       AJANTPHARM
+
+
+6)    CNX Midcap Index
+
+The following company is being excluded:
+
+ Sr. No. Company Name                      Symbol
+   1     Aditya Birla Nuvo Ltd.            ABIRLANUVO
+
+The following company is being included:
+
+ Sr. No. Company Name                      Symbol
+   1     Alembic Pharmaceuticals Ltd.      APLLTD
+
+For more details, contact:
+Arindam Saha
+Head - Corporate Communications
+cc_nse@nse.co.in
++91–(022)–2659 8164
+About IISL: India Index Services & Products Ltd. (IISL), a NSE group company, was
+setup in May 1998 to provide a variety of indices and index related services for the
+capital markets. IISL is India's first specialised company focused upon the index as a
+core product. IISL maintains more than 100 equity indices comprising broad-based
+benchmark indices, sectoral indices and customised indices. IISL also maintains fixed
+income indices based on Government of India bonds. Many investment and risk
+management products based on IISL indices have been developed in the recent past,
+within India and abroad. These include index based derivatives traded on NSE,
+Singapore Exchange Ltd. (SGX), Chicago Mercantile Exchange Inc. (CME) and
+Osaka Exchange Inc. (OSE) and a number of index funds and exchange traded funds.
+The flagship 'Nifty 50' index is widely tracked and traded as the benchmark for Indian
+Capital Markets.
+
+About NSE: In its 20 year history, NSE has transformed the capital market, based on
+technology, innovation, high standards of governance and management practices.
+NSE's business practices and high levels of integrity have earned it the trust of the
+financial markets worldwide. Besides being a platform of choice for all exchange
+traded financial products in India, NSE’s flagship index, the Nifty 50, has become a
+benchmark national level economic parameter. Since inception, the exchange has
+been covered extensively by global media and has won many accolades as recognition
+of this remarkable journey.
+

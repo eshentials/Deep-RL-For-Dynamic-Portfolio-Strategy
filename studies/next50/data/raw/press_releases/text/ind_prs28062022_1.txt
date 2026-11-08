@@ -1,0 +1,63 @@
+PRESS RELEASE
+Mumbai, June 28, 2022
+
+
+
+              Revision in methodology for treatment of Special Dividend
+      The Index Maintenance Sub-Committee - Equity of NSE Indices Limited has decided to revise the
+      methodology for treatment of special dividend in the price return index as mentioned hereunder
+      pursuant to SEBI circular SEBI/HO/MRD2/MRD2_DCAP/P/CIR/2022/90 dated June 28, 2022.
+
+                           Existing                                            Revised
+       The adjustment for special dividend is made in     The adjustment for special dividend be made in
+       the index provided:                                the index provided:
+       •   Dividends declared at and above 5% of the      •   Dividends declared are at or above 2% of
+           market value of the underlying stock               the market value of the underlying stock
+
+       •   All cases of dividends (irrespective of the •      All cases of dividends (irrespective of the
+           dividend amount), where the listed entity          dividend amount), where the listed entity has
+           has sought exemption from the timeline             sought exemption from the timeline
+           prescribed under the provisions of SEBI            prescribed under the provisions of SEBI
+           (Listing Obligations and Disclosure                (Listing Obligations and Disclosure
+           Requirements) Regulations, 2015                    Requirements) Regulations, 2015
+
+
+
+      The revision in methodology shall become effective from June 29, 2022.
+
+
+      About National Stock Exchange of India Limited (NSE):
+
+      National Stock Exchange of India (NSE) is the world’s largest derivatives exchange by trading
+      volume (contracts) as per the statistics maintained by Futures Industry Association (FIA) for calendar
+      year 2021. NSE is ranked 4th in the world in the cash equities by number of trades as per the statistics
+      maintained by the World Federation of Exchanges (WFE) for calendar year 2021. NSE was the first
+      exchange in India to implement electronic or screen-based trading. It began operations in 1994 and is
+      ranked as the largest stock exchange in India in terms of total and average daily turnover for equity
+      shares every year since 1995, based on SEBI data. NSE has a fully integrated business model
+      comprising exchange listings, trading services, clearing and settlement services, indices, market data
+feeds, technology solutions and financial education offerings. NSE also oversees compliance by
+trading, clearing members and listed companies with the rules and regulations of SEBI and the
+exchange. NSE is a pioneer in technology and ensures the reliability and performance of its systems
+through a culture of innovation and investment in technology.
+For more information, please visit: www.nseindia.com
+
+
+About NSE Indices Limited:
+NSE Indices Limited (formerly known as India Index Services & Products Ltd. - IISL), a subsidiary of
+NSE, provides a variety of indices and index related services for the capital markets. The company focuses
+on the index as a core product. The company owns and manages a portfolio of indices under the Nifty
+brand of NSE, including the flagship index, the Nifty 50. Nifty equity indices comprises of broad-based
+benchmark indices, sectoral indices, strategy indices, thematic indices and customised indices. NSE
+Indices Limited also maintains fixed income indices based on Government of India securities, corporate
+bonds, money market instruments and hybrid indices. Many investment products based on Nifty indices
+have been developed within India and abroad. These include index based derivatives traded on NSE, NSE
+IFSC and Singapore Exchange Ltd. (SGX) and a number of index funds and exchange traded funds. The
+flagship ' Nifty 50' index is widely tracked and traded as the benchmark for Indian Capital Markets.
+For more information, please visit: www.niftyindices.com
+
+Press contact:
+Kumar Kartikey - Chief Manager, Corporate Communications
+Priyanka Roy - Manager, Corporate Communications
+Email ID: cc@nse.co.in
+

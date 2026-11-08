@@ -1,0 +1,135 @@
+       IISL
+       INDIA INDEX SERVICES & PRODUCTS LIMITED
+
+                                  PRESS RELEASE
+
+The Index Maintenance Sub-Committee has decided to make the following change in the
+various indices. These changes shall become effective from May 29, 2015 (close of May
+28, 2015).
+
+(1)    CNX Nifty Index:
+
+The following company is being excluded:
+
+ Sr. No. Company Name                                      Symbol
+   1     IDFC Ltd.                                         IDFC
+
+The following company is being included:
+
+ Sr. No. Company Name                                      Symbol
+   1     Bosch Ltd.                                        BOSCHLTD
+
+(2)    CNX Nifty Junior Index:
+
+The following companies are being excluded:
+
+ Sr. No. Company Name                                      Symbol
+   1     Adani Enterprises Ltd.                            ADANIENT
+   2     Bosch Ltd.                                        BOSCHLTD
+
+The following companies are being included:
+
+ Sr. No. Company Name                                      Symbol
+   1     Britannia Industries Ltd.                         BRITANNIA
+   2     MRF Ltd.                                          MRF
+
+(3)    CNX 100 Index:
+
+The following companies are being excluded:
+
+ Sr. No. Company Name                                      Symbol
+   1     Adani Enterprises Ltd.                            ADANIENT
+   2     IDFC Ltd.                                         IDFC
+
+The following companies are being included:
+
+ Sr. No. Company Name                                      Symbol
+   1     Britannia Industries Ltd.                         BRITANNIA
+   2     MRF Ltd.                                          MRF
+The replacements in CNX 100 as stated above will also be applicable to CNX 100
+Equal Weight Index.
+
+(4)    CNX 200 Index:
+
+The following companies are being excluded:
+
+ Sr. No. Company Name                                   Symbol
+   1     Adani Enterprises Ltd.                         ADANIENT
+   2     IDFC Ltd.                                      IDFC
+
+The following companies are being included:
+
+ Sr. No. Company Name                                   Symbol
+   1     Alstom T&D India Ltd.                          ALSTOMT&D
+   2     City Union Bank Ltd.                           CUB
+
+(5)    CNX 500 Index:
+
+The following companies are being excluded:
+
+ Sr. No. Company Name                                   Symbol
+   1     Adani Enterprises Ltd.                         ADANIENT
+   2     IDFC Ltd.                                      IDFC
+
+The following companies are being included:
+
+ Sr. No. Company Name                                   Symbol
+   1     NATCO Pharma Ltd.                              NATCOPHARM
+   2     Visagar Polytex Ltd.                           VIVIDHA
+
+(6)    CNX Finance Index:
+
+The following company is being excluded:
+
+ Sr. No. Company Name                                   Symbol
+   1     IDFC Ltd.                                      IDFC
+
+The following company is being included:
+
+ Sr. No. Company Name                                   Symbol
+   1     Sundaram Finance Ltd.                          SUNDARMFIN
+
+(7)    CNX Service Sector Index:
+
+The following company is being excluded:
+
+ Sr. No. Company Name                                   Symbol
+   1     IDFC Ltd.                                      IDFC
+The following company is being included:
+
+ Sr. No. Company Name                                 Symbol
+   1     LIC Housing Finance Ltd.                     LICHSGFIN
+
+(8)    CNX High Beta Index:
+
+The following companies are being excluded:
+
+ Sr. No. Company Name                                 Symbol
+   1     Adani Enterprises Ltd.                       ADANIENT
+   2     IDFC Ltd.                                    IDFC
+
+The following companies are being included:
+
+ Sr. No. Company Name                                 Symbol
+   1     Adani Ports and Special Economic Zone Ltd.   ADANIPORTS
+   2     Jindal Steel & Power Ltd.                    JINDALSTEL
+
+(9)    LIX 15 Index:
+
+The following companies are being excluded:
+
+ Sr. No. Company Name                                 Symbol
+   1     IDFC Ltd.                                    IDFC
+   2     Jindal Steel & Power Ltd.                    JINDALSTEL
+
+The following companies are being included:
+
+ Sr. No. Company Name                                 Symbol
+   1     HCL Technologies Ltd.                        HCLTECH
+   2     Hero MotoCorp Ltd.                           HEROMOTOCO
+
+
+Place: Mumbai
+
+Date: April 29, 2015
+

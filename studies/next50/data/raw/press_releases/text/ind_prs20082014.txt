@@ -1,0 +1,214 @@
+       IISL
+       INDIA INDEX SERVICES & PRODUCTS LIMITED
+
+                                 PRESS RELEASE
+
+The Index Maintenance Sub-Committee has decided to make the following changes in
+various indices as a part of its periodic review. These changes shall become effective
+from September 19, 2014 (close of September 18, 2014).
+
+(1)    CNX Nifty Index
+
+The following company is being excluded:
+
+ Sr. No.   Company Name                                Symbol
+    1      United Spirits Ltd.                         MCDOWELL-N
+
+
+The following company is being included:
+
+ Sr. No.   Company Name                                Symbol
+    1      Zee Entertainment Enterprises Ltd.          ZEEL
+
+
+(2)    CNX Nifty Junior Index
+
+The following companies are being excluded:
+
+ Sr. No.   Company Name                                Symbol
+    1      MphasiS Ltd.                                MPHASIS
+    2      Zee Entertainment Enterprises Ltd.          ZEEL
+
+
+The following companies are being included:
+
+ Sr. No.   Company Name                              Symbol
+    1      Aurobindo Pharma Ltd.                     AUROPHARMA
+    2      Motherson Sumi Systems Ltd.               MOTHERSUMI
+
+
+(3)    CNX 100 Index
+
+The following companies are being excluded:
+
+ Sr. No.   Company Name                                Symbol
+    1      MphasiS Ltd.                                MPHASIS
+ Sr. No.   Company Name                               Symbol
+    2      United Spirits Ltd.                        MCDOWELL-N
+
+The following companies are being included:
+
+ Sr. No.   Company Name                             Symbol
+    1      Aurobindo Pharma Ltd.                    AUROPHARMA
+    2      Motherson Sumi Systems Ltd.              MOTHERSUMI
+
+The above replacements will also be applicable to CNX 100 Equal Weight Index.
+
+
+(4)    CNX 200 Index
+
+The following companies are being excluded:
+
+ Sr. No.   Company Name                                 Symbol
+    1      Adani Power Ltd.                             ADANIPOWER
+    2      Bajaj Finserv Ltd.                           BAJAJFINSV
+    3      Bajaj Holdings & Investment Ltd.             BAJAJHLDNG
+    4      Berger Paints India Ltd.                     BERGEPAINT
+    5      Bhushan Steel Ltd.                           BHUSANSTL
+    6      Coromandel International Ltd.                COROMANDEL
+    7      CRISIL Ltd.                                  CRISIL
+    8      Cyient Ltd.                                  CYIENT
+    9      eClerx Services Ltd.                         ECLERX
+   10      Gillette India Ltd.                          GILLETTE
+   11      GlaxoSmithkline Consumer Healthcare Ltd.     GSKCONS
+   12      Great Eastern Shipping Co. Ltd.              GESHIP
+   13      Religare Enterprises Ltd.                    RELIGARE
+   14      Shree Renuka Sugars Ltd.                     RENUKA
+   15      Supreme Industries Ltd.                      SUPREMEIND
+   16      Trent Ltd.                                   TRENT
+   17      United Spirits Ltd.                          MCDOWELL-N
+   18      Vakrangee Ltd.                               VAKRANGEE
+   19      Vijaya Bank                                  VIJAYABANK
+
+
+The following companies are being included:
+
+ Sr. No.   Company Name                               Symbol
+    1      Alembic Pharmaceuticals Ltd.               APLLTD
+    2      Amtek Auto Ltd.                            AMTEKAUTO
+    3      CARE Ltd.                                  CARERATING
+    4      Castrol India Ltd.                         CASTROLIND
+ Sr. No.   Company Name                              Symbol
+    5      DCB Bank Ltd.                             DCBBANK
+    6      Delta Corp Ltd.                           DELTACORP
+    7      Dewan Housing Finance Corporation Ltd.    DHFL
+    8      Edelweiss Financial Services Ltd.         EDELWEISS
+    9      Engineers India Ltd.                      ENGINERSIN
+   10      Indian Oil Corporation Ltd.               IOC
+   11      Kaveri Seed Company Ltd.                  KSCL
+   12      Marico Ltd.                               MARICO
+   13      Muthoot Finance Ltd.                      MUTHOOTFIN
+   14      National Aluminium Co. Ltd.               NATIONALUM
+   15      Prestige Estates Projects Ltd.            PRESTIGE
+   16      Repco Home Finance Ltd.                   REPCOHOME
+   17      SKS Microfinance Ltd.                     SKSMICRO
+   18      TVS Motor Company Ltd.                    TVSMOTOR
+   19      Va Tech Wabag Ltd.                        WABAG
+
+
+
+(5)    CNX 500 Index
+
+The following companies are being excluded:
+
+ Sr. No.   Company Name                              Symbol
+    1      Adani Power Ltd.                          ADANIPOWER
+    2      Aptech Ltd.                               APTECHT
+    3      CORE Education & Technologies Ltd.        COREEDUTEC
+    4      Era Infra Engineering Ltd.                ERAINFRA
+    5      GOL Offshore Ltd.                         GTOFFSHORE
+    6      India Glycols Ltd.                        INDIAGLYCO
+    7      Indraprastha Medical Corporation Ltd.     INDRAMEDCO
+    8      Infinite Computer Solutions (India) Ltd   INFINITE
+    9      Man Infraconstruction Ltd.                MANINFRA
+   10      Orbit Corporation Ltd.                    ORBITCORP
+   11      Polaris Financial Technology Ltd.         POLARIS
+   12      S. Kumars Nationwide Ltd.                 SKUMARSYNF
+   13      Tinplate Company of India Ltd.            TINPLATE
+   14      United Spirits Ltd.                       MCDOWELL-N
+   15      West Coast Paper Mills Ltd.               WSTCSTPAPR
+
+
+The following companies are being included:
+
+ Sr. No.   Company Name                              Symbol
+    1      Ajanta Pharmaceuticals Ltd.               AJANTPHARM
+ Sr. No.   Company Name                             Symbol
+    2      Alembic Pharmaceuticals Ltd.             APLLTD
+    3      Apar Industries Ltd.                     APARINDS
+    4      Ashoka Buildcon Ltd.                     ASHOKA
+    5      Astral Poly Technik Ltd.                 ASTRAL
+    6      Century Plyboards (India) Ltd.           CENTURYPLY
+    7      Kitex Garments Ltd.                      KITEX
+    8      Nitin Fire Protection Industries Ltd.    NITINFIRE
+    9      NOCIL Ltd.                               NOCIL
+   10      Ratnamani Metals & Tubes Ltd.            RATNAMANI
+   11      Repco Home Finance Ltd.                  REPCOHOME
+   12      TV Today Network Ltd.                    TVTODAY
+   13      Va Tech Wabag Ltd.                       WABAG
+   14      Welspun Corp Ltd.                        WELCORP
+   15      Wheels India Ltd.                        WHEELS
+
+
+(6)    CNX FMCG Index
+
+The following companies are being excluded:
+
+ Sr. No.   Company Name                                  Symbol
+    1      Procter & Gamble Hygiene & Health Care Ltd.   PGHH
+    2      United Spirits Ltd.                           MCDOWELL-N
+
+
+The following companies are being included:
+
+ Sr. No.   Company Name                              Symbol
+    1      Godrej Industries Ltd.                    GODREJIND
+    2      Marico Ltd.                               MARICO
+
+
+(7)    CNX Consumption Index
+
+The following company is being excluded:
+
+ Sr. No.   Company Name                             Symbol
+    1      United Spirits Ltd.                      MCDOWELL-N
+
+
+The following company is being included:
+
+ Sr. No.   Company Name                              Symbol
+    1      Marico Ltd.                               MARICO
+(8)    LIX 15 Index
+
+The following companies are being excluded:
+
+ Sr. No.   Company Name                       Symbol
+    1      Maruti Suzuki India Ltd.           MARUTI
+    2      United Spirits Ltd.                MCDOWELL-N
+
+
+The following companies are being included:
+
+ Sr. No.   Company Name                       Symbol
+    1      HCL Technologies Ltd.              HCLTECH
+    2      Tech Mahindra Ltd.                 TECHM
+
+
+(9)    NI15 Index
+
+The following company is being excluded:
+
+ Sr. No.   Company Name                       Symbol
+    1      United Spirits Ltd.                MCDOWELL-N
+
+
+The following company is being included:
+
+ Sr. No.   Company Name                       Symbol
+    1      Dabur Ltd.                         DABUR
+
+
+
+Place: Mumbai
+Date: August 20, 2014
+

@@ -27,7 +27,7 @@ import pandas as pd
 
 from baselines import rules
 from baselines.select import _score
-from config import ROOT, load
+from config import ROOT, load, require_version
 from env.engine import run
 from env.features import MARKET_FEATURES
 from eval import metrics as M
@@ -46,11 +46,8 @@ NAMES = {"ppo_ensemble": "PPO ensemble", "vix_rule": "VIX threshold rule (post-h
 
 
 def vix_threshold(data, threshold: float, horizon: int, low: float = LOW, high: float = HIGH):
-    v = data.feats[:, VIX_COL]
-
-    def pol(sim, t):
-        return (high if v[t] >= threshold else low), horizon
-    return pol
+    """The rule now lives in baselines.rules (protocol v2 registers it); same function."""
+    return rules.vix_threshold(data, threshold, horizon, low, high)
 
 
 def select(data, fold, cost_bps: float) -> dict:
@@ -77,6 +74,7 @@ def _table(df: pd.DataFrame, cols: list[str], fmt: dict) -> list[str]:
 
 def main():
     cfg = load()
+    require_version(1, "eval.vix_rule")
     cost = cfg["portfolio"]["cost_bps"]
     b = cfg["evaluation"]["bootstrap"]
     years = cfg["folds"]["test_years"]

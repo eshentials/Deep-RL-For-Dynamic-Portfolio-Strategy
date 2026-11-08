@@ -1,0 +1,14 @@
+symbol,date,r_vendor,r_nse,nse_open,nse_close,nse_prevclose,nse_agrees,explanation,accepted,bhavcopy
+BANDHANBNK,2020-03-23,-0.2502,-0.2502,208.45,173.65,231.6,True,COVID crash: Nifty -13% on 2020-03-23,True,https://nsearchives.nseindia.com/content/historical/EQUITIES/2020/MAR/cm23MAR2020bhav.csv.zip
+BANDHANBNK,2020-03-26,0.3932,0.3932,160.8,215.6,154.75,True,Rebound of beaten-down bank stocks at the March 2020 F&O expiry,True,https://nsearchives.nseindia.com/content/historical/EQUITIES/2020/MAR/cm26MAR2020bhav.csv.zip
+BANKBARODA,2017-10-25,0.3144,0.3144,157.45,188.15,143.15,True,Government PSU-bank recapitalisation plan (2017-10-24),True,https://nsearchives.nseindia.com/content/historical/EQUITIES/2017/OCT/cm25OCT2017bhav.csv.zip
+IBULHSGFIN,2019-09-30,-0.344,-0.344,360.6,255.9,390.1,True,Delhi High Court agreed to hear a PIL alleging fund diversion; ended 34% lower,True,https://nsearchives.nseindia.com/content/historical/EQUITIES/2019/SEP/cm30SEP2019bhav.csv.zip
+IBULHSGFIN,2020-03-19,-0.3374,-0.3374,122.0,89.75,135.45,True,COVID-19 crash week: housing-finance sell-off (no corporate action),True,https://nsearchives.nseindia.com/content/historical/EQUITIES/2020/MAR/cm19MAR2020bhav.csv.zip
+IBULHSGFIN,2020-06-19,0.311,0.311,157.4,203.4,155.15,True,"Bulk deals, Morgan Stanley bought a 1.06% stake (2020-06-19)",True,https://nsearchives.nseindia.com/content/historical/EQUITIES/2020/JUN/cm19JUN2020bhav.csv.zip
+IDEA,2019-07-29,-0.2703,-0.2703,8.75,6.75,9.25,True,Q1 FY20 results: subscriber and revenue decline,True,https://nsearchives.nseindia.com/content/historical/EQUITIES/2019/JUL/cm29JUL2019bhav.csv.zip
+IDEA,2019-11-19,0.3596,0.3596,4.85,6.05,4.45,True,Tariff increase announced after hours on 2019-11-18,True,https://nsearchives.nseindia.com/content/historical/EQUITIES/2019/NOV/cm19NOV2019bhav.csv.zip
+IDEA,2020-02-19,0.4,0.4,3.15,4.2,3.0,True,Reports that the government would not invoke bank guarantees over AGR dues,True,https://nsearchives.nseindia.com/content/historical/EQUITIES/2020/FEB/cm19FEB2020bhav.csv.zip
+IDEA,2020-03-13,0.3333,0.3333,4.0,5.6,4.2,True,Hopes of a government relief package for telecoms,True,https://nsearchives.nseindia.com/content/historical/EQUITIES/2020/MAR/cm13MAR2020bhav.csv.zip
+IDEA,2020-03-18,-0.3505,-0.3505,5.3,3.15,4.85,True,Supreme Court rejected self-assessment of AGR dues,True,https://nsearchives.nseindia.com/content/historical/EQUITIES/2020/MAR/cm18MAR2020bhav.csv.zip
+PNB,2017-10-25,0.462,0.462,152.0,202.05,138.2,True,Government PSU-bank recapitalisation plan (2017-10-24),True,https://nsearchives.nseindia.com/content/historical/EQUITIES/2017/OCT/cm25OCT2017bhav.csv.zip
+RECLTD,2024-06-04,-0.2519,-0.2519,594.0,452.2,604.5,True,General-election results day: sell-off in state-owned stocks (Nifty Next 50 -9.3%),True,https://nsearchives.nseindia.com/content/historical/EQUITIES/2024/JUN/cm04JUN2024bhav.csv.zip

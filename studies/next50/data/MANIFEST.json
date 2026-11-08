@@ -1,0 +1,2586 @@
+{
+ "files": {
+  "data/raw/rbi/rbi_91day_tbill_auctions_1992-2026.pdf": {
+   "bytes": 656748,
+   "sha256": "e1cf1657fd03756200dfbe94e24d5739a67e6ab35a6601a8526e6411199686ac",
+   "source": "Reserve Bank of India 91-day T-bill auction cut-off yields (shared with protocol v1)"
+  },
+  "data/raw/rbi/rbi_handbook_2025-26_table218_91day_auctions.xlsx": {
+   "bytes": 14594,
+   "sha256": "391ce6cc51421607d915e886d03c42abf016770e1a0d01222b9651393ccd630a",
+   "source": "Reserve Bank of India 91-day T-bill auction cut-off yields (shared with protocol v1)"
+  },
+  "studies/next50/data/processed/benchmark_repairs.csv": {
+   "bytes": 75,
+   "sha256": "b2cc8a7c64ba7cb59fc8121a4b2cd043a3cc63dea643fb257222af9c34a002ad",
+   "source": "Derived by this repository's builders"
+  },
+  "studies/next50/data/processed/benchmark_tracking_deviations.csv": {
+   "bytes": 464,
+   "sha256": "67fca14d4543853d8061536e6c339494669a37592d5d33c999a010b245e9f78e",
+   "source": "Derived by this repository's builders"
+  },
+  "studies/next50/data/processed/engine.npz": {
+   "bytes": 4717336,
+   "sha256": "b655c4cddd275975bf12335b2a75c88bdcc270bcde001f1727361fca8f82c09f",
+   "source": "Derived by this repository's builders"
+  },
+  "studies/next50/data/processed/market.parquet": {
+   "bytes": 172885,
+   "sha256": "e40a90fd1556c782cf41377faf2700d574768b19059079b06232552c303653fd",
+   "source": "Derived by this repository's builders"
+  },
+  "studies/next50/data/processed/price_jump_checks.csv": {
+   "bytes": 2883,
+   "sha256": "1690e9789b0a1ff5ed6ef8c7d3ab7899802a8d09a7d6b3afa5b144aee9fdf4df",
+   "source": "Derived by this repository's builders"
+  },
+  "studies/next50/data/processed/price_jumps_explained.csv": {
+   "bytes": 3218,
+   "sha256": "f5e4619981fd462991d252cbd4136bb405c8770871cd3455611f75374c6984e7",
+   "source": "Derived by this repository's builders"
+  },
+  "studies/next50/data/processed/price_qa.csv": {
+   "bytes": 6166,
+   "sha256": "63f436bdabfbab4081222e3d51ee003a08bafb378023ac0dcf447783790f1cbd",
+   "source": "Derived by this repository's builders"
+  },
+  "studies/next50/data/processed/price_repairs.csv": {
+   "bytes": 849,
+   "sha256": "7c4a690cb54d8769d228a86ac97526d3e7b6df51ee329c97ff44e4ac199a8375",
+   "source": "Derived by this repository's builders"
+  },
+  "studies/next50/data/processed/prices_adjusted.parquet": {
+   "bytes": 3077059,
+   "sha256": "94c32461c2be874ea5bc3e0728a974a028758e92f4c00de7f5eb448b6ff2e3dc",
+   "source": "Derived by this repository's builders"
+  },
+  "studies/next50/data/processed/rf.parquet": {
+   "bytes": 52179,
+   "sha256": "3fd36131b217b7116bb87624ba8c9e82643975eca8190f852d60cb547e65fcf0",
+   "source": "Derived by this repository's builders"
+  },
+  "studies/next50/data/raw/market/yahoo_market_adj_close.csv": {
+   "bytes": 337224,
+   "sha256": "e736be12fcb10cc962603b4014326be2198615629e5be977de84e0fa531f3918",
+   "source": "Yahoo Finance via yfinance (^NSEI session calendar, ^NSMIDCP, JUNIORBEES.NS, ^INDIAVIX, INR=X)"
+  },
+  "studies/next50/data/raw/market/yahoo_market_close.csv": {
+   "bytes": 334873,
+   "sha256": "8dfd778379e317dd8f374979834d9c1322a615037eb85f3e08d91fcf35049a05",
+   "source": "Yahoo Finance via yfinance (^NSEI session calendar, ^NSMIDCP, JUNIORBEES.NS, ^INDIAVIX, INR=X)"
+  },
+  "studies/next50/data/raw/market/yahoo_market_volume.csv": {
+   "bytes": 160986,
+   "sha256": "c9b9df60a777f2115a23a9bb41f13399b7a351a8cfb630e918f6f664f8392907",
+   "source": "Yahoo Finance via yfinance (^NSEI session calendar, ^NSMIDCP, JUNIORBEES.NS, ^INDIAVIX, INR=X)"
+  },
+  "studies/next50/data/raw/nse_bhavcopy/rows.csv": {
+   "bytes": 2802,
+   "sha256": "edc977292a94ea26aff0a1e102403765d10092014240cbc98987cb1b1d55a907",
+   "source": ""
+  },
+  "studies/next50/data/raw/press_releases/listing.csv": {
+   "bytes": 132845,
+   "sha256": "47f0b2adb62a84f82980949315429e2277d3e567ee79c887a0cc4d827d19c467",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/listing_meta.csv": {
+   "bytes": 168,
+   "sha256": "db2aeb339315adcd7cee8b8b6b89e6c53714b0673bbe15de444c9da5c440c1ef",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/notices.csv": {
+   "bytes": 127971,
+   "sha256": "eac904b16df606ea3f27edc06e95dbabdc03df99c93812689a61c8701659ae50",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs01012025.txt": {
+   "bytes": 1842,
+   "sha256": "424b9959e0e464bf42813abe5dbb23b63864acdaca0f51b3872530e221c3e599",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs01042026.txt": {
+   "bytes": 1836,
+   "sha256": "20bbc59528bada959771647b8e8391cd893c7541ca97fa8101ca4bcfb13a0215",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs01082018.txt": {
+   "bytes": 7447,
+   "sha256": "2710d13ec2d63c641f30d974fabb2df68a0b7baf2e0143e0df56aee6f15e1b96",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs01082025.txt": {
+   "bytes": 1843,
+   "sha256": "1b9d11b2b08bdcac707870500a229018a78791af2f171b7e0d0e1efeb43b56f2",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs01092022.txt": {
+   "bytes": 57310,
+   "sha256": "82eb947ca363d5db3dcc373f0ee1e7414145726460c8864790dfb6fc2ea81c6e",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs01092026.txt": {
+   "bytes": 1835,
+   "sha256": "56a06ec5b1be3eaf9fba1e5982aaa782d2536e0f974636bb0746ad9e92af078f",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs01102024.txt": {
+   "bytes": 1861,
+   "sha256": "547c1e179c4809f1ae22334d60fe4b957fcc45f1226427940d993018d6b22904",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs01102025.txt": {
+   "bytes": 2119,
+   "sha256": "513143b34834ffa75e10cc4f7431b1e94fba2864e00ac8293ef4efd28aa8f964",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs01102026.txt": {
+   "bytes": 2126,
+   "sha256": "7807c6dcd023fe68f23b02667ef9fa6d39ab41903c6c29f22cebdcf1ee1b7861",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs01122025.txt": {
+   "bytes": 16023,
+   "sha256": "5afc5adb2a4e85737596828083684e4402ddb770e20f00b0964d1fc475f34b3b",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs01122025_1.txt": {
+   "bytes": 1835,
+   "sha256": "826efb14739afa09ecbd9f6c3f18b343754994e4351b4cb881040e4f2d05a8e8",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs02032026_1.txt": {
+   "bytes": 1826,
+   "sha256": "8fcad670ad030f0b61bb5f012c579d9e7bf38b61e82aeca2221073d7301c1ad2",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs02032026_2.txt": {
+   "bytes": 2350,
+   "sha256": "aa6aafba15f9967564966dc90830856a5c6111a06b9008a2d89156400bc11c05",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs02052025_1.txt": {
+   "bytes": 1719,
+   "sha256": "1d604f579023f48eb18a18af1f5b3a977b7942497251f344e067086d7d24612f",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs02072015.txt": {
+   "bytes": 4252,
+   "sha256": "6c611efe7401daf425fa28b7b9e8f49b50710f4dbd36572a2b99145fd177b303",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs02072020_1.txt": {
+   "bytes": 8938,
+   "sha256": "1dcdc0ce537da9be0a0c3b2e9f633b2a09b151c152459b64eddcb978965eeeab",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs02072025.txt": {
+   "bytes": 2016,
+   "sha256": "6869cc60d166b051891b74c31c8755e15b609dca260ccb24280e62584f884f1a",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs02072026.txt": {
+   "bytes": 1947,
+   "sha256": "9faf5d3d5677911fe9b83b5392d7cb878831b24cb4d114e850898faff7932c3f",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs02092026.txt": {
+   "bytes": 2015,
+   "sha256": "23e28bdcd2fd646d41c842dace157f63eea8023549b8cc95b188aa225ecda90b",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs02112018.txt": {
+   "bytes": 5595,
+   "sha256": "163e5f42d44a25ffa414416790c840fed07a7fb211ff08a9823b0bdeefe4e9c0",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs02122024.txt": {
+   "bytes": 1825,
+   "sha256": "f52bf7ccfefe3561673a9dcc40bf1ac56bd1e74537d58da490d9e5b4491d7077",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs03012014.txt": {
+   "bytes": 2863,
+   "sha256": "cce784719b499164f843f8020160b5659fbe6359496aa5dc6154f93342df9b42",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs03012017.txt": {
+   "bytes": 5166,
+   "sha256": "8e911f1708cdd29ccd62ba9276635a03c59dd4a7e54b9145c2283da61b8300a3",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs03042014.txt": {
+   "bytes": 3587,
+   "sha256": "d37b78176198063977c68c9e9c87f248f5ef441fe2bcb865e7e2c170d2235c56",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs03062025_1.txt": {
+   "bytes": 1931,
+   "sha256": "2ca56db0193d792918e6931b10ae157fde5796598bd61a3d14c6d47fd1fa396e",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs03072025.txt": {
+   "bytes": 1926,
+   "sha256": "70fc0b00b3e873a4f5387a24b042af02f99e9048d5ff4a2a5b24dbe390116f89",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs03072026.txt": {
+   "bytes": 1841,
+   "sha256": "98ec8ec97767e069003ef758e0d8885d49fd9bb6d2a31d1ad479954acb4b0f33",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs03082026.txt": {
+   "bytes": 1652,
+   "sha256": "2645627180b183fafad000e60be49bb7b26c4e86fa56a0379eb7216afbe595c1",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs03092026_1.txt": {
+   "bytes": 1832,
+   "sha256": "439f7297d50893c31f5daabcebfd846e2ed48e72dc78b1e96e55a2bad0788918",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs03102025.txt": {
+   "bytes": 2040,
+   "sha256": "57f1e522d8bdbdda25ef4e8ed873668eacef28c9953577e377e8a46e43b23747",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs03112017.txt": {
+   "bytes": 7389,
+   "sha256": "24838507853734fa0f6a377bbda150256b6e3c7c13a55bcb0b255d895355b329",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs03112026_1.txt": {
+   "bytes": 1833,
+   "sha256": "f34bda4bef95ee4608b0d0f52b875724739550959ef7355152c704ae799e1987",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs04032026.txt": {
+   "bytes": 1824,
+   "sha256": "6fd8070a1d6e6040e1742e878c44ec45a6bfbbe92eb4735a29048fc2cd35acdd",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs04042025_2.txt": {
+   "bytes": 4032,
+   "sha256": "b974bee9de0edb0a895096207d929fbbf6283e08e89569cabeea572dd224d088",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs04052026.txt": {
+   "bytes": 6980,
+   "sha256": "41e1dce111c8f11ef00f9d3045100c9b3f7f7e5e560c07f8cfa46b0e55337deb",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs04062025.txt": {
+   "bytes": 1836,
+   "sha256": "24949a895e88f9aa4098b0a904b8cb94aea3819448da905211962e8c04514b23",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs04072023.txt": {
+   "bytes": 10951,
+   "sha256": "dd3415e18dab35fea2a7b4477157b67460f5e7ddd3887cce65c04317ef466807",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs04072025.txt": {
+   "bytes": 1835,
+   "sha256": "97990b0cfecd9b49388aa97ff5a4f580471f841ad261b33c98626e47c1f6bde3",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs04082025.txt": {
+   "bytes": 1844,
+   "sha256": "98bd2811e0b7e6c7a5fec22dbc12d899622a4037f66e3f76af4cd3c555f9ad84",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs04082026_3.txt": {
+   "bytes": 2139,
+   "sha256": "1d0a7fb96687341ee75b2fe69f8adf062e759d40895e5616f2d250d7dc486302",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs04092024_1.txt": {
+   "bytes": 1849,
+   "sha256": "4711493a0e0acfb83d87cb31772869f0adf99d9ac365afbf53eec84f3360a228",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs04092025.txt": {
+   "bytes": 1912,
+   "sha256": "28212995f26044340716a338e689d471dee31a5a4b84f57c81f892439e478f50",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs04092026.txt": {
+   "bytes": 2107,
+   "sha256": "98117a4b69726c104e414ac23184a17ea945ba918f9dbbe8126fcbcd06f6fac8",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs04092026_1.txt": {
+   "bytes": 1834,
+   "sha256": "352bc493ef3fcd59362065bf113272d40df1e2339bb98a179d80be3f6eef4603",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs04102024.txt": {
+   "bytes": 6195,
+   "sha256": "cd8e0fb818ee12841f75d06f7f8a0f134ef9ae415d4f981ffe9ed657ceef6866",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs04102024_1.txt": {
+   "bytes": 1861,
+   "sha256": "71f81da92d68d8227459bf6c5d42782d41708b6536d0ec6a1ec8e28c4dad78c5",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs04112015_1.txt": {
+   "bytes": 4662,
+   "sha256": "80a6c487456b53bba62084a6584f6c26ebc08aac92a03beedc16c5a9ec1e46f4",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs04112026_1.txt": {
+   "bytes": 1926,
+   "sha256": "6d32fcc4f52e565c6277e4bdc3e81f681654e372e90bf0a28cfa659cd84dbc13",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs05012018.txt": {
+   "bytes": 8238,
+   "sha256": "af9e3cf8f27f56dc110e3316e0ffdae8bbf9b7ecf929d985fe85bb03b457de05",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs05022025.txt": {
+   "bytes": 1823,
+   "sha256": "2e2a608c6621255eb97017fd9c47a0c70b602f59e4460a69de6cd525cf3f38e8",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs05022025_1.txt": {
+   "bytes": 2750,
+   "sha256": "8b6681c0495e5f950b92e4ee1eb4d90525e1605067769223daa48b4a0565002d",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs05032014.txt": {
+   "bytes": 848,
+   "sha256": "6c6c76f3cc76b2d5d601d0c3f65f021287a83bce8f86c56efc69ce29cfec9fcb",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs05032026.txt": {
+   "bytes": 1824,
+   "sha256": "0ffb2246ed6920a303e7d7c7f16a6456b6e2c855cdbaaecc7624314c0c10fcd1",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs05042022.txt": {
+   "bytes": 6913,
+   "sha256": "2d43b9ef644e5c16c4b45f18c49f4bded741ce9cec35eea44f25b47f3f62375a",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs05042022_1.txt": {
+   "bytes": 6577,
+   "sha256": "d6d94354d5894de519176ab50837f0d87f35661cd36ddf3be974a0e1b46a61e1",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs05062015.txt": {
+   "bytes": 907,
+   "sha256": "3d28820ed52980858690bca2546ae75d4e275d11260cc1ad7fbb968a7f0e1114",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs05062025.txt": {
+   "bytes": 1838,
+   "sha256": "5efdd2426b1c4b7975da1a83bc034905425a098c93e30005fdf617c57397c3e3",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs05092023.txt": {
+   "bytes": 2908,
+   "sha256": "b4cb9b1dbc29a3ea36cd9bd01268c3d56f7a465540bc7a5d2664333f3915070d",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs05092024.txt": {
+   "bytes": 1849,
+   "sha256": "62ab8f19c42dd51558f0ca22ca5c3d4c7f85053b929f7be5b706e5af53905c39",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs05102026.txt": {
+   "bytes": 1952,
+   "sha256": "ba3071fb4888c859f0d49520756d167033160409f5d18576a2b3048e1ffdf66e",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs05112024.txt": {
+   "bytes": 1820,
+   "sha256": "03a32d848800ae2b034acc99d4596e1924689f3a54f40b4c732778bdc4636c03",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs05112026.txt": {
+   "bytes": 1833,
+   "sha256": "4440d6b6dc9aafd316340f3024c21fb796012e0842234760cf3b4f7ca69edb29",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs06012015.txt": {
+   "bytes": 3076,
+   "sha256": "7eff4cb00fcfd08732b8a27c2933c3ce196e39a7948591e392b9c03181fcfe63",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs06022025_1.txt": {
+   "bytes": 3608,
+   "sha256": "c7bd0863be89b690f425e48cec0ab51ac95231e8fdcdd2eb0db7ae8e1ec9fa38",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs06032017_1.txt": {
+   "bytes": 3583,
+   "sha256": "f3ec887427e52c3ec55fb22d72a93d054939baf3b006ded4ec33a25262e33377",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs06032018.txt": {
+   "bytes": 6583,
+   "sha256": "7afb2de9559631bacc5467ec5da4ef2b400ed3d970c3e70b5fe9a98b2b3fc1f4",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs06032023.txt": {
+   "bytes": 12268,
+   "sha256": "0f750e18f9729d89cbdeb910d819cd9df39a2ea22ad4db1b1cb106421712d023",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs06032025.txt": {
+   "bytes": 2567,
+   "sha256": "b822c5c6e1869c174f1a5eb0f74e8aa4c79e4d13737742304050771b983eca1a",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs06032026.txt": {
+   "bytes": 1819,
+   "sha256": "5223c482707acb881e5a2f24257a804f4c259c7d3a0c83158f9aa1e2ad3d710c",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs06042016.txt": {
+   "bytes": 3193,
+   "sha256": "1cc551a3960ceb7bc8bfb1fabd50ba46ce0b51153055a0f96d1eeeb3fb42838c",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs06042022.txt": {
+   "bytes": 5204,
+   "sha256": "fb92ffb718c529e59e319e18bf73d07529eb35d2da4ba534044bea7713737f7b",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs06042026.txt": {
+   "bytes": 2034,
+   "sha256": "5cc0100fe040369fdc1aefd583e7855a2529bb6398db38acfa3a7ab2d87bee17",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs06052005.txt": {
+   "bytes": 2799,
+   "sha256": "58ec4db9c22a4569205eb2560826d7bf02e99d0cafa4e7185bbdcbace380d9b5",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs06062025.txt": {
+   "bytes": 50714,
+   "sha256": "2842cd8df17f58119b426dbc14bd1209c3ff610a373fc03b746f07a03cf17509",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs06062025_1.txt": {
+   "bytes": 1582,
+   "sha256": "528a7cf04e1149117810779bc14512a6e259c04e80e500c776f89ad504e99763",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs06082025_2.txt": {
+   "bytes": 1933,
+   "sha256": "cc2f13fb2eb7edab846ed0c2e2ce069acebb4fd48d8176e5a06d8edd4991b92f",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs06082026_2.txt": {
+   "bytes": 1918,
+   "sha256": "45ab7f69c191b690d75830b863da523c35a6605e9e544019492d57b92645d49a",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs06102025.txt": {
+   "bytes": 1853,
+   "sha256": "9ec089ec98e91c87636914a85daa6f6e9c91834472afdf67d65c53f9ad335ab1",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs06102026.txt": {
+   "bytes": 2130,
+   "sha256": "af3750b25294a581b9c90b1b7d25a452576e24245e3e0d49bcf00d482becd720",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs06112026.txt": {
+   "bytes": 1830,
+   "sha256": "1d23057bde6e57264af00cc03b6a307cc92161d72185a89b2c6124a7cd6d5490",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs06122022.txt": {
+   "bytes": 32440,
+   "sha256": "53f6bd10f2cf3154a9c4f5fecbfaedf2741f5ca60ae3876ff13c83ff8f14071b",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs07012013.txt": {
+   "bytes": 3356,
+   "sha256": "710b3411508be5c553e547aed198d3c6644cf5116bbc0a7280a469d8ae3c410d",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs07012016.txt": {
+   "bytes": 2349,
+   "sha256": "93de3499d56ac11b6b6c94d84e0fa766e692297e27c32a3bb9771db1a9e0bd36",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs07032017.txt": {
+   "bytes": 7474,
+   "sha256": "52d9893167618683e3ce495429184721ed0c1e31b892dfec5ef1d320810611fd",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs07042017.txt": {
+   "bytes": 3650,
+   "sha256": "c4f51b9cdb332384544bdb3fa3db3c26b1654bf941dfdeaa52be95a59f1b83ee",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs07052025.txt": {
+   "bytes": 1812,
+   "sha256": "90149d7f0e6219c64334b862f7ee61950df1cebddb6e54fbf942e0b8d219a233",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs07062024.txt": {
+   "bytes": 38171,
+   "sha256": "20ee2ebbf7cb0ad1ab495c70bde8c03962725d5f0c09a26b640bf1907ec7fbed",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs07072014.txt": {
+   "bytes": 3000,
+   "sha256": "21b1f6e451886f2291407286ff906077f3fc556c32bbf2493329ef1fd759c665",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs07072026.txt": {
+   "bytes": 1844,
+   "sha256": "faef82474cdc1a8fe3471823b3efe90d347d5f063bfd6453519f7d53e2e7eba0",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs07082024.txt": {
+   "bytes": 1857,
+   "sha256": "616e163615c30b414bd625492aa1291072b915aaeef2dce082569cd263e70778",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs07082025.txt": {
+   "bytes": 1929,
+   "sha256": "fe7c1fadca7fd6129f1e1dcf769e88a0e2b9cbe6e0fce6bf45660a406fef8aa2",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs07082026.txt": {
+   "bytes": 2010,
+   "sha256": "010124faba5c82813bdb66ab6d51a6a08887be274fbf9e896de1c1a428af1654",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs07092020.txt": {
+   "bytes": 14638,
+   "sha256": "0effde948d7ad512a5a0450222e9dae9e6a8c2e449d1556baacf332c9785c594",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs07092026_1.txt": {
+   "bytes": 1827,
+   "sha256": "d0430ab2ef2517ebaa9f2e5746fcefa7d57540bc9533a4ef6d9bc510272089fa",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs07102024.txt": {
+   "bytes": 1864,
+   "sha256": "5ee1850a5b25dd70cccb0c19804b7d9272b5163226ee037d513fd7764ce47564",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs07102025_1.txt": {
+   "bytes": 1834,
+   "sha256": "12cc61eb4965b85ad2115ecc94e260a0fb5495433f40119cc5ef00514fcebfcd",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs07102026.txt": {
+   "bytes": 1846,
+   "sha256": "f868bdbcd7d9f1644221cc3e88a4c5797d9d9069ddb39ad6178fb09835a961bc",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs07112013.txt": {
+   "bytes": 2010,
+   "sha256": "04064f332c92da04e5d510de52a5f44c41a605cbf30ccec2b2d35d69df5802d8",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs07112013_1.txt": {
+   "bytes": 572,
+   "sha256": "e9db07a649b9155d345bc88ae2e64868e4090eb1ec7e56a09d51c3da939d9465",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs07112025_1.txt": {
+   "bytes": 1831,
+   "sha256": "b21b07ca161af29d4ed00024ea18344ad37bdcf4dcff1004f251568db3a4cda0",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs07122015.txt": {
+   "bytes": 3026,
+   "sha256": "e598f3b5a27a4b8542bdec86709666424b2aea04608d9bb014038e0d2e42d1e6",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs07122023.txt": {
+   "bytes": 28823,
+   "sha256": "1a05fac436d3a86323826a1c3b79e2afe885ec1abd352edfc42345db55dab33f",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs08012018.txt": {
+   "bytes": 12642,
+   "sha256": "8e7bc5b9e85b7ba7877ddad0c58b69621cf767dfddb6a5a00856e98311f85d47",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs08012025.txt": {
+   "bytes": 1820,
+   "sha256": "b4650d344671ba0bfba66683b0d77698945a9492dfb488679087bb20298714e0",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs08032018.txt": {
+   "bytes": 8580,
+   "sha256": "b75f8a693fdf6974e52eefc15346d9bf97c2cb031c744a6f0f5c0b1dcf39d2ff",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs08032022.txt": {
+   "bytes": 17637,
+   "sha256": "d33a9dd7a735de3e49d9d08f26a806f95a8dd80db8b6c1d756ab3e475ea47574",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs08042019.txt": {
+   "bytes": 4484,
+   "sha256": "81a89f7138fae27cfbc7bc61774f24b8a2d9b149dc8d0f105d1ed43f8216b9f0",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs08052026.txt": {
+   "bytes": 3371,
+   "sha256": "23ca44fcbd4f9238ae044877a50907aa5f19f0dd412c3771112c12e12a22c385",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs08072025.txt": {
+   "bytes": 2909,
+   "sha256": "34d87df0c17fb40a5b5fcd2fd99bde37451826ff69a19544573d68d21bdce858",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs08092026.txt": {
+   "bytes": 1830,
+   "sha256": "a454673138b7e4bd59e3b56f5f73179499005006da175aa39facb28bf44a47e3",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs08102014.txt": {
+   "bytes": 2463,
+   "sha256": "923d83a35ecebe2871f6571e6660beea40faa778c56ebf429efff03b9a010af3",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs08102015.txt": {
+   "bytes": 5057,
+   "sha256": "0c2d32bea0cfec856e748e2a79151fa87ee892dccb6c0cb1dfd38f023c6c77da",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs08102021.txt": {
+   "bytes": 6244,
+   "sha256": "7f582ebb661bac881f7338886738f68430d35166d15a84d7768dc0b70ac2c503",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs08102025.txt": {
+   "bytes": 1947,
+   "sha256": "d344ddeef1a8b4968019c4a2ff261a466e91201e7806c1edb79c05c69719a516",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs08122021.txt": {
+   "bytes": 19522,
+   "sha256": "c9b5ca9c0d0450323776e5faf7e06e7c689f67a21b9b135f31644539bc46e016",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs09012020.txt": {
+   "bytes": 4943,
+   "sha256": "c5c5739b70cd73095e5bc7e9b099131f43976e74bfa649a0f4fc8a012075cf75",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs09022023_1.txt": {
+   "bytes": 5778,
+   "sha256": "fb5d7caf98d3fc730819896cd161c6735f7d218f5759704b92a67a35740897e8",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs09032018.txt": {
+   "bytes": 6087,
+   "sha256": "5811d5733cde71c612832805a0a6e8ecaff41582d5938a59385f90e3949d1d47",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs09052017.txt": {
+   "bytes": 9368,
+   "sha256": "31c17487aea2bd28b340eec76ee5aadf77373a4ab5ad195315bae90ff9bcedbb",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs09062023.txt": {
+   "bytes": 24203,
+   "sha256": "2023b23e23c5956e687098d64dc5f01efecccae9a807ce719e97a5414f84a9f6",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs09072026.txt": {
+   "bytes": 1843,
+   "sha256": "1ed928cbdf1bdc2a5eb6865261107fb750c852e56859d99bc148be39c5f6c01e",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs09082024.txt": {
+   "bytes": 1861,
+   "sha256": "e548b52ee3405f17477ab19a87da1a973a8f23495637bb9c4e118d5f6fd5ec41",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs09092024_1.txt": {
+   "bytes": 1849,
+   "sha256": "c0074ba7e6a878d17fa54eb0bd2a3c73196c751706c510c9c70d7e5aa11d4a87",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs09092026.txt": {
+   "bytes": 1825,
+   "sha256": "0a1e57e36f747666e657c2b23d7af6375638b37088890ee5fbf4aecf93e0873a",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs09102013.txt": {
+   "bytes": 3872,
+   "sha256": "20884f5f74141e5e4f506def99c41d9f77745bc429ea87e1c745d5d4a3156e56",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs09102013_1.txt": {
+   "bytes": 3872,
+   "sha256": "20884f5f74141e5e4f506def99c41d9f77745bc429ea87e1c745d5d4a3156e56",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs09102025.txt": {
+   "bytes": 1854,
+   "sha256": "62b6050406b71fad28d7ffd547ff31b3f428d49d043a79ef835d61259b80a01b",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs09102026.txt": {
+   "bytes": 1942,
+   "sha256": "81ba9250f8c4110c71e73aade440427d0acade4511cacde020cd73e9bb27b58c",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs09112016.txt": {
+   "bytes": 2714,
+   "sha256": "b871393fd244abe48ea192205f1f4e184e899d78792f2fc73df8cbb476fde6f3",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs09112023.txt": {
+   "bytes": 1919,
+   "sha256": "e7fb3249c3fed7f21e634c0bbc7c8dcbf2fabd428d6a8a702ec752c76c4d42ab",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs09122024.txt": {
+   "bytes": 1823,
+   "sha256": "6b99b6dd766a6bde073aafecaa1fdd086d17336886a2ab7d4d61f85193075224",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs10012024.txt": {
+   "bytes": 2754,
+   "sha256": "46c850202108e98dfb9fc9038f26db3e7e63a30285c5cab0c891e821860145e4",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs10032021.txt": {
+   "bytes": 9203,
+   "sha256": "dbc8a7cf952217a5459e1153d939be17d3ee042182b1e394c8102c94de797cf8",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs10042015.txt": {
+   "bytes": 2494,
+   "sha256": "d086d2b36d5210d379c3d98a2827f95c3f96b84135221dc569eb134a85f6ecf9",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs10062020.txt": {
+   "bytes": 57464,
+   "sha256": "6845a121bff6a061ec128026a080b4051f5a326d135f9494d71f49d9a7896029",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs10062026.txt": {
+   "bytes": 61550,
+   "sha256": "220d766518b585ab2ddc6fa11941a794d3d515d2f1098557db4584faab954163",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs10072025.txt": {
+   "bytes": 1835,
+   "sha256": "1f6aa394a15862cd36b40b4a39b380b79ce0909a9a635dcd38e6a4c84e9807e6",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs10082026.txt": {
+   "bytes": 90713,
+   "sha256": "71a168b555d6112d053824234ebe82ff20372458f98d9ce3c5fa57861f1b7177",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs10082026_3.txt": {
+   "bytes": 3185,
+   "sha256": "6aea83b09aa56d4f8203a59f3308a5fdb4b7d0d199ff943b125be14cf4792e6e",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs10092018.txt": {
+   "bytes": 7268,
+   "sha256": "dfedceb0a4a0b0aa16802c1645b13dde5fce691984067490a602fb3dabdd21ef",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs10092024.txt": {
+   "bytes": 1847,
+   "sha256": "c7be00e4a2c9d10e53647b4edf0322ee687cbe9365e4360b378c5417ccfe02ab",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs10102024.txt": {
+   "bytes": 3779,
+   "sha256": "5d3b977647882e973f8f70f2573032a743fa6290c528fbad41d160b3f8de4dd5",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs10102024_1.txt": {
+   "bytes": 3625,
+   "sha256": "813ace00dac440f4ec660db4828147ec2499f236f6844c4b28c1f65106bab892",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs10112017.txt": {
+   "bytes": 6308,
+   "sha256": "0bff1d166a7a276dd0a5a46925a11dc35f6344811e459eaa9fe80e50140e9e73",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs10112025.txt": {
+   "bytes": 1831,
+   "sha256": "9d883e772ab701d98c7a76e0139045c83039700161e366113ceff6d02681f3ab",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs11012016.txt": {
+   "bytes": 5563,
+   "sha256": "1237a6a46d6fe55865c6f4c64acaa0f492922ea0e0ebda87d8581fd9b78de7a0",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs11052026.txt": {
+   "bytes": 1816,
+   "sha256": "0f8a5ba88ec78c5338719b9552028bf3bf1a51bba53d69ef5ffd5c8dc118dd06",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs11062026.txt": {
+   "bytes": 1903,
+   "sha256": "efe68d90c8a981464185fba45a6db483c9a69e0658e66ea98097a3fd0553ebfe",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs11072022.txt": {
+   "bytes": 14230,
+   "sha256": "16ce2f2c9d88ee30d2625572c2d0cc94dc4e547e6eae18d27e1bef6d695a07e9",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs11092026_1.txt": {
+   "bytes": 1778,
+   "sha256": "0111f199ace48e6b58fd4e4886b448e3c173a9b90bbd39bcc016a87abe91631f",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs11112025.txt": {
+   "bytes": 1833,
+   "sha256": "61d866f85081cc85de63d633ff046d780ad364e7da6f9a8ba6147a739136afb5",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs11122020.txt": {
+   "bytes": 16322,
+   "sha256": "4f5c7d7ceb39d27e09a7e31ec2d6f34bdb5485848cc4dfb02190e0baf20dc58d",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs11122020_1.txt": {
+   "bytes": 10561,
+   "sha256": "34aefc0191a69ec3b5bc9e5e118c39f6add337595b73fd331ba468a83008a66e",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs11122024.txt": {
+   "bytes": 55221,
+   "sha256": "01d75029e8d12eaf1ce0c5ae59e9eee85ea17d6962fd30e1c9973a8a3d1c37a8",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs11122025.txt": {
+   "bytes": 62294,
+   "sha256": "eb84a22f833557c6481b325db18bb7a93e80dfe10adf8c70488efffff04cde1c",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs11122025_1.txt": {
+   "bytes": 3018,
+   "sha256": "68e933985833f72fd8cf808f4f52688e7d4d0caa264c9741dc2bfeb049b4bf18",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs11122025_2.txt": {
+   "bytes": 2013,
+   "sha256": "56b30fe94b9676050bc4c2ceedf03c417f326466c8bea935ad73f1e46e7967b5",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs12032020.txt": {
+   "bytes": 11343,
+   "sha256": "09d3235e15b50a1bb7c3067e15acc845de07bbb4cdf9640c6e376451a4f6d072",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs12032026.txt": {
+   "bytes": 13876,
+   "sha256": "3f78779d96be4f13c293ae0fbb1da5cfadc1ddb17f3d1645b1770ec9ea18ffc4",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs12032026_1.txt": {
+   "bytes": 1823,
+   "sha256": "fecdc58db569d1eb72d3e84c96d527853b3e8fcba2639f47ea9dae63312c2180",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs12082015.txt": {
+   "bytes": 16608,
+   "sha256": "8026f3bfdff63b2dc8f569f7995c98a33cd46e8645bc15f8ccfcd6b7cb98f799",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs12082016.txt": {
+   "bytes": 30062,
+   "sha256": "15a56ba04c0f82fefa0f9b4ef42d80c55bb6f7d973b5828ccb1d7e1ab9d89782",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs12082024.txt": {
+   "bytes": 1860,
+   "sha256": "c8e4ab6f598d7c7d18a69201e3a867f7d64075290d78591ad07be9a013b4b0e7",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs12102026.txt": {
+   "bytes": 3330,
+   "sha256": "a2d7a2f5488e3b50bbbde4b7f07ac6d7a33d352d50becb015785ee02b0970cbc",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs13012016.txt": {
+   "bytes": 2444,
+   "sha256": "0ef05a120c5122153eaf7b86dac314feeb5a17a648c76489d810506f2afd138d",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs13032019.txt": {
+   "bytes": 17699,
+   "sha256": "85dd0fcfdc446ee645e4acb3db1a103fc609ed42526c6412721aa1a0ebc1c70b",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs13032025.txt": {
+   "bytes": 15101,
+   "sha256": "d628bd05fc3d38e64471d0bafaf7d5af1e1f1e387cafda7f499c12f8cf8abc75",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs13052020.txt": {
+   "bytes": 6412,
+   "sha256": "e9cb0e0dfa03c18afbfd4e4bbb0c383e649f95dc85ccaee7a8ed88e8315200fa",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs13062019.txt": {
+   "bytes": 19450,
+   "sha256": "4628ee859f4a50c6e30afc47001a3aa06b4ce7613bef358c3f72007ab9f72d8e",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs13072026.txt": {
+   "bytes": 2382,
+   "sha256": "532a5e5a9eb0705e797c3311526feaf9f05faddb29202cedd32b1b35cac4cee5",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs13072026_1.txt": {
+   "bytes": 9244,
+   "sha256": "7db720a8321453d764877f93d40dd27705fc995cc1cb1b13212296a6dfc34992",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs13082025.txt": {
+   "bytes": 1843,
+   "sha256": "28046c852a7539ec2f5bcc080a6192de52c579e5164ae5cedff1262d4667af78",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs13082026.txt": {
+   "bytes": 1847,
+   "sha256": "e294795cb2fb6a4ea0af2438ce72b40f4fcf0444e48821e19c44110d0879bc54",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs13092017.txt": {
+   "bytes": 8815,
+   "sha256": "3097ca1c6955bfd1b7588176e4d8cf96329f8b910eba3c46dc21b4cf5bae6644",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs13092024.txt": {
+   "bytes": 2914,
+   "sha256": "83f49623738050405d4918b52ec8dd6ce494fb1496bede164a7b0d17f5b07550",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs13092024_1.txt": {
+   "bytes": 1846,
+   "sha256": "2dfe1a68d4e16cef226c7f7585f55cfa1dfb6d7c542f8df619ac2b789749bcfe",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs13102025.txt": {
+   "bytes": 1852,
+   "sha256": "e1b0d850dfa8068b1acb7258d517f6ad2999fc7dd7a788119126b88831753a66",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs13112013.txt": {
+   "bytes": 2631,
+   "sha256": "58e34df22897fe929cc0b8f2761c4a1b74f0b2be4b87c12adbc2f17eb096530b",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs13112024.txt": {
+   "bytes": 1828,
+   "sha256": "999a68a444bda158bced64333f2525c85ccf5cd348839177df5137be39c378a7",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs13112025.txt": {
+   "bytes": 3947,
+   "sha256": "2a69d3918adfff04469e4ceed865c001e86e8caabca3e102ed7941618c3e9ab6",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs13112025_1.txt": {
+   "bytes": 1830,
+   "sha256": "c711db89f6fa802dd24538ba67eb138ce0ff9ac4dade6d713efe39038665b711",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs14012025.txt": {
+   "bytes": 1817,
+   "sha256": "f0bcf09a51cc675dc01cd1e0463f1cc4784db7756be48ad773d87dc4558d8864",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs14022025.txt": {
+   "bytes": 1662,
+   "sha256": "992c4d312f402f06d15c5635d487e2f2bd3ba4810a0bb22709e01da9f0bd72d3",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs14032022.txt": {
+   "bytes": 4373,
+   "sha256": "4f47fd116c78cf0d0a5ede6366f9112ff6c97981dbf5139314da52bc5329f35a",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs14032024.txt": {
+   "bytes": 9624,
+   "sha256": "eae9931ec3b15f7b5b9a8b0fe24ea3f292172cafd42f34006905970f3df9d0ec",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs14082024.txt": {
+   "bytes": 1952,
+   "sha256": "1a89e553619fe23de3dcb17152b1abfeba0d1ca0b32c2955fc4769d2d56d5b96",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs14082025.txt": {
+   "bytes": 1678,
+   "sha256": "076e00c027466ab76a9e5c7a79a516832a130f0b2c9a6736941cd63234052928",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs14102025.txt": {
+   "bytes": 1854,
+   "sha256": "31f91a16275d992f362fa2ed3e41715160387f06ffea807a22e6b2c24ec27897",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs14112024.txt": {
+   "bytes": 1916,
+   "sha256": "5b50b681e44d666d1a8de809652528be60a42a5011d23b93d19c4bbe2b5824bd",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs14122018.txt": {
+   "bytes": 26170,
+   "sha256": "26e1dd385cd4440c29ffb940e3d068a3e974ebe85c9aff0e672ebfb792bb779e",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs15012025.txt": {
+   "bytes": 1845,
+   "sha256": "428923a251d6ea5bafdc72e3a25a866853bc9a79c526db68d0a03fd538ce641a",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs15022024.txt": {
+   "bytes": 2546,
+   "sha256": "ee5b72428b5665f25059e0c6e70cbf789a74be46488d4170f851c920cc663fb6",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs15052026.txt": {
+   "bytes": 2198,
+   "sha256": "f9c17698e067364ba2e0e2492114b161a1befb1ea0516e2f0dc7fa38b771352f",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs15062017.txt": {
+   "bytes": 7400,
+   "sha256": "a069467866af4f3ead7461c9725499ac4a831bae8a7618324b42b8bf35ecbf04",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs15062018.txt": {
+   "bytes": 19638,
+   "sha256": "662f0fe71363887e738081d3a959b66e08594367f5fc507e8e93eb51f2e41d13",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs15062018_1.txt": {
+   "bytes": 11471,
+   "sha256": "a83b9da9e3ec41df4b16e92c1d87f7a7df6829aea5aa3744f5da8cf5355b857a",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs15062021.txt": {
+   "bytes": 21982,
+   "sha256": "e4fc110edff9ebc421d8e9cb526baa5c54da94630a7d3c37243546878a80803c",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs15062022.txt": {
+   "bytes": 22220,
+   "sha256": "eb889ab0eeb688572112f489410d7f340db512e1bc6f6c54bb263188c4f9758e",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs15092021.txt": {
+   "bytes": 41012,
+   "sha256": "a13f2b32d1bb30ebaaf0a7f858c06b4bbbd6bce4d0b8cc59c25b48a7ae16ec8c",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs15092023.txt": {
+   "bytes": 10678,
+   "sha256": "936d65484b883c906ec6e2f28fca81312d059ab895d1fea24d35106bd9c68e6e",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs15092025.txt": {
+   "bytes": 13648,
+   "sha256": "823d98a14abbb487d6b2beb0420a3f42dbc0498670338359b0a665a034611955",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs15092025_1.txt": {
+   "bytes": 6359,
+   "sha256": "c776dd1363c45d1b8224f4c17c005391a8d8e2cbd2338097dd5f0eaeaa25f911",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs15092026.txt": {
+   "bytes": 19409,
+   "sha256": "8b8760bb88490eea14a593a2912aee6e9eec5ef895b93f9f7ec412fece452720",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs15102025.txt": {
+   "bytes": 1855,
+   "sha256": "bae1c97b015e3350b6c4c2d1fc9dacfc7a30f7b7f8ae8abd7f9cec473b819227",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs16012017.txt": {
+   "bytes": 7843,
+   "sha256": "ecf61ca7de6d048ff79cd20baa56551829222f09dda7e4e54463761d11a7a5eb",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs16022017.txt": {
+   "bytes": 36425,
+   "sha256": "6ac248a79247e762f56a4d2daa22c8eb3612f67ffe35d9c150f308013e534446",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs16022026.txt": {
+   "bytes": 1662,
+   "sha256": "e1c54ccb0fffeb04f729fa60666830129e7f846be42b29314c09dae72fb873cd",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs16032020.txt": {
+   "bytes": 10805,
+   "sha256": "121983275038a3ba28524c7efbf452326d24349f59fb4d4184825ac6c11190f7",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs16062018.txt": {
+   "bytes": 4961,
+   "sha256": "5d90b771ef47e6e9cd5327e42f29f41153d79f3d87f2e6972bfc2ddd28571c29",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs16072026.txt": {
+   "bytes": 1846,
+   "sha256": "dc0292deea0f18a87dc2a2358667d1791887ffa3da99ec827c330dfc46cb5ef2",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs16082024.txt": {
+   "bytes": 1654,
+   "sha256": "dd138742e9ad0c9a6dc0d39ee44c11387efad9fbdc6e6c1caae9787db3f90556",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs16092022.txt": {
+   "bytes": 18885,
+   "sha256": "224d667d2a4024268d523152348fc73d6d107c5ddb7f22be17c2937533edb41d",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs16092026.txt": {
+   "bytes": 1834,
+   "sha256": "c1838a6735b8da7aeca0371bb5844d928269aa5e2d0c7f534aa0d09b2fe0c091",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs16102017.txt": {
+   "bytes": 7477,
+   "sha256": "2ecfd2e7dd22cb318a5130c733a2aa8d3080bff38c5e41d11155f5caa6d92b9a",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs16102024.txt": {
+   "bytes": 1862,
+   "sha256": "dbba06be1604eb663325e4e968d232cc9a7973df9d849742fddf83e2f7579f0b",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs16122019.txt": {
+   "bytes": 34743,
+   "sha256": "27d383f32d5c412d31124b63abc95462817b9334cd614b04c875afca3f61cf1b",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs16122025.txt": {
+   "bytes": 1925,
+   "sha256": "92e00daa6b92733a42b47f6063f58e65150a8f81704faa39f0c6202e4bbcc90a",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs17012020.txt": {
+   "bytes": 4441,
+   "sha256": "1f29dd6df2e3c8b000e2ad5c81f375ad7b4d60995eb3240f9e12424ed052bae6",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs17022023_1.txt": {
+   "bytes": 58099,
+   "sha256": "05da71f2d475f50f5ea0c4cd1857f2b8561573de05d34319364510acb752acf6",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs17022026.txt": {
+   "bytes": 1922,
+   "sha256": "4953fdca50dc66dffc81d752dd9ce73edc61773697d35ee91c9aee6ae929f6ea",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs17032025.txt": {
+   "bytes": 7529,
+   "sha256": "35fc8fb8ead30b18419824c13dadffd18177eb4f62c19544848878ac2efc1b18",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs17032025_1.txt": {
+   "bytes": 2753,
+   "sha256": "c924be9020086d4fa78b524612773f15b023273910da2e56f361accce912357a",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs17062026.txt": {
+   "bytes": 3904,
+   "sha256": "2d236e344515c9bc6b6f8cd285a9e0a3b6cab7b4e98c5544ba92f0d71bc72711",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs17062026_2.txt": {
+   "bytes": 2149,
+   "sha256": "e83dcf6afccd53301f1cb73c51c479ce4e4d429bba3f6dd8c898cce923811739",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs17072026_1.txt": {
+   "bytes": 3365,
+   "sha256": "cb8fdceb108c396d6e6a1d43e4e731e0b762c165d49d05a51e02aea1487e4782",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs17082023.txt": {
+   "bytes": 59612,
+   "sha256": "172cd6638f6c999fed639fd0931227b615714d5772ad9b93ea16f040d8fe339c",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs17082026.txt": {
+   "bytes": 2014,
+   "sha256": "d481ced6c8bc8a640d25479ffa426eeafefd68fbe31a4157987bbf0d693bff61",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs17092019.txt": {
+   "bytes": 17911,
+   "sha256": "76a7f584b4b56ed12b2e3604238f21225c2f4b532dade5968e6a58ce9d498613",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs17092019_1.txt": {
+   "bytes": 6496,
+   "sha256": "136763a5ea4dff168efc7386fb63a35fed142664b7e7aabd2d8f1218acdc8d75",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs17092024.txt": {
+   "bytes": 2016,
+   "sha256": "77b538e14e2261f98fa45c6808d9443ce8cfeb5e7571281c05b2955c8abf5b00",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs17092026.txt": {
+   "bytes": 2021,
+   "sha256": "41009b7f4fb5d38887bcf2b1d2b7371e7328d06e65cd755eed0c9c5634abc2b6",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs17102014.txt": {
+   "bytes": 2237,
+   "sha256": "6df9e2783daa2e0d968ecc942f41d18aa0723c091a6981fc3a04da284cb07afb",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs17102016.txt": {
+   "bytes": 13818,
+   "sha256": "2fa32b83741141e41d6194f61c1db24171998fbfe864cf0c90f82bc0e83ce1aa",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs17102023.txt": {
+   "bytes": 6630,
+   "sha256": "7e5534e082a632ee13af20b2c7fbae0ca40a579d422c86f3958f7867cb52dc33",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs17102025.txt": {
+   "bytes": 4550,
+   "sha256": "271370115f7c7f28fab4adc8b113768a877ec019d3dca2f9eb2d46797c11fdea",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs17102025_1.txt": {
+   "bytes": 1945,
+   "sha256": "e410fa324a76dd89ebc597b168f4949e43f8c33d52697ad2585bd18cd513edf5",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs17112025_1.txt": {
+   "bytes": 2996,
+   "sha256": "e3832f1f70d4dbb4681178c15172800495204f2bc8b7a9a900e6f3555e907ddb",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs17112025_2.txt": {
+   "bytes": 1828,
+   "sha256": "915fcc730274fa153e27068812d5cf08d95947c49fb5762e8c72a06613b5d497",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs18022020.txt": {
+   "bytes": 40983,
+   "sha256": "eba43cf4733d56f073caa7244d65a837fcb321658eeb400788a71ff58e8021d7",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs18022025.txt": {
+   "bytes": 2621,
+   "sha256": "b435527280a4735749c07f6ff90c85a8a78bba9a92accfc93840b01e13660652",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs18022025_1.txt": {
+   "bytes": 1821,
+   "sha256": "5895183c1f7f91f65fd726c5ab2f3ce864f0cea28654996f50546655443a4d53",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs18032015_2.txt": {
+   "bytes": 2770,
+   "sha256": "dd5be78a60f011ec3e84d52683a6726a89a9ab3b527b3c819c26d49742390159",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs18052023.txt": {
+   "bytes": 3397,
+   "sha256": "7c1886d2c8b3a5ef52799eddf1f498e15a18d88ad35853826c6f8d26b2db978f",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs18062014.txt": {
+   "bytes": 685,
+   "sha256": "0304682a4372e6ac986e6f0b8690aaabfdd40e6e54a2f47adbcb30726ee65202",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs18072014.txt": {
+   "bytes": 721,
+   "sha256": "ca4a1f9938044429abb025fdeb39941f301462dbb0a53ac4663faa21d30c1c24",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs18072016.txt": {
+   "bytes": 6657,
+   "sha256": "4acc66d5d60e3ad9125dcf0c4ae09162c59a2453648ff6f06fbc4057f79c3f02",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs18072025.txt": {
+   "bytes": 1838,
+   "sha256": "0f0520170dd6a3fd2f87a59d3a843a4ae568e0d208dcbcf209bde479e98abda5",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs18082025.txt": {
+   "bytes": 1933,
+   "sha256": "e2d93a460c53f088e68fa9716201803e7433d2e21ec27308b20c475bcab55280",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs18082026.txt": {
+   "bytes": 2013,
+   "sha256": "0418dc7998f6dc96fb16952f2e7beb3565283178dc89d2526ac20dd66b36a207",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs18092014.txt": {
+   "bytes": 929,
+   "sha256": "e71bb1c519bd1b2dc5a8bec0e0b24cd40404308402af88784bc2381ce1c4c542",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs18092015.txt": {
+   "bytes": 4297,
+   "sha256": "80407cfd5221b5276879ff09dd22f27dc225820cc21a41d7bcd59f5e9cc70651",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs18092024.txt": {
+   "bytes": 1845,
+   "sha256": "a5fc6a1c1a3793a8f4b07ddf3587c7682f722317596aae3ec8c3dea1a602ca56",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs18092025.txt": {
+   "bytes": 1920,
+   "sha256": "f7756e0ac20a35dcf709fe5dcf6a2b86f824016c208fb21241d04301d6ae935c",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs18092026.txt": {
+   "bytes": 2288,
+   "sha256": "76837b966a5458d75bd24be921fd2aef6ad901faedbfd819f2369c0d72350ccd",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs18112014.txt": {
+   "bytes": 2809,
+   "sha256": "c10bed7a80844c303594d47110651fbac38cfa52708ef83c8749d71bd1a2cb0f",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs18112020.txt": {
+   "bytes": 5134,
+   "sha256": "9fab14b3e2b61877c8045e7b6a63c7f6717320be9172fbd8c0d35470d4fdc7c9",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs18112024.txt": {
+   "bytes": 1826,
+   "sha256": "5db36a10f6623c4b45498099e76ab79649c025e3091ce04a4588deebb60700e1",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs18122017.txt": {
+   "bytes": 21066,
+   "sha256": "02ae02b4bf44bafab728394e7813b0f898abbdd01e327dbf1d3cdc706b544365",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs18122019.txt": {
+   "bytes": 5430,
+   "sha256": "e13bfb8101e79ae05bb7afb9a51446655614a74425bd3127a5a8c27df152ae8d",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs18122025_1.txt": {
+   "bytes": 1931,
+   "sha256": "3fc587b37735f7a9100b0b63ea49ac141ddd9e20a616f07ed42134a62cca76a2",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs19012024.txt": {
+   "bytes": 2014,
+   "sha256": "b35f0dc34ac7cb83e9d56e162370f4aec95f6e1e5bc1c1234da864963c81f112",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs19032020.txt": {
+   "bytes": 8562,
+   "sha256": "765ee42ee1779080df6ba4526a5fb8d4068d113924fe2465295fa7ebf427d9da",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs19032024.txt": {
+   "bytes": 9907,
+   "sha256": "551e3696554e5d07d083fb08944fad5936c97b716a39747901a9237acdf4930c",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs19042023_1.txt": {
+   "bytes": 9555,
+   "sha256": "010405a987bcb3c94f53c01745179ae3f7826fd1c08d101c43b3f03eee216077",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs19062023.txt": {
+   "bytes": 1763,
+   "sha256": "5f599318669f77bedc61a9a810e0f0a98f303968071b1d7397181a0497ddac51",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs19062026.txt": {
+   "bytes": 3733,
+   "sha256": "241bb845d2e2a86aee32d3c14b3d15059fee8574433befa0cb99d24206201754",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs19082026.txt": {
+   "bytes": 1910,
+   "sha256": "e26e14069961fc49fa2c82d40a4dd9098d4a18e83f9fc31d14a62962d1cd0d64",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs19092024.txt": {
+   "bytes": 3037,
+   "sha256": "9ca60032f343c9a218ab9bef34b773a760cb38e4366bba684c181061094623a6",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs19112025.txt": {
+   "bytes": 1919,
+   "sha256": "cc4971820cb1f57a9d4ba001081b71e42e9e45ed6b30c9874e08be3ff6605882",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs19122019.txt": {
+   "bytes": 5608,
+   "sha256": "5151bc56a1263f0e8c4764a6824852f7bf9ab6be055e1187641613dd04457a9e",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs19122024.txt": {
+   "bytes": 1991,
+   "sha256": "54a326303e9c04139263e679df9e57c213b76a4243970e5fc9416e807f0f4fdf",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20012026_1.txt": {
+   "bytes": 1857,
+   "sha256": "f803c281ec3312d603a78ac3c19f5425fa5924831fedd594d499a015a276eba7",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20012026_2.txt": {
+   "bytes": 2284,
+   "sha256": "b00b77f849cbd18de0845ac036fce010bdfc1c06769f24fc8af4dfc03d525b9b",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20022015.txt": {
+   "bytes": 15069,
+   "sha256": "44af1de8fa1e88df37572039f64365f9cbc422d15c2e56b393a51bab426a83aa",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20022019.txt": {
+   "bytes": 5320,
+   "sha256": "fa20a15f8dcacee7d221b974361e634f78f91dec3a2e7350ad613a43898191b5",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20022025.txt": {
+   "bytes": 1820,
+   "sha256": "fe709e7a9ef715f20153c7b01017920e5200af57af7d23759e8a89d21d920e1c",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20022026_1.txt": {
+   "bytes": 3914,
+   "sha256": "d4f8ca25d3d922cc775b7d229f25bed23333fcf9c0b05ddd96e862f012167247",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20022026_2.txt": {
+   "bytes": 1957,
+   "sha256": "9da02e9afbe44dcd06e261ee2d1d06688052f0298285b96ea27a87f37c271d3e",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20032019.txt": {
+   "bytes": 5378,
+   "sha256": "abbd99c052e405180a75286eac1ac45242c2a413f82006aad5e0c0eecbab421f",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20032026_2.txt": {
+   "bytes": 1822,
+   "sha256": "23bbf4869b6665a8018c5cb28cf8c7b85692606c965f7acaf8a69d039316b6c2",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20042015.txt": {
+   "bytes": 1270,
+   "sha256": "dc9ecb08d9b8b0c3893e779a04c38b892b17063958640b3d0d5317b25fb0abcc",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20042026.txt": {
+   "bytes": 1845,
+   "sha256": "bf328640d1efab1d65c274e562427d736e57b44be033ba4fd0c6efd0025114b3",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20052026_1.txt": {
+   "bytes": 1988,
+   "sha256": "57d2ba2644a8e1ddab8af55a0dbaa99833c84f2972ed1ced10565cceb500a3e8",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20062018.txt": {
+   "bytes": 6721,
+   "sha256": "0960eb97488e24d11757d45c861e0dc34229d7ac34d765345ff6d7559fb87d20",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20062025.txt": {
+   "bytes": 1989,
+   "sha256": "bc7da02ae1ce8f8c9c9a76ecf2e28a0a791b31a59ad4b774c6adbef35500eb47",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20072026.txt": {
+   "bytes": 2690,
+   "sha256": "974095a5ca7b445326b914b60bb9dc47ad8f248d23fb2ebaea8c0df14172b98a",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20082014.txt": {
+   "bytes": 8334,
+   "sha256": "49cb47da869037ad621f729c61fbd073784dfcb316ae15a9407637c327201986",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20082019.txt": {
+   "bytes": 4462,
+   "sha256": "6fca0e596e8cd0de8a6cb5cbf5574beb7adc985f7a5869f6dce9800d2a32a828",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20082020.txt": {
+   "bytes": 44792,
+   "sha256": "0ccf605a13fce42ec9aecc0c4555d7adb673939b9b8ca00773d2d109aa290d11",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20082025.txt": {
+   "bytes": 1843,
+   "sha256": "2b7041a29e4c852970fc14d1974a861b55a983ac00d738c051a6d9bad74046fc",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20082026.txt": {
+   "bytes": 2011,
+   "sha256": "ffbfcfa015e45eddc2d4f0b66aa3a3449d6969286ba4843d752f2f58cb3ac955",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20092021.txt": {
+   "bytes": 4507,
+   "sha256": "8db4a4c87bf134f6bbcd77880a899ac95bb54b425ddc14c181aa7b82f51ad63f",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20102022.txt": {
+   "bytes": 4262,
+   "sha256": "a8bd4ae4c70d1e54d35582217c26806ca9d8b82b6499b57dcd81b5b8e62117a0",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20102022_1.txt": {
+   "bytes": 5538,
+   "sha256": "9c0b94d19812ce998846eec81c0ae09f2ced0544d0bb5ce3c230af09f5b5a8ce",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20102025.txt": {
+   "bytes": 2523,
+   "sha256": "7671579e2b3a013c0b92973828a31a49eeec514832b8147bd780aad92b1aca47",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20102025_1.txt": {
+   "bytes": 1855,
+   "sha256": "a9e17d8c6f07377c752af9de94bc9d9cb9bcb7b69f874cdc107adeec1cafad99",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20112025.txt": {
+   "bytes": 1832,
+   "sha256": "26d596331853b8f891c4018cb6dfbdc82318c60d54e9e04c117096388ebad15b",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs20122024_1.txt": {
+   "bytes": 1822,
+   "sha256": "ca9504376491b0bb65f0dc7da87df02c1bee67b3ac86063330f73e331e37cfb5",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs21012015.txt": {
+   "bytes": 3464,
+   "sha256": "f9fb4f6af943ad4dcca10321ee50998e2cb16e2d359615a45850b56148f6c696",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs21012019.txt": {
+   "bytes": 7980,
+   "sha256": "986da27f9554326e8ce367798f5850b9ec1583cd81f635b902e99f4439b97671",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs21012025.txt": {
+   "bytes": 1822,
+   "sha256": "0f618fdc5769bcdcf4fcfec3520c84348acde924ed2f9897e3e496d2b0b82805",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs21022014.txt": {
+   "bytes": 2671,
+   "sha256": "44d418a33d3fd748a530e418084cdf27b44e0724056d185eae7895394c14920e",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs21022018.txt": {
+   "bytes": 55581,
+   "sha256": "af8069508e94f93a9e1c427327cb755a31d2f12185138491c2d73a692ee606b5",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs21022023.txt": {
+   "bytes": 4057,
+   "sha256": "f55c81d4add03604bddd5b7d914b28aca1c95adf75d7e30f711c13ab998ce038",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs21022025.txt": {
+   "bytes": 88900,
+   "sha256": "92c110481d93c8c0789c89aef12644051037e5707fd12d90520567111a28f108",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs21032022_1.txt": {
+   "bytes": 6311,
+   "sha256": "a7393b40b0f83a90a13ed53ba84e9ed4bdfb8bc417ae6157ef56bbab194099df",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs21042025_1.txt": {
+   "bytes": 2142,
+   "sha256": "5dcd9117c52e56feee5b6bfb51ae1fa41e759ec4c000538dc30f28fa93c5950e",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs21052026_1.txt": {
+   "bytes": 2347,
+   "sha256": "9000c87452b4967bebab0ce2cbebabb2d8ef30dcba99fc69016b29a8cd259119",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs21062024_1.txt": {
+   "bytes": 2016,
+   "sha256": "e6a3ecc8a82b8d5863ec4c671817ac787c5ac735c2a90d642de0a48d987eb2b4",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs21082024.txt": {
+   "bytes": 1860,
+   "sha256": "c252c9cf2fc692835c1a0024c99b9c7a877eb4a956282435e0287e2a0f8d1b3b",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs21082025_1.txt": {
+   "bytes": 1840,
+   "sha256": "f395b18b339c81697dd6264ce485d3c68d3fd23d77e31fdb199ad1a851a9e836",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs21092026.txt": {
+   "bytes": 1829,
+   "sha256": "7b84d0091fef5fc8d1eb732265f1f2a252e8320a775e5dec37ff0c6a8e65a531",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs21102013.txt": {
+   "bytes": 1092,
+   "sha256": "513c339abef1af9cc048db326f991a9d20685794640fb71a7f3ed2c6209972a3",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs21112025.txt": {
+   "bytes": 1825,
+   "sha256": "1963ff46ce4a72ec3535d9be8fa03d23c4036991609e680ccdff332df34af997",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs21122023_2.txt": {
+   "bytes": 12499,
+   "sha256": "3900f1c75cf6692776d30c0e8891a6cee932fed7f85885a527ee4f12ba37a9f8",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs22012026.txt": {
+   "bytes": 1851,
+   "sha256": "f81f4d315a466866c1d2ba48b37aac284ffca59157947c948aca02605e318c14",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs22022016.txt": {
+   "bytes": 8843,
+   "sha256": "a62722a3a46990aa8a146949ff237d375c7c57e6e170ac88b4d66c208e631bbc",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs22022016_1.txt": {
+   "bytes": 7284,
+   "sha256": "c8192db57b56c70db1b453027b8518032c44664d317c21884e29905146374433",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs22022016_2.txt": {
+   "bytes": 35142,
+   "sha256": "d1f93bc851423ac761b7d2cadd099f19750a989c6e9ede32803f024c5b1a533e",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs22032023.txt": {
+   "bytes": 3801,
+   "sha256": "c2fd02a71e18af81722c5387b9292820713bccc53ad2192fa1eb09a00e4faaf2",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs22042016.txt": {
+   "bytes": 7885,
+   "sha256": "df6d7fd9ae19948cf558bf70574fe85957d3893168dbccf64dec92a23900e59c",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs22042021.txt": {
+   "bytes": 5384,
+   "sha256": "cb4af2d05f223ea7596217e84315885888cc86f4ce9cbcfeb9b14d7e5c85808a",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs22042026.txt": {
+   "bytes": 2722,
+   "sha256": "1e4fdb48f76c0e4d3d908e65907f860fabb768222ea2e26654f162948d074c6e",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs22052024.txt": {
+   "bytes": 6825,
+   "sha256": "d0d998fcf7d0d9aed55528a6d48dfb071568ec0278aa637b1c74eefc4f66c42a",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs22062026.txt": {
+   "bytes": 3782,
+   "sha256": "d941a7a5203befd13e5afd82454339fd8c751f4584a41acaee72f1f5dede17a5",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs22072025.txt": {
+   "bytes": 1834,
+   "sha256": "05372357be4379286911fccce866bd99282f91194b30604facf60d2717d3fceb",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs22072026.txt": {
+   "bytes": 1949,
+   "sha256": "1cc6e6183bce9262ac948689604608129cf5fb8b1f8fb39412bafe601d4c89f1",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs22072026_2.txt": {
+   "bytes": 2176,
+   "sha256": "ed4b14528644974d24fb59a74aaad874bd89f930090d49e723c2d8c7013c08cd",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs22082017.txt": {
+   "bytes": 18953,
+   "sha256": "4f4a38fd983614f801fa5558a25e53a275f6a537c74913bc5b70acfdc1420946",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs22082025.txt": {
+   "bytes": 68466,
+   "sha256": "6609f3ddc3170e0ffefaa19143ffe1761ce42bee394f8ca674b33bb7b5fc275a",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs22082025_1.txt": {
+   "bytes": 2863,
+   "sha256": "1063bfe7820c41a60722a8eb1d6e2a0c4024787870a34bc271225a6dac09d63f",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs22092015.txt": {
+   "bytes": 7048,
+   "sha256": "c33e02e84d8e9a905f97dcf366fb0e1d30d9c3b29e542bf6433a6ee2cef7ccef",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs22092025.txt": {
+   "bytes": 2702,
+   "sha256": "74c486495ab63849ef1e2e2881f063e9ee61d93a1073ee7c81840188f435067b",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs22102021.txt": {
+   "bytes": 10443,
+   "sha256": "f2de08bec03184c1be296502ff42badf8360743af88aeed18e8596cd89bfde7d",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs22102026.txt": {
+   "bytes": 1853,
+   "sha256": "85bce9c1f99f8f333769a171d3a81b48055bc6ce1b3e9995d51149a9445e9ef7",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs22112024.txt": {
+   "bytes": 2095,
+   "sha256": "5a4df7d36506c82ca9b9816fd60b05f91261bcd8f8714bc79badcfed96fc3d6b",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs22122022.txt": {
+   "bytes": 7034,
+   "sha256": "855d057ca336b30e8555d9c2906c51d0702fba49effa423029359a5bb66b0b06",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs22122025.txt": {
+   "bytes": 1834,
+   "sha256": "21e1d09b0dc82284992b1216de72b4ec6d989ebbde60db11926ac22874acfb60",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs23012015.txt": {
+   "bytes": 2322,
+   "sha256": "85d727023a39ddef068260838e322cee39e8a6c7a5f61651cde69907638a8b4f",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs23022021.txt": {
+   "bytes": 46013,
+   "sha256": "3c993b94410d224c5b60fe16d6aab379483d7e0c3d215e059dbf4dceebc2beb7",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs23022021_1.txt": {
+   "bytes": 18151,
+   "sha256": "467d2b0c93382c8dc57b4ec7c3d07435bfebda377c14dd0b5ae0874203cd5075",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs23022026.txt": {
+   "bytes": 91775,
+   "sha256": "0d3fa8dfc9f8cc88cde441d08a6e7fad336f9eae5a3813c09fcf45bdc60fa875",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs23032020.txt": {
+   "bytes": 5041,
+   "sha256": "356ccd526ddc537308bfb8269204f86a5660f1fa31acab3950a13a4b30efe953",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs23062025_1.txt": {
+   "bytes": 1838,
+   "sha256": "21422b0ad1410859b6251b0a781c97963b76c9f81a9ae5dfac07ce0aa9921891",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs23082021.txt": {
+   "bytes": 20691,
+   "sha256": "4dc70c662624d2d663e070a759647ecca44b028e7f0d956125da9f412055ebf6",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs23082022.txt": {
+   "bytes": 4777,
+   "sha256": "6d7cf64c8f0c9328201959e7b624e970bff43004fdb0385503be0290002d2a2e",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs23082023.txt": {
+   "bytes": 2848,
+   "sha256": "9105082dc687ace49420679df5468fe81db6269cb4f43693ff24fb73c7416b92",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs23082024.txt": {
+   "bytes": 79979,
+   "sha256": "73ea2f72171307a01f0579aaaea8e1ebf33af6d3dce6d7691486e19b5a91aa64",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs23082024_1.txt": {
+   "bytes": 4999,
+   "sha256": "6181f48a1eb2e5f57cc53e53fcb873a526f4fe25853021376daa863d70141177",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs23092024.txt": {
+   "bytes": 14551,
+   "sha256": "68a6258564013e73b44c4a5fa9be87af5c32b4c8bc898545c0259298efd5397a",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs23102024.txt": {
+   "bytes": 1863,
+   "sha256": "3108b1d76ef5fce50cce19a122289ce6213539b20e038a67122cdcc89adbede0",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs23102026.txt": {
+   "bytes": 1856,
+   "sha256": "efcfe9f8f5b070f5c810a297c3c04f127aebc30bc4cd708fd03e864b3942da07",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs23102026_1.txt": {
+   "bytes": 3613,
+   "sha256": "e1796165e420aa57dd9839e243fafbe3396f5a0604f98531f2684754e9968ec7",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs23122024.txt": {
+   "bytes": 1823,
+   "sha256": "e662bc3bcb9557d05c4859c5af64eb055bd8ce492be8c6bf9f3a811246ec033c",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs23122025.txt": {
+   "bytes": 2626,
+   "sha256": "f066e937c81663207fe5078bf9df08a3bf4db889d6293adad8db710660688077",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs24012025.txt": {
+   "bytes": 1820,
+   "sha256": "b0eb64afd85edd6610d312f59809e7d6cdf19a8118b3003df21a32828c26efdb",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs24012025_3.txt": {
+   "bytes": 1707,
+   "sha256": "4920c33c7bb10ea6a6f2b23aba000f82393df9f49b9d458f3e8c212fdc6d0859",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs24022022_1.txt": {
+   "bytes": 63363,
+   "sha256": "641572ba2b204d03ee1c0f0d30639c9ca16916c7ab140c83b46e56b21ca8280b",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs24042024.txt": {
+   "bytes": 3062,
+   "sha256": "991c8e32109fa1eea768ec99f2650a399735ef132ccce87de6cf36733656401f",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs24042024_1.txt": {
+   "bytes": 2528,
+   "sha256": "4e5279d1b1a65593dca4cdeeb7c12045825cc8b192919c4cf4a3f3426f803e3c",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs24052018.txt": {
+   "bytes": 11883,
+   "sha256": "7d7c90048cce655f7fd3d64a79fed412b2abd8e31847e6486886416041b4d58f",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs24052022.txt": {
+   "bytes": 5571,
+   "sha256": "64fafd7870b611bdd82a5c32caa5fc59905c29177ab8a243dce5866d47428765",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs24062026.txt": {
+   "bytes": 2625,
+   "sha256": "08b2050ac97fe6a1c23b836fda2625370bc4521b8affb4f8c927e0100179e514",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs24062026_1.txt": {
+   "bytes": 2056,
+   "sha256": "4b0c9ad2d94cdda1320ebbd29efc8b2fce7b916bbfefc0620985842eb4c44fa5",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs24072023.txt": {
+   "bytes": 3152,
+   "sha256": "91c687505c30e1969b8ab9603782539578017c96ae50f7b95599278ac45dd532",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs24072024.txt": {
+   "bytes": 3308,
+   "sha256": "f140d7d6056d5476337774b87207658b5d07beeee29b99cb60dbdbe1627c9d38",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs24072025.txt": {
+   "bytes": 3099,
+   "sha256": "78cd27035439431f8c81523537f6cb2a98728ffd79769e4c319b83ee9b0e8141",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs24082015.txt": {
+   "bytes": 5583,
+   "sha256": "0dc92aa2c400fb283c092b9014badbe20a1cabe224da7fca542c1e573374dc0b",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs24092018.txt": {
+   "bytes": 6164,
+   "sha256": "8557fb0503f09f68a7e8a9806dbc664c8287f4dda7b940ddddb5e615e83114df",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs24092025.txt": {
+   "bytes": 1830,
+   "sha256": "bdea4a52d1dfcc2d6a1410302dff150d752f781d1babce536ff431fbea758483",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs24092026.txt": {
+   "bytes": 2020,
+   "sha256": "6eb0abff281b91f5604633900be8cb214c45345b9eb1df76cc60c3d88c17716f",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs24112025.txt": {
+   "bytes": 1827,
+   "sha256": "b4e709d535f281653c500a7e8dc690a112852b62a581bc9a85ca816882ad394d",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs24122025.txt": {
+   "bytes": 1832,
+   "sha256": "78e33c83c4c915a9f5aecfc8a0ecfcffa8212878893dd516b7d74fe6abae93a7",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs25022019.txt": {
+   "bytes": 36868,
+   "sha256": "3f09b25b8c9c2300e9f19854b8ad9f2468f8dc3f8c1da3256705664bf36ec45f",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs25022019_1.txt": {
+   "bytes": 7618,
+   "sha256": "ce601c7f718a9e7246674e4dc6bf262022da44faa7144b80cdbefd7f4f2b5b20",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs25022025_1.txt": {
+   "bytes": 1819,
+   "sha256": "05dc1a3b0b1df9e20e45e7a96ff5671b648069e43d230a9648772557371d517a",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs25032020.txt": {
+   "bytes": 4080,
+   "sha256": "4e7aedc090c4694f69c4049a6db6a40ba3cd90534bb0a6a15eed18b2258bb3e4",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs25032025.txt": {
+   "bytes": 3211,
+   "sha256": "71ea1c982776cd5ba55b9c2cdbf6aacba4f83f787e35b95f9261d67745654004",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs25032026.txt": {
+   "bytes": 1823,
+   "sha256": "6ca66df2b754d5de7f9cdf413071459a9c909174db3c116cee567ec7fbc1d72b",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs25042014.txt": {
+   "bytes": 658,
+   "sha256": "00552ee5619b94e8be02cb2e978d008f5d7c14fd1b75d7a8ff687079f945f0fc",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs25062025_1.txt": {
+   "bytes": 2347,
+   "sha256": "07131955fa4a79b05529040edaaab1beb2d7d9546e93c54fd89f21f4b2a63177",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs25062025_2.txt": {
+   "bytes": 5268,
+   "sha256": "24b0ef958431620298e51cca5d8ff184ac48cd2280dd6a5810289da301769dce",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs25082026.txt": {
+   "bytes": 2015,
+   "sha256": "53d7d782676d45edb984ec2b901ba02fa022e4dc911d7b65d402623173289555",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs25092024.txt": {
+   "bytes": 11699,
+   "sha256": "66f6c1a41bef2812f2be4cd644ae6430a9c05c24cf211d63709089245e8684b3",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs25092025_1.txt": {
+   "bytes": 4196,
+   "sha256": "f45558f8aa62d56b374886835f604dc02446734dd95f200a44fb0fea40604b26",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs25092026.txt": {
+   "bytes": 6684,
+   "sha256": "502d594d3a7a41cf1af4633760aca814e31b22ed7d2578e040efd04656a8e8b5",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs25112024_1.txt": {
+   "bytes": 1827,
+   "sha256": "7ebe3440702449f7ccde11edd9cef080b7bb5171f4d682414308f3500a290362",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs26022024.txt": {
+   "bytes": 12746,
+   "sha256": "f6287e076228c71e983d6da88990777675780aa4e95e9010197e471ea2dfa258",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs26062025_1.txt": {
+   "bytes": 1838,
+   "sha256": "cdd30364fced29b159bfb3d972e7afd185639334dfd75d16103471067f98583d",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs26072022.txt": {
+   "bytes": 5397,
+   "sha256": "43aef4df17a416c409d5e13bdc19456decc66e8804590b343dfe674cfcc13d9d",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs26072024.txt": {
+   "bytes": 1857,
+   "sha256": "5236423a00a709e3113ae595a81fe16fe58d0e21915a2aee1e8dfd2fa8617c4d",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs26082014.txt": {
+   "bytes": 4453,
+   "sha256": "893ffd82a8460f771053e8343aec3213b93828afcb4592d8a8a001e320ae32ab",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs26082026_2.txt": {
+   "bytes": 2014,
+   "sha256": "7bff99f78c2723f5af4a03208d3c2034f04007b9335fe7c3bab07b342b46edc3",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs26092025.txt": {
+   "bytes": 1824,
+   "sha256": "2510c34fbaba721be74a4cd9bd02a327770c81b0207146591f7172d8e58f990e",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs26102020.txt": {
+   "bytes": 4727,
+   "sha256": "cb052324c4e9b161804ed1126243ac68b386cb3d916d8b81036603cf7e950c9b",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs26102026.txt": {
+   "bytes": 2116,
+   "sha256": "80445dc07ee17063c1289da18dbff052660c548ce6f9c79f5de3af2198221d45",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs26112025.txt": {
+   "bytes": 2951,
+   "sha256": "28618f8be4b71ca275c13ca6231e16edce4790311c931c21baa2212ed4f93431",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs26122024.txt": {
+   "bytes": 3460,
+   "sha256": "15bea3ac60d26f4292dcb7458738e8bc4a99a0a1c85e637ba361b166f7ea5064",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs26122025.txt": {
+   "bytes": 5454,
+   "sha256": "8bb17dd840b9f16ccad8a244d3b7aec0db4eedacd55aefb8c9ac4025e6c13968",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs27022014.txt": {
+   "bytes": 13899,
+   "sha256": "037f493305c63cdd68e0480dc09c5125b18e22251e7948750aebae278a89253d",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs27022024.txt": {
+   "bytes": 1641,
+   "sha256": "a0732b5b52a52562656dea59d0e2e684c1a99e3d939d2bdfc61c0633efb1e206",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs27042017.txt": {
+   "bytes": 14300,
+   "sha256": "60b182835fe04dcc38f24e8828986bfed7cc67d9ef4574f722818422ded76c68",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs27052026.txt": {
+   "bytes": 1836,
+   "sha256": "d5c6415c58d520bd357963ff4f4024dd752dda465a9ab91771dae85e7110d0a9",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs27062023.txt": {
+   "bytes": 1667,
+   "sha256": "5ee60f001310d836d7b3c3cee0027c09e659c7e56d63deb2ba5ffcba4f126d3b",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs27072026.txt": {
+   "bytes": 1908,
+   "sha256": "47c964101281d45d18edfc8a4b1b495b918fa80f6bef4c0f0d902a3dc6376d45",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs27082024.txt": {
+   "bytes": 2509,
+   "sha256": "6a4f677a4096743dd00a546ed509cbe7e561e1a6fd07283253752399db4219d5",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs27082024_1.txt": {
+   "bytes": 1863,
+   "sha256": "fcb6fe123576a20bfb66edc615f06534182f320d20936d395d9c03c3625180a7",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs27082026.txt": {
+   "bytes": 1844,
+   "sha256": "76ed54e6e1b2f22acbdb093c9103ddc3a41373126cb48f7db384769613f6690d",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs27102025.txt": {
+   "bytes": 1847,
+   "sha256": "fd25afc17866ccc09abd923faebe32f86aa76215fbd05bc40f2a52b00a5505ec",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs27112025.txt": {
+   "bytes": 1834,
+   "sha256": "a223e24cff25f911ebd9fdc87c283bd00f2036c9a51883add5d5d84938f83b37",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs28022024.txt": {
+   "bytes": 75905,
+   "sha256": "1d36de4c4831b1dd48676a78916710093ef8be4b457501d65baa2a8aeeb01ab7",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs28032023.txt": {
+   "bytes": 7858,
+   "sha256": "487010ca5784345743d9c984e93997e83952d7588044accad38374c9211f3e5a",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs28042016.txt": {
+   "bytes": 2715,
+   "sha256": "e23f5adb39b618eaed74236fdea5361a7811792b6458c27e2d1299f1c69de614",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs28062022_1.txt": {
+   "bytes": 4136,
+   "sha256": "b0a075a068409f0422fde7a84fccc6ad14180ae71f19d1d5c68adf3caf2318b0",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs28082017.txt": {
+   "bytes": 37731,
+   "sha256": "e8026834b0a3e53ead4c4e779b5e9ae2205201c28213e684efa2c4b59577b067",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs28082018.txt": {
+   "bytes": 39519,
+   "sha256": "ddcd8e149097cef9db3fa153c05f024683d71acb3132d41df7ca84cb71b86b6f",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs28082019.txt": {
+   "bytes": 40749,
+   "sha256": "14efd053ecc036dcdc53a6b9add7f1058f93529e54f4d2e4b54852c00c7d4085",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs28082025.txt": {
+   "bytes": 2113,
+   "sha256": "388a369df939e25aca820001ac0ee272bf4a32019001ea71bcb987d7b1a0f245",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs28102026.txt": {
+   "bytes": 2798,
+   "sha256": "cb91369bdc6cc08b3e5e02e79c0a6e3a199b010cd9a999869bd2452511634924",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs28112017.txt": {
+   "bytes": 5592,
+   "sha256": "dc6fa1514dd2ff8a8650c0eee450699fa6acb06d70328acb9516f53a2147e1f6",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs28112019.txt": {
+   "bytes": 3492,
+   "sha256": "08e98c3d730d3cbf185f11afb84cffe732a17a8451a2291d04588be9c522c52d",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs28112024_1.txt": {
+   "bytes": 1827,
+   "sha256": "aeebfe50a677f4cc904430c740799e4198f29f40ed06e96bde9f90a2ec884b6d",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs29012026.txt": {
+   "bytes": 1856,
+   "sha256": "e27615240a26de8772220646bb59451136e87836b488adef06b6ac02132173e2",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs29042015.txt": {
+   "bytes": 4548,
+   "sha256": "d9133f170e93c2f61277d3c6c2d37f2552ee9ba30e735bc7fdede21cdc8d9944",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs29052025.txt": {
+   "bytes": 1811,
+   "sha256": "bff96f2f8a4caf2ed37a4d05eecbe94f16c0615f3e512f9cc9a73cdadfc438d8",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs29082017.txt": {
+   "bytes": 8967,
+   "sha256": "2d32b22a97e6dbc20a0dd6174e8a3d9c424d77082460b8b92e59a3e16886e63e",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs29082024.txt": {
+   "bytes": 1870,
+   "sha256": "ab32a8e7d35791dd592123a519b1c7dcee1c1a2c2b9bfe4ada6899d45700d435",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs29082025.txt": {
+   "bytes": 1847,
+   "sha256": "e93250e05314d481e5f06aa756d25cdefd0cb5f51306d5b5dadd2e248693dd02",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs29092025.txt": {
+   "bytes": 1915,
+   "sha256": "19ea65da5030a7d2d6537f60bf9916ca3f58706ccf3fd77bf70b96459dae7719",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs29102013.txt": {
+   "bytes": 3086,
+   "sha256": "93a63de7dff29546ba8099ba11d0f5710c8c671db74b4a0bd29ca05248c21301",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs29102024.txt": {
+   "bytes": 1910,
+   "sha256": "574af59a5c9915ba7b030f7ba4009d38650279d0d1ae3365885a9a1fd224f213",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs29102026_1.txt": {
+   "bytes": 1949,
+   "sha256": "c540672a18e1cddd4411afa1e88abb55c1b5f6e46edd9ba423417953089d5b73",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs30012024.txt": {
+   "bytes": 2730,
+   "sha256": "b499a27997247ed1552dd663ca1b5cbca06b1e1e8ebebea5b6f7471ad8623684",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs30012025.txt": {
+   "bytes": 1842,
+   "sha256": "769f8a7204295c1a321cd248d0b637e5f716a839bd84c19d0c8e28226dcd17ff",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs30062022.txt": {
+   "bytes": 5059,
+   "sha256": "83c2e8b4c7757e5130ec384d7b60a2f8cef360b9c0f54006b26d65c8806f987f",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs30062026.txt": {
+   "bytes": 1848,
+   "sha256": "c99d17410178f372ff4b3f217aaac5b7cca8803e61cc4f5e34e84fd9bff1b3ea",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs30092020.txt": {
+   "bytes": 4930,
+   "sha256": "5b4db0e7c8d1e284f6edc4c16afd2d3b884884847970b21da3cb6178cfee204e",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs30092025.txt": {
+   "bytes": 1916,
+   "sha256": "40eea557ef0b21c504cae92fc3b111da1821697de50e5b64db2ce84124560f14",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs30092026_1.txt": {
+   "bytes": 1823,
+   "sha256": "3a006a17e20f13fee1377a418dcb52adee23b4ae2d174641015bf11df799da13",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs30122024_1.txt": {
+   "bytes": 2158,
+   "sha256": "42b68b17fe8e8d39b8dde057861caa16936f098efe210c7756319bda694e7d64",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs31072025.txt": {
+   "bytes": 1929,
+   "sha256": "361816e29022b3f72654f3e81c1472fcefc5dab8992b201ca59ed05247b18a70",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs31072026.txt": {
+   "bytes": 2093,
+   "sha256": "f4453b9dce67cf566f1b7e205e48e815687fc05b15841b7a97354729efb1c6fc",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs31082018.txt": {
+   "bytes": 7201,
+   "sha256": "14024a98625d8c2b690c06f2939c45e4cc61dd12dec0da69b17a060f6027a741",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs31082026.txt": {
+   "bytes": 1856,
+   "sha256": "72a739778b4562cffc2167ae9d432d9d1578d0a94409e145a3ab798daf6dfaf4",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs31102024.txt": {
+   "bytes": 1844,
+   "sha256": "5413adac2e0d9b5727a047ae68d830376aaea51a45e9bee5e277db6fef9bda42",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs31122024.txt": {
+   "bytes": 1984,
+   "sha256": "a03391601cef9530b3f60c6f17a190c1d2371d2fe5379cc8868d34cc5518d094",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/press_releases/text/ind_prs31122025.txt": {
+   "bytes": 1829,
+   "sha256": "8bb53d7f3668c049a9c54301a8ae90dd76140edc2f62c7912985a72774d11e08",
+   "source": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv"
+  },
+  "studies/next50/data/raw/prices/yahoo_adj_close.csv": {
+   "bytes": 7753002,
+   "sha256": "32b71216ed0b20cd70e517dd869a68361d14821e0209d442a4cd9489175cb8fb",
+   "source": "Yahoo Finance via yfinance (constituent adjusted closes)"
+  },
+  "studies/next50/data/raw/prices/yahoo_close.csv": {
+   "bytes": 7107761,
+   "sha256": "759924a0df4b209c1e4c1b1c4d08df5e914cdb5a65f87f36798ef241b2891227",
+   "source": "Yahoo Finance via yfinance (constituent adjusted closes)"
+  },
+  "studies/next50/data/raw/prices/yahoo_splits.csv": {
+   "bytes": 6103,
+   "sha256": "c1978e449e329b54b6decb6461d0f9df6af6d0c44d5e50fe1f2083e530b3ad13",
+   "source": "Yahoo Finance via yfinance (constituent adjusted closes)"
+  },
+  "studies/next50/data/raw/prices/yahoo_volume.csv": {
+   "bytes": 3639740,
+   "sha256": "85a78d8ac97e9f76982adf01b93211a40bf3b82a746044374a5dfc8e52e7a610",
+   "source": "Yahoo Finance via yfinance (constituent adjusted closes)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20130119062113_www.nseindia.com_ind_cnx100list.csv": {
+   "bytes": 6291,
+   "sha256": "fb7a6e84e955773fc6ebfcda2cec520feeb8e90d56264f858f7eb814ede0bcfc",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20130119065158_www.nseindia.com_ind_jrniftylist.csv": {
+   "bytes": 3256,
+   "sha256": "404b09009cc1894b716a30f08ad3f66cece6bc21fa2d3e7d0e3a7c5fbe5b1073",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20130508065307_www.nseindia.com_ind_jrniftylist.csv": {
+   "bytes": 3280,
+   "sha256": "bb859de5a506bf2476df9e61cb2eced51731e93e12ebd71519db047fe86c49fb",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20130508081955_www.nseindia.com_ind_cnx100list.csv": {
+   "bytes": 6293,
+   "sha256": "635da18ca384a69448843534df0a08a898ec2fecd721671f2e8cfab6b89bb4f4",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20130818225616_www.nseindia.com_ind_cnx100list.csv": {
+   "bytes": 6293,
+   "sha256": "7541cb940270bb0f9bdf5863c7cf40ffd7e3f7da08b0aa275fbff31130635398",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20140122091423_nseindia.com_ind_cnx100list.csv": {
+   "bytes": 6007,
+   "sha256": "3223a23320c6029bc58c41e8ca8c940e6b6a392c5e61cf155c99f6483a5c15ae",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20140404002103_www.nseindia.com_ind_jrniftylist.csv": {
+   "bytes": 3201,
+   "sha256": "0ff52834f741609253e1bf25c7c796caf8bc0f5a12d6c2ef8a9c6934a2c584bc",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20140404010827_www.nseindia.com_ind_cnx100list.csv": {
+   "bytes": 6005,
+   "sha256": "a2948ce68049a79fdd9a53f7e0f219ee18d30e2c69b24323fcc3b02c85f2df76",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20150317093557_www.nseindia.com_ind_cnx100list.csv": {
+   "bytes": 6019,
+   "sha256": "4a760716609f2ddc1f1f70ab5cdf4313852608b4467290507a6321a742f849c8",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20150317103330_www.nseindia.com_ind_jrniftylist.csv": {
+   "bytes": 3199,
+   "sha256": "332e4be3755818be5559691855c82ebcab0ee393e6cf2e57e1b32bff32ce85eb",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20151119104725_www.nseindia.com_ind_jrniftylist.csv": {
+   "bytes": 3176,
+   "sha256": "9f4255d3b90ca7881b91bfd45e950059a388ae82b4fed075cc702581fb43400f",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20171102031755_www.niftyindices.com_ind_nifty100list.csv": {
+   "bytes": 6016,
+   "sha256": "7928a5af01773403c1659e5c69ab89b65ce91bc92aca50c820bd0a94996e253e",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20180228113140_www.niftyindices.com_ind_niftynext50list.csv": {
+   "bytes": 3084,
+   "sha256": "c3bd3a12058f350161712f63b1ecb5d4cb0cbcdcea700aff1532b232d2887a9a",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20180501120944_www.niftyindices.com_ind_niftynext50list.csv": {
+   "bytes": 3106,
+   "sha256": "3ac8a467deacadf19e590c6483f631660ab7b04c698abc06b94ea6db52f6a8f9",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20180603160802_niftyindices.com_ind_nifty100list.csv": {
+   "bytes": 6056,
+   "sha256": "cc03da646a40259f88c37b007fcbea1deb805f039082fdf036290e19ce07d478",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20180702185142_www.niftyindices.com_ind_niftynext50list.csv": {
+   "bytes": 3106,
+   "sha256": "7523a05898e590e9d25bc4557ad32e31ef4a42544653980d985e4847ace5d531",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20180803145347_niftyindices.com_ind_nifty100list.csv": {
+   "bytes": 6068,
+   "sha256": "eeaf24d103222b0e49b9b19c55602059a185eb80c40a4e4aebf8b61e6260a752",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20181009161119_www.niftyindices.com_ind_nifty100list.csv": {
+   "bytes": 6081,
+   "sha256": "058acc2e201d03f5c36eb0f258b36c4ca8686654033236fb8fdff87caf475f95",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20181210040426_www.niftyindices.com_ind_nifty100list.csv": {
+   "bytes": 6081,
+   "sha256": "36a2ba44f780bb65d1b418965a8735f176b9a0b6ef1f54b95d2aaf91a853813b",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20190201164539_niftyindices.com_ind_nifty100list.csv": {
+   "bytes": 6072,
+   "sha256": "6864611819e51c51b851d9fb6b3aa162ca2ad3385ce0f50f98c2d28811f0aae2",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20190201210120_niftyindices.com_ind_niftynext50list.csv": {
+   "bytes": 3115,
+   "sha256": "7fb015b13eeb1410c1b198deff2afa19f33daf264df3c9487ca8a84b12385c61",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20190517060409_www.nseindia.com_ind_nifty100list.csv": {
+   "bytes": 6181,
+   "sha256": "b1cac74235fcb0d060a0e2bcf9e3c714c6da781452e13531a2aef407a574280b",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20211113201824_archives.nseindia.com_ind_niftynext50list.csv": {
+   "bytes": 3122,
+   "sha256": "b130966d3c3c9677839f04729188d0ec68cfbe4b2200916e2126acf840e959f4",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20230424220213_archives.nseindia.com_ind_niftynext50list.csv": {
+   "bytes": 3362,
+   "sha256": "74b64e5260bd5321695d1531124c4a76ba99f7f1426c98bb12d2a34009ea0ebf",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20230803073553_archives.nseindia.com_ind_nifty100list.csv": {
+   "bytes": 6782,
+   "sha256": "1d2410149c302afefd6ea12956bd78d9a9641e87af82804e957a162116e27b3b",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20230812210156_www.niftyindices.com_ind_niftynext50list.csv": {
+   "bytes": 3370,
+   "sha256": "3cb210352b10b3960f62401dbecacc4a4f149afa0a73b3997865db444bd9d11b",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20240819102411_nsearchives.nseindia.com_ind_niftynext50list.csv": {
+   "bytes": 3353,
+   "sha256": "04c0bd015b268974abca426da7c1fd80ed676f0c962dc1f52764cb0666736a1f",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20250119054908_niftyindices.com_ind_niftynext50list.csv": {
+   "bytes": 3305,
+   "sha256": "a9893a8b9d5158df5671a790f3a56ea5f5b357195e6ad8f5c49200b9d14105f7",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20250715140024_www.niftyindices.com_ind_niftynext50list.csv": {
+   "bytes": 3357,
+   "sha256": "7b48bd8dda0b5ffb67a65cadc2d1cd3d90dc7270e9a2effd0a000e3900597a47",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20250914225515_www.niftyindices.com_ind_niftynext50list.csv": {
+   "bytes": 3349,
+   "sha256": "a095a2a6453c8ac6f7b485f48f239a8906d2a7fbf2418a9f82c5de8191ed54d4",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20251022222830_www.niftyindices.com_ind_niftynext50list.csv": {
+   "bytes": 3339,
+   "sha256": "deac8502d6d9b20cdff94e124309d6cbacd1330ea7a1b402c312e51ef6ed807d",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20260621143020_nsearchives.nseindia.com_ind_niftynext50list.csv": {
+   "bytes": 3444,
+   "sha256": "021fdfd898ade0844a2c2ac1ec517dc4c18a65de4b0055f08dfb025d8122a91b",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20260827161548_www.niftyindices.com_ind_niftynext50list.csv": {
+   "bytes": 3305,
+   "sha256": "e4654c80b911e3eaeb8044ec3a9e61d89b9db0702cc98b80e5a8fe86fbf83d5e",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20260827161608_www.niftyindices.com_ind_nifty100list.csv": {
+   "bytes": 6611,
+   "sha256": "1a40e33a0febf458986a178bc76f7b0051f163718f2a8bc11a726ba70a39c0a9",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20260930150752_www.niftyindices.com_ind_niftynext50list.csv": {
+   "bytes": 3303,
+   "sha256": "b05337532e755953b588677216012f9b59e69ff39f3dfbbab61e96fc2d724e47",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/20260930150812_www.niftyindices.com_ind_nifty100list.csv": {
+   "bytes": 6601,
+   "sha256": "0a53ad14c15e9ec258dc72117a8c0699546ec25f2d283c47d53412e2de8a06fc",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/raw/roster_snapshots/cdx_captures.csv": {
+   "bytes": 11915,
+   "sha256": "d3192da12138f1b0a68f5f027af54c32eb1987b1c2bab904d5d951757a413cad",
+   "source": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)"
+  },
+  "studies/next50/data/roster/changes.csv": {
+   "bytes": 39942,
+   "sha256": "b784ea567552394c4d1bcfd3bf624e7ba506f714ae8a9fdc4195287ea38a8fae",
+   "source": "Derived: snapshot tables, dated change events, membership intervals, validation"
+  },
+  "studies/next50/data/roster/hand_decisions.csv": {
+   "bytes": 690,
+   "sha256": "886de4fa4a8b039b79aa1372354ccbc3cda7cf9f7e14bb1d01ebb98d4eb8b0ad",
+   "source": "Derived: snapshot tables, dated change events, membership intervals, validation"
+  },
+  "studies/next50/data/roster/membership_daily.parquet": {
+   "bytes": 102380,
+   "sha256": "9c121bb53762f4707d351c0570e786d070dc6fb6b1efe21e56730b7da99f2e1d",
+   "source": "Derived: snapshot tables, dated change events, membership intervals, validation"
+  },
+  "studies/next50/data/roster/membership_intervals.csv": {
+   "bytes": 8696,
+   "sha256": "d4dc0f4c8fa4843f9fadadb1bae2392b008b09b4bf3d7fa23d8367a4eef3ddb4",
+   "source": "Derived: snapshot tables, dated change events, membership intervals, validation"
+  },
+  "studies/next50/data/roster/notice_rows_auto.csv": {
+   "bytes": 42950,
+   "sha256": "f8afeab18409161e48e24e79d8ad98501696ed4da1fbe29a5f5c9f92bcfdf036",
+   "source": "Derived: snapshot tables, dated change events, membership intervals, validation"
+  },
+  "studies/next50/data/roster/snapshot_index.csv": {
+   "bytes": 6011,
+   "sha256": "9a1545497720cffea59fc206c35ef47d9179a3dd0971f0d76eb39c93fed84bab",
+   "source": "Derived: snapshot tables, dated change events, membership intervals, validation"
+  },
+  "studies/next50/data/roster/snapshot_members.csv": {
+   "bytes": 288669,
+   "sha256": "efab6619d3080ce88abca0e7cae5ecf6d7875fa734a4cbba4d4d36871e11e1c6",
+   "source": "Derived: snapshot tables, dated change events, membership intervals, validation"
+  },
+  "studies/next50/data/roster/symbol_aliases.csv": {
+   "bytes": 3291,
+   "sha256": "0f09b1c73ed587d72f8b3a2ad4bf0f55e3daa26a88140cde84ffaf4593b142ac",
+   "source": "Derived: snapshot tables, dated change events, membership intervals, validation"
+  },
+  "studies/next50/data/roster/validation.csv": {
+   "bytes": 4242,
+   "sha256": "b359df8f9bf4712618ccb943521fa725f8e9a5caf7925795214932c835718cc2",
+   "source": "Derived: snapshot tables, dated change events, membership intervals, validation"
+  }
+ },
+ "generated_utc": "2026-11-08T07:21:41Z",
+ "protocol_sha256": "217c789dd2a95d9dab7bd1eea3be42e5bec385c74e29c2abde097605f6c4157a"
+}

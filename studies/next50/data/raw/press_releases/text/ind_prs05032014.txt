@@ -1,0 +1,27 @@
+       IISL
+       INDIA INDEX SERVICES & PRODUCTS LIMITED
+
+                                  PRESS RELEASE
+
+The Index Maintenance Sub-Committee has decided to make the following changes in LIX
+15 Index as part of its periodic review. These changes shall become effective from March
+28, 2014 (close of March 27, 2014).
+
+(1)    LIX 15 Index
+
+The following companies are being excluded:
+
+  Sr. No. Company Name                                  Symbol
+    1     Cairn India Ltd.                              CAIRN
+    2     Jaiprakash Associates Ltd.                    JPASSOCIAT
+
+The following companies are being included:
+
+  Sr. No. Company Name                                  Symbol
+    1     Sesa Sterlite Ltd.                            SSLT
+    2     Tech Mahindra Ltd.                            TECHM
+
+
+Place: Mumbai
+Date: March 05, 2014
+

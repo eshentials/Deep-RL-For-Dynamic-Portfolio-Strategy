@@ -1,0 +1,80 @@
+       IISL
+       INDIA INDEX SERVICES & PRODUCTS LIMITED
+       (A joint venture of NSE & CRISIL)
+
+                                  PRESS RELEASE
+The Index Maintenance Sub-Committee has decided to make the following changes in CNX
+Alpha, CNX High Beta & CNX Low Volatility as part of the quarterly periodic review.
+These changes shall become effective from January 14, 2013.
+
+(1)    CNX Alpha Index
+
+The following companies are being excluded:
+
+  Sr. No.   Company Name                              Symbol
+    1       Ambuja Cements Ltd.                       AMBUJACEM
+    2       Apollo Tyres Ltd.                         APOLLOTYRE
+    3       Bajaj Auto Ltd.                           BAJAJ-AUTO
+    4       Balkrishna Industries Ltd.                BALKRISIND
+    5       Hexaware Technologies Ltd.                HEXAWARE
+    6       Hindustan Unilever Ltd.                   HINDUNILVR
+    7       India Cements Ltd.                        INDIACEM
+    8       Kotak Mahindra Bank Ltd.                  KOTAKBANK
+    9       LIC Housing Finance Ltd.                  LICHSGFIN
+   10       NIIT Technologies Ltd.                    NIITTECH
+   11       Tata Consultancy Services Ltd.            TCS
+   12       TTK Prestige Ltd.                         TTKPRESTIG
+
+The following companies are being included:
+
+  Sr. No.   Company Name                              Symbol
+    1       Aurobindo Pharma Ltd.                     AUROPHARMA
+    2       Bajaj Finance Ltd.                        BAJFINANCE
+    3       D B Realty Ltd.                           DBREALTY
+    4       Den Networks Ltd.                         DEN
+    5       Dena Bank                                 DENABANK
+    6       Glenmark Pharmaceuticals Ltd.             GLENMARK
+    7       Karnataka Bank Ltd.                       KTKBANK
+    8       L&T Finance Holdings Ltd.                 L&TFH
+    9       Motherson Sumi Systems Ltd.               MOTHERSUMI
+   10       Prestige Estates Projects Ltd.            PRESTIGE
+   11       Shriram City Union Finance Ltd.           SHRIRAMCIT
+   12       Wockhardt Ltd.                            WOCKPHARMA
+(2)    CNX High Beta Index
+
+The following companies are being excluded:
+
+  Sr. No.   Company Name                          Symbol
+    1       Aban Offshore Ltd.                    ABAN
+    2       JSW ISPAT Steel Ltd.                  JSWISPAT
+    3       TVS Motor Company Ltd.                TVSMOTOR
+
+The following companies are being included:
+
+  Sr. No.   Company Name                          Symbol
+     1      Adani Power Ltd.                      ADANIPOWER
+     2      Delta Corp Ltd.                       DELTACORP
+     3      Indiabulls Real Estate Ltd.           IBREALEST
+
+
+(3)    CNX Low Volatility Index
+
+The following companies are being excluded:
+
+  Sr. No.   Company Name                          Symbol
+    1       Container Corporation of India Ltd.   CONCOR
+    2       Engineers India Ltd.                  ENGINERSIN
+    3       L&T Finance Holdings Ltd.             L&TFH
+
+The following companies are being included:
+
+  Sr. No.   Company Name                          Symbol
+     1      Bhushan Steel Ltd.                    BHUSANSTL
+     2      Castrol (India) Ltd.                  CASTROL
+     3      Emami Ltd.                            EMAMILTD
+
+
+
+Place: Mumbai
+Date: January 7, 2013
+

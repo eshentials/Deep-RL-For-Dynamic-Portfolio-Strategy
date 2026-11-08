@@ -12,13 +12,14 @@ import json
 import numpy as np
 import pandas as pd
 
-from config import ROOT, load, protocol_hash
+from config import ROOT, load, protocol_hash, require_version
 from data.rf import is_provisional
 
 PROC, ROSTER, DOCS = ROOT / "data" / "processed", ROOT / "data" / "roster", ROOT / "docs"
 
 
 def build() -> str:
+    require_version(1, "eval.methods_facts")
     cfg = load()
     iv = pd.read_csv(ROSTER / "membership_intervals.csv")
     ch = pd.read_csv(ROSTER / "changes.csv")

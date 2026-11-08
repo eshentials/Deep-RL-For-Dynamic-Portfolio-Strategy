@@ -1,0 +1,96 @@
+  IISL
+      India Index Services & Products Limited
+
+                                                                            Date: July 2, 2015
+                                         Press Release
+
+The Index Maintenance Sub-Committee of IISL, a NSE group company, has decided to make the
+following changes in CNX Alpha, CNX High Beta and CNX Low Volatility indices as part of
+the quarterly review. The changes shall become effective from July 13, 2015 (close of July 10,
+2015).
+
+(1)       CNX Alpha Index
+
+The following companies are being excluded:
+
+ Sr. No.     Company Name                                 Symbol
+    1        Ceat Ltd.                                    CEATLTD
+    2        Cox & Kings Ltd.                             COX&KINGS
+    3        Finolex Cables Ltd.                          FINCABLES
+    4        Havells India Ltd.                           HAVELLS
+    5        Himachal Futuristic Communications Ltd.      HFCL
+    6        IRB Infrastructure Developers Ltd.           IRB
+    7        Kaveri Seed Company Ltd.                     KSCL
+    8        Manappuram Finance Ltd.                      MANAPPURAM
+    9        Monsanto India Ltd.                          MONSANTO
+   10        Sintex Industries Ltd.                       SINTEX
+   11        Suzlon Energy Ltd.                           SUZLON
+   12        Va Tech Wabag Ltd.                           WABAG
+
+The following companies are being included:
+
+ Sr. No.     Company Name                                 Symbol
+    1        Bajaj Corp Ltd.                              BAJAJCORP
+    2        Bajaj Finance Ltd.                           BAJFINANCE
+    3        Glenmark Pharmaceuticals Ltd.                GLENMARK
+    4        Hindustan Petroleum Corporation Ltd.         HINDPETRO
+    5        Kitex Garments Ltd.                          KITEX
+    6        Lupin Ltd.                                   LUPIN
+       7      Marico Ltd.                     MARICO
+       8      Rajesh Exports Ltd.             RAJESHEXPO
+       9      Suven Life Sciences Ltd.        SUVEN
+      10      Symphony Ltd.                   SYMPHONY
+      11      Tata Elxsi Ltd.                 TATAELXSI
+      12      Thomas Cook (India) Ltd.        THOMASCOOK
+
+
+(2)        CNX High Beta Index
+
+The following company is being excluded:
+
+ Sr. No.      Company Name                    Symbol
+    1         Raymond Ltd.                    RAYMOND
+
+The following company is being included:
+
+ Sr. No.      Company Name                    Symbol
+    1         Adani Power Ltd.                ADANIPOWER
+
+
+(3)        CNX Low Volatility Index
+
+The following companies are being excluded:
+
+ Sr. No.      Company Name                    Symbol
+    1         Emami Ltd.                      EMAMILTD
+    2         Page Industries Ltd.            PAGEIND
+
+The following companies are being included:
+
+ Sr. No.      Company Name                    Symbol
+    1         L&T Finance Holdings Ltd.       L&TFH
+    2         Lakshmi Vilas Bank Ltd.         LAKSHVILAS
+
+
+
+
+For more details, contact:
+Arindam Saha
+Head - Corporate Communications
+cc_nse@nse.co.in
++91–(022)–2659 8164
+About IISL: IISL, a NSE group company, provides wide array of indices and index related
+services for the capital markets. It maintains more than 100 equity & fixed income based indices
+as well as investment & risk management tools etc. Along with NSE, many such products are
+traded on overseas exchanges like Singapore Exchange (SGX), Chicago Mercantile Exchange
+(CME) and Osaka Securities Exchange (OSE). IISL also actively maintains large number of
+index and exchange traded funds.
+
+About NSE: In its 20 year history, NSE has transformed the capital market, based on technology,
+innovation, high standards of governance and management practices. NSE's business practices
+and high levels of integrity have earned it the trust of the financial markets worldwide. Besides
+being a platform of choice for all exchange traded financial products In India, NSE’s flagship
+index, the Nifty 50, has become a benchmark national level economic parameter. Since
+inception, the exchange has been covered extensively by global media and has won many
+accolades as recognition of this remarkable journey.
+

@@ -38,8 +38,9 @@ def avg_pairwise_corr(returns: np.ndarray, eligible: np.ndarray, window: int = 6
 
 
 def market_features(market: pd.DataFrame, returns: np.ndarray, eligible: np.ndarray) -> pd.DataFrame:
-    """`market` is indexed by session with columns nsei, vix, usdinr."""
-    px = market["nsei"]
+    """`market` is indexed by session with columns vix, usdinr and the universe's index:
+    `index` when the study has one (Nifty Next 50), else `nsei` (Nifty 50, protocol v1)."""
+    px = market["index"] if "index" in market.columns else market["nsei"]
     lp = np.log(px)
     lr = lp.diff()
     f = pd.DataFrame(index=market.index)

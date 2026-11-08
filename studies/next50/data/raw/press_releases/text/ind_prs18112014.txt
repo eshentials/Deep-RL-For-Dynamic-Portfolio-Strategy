@@ -1,0 +1,87 @@
+       IISL
+       INDIA INDEX SERVICES & PRODUCTS LIMITED
+
+                                PRESS RELEASE
+
+The Index Maintenance Sub-Committee has decided to make the following changes in
+the indices to be effective from November 28, 2014 (close of November 27, 2014) on
+account of proposed scheme of amalgamation with Sun Pharmaceuticals Industries Ltd.
+
+1. CNX Nifty Junior index:
+
+The following company is being excluded:
+ Sr. No.               Company Name                     Symbol
+    1      Ranbaxy Laboratories Ltd.                 RANBAXY
+
+The following company is being included:
+ Sr. No.                Company Name                    Symbol
+    1      Reliance Infrastructure Ltd.              RELINFRA
+
+2. CNX 100 index:
+
+The following company is being excluded:
+ Sr. No.               Company Name                     Symbol
+    1      Ranbaxy Laboratories Ltd.                 RANBAXY
+
+The following company is being included:
+ Sr. No.                Company Name                    Symbol
+    1      Reliance Infrastructure Ltd.              RELINFRA
+
+Note: The replacement in CNX 100 will also be applicable to CNX 100 Equal Weight
+Index.
+
+3. CNX 200 index:
+
+The following company is being excluded:
+ Sr. No.               Company Name                     Symbol
+    1      Ranbaxy Laboratories Ltd.                 RANBAXY
+
+The following company is being included:
+ Sr. No.               Company Name                     Symbol
+    1      Vakrangee Ltd.                            VAKRANGEE
+
+4. CNX 500 index:
+
+The following company is being excluded:
+ Sr. No.              Company Name            Symbol
+    1      Ranbaxy Laboratories Ltd.       RANBAXY
+
+The following company is being included:
+ Sr. No.                Company Name            Symbol
+    1      Tilaknagar Industries Ltd.      TI
+
+5. CNX Midcap index:
+
+The following company is being excluded:
+ Sr. No.               Company Name           Symbol
+    1      Ranbaxy Laboratories Ltd.       RANBAXY
+
+The following company is being included:
+ Sr. No.               Company Name           Symbol
+    1      Jaiprakash Associates Ltd.      JPASSOCIAT
+
+6. CNX Pharma index:
+
+The following company is being excluded:
+ Sr. No.               Company Name           Symbol
+    1      Ranbaxy Laboratories Ltd.       RANBAXY
+
+The following company is being included:
+ Sr. No.               Company Name           Symbol
+    1      Aurobindo Pharma Ltd.           AUROPHARMA
+
+7. CNX MNC index:
+
+The following company is being excluded:
+ Sr. No.               Company Name           Symbol
+    1      Ranbaxy Laboratories Ltd.       RANBAXY
+
+The following company is being included:
+ Sr. No.                 Company Name         Symbol
+    1      Castrol India Ltd.              CASTROLIND
+
+
+
+Place: Mumbai
+Date: November 18, 2014
+

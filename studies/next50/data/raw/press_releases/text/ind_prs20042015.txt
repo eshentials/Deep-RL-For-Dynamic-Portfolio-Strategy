@@ -1,0 +1,31 @@
+       IISL
+       INDIA INDEX SERVICES & PRODUCTS LIMITED
+
+                                  PRESS RELEASE
+
+The Index Maintenance Sub-Committee has decided to make the changes to the
+composition and calculation methodology of CNX IT index as given hereunder:
+
+CNX IT index is presently calculated based on the free-float market capitalization
+method comprising of 20 stocks. Effective May 29, 2015 (close of May 28, 2015), the
+index shall be computed with 10 companies and weights of each company in the index
+shall be capped at 25% at the time of rebalancing of the index.
+
+The following companies shall be excluded:
+
+ Sr. No.   Company Name                         Symbol
+   1       eClerx Services Ltd.                 ECLERX
+   2       Firstsource Solutions Ltd.           FSL
+   3       Hexaware Technologies Ltd.           HEXAWARE
+   4       KPIT Technologies Ltd.               KPIT
+   5       MphasiS Ltd.                         MPHASIS
+   6       NIIT Technologies Ltd.               NIITTECH
+   7       Persistent Systems Ltd.              PERSISTENT
+   8       Polaris Consulting & Services Ltd.   POLARIS
+   9       Rolta India Ltd.                     ROLTA
+  10       Tata Elxsi Ltd.                      TATAELXSI
+
+Place: Mumbai
+
+Date: April 20, 2015
+

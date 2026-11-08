@@ -17,12 +17,12 @@ from datetime import date, timedelta
 import numpy as np
 import pandas as pd
 
-from config import ROOT, load
+from config import load, study_root
 from data import yahoo
 
-RAW = ROOT / "data" / "raw" / "prices"
-PROC = ROOT / "data" / "processed"
-ROSTER = ROOT / "data" / "roster"
+RAW = study_root() / "data" / "raw" / "prices"
+PROC = study_root() / "data" / "processed"
+ROSTER = study_root() / "data" / "roster"
 
 CANDIDATES = {
     "MCDOWELL-N": ["UNITDSPR.NS", "MCDOWELL-N.NS"],
@@ -66,6 +66,66 @@ KNOWN_EVENTS: dict[tuple[str, str], str] = {
 for _d in ["2018-09-21", "2019-02-14", "2019-04-30", "2019-10-03", "2020-03-05", "2020-03-06",
            "2020-03-09", "2020-03-11", "2020-03-16", "2020-03-17"]:
     KNOWN_EVENTS[("YESBANK", _d)] = _YES
+
+
+# Protocol v2 (Nifty Next 50) additions. Merged only when that protocol is active, so protocol
+# v1's outputs (price_qa.csv, price_jumps_explained.csv, ...) cannot change.
+CANDIDATES_NEXT50 = {
+    "L&TFH": ["LTF.NS", "L&TFH.NS"],          # L&T Finance Holdings, now L&T Finance (same ISIN)
+}
+_BHAV_0430 = "https://nsearchives.nseindia.com/content/cm/BhavCopy_NSE_CM_0_0_0_20260430_F_0000.csv.zip"
+DEMERGERS_NEXT50: list = [
+    # Five-way demerger, ex-date 2026-04-30. NSE's bhavcopy shows the special pre-open discovered
+    # price as the day's open (289.50) and the unadjusted previous close (773.60).
+    ("VEDL", "2026-04-30", 289.50, 773.60,
+     f"{_BHAV_0430} (open = special pre-open price); "
+     "https://www.multibagg.ai/market-pulse/articles/vedanta-ex-demerger-price-fall-cmol1h3tirvh6pg0j4wog395i"),
+]
+# Reviewed by hand; under protocol v2 each is accepted only if NSE's bhavcopy return agrees.
+_COVID = "COVID crash: Nifty -13% on 2020-03-23"
+KNOWN_EVENTS_NEXT50: dict[tuple[str, str], str] = {
+    ("BANKBARODA", "2017-10-25"): "Government PSU-bank recapitalisation plan (2017-10-24)",
+    ("PNB", "2017-10-25"): "Government PSU-bank recapitalisation plan (2017-10-24)",
+    ("IBULHSGFIN", "2019-09-30"): "Delhi High Court agreed to hear a PIL alleging fund diversion; ended 34% lower",
+    ("IBULHSGFIN", "2020-03-19"): "COVID-19 crash week: housing-finance sell-off (no corporate action)",
+    ("IBULHSGFIN", "2020-06-19"): "Bulk deals, Morgan Stanley bought a 1.06% stake (2020-06-19)",
+    ("IDEA", "2019-07-29"): "Q1 FY20 results: subscriber and revenue decline",
+    ("IDEA", "2019-11-19"): "Tariff increase announced after hours on 2019-11-18",
+    ("IDEA", "2020-02-19"): "Reports that the government would not invoke bank guarantees over AGR dues",
+    ("IDEA", "2020-03-13"): "Hopes of a government relief package for telecoms",
+    ("IDEA", "2020-03-18"): "Supreme Court rejected self-assessment of AGR dues",
+    ("BANDHANBNK", "2020-03-23"): _COVID,
+    ("BANDHANBNK", "2020-03-26"): "Rebound of beaten-down bank stocks at the March 2020 F&O expiry",
+    ("RECLTD", "2024-06-04"): "General-election results day: sell-off in state-owned stocks (Nifty Next 50 -9.3%)",
+}
+NSE_CHECK_TOL = 0.015   # |Yahoo return - NSE close/prevclose return| allowed (dividends, rounding)
+
+if load()["data"]["universe"] == "next50":
+    CANDIDATES = {**CANDIDATES, **CANDIDATES_NEXT50}
+    DEMERGERS = DEMERGERS + DEMERGERS_NEXT50
+    KNOWN_EVENTS = {**KNOWN_EVENTS, **KNOWN_EVENTS_NEXT50}
+
+
+CHECK_NSE = load()["data"]["universe"] == "next50"
+
+
+def nse_check(sym: str, day: pd.Timestamp, r_vendor: float) -> dict:
+    """Protocol v2: a flagged day is accepted only with a reviewed explanation AND an NSE bhavcopy
+    return (close / previous close - 1) within NSE_CHECK_TOL of the vendor return."""
+    from data import nse_bhav
+    al = pd.read_csv(ROSTER / "symbol_aliases.csv", dtype=str)
+    iv = pd.read_csv(ROSTER / "membership_intervals.csv", dtype=str)
+    names = set(al.loc[al["symbol"] == sym, "alias"]) | {sym}
+    isins = set(iv.loc[iv["symbol"] == sym, "isin"].dropna())
+    row = nse_bhav.row(day, isins, names)
+    r_nse = row["close"] / row["prevclose"] - 1 if row else float("nan")
+    agree = row is not None and abs(r_vendor - r_nse) <= NSE_CHECK_TOL
+    why = KNOWN_EVENTS.get((sym, day.strftime("%Y-%m-%d")), "")
+    return {"symbol": sym, "date": day.date(), "r_vendor": round(r_vendor, 4),
+            "r_nse": round(r_nse, 4) if row else None, "nse_open": row["open"] if row else None,
+            "nse_close": row["close"] if row else None, "nse_prevclose": row["prevclose"] if row else None,
+            "nse_agrees": agree, "explanation": why, "accepted": bool(agree and why),
+            "bhavcopy": row["url"] if row else ""}
 
 
 def candidates(symbol: str) -> list[str]:
@@ -182,7 +242,7 @@ def build():
     masks = windows(iv, S, win)
     member_only = windows(iv, S, 0)
 
-    chosen, qa, repairs = {}, [], []
+    chosen, qa, repairs, jump_checks = {}, [], [], []
     picks = {}
     for sym in symbols:
         best = None
@@ -211,6 +271,12 @@ def build():
         in_win = pd.Series(member_only[sym], index=S)
         big = r[(r.abs() > cfg["jump_flag"]) & in_win]
         unexplained = [d for d in big.index if (sym, d.strftime("%Y-%m-%d")) not in KNOWN_EVENTS]
+        if CHECK_NSE:
+            for d in big.index:
+                chk = nse_check(sym, d, float(r[d]))
+                jump_checks.append(chk)
+                if not chk["accepted"] and d not in unexplained:
+                    unexplained.append(d)
         status, reason = "adjusted", ""
         if mcov < cfg["min_coverage"]:
             status, reason = "excluded", f"member-window coverage {mcov:.1%}"
@@ -225,6 +291,8 @@ def build():
     PROC.mkdir(parents=True, exist_ok=True)
     qa.to_csv(PROC / "price_qa.csv", index=False)
     pd.DataFrame(repairs).to_csv(PROC / "price_repairs.csv", index=False)
+    if CHECK_NSE:
+        pd.DataFrame(jump_checks).to_csv(PROC / "price_jump_checks.csv", index=False)
     explained = pd.DataFrame([{"symbol": s, "date": d, "reason": why} for (s, d), why in KNOWN_EVENTS.items()])
     explained.to_csv(PROC / "price_jumps_explained.csv", index=False)
     panel = pd.DataFrame(chosen, index=S)

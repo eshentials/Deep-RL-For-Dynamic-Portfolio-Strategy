@@ -1,0 +1,14 @@
+date,isin,symbol,series,open,close,prevclose,url,zip_sha256
+2020-03-23,INE545U01014,BANDHANBNK,EQ,208.45,173.65,231.6,https://nsearchives.nseindia.com/content/historical/EQUITIES/2020/MAR/cm23MAR2020bhav.csv.zip,2806459732d60d63adf7d3340307aa257d3677593dc5f27d118f5af89e1a7d32
+2020-03-26,INE545U01014,BANDHANBNK,EQ,160.8,215.6,154.75,https://nsearchives.nseindia.com/content/historical/EQUITIES/2020/MAR/cm26MAR2020bhav.csv.zip,db295579e5c9088f8f40416e0ff426eb882de647d0cce410c431391acba99b95
+2017-10-25,INE028A01039,BANKBARODA,EQ,157.45,188.15,143.15,https://nsearchives.nseindia.com/content/historical/EQUITIES/2017/OCT/cm25OCT2017bhav.csv.zip,429bbebb88cc1df9869dc90e63402666cdf6a5d62bd1fa60daae567f1ff8192c
+2019-09-30,INE148I01020,IBULHSGFIN,EQ,360.6,255.9,390.1,https://nsearchives.nseindia.com/content/historical/EQUITIES/2019/SEP/cm30SEP2019bhav.csv.zip,ff9496580483dbbc47f0d600d4a5effdb775c526c6749dd68efe623c07abc69c
+2020-03-19,INE148I01020,IBULHSGFIN,EQ,122.0,89.75,135.45,https://nsearchives.nseindia.com/content/historical/EQUITIES/2020/MAR/cm19MAR2020bhav.csv.zip,9c590311f613e0c1f33d07ab52a3ba4426bd867ac3a258f7dce38748d6db55b7
+2020-06-19,INE148I01020,IBULHSGFIN,EQ,157.4,203.4,155.15,https://nsearchives.nseindia.com/content/historical/EQUITIES/2020/JUN/cm19JUN2020bhav.csv.zip,961e4d144ee688b0c3cb3b89e72ef7b632655ccc7b4fce56d2584181b4ea637f
+2019-07-29,INE669E01016,IDEA,EQ,8.75,6.75,9.25,https://nsearchives.nseindia.com/content/historical/EQUITIES/2019/JUL/cm29JUL2019bhav.csv.zip,b36a19fd71a00e0765ebcf88c31b647f5c7986c39586144da9b5ed1874efd5d2
+2019-11-19,INE669E01016,IDEA,EQ,4.85,6.05,4.45,https://nsearchives.nseindia.com/content/historical/EQUITIES/2019/NOV/cm19NOV2019bhav.csv.zip,0a256f488ad463b2128e1e2225c0be8740eae53c83f0d152bdf1500499c08e9b
+2020-02-19,INE669E01016,IDEA,EQ,3.15,4.2,3.0,https://nsearchives.nseindia.com/content/historical/EQUITIES/2020/FEB/cm19FEB2020bhav.csv.zip,52655d7f0d1313f8e15a6a5e1801c2dc7b0ad58e26dfe29937aca95f0ef4169a
+2020-03-13,INE669E01016,IDEA,EQ,4.0,5.6,4.2,https://nsearchives.nseindia.com/content/historical/EQUITIES/2020/MAR/cm13MAR2020bhav.csv.zip,efce5c59f75c63f5289df4d8b9465741a73cf2d2f72f37cccaead79e8fd9f4e8
+2020-03-18,INE669E01016,IDEA,EQ,5.3,3.15,4.85,https://nsearchives.nseindia.com/content/historical/EQUITIES/2020/MAR/cm18MAR2020bhav.csv.zip,255cb08713c72a5ce05058d4dbe472794d0083272b0696450a25ed86f67dcfbd
+2017-10-25,INE160A01022,PNB,EQ,152.0,202.05,138.2,https://nsearchives.nseindia.com/content/historical/EQUITIES/2017/OCT/cm25OCT2017bhav.csv.zip,429bbebb88cc1df9869dc90e63402666cdf6a5d62bd1fa60daae567f1ff8192c
+2024-06-04,INE020B01018,RECLTD,EQ,594.0,452.2,604.5,https://nsearchives.nseindia.com/content/historical/EQUITIES/2024/JUN/cm04JUN2024bhav.csv.zip,436b60d00d22c0f304397928af2b5c6a748aa75fff0e2f7c2a116c85cdd5f953

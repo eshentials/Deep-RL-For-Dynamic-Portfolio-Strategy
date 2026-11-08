@@ -49,6 +49,8 @@ def sessions() -> pd.DatetimeIndex:
 
 
 def build() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    from config import require_version
+    require_version(1, "data.roster_build")
     canon, isin_of = canonical_map()
     runs, sets = membership_sets()
     anchor = {canon.get(s, s) for s in sets[runs.iloc[0]["members_hash"]]}

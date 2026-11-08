@@ -11,12 +11,12 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
-from config import ROOT, load
+from config import load, study_root
 from env.build import assemble
 from env.engine import MarketData
 
-PROC = ROOT / "data" / "processed"
-ROSTER = ROOT / "data" / "roster"
+PROC = study_root() / "data" / "processed"
+ROSTER = study_root() / "data" / "roster"
 ENGINE = PROC / "engine.npz"
 
 
@@ -39,7 +39,8 @@ def inputs():
 def build() -> MarketData:
     cfg = load()
     S, mk, R, member, rf, symbols = inputs()
-    data = assemble(S, mk[["nsei", "vix", "usdinr"]], R, member, rf,
+    idx_col = "index" if "index" in mk.columns else "nsei"
+    data = assemble(S, mk[[idx_col, "vix", "usdinr"]], R, member, rf,
                     window=cfg["portfolio"]["cov_window"], symbols=symbols)
     np.savez_compressed(ENGINE, dates=S.values.astype("datetime64[ns]").astype(np.int64), R=data.R,
                         W=data.W, exit_mask=data.exit_mask, delist_mask=data.delist_mask, rf=data.rf,

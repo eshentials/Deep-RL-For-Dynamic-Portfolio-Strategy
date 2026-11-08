@@ -16,7 +16,7 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
-from config import ROOT, load
+from config import ROOT, load, require_version
 from eval import metrics as M
 from eval.bootstrap import paired_sharpe_diff
 
@@ -102,6 +102,7 @@ def _md_table(df, cols, fmt):
 
 
 def main():
+    require_version(1, "eval.exploratory")
     cfg = load()
     b = cfg["evaluation"]["bootstrap"]
     rets = pd.read_parquet(RES / "test_returns.parquet")

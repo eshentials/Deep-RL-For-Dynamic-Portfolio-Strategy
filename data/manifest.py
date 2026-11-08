@@ -10,10 +10,23 @@ import json
 import sys
 from datetime import datetime, timezone
 
-from config import ROOT, protocol_hash
+from config import ROOT, protocol_hash, study_root
 
-MANIFEST = ROOT / "data" / "MANIFEST.json"
-TRACKED_DIRS = ["data/raw", "data/processed", "data/roster"]
+BASE = study_root() / "data"            # v1: data/; v2: studies/next50/data/
+MANIFEST = BASE / "MANIFEST.json"
+TRACKED_DIRS = [str((BASE / d).relative_to(ROOT)) for d in ("raw", "processed", "roster")]
+if study_root() != ROOT:
+    TRACKED_DIRS.append("data/raw/rbi")  # the one input every study shares
+_V2 = "studies/next50/data"
+SOURCES_V2 = {
+    f"{_V2}/raw/press_releases": "niftyindices.com press-release listing and index-change notices; text extracted with pdftotext -layout, PDF URL and SHA-256 in notices.csv",
+    f"{_V2}/raw/roster_snapshots": "Wayback Machine captures of NSE/niftyindices Nifty Next 50 (ind_jrniftylist.csv, ind_niftynext50list.csv) and Nifty 100 (ind_cnx100list.csv, ind_nifty100list.csv) constituent files (web.archive.org id_ endpoint)",
+    f"{_V2}/raw/market": "Yahoo Finance via yfinance (^NSEI session calendar, ^NSMIDCP, JUNIORBEES.NS, ^INDIAVIX, INR=X)",
+    f"{_V2}/raw/prices": "Yahoo Finance via yfinance (constituent adjusted closes)",
+    "data/raw/rbi": "Reserve Bank of India 91-day T-bill auction cut-off yields (shared with protocol v1)",
+    f"{_V2}/roster": "Derived: snapshot tables, dated change events, membership intervals, validation",
+    f"{_V2}/processed": "Derived by this repository's builders",
+}
 SOURCES = {
     "data/raw/roster_snapshots": "Wayback Machine captures of NSE/niftyindices Nifty 50 constituent files and NSE equity-stockIndices JSON (web.archive.org id_ endpoint)",
     "data/raw/market": "Yahoo Finance via yfinance (^NSEI, NIFTYBEES.NS, ^INDIAVIX, INR=X)",
@@ -42,8 +55,9 @@ def _files():
 
 
 def _source(rel: str) -> str:
-    best = max((k for k in SOURCES if rel.startswith(k)), key=len, default="")
-    return SOURCES.get(best, "")
+    src = SOURCES if study_root() == ROOT else SOURCES_V2
+    best = max((k for k in src if rel.startswith(k)), key=len, default="")
+    return src.get(best, "")
 
 
 def build() -> dict:

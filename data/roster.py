@@ -157,6 +157,8 @@ def parse_json(raw: bytes) -> pd.DataFrame | None:
 
 
 def fetch() -> pd.DataFrame:
+    from config import require_version
+    require_version(1, "data.roster")
     """Download and parse every useful capture; write snapshot tables.
 
     Returns the snapshot index: one row per parsed capture with its member set hash.

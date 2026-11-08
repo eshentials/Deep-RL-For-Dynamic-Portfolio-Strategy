@@ -1,0 +1,75 @@
+       IISL
+       INDIA INDEX SERVICES & PRODUCTS LIMITED
+
+                                 PRESS RELEASE
+
+
+The Index Maintenance Sub-Committee has decided to make the following changes in CNX
+Alpha, CNX High Beta & CNX Low Volatility Indices as part of the quarterly periodic
+review. These changes shall become effective from January 13, 2014.
+
+
+(1)    CNX Alpha Index
+
+The following companies are being excluded:
+
+  Sr. No.   Company Name                              Symbol
+    1       Den Networks Ltd.                         DEN
+    2       Essar Oil Ltd.                            ESSAROIL
+    3       Glenmark Pharmaceuticals Ltd.             GLENMARK
+    4       Gruh Finance Ltd.                         GRUH
+    5       Hathway Cable & Datacom Ltd.              HATHWAY
+    6       L&T Finance Holdings Ltd.                 L&TFH
+    7       Shree Cement Ltd.                         SHREECEM
+    8       Strides Arcolab Ltd.                      STAR
+    9       Tata Coffee Ltd.                          TATACOFFEE
+   10       United Breweries Ltd.                     UBL
+
+The following companies are being included:
+
+  Sr. No.   Company Name                              Symbol
+    1       Ajanta Pharmaceuticals Ltd.               AJANTPHARM
+    2       Alembic Pharmaceuticals Ltd.              APLLTD
+    3       Biocon Ltd.                               BIOCON
+    4       Delta Corp Ltd.                           DELTACORP
+    5       Escorts Ltd.                              ESCORTS
+    6       Ess Dee Aluminium Ltd.                    ESSDEE
+    7       Infotech Enterprises Ltd.                 INFOTECENT
+    8       NATCO Pharma Ltd.                         NATCOPHARM
+    9       Persistent Systems Ltd.                   PERSISTENT
+   10       TVS Motor Company Ltd.                    TVSMOTOR
+(2)    CNX High Beta Index
+
+The following companies are being excluded:
+
+  Sr. No.   Company Name                      Symbol
+    1       Arvind Ltd.                       ARVIND
+    2       Punj Lloyd Ltd.                   PUNJLLOYD
+    3       Sintex Industries Ltd.            SINTEX
+
+The following companies are being included:
+
+  Sr. No.   Company Name                      Symbol
+    1       Bank of Baroda                    BANKBARODA
+    2       Future Retail Ltd.                FRL
+    3       Punjab National Bank              PNB
+
+
+(3)    CNX Low Volatility Index
+
+The following companies are being excluded:
+
+  Sr. No. Company Name                        Symbol
+    1     Bajaj Holdings & Investment Ltd.    BAJAJHLDNG
+    2     Era Infra Engineering Ltd.          ERAINFRA
+
+The following companies are being included:
+
+  Sr. No. Company Name                        Symbol
+    1     Shree Cement Ltd.                   SHREECEM
+    2     Trent Ltd.                          TRENT
+
+
+Place: Mumbai
+Date: January 03, 2014
+

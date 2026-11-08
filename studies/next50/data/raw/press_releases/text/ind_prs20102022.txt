@@ -1,0 +1,72 @@
+PRESS RELEASE
+Mumbai, October 20, 2022
+
+                                      Replacements in indices
+
+      NSE vide its circular NSE/CML/54037 dated October 12, 2022 has announced shifting of securities
+      to Z category (BZ Series) effective from October 25, 2022.
+
+      In view of above, the Index Maintenance Sub-Committee (Equity) of NSE Indices Limited has decided
+      to make the following replacements in various indices as given below. These changes shall become
+      effective from October 25, 2022 (close of October 24, 2022).
+
+      1)      Nifty Microcap 250
+
+      The following companies are being excluded:
+
+           Sr. No.                  Company Name                         Symbol
+             1     Future Retail Ltd.                                FRETAIL
+             2     PTC India Ltd.                                    PTC
+
+      The following companies are being included:
+
+           Sr. No.                 Company Name                          Symbol
+             1     Syrma SGS Technology Ltd.                         SYRMA
+             2     Vesuvius India Ltd.                               VESUVIUS
+
+      2)      Nifty Total Market
+
+      The following companies are being excluded:
+
+           Sr. No.                  Company Name                         Symbol
+             1     Future Retail Ltd.                                FRETAIL
+             2     PTC India Ltd.                                    PTC
+
+      The following companies are being included:
+
+           Sr. No.                 Company Name                          Symbol
+             1     Syrma SGS Technology Ltd.                         SYRMA
+             2     Vesuvius India Ltd.                               VESUVIUS
+About National Stock Exchange of India Limited (NSE):
+National Stock Exchange of India (NSE) is the world’s largest derivatives exchange by trading
+volume (contracts) as per the statistics maintained by Futures Industry Association (FIA) for calendar
+year 2021. NSE is ranked 4th in the world in the cash equities by number of trades as per the statistics
+maintained by the World Federation of Exchanges (WFE) for calendar year 2021. NSE was the first
+exchange in India to implement electronic or screen-based trading. It began operations in 1994 and is
+ranked as the largest stock exchange in India in terms of total and average daily turnover for equity
+shares every year since 1995, based on SEBI data. NSE has a fully integrated business model
+comprising exchange listings, trading services, clearing and settlement services, indices, market data
+feeds, technology solutions and financial education offerings. NSE also oversees compliance by
+trading, clearing members and listed companies with the rules and regulations of SEBI and the
+exchange. NSE is a pioneer in technology and ensures the reliability and performance of its systems
+through a culture of innovation and investment in technology.
+For more information, please visit: www.nseindia.com
+
+About NSE Indices Limited:
+NSE Indices Limited (formerly known as India Index Services & Products Ltd. - IISL), a subsidiary of
+NSE, provides a variety of indices and index related services for the capital markets. The company focuses
+on the index as a core product. The company owns and manages a portfolio of indices under the Nifty
+brand of NSE, including the flagship index, the Nifty 50. Nifty equity indices comprises of broad-based
+benchmark indices, sectoral indices, strategy indices, thematic indices and customised indices. NSE
+Indices Limited also maintains fixed income indices based on Government of India securities, corporate
+bonds, money market instruments and hybrid indices. Many investment products based on Nifty indices
+have been developed within India and abroad. These include index based derivatives traded on NSE, NSE
+IFSC and Singapore Exchange Ltd. (SGX) and a number of index funds and exchange traded funds. The
+flagship 'Nifty 50' index is widely tracked and traded as the benchmark for Indian Capital Markets.
+For more information, please visit: www.Niftyindices.com
+
+Press contact:
+Kumar Kartikey - Associate Vice President, Corporate Communications
+Priyanka Roy - Manager, Corporate Communications
+Email ID: cc@nse.co.in
+

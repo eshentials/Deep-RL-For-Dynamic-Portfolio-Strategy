@@ -10,13 +10,14 @@ from __future__ import annotations
 
 import pandas as pd
 
-from config import ROOT
+from config import ROOT, require_version
 
 RES = ROOT / "results"
 COLS = ["ppo_ensemble", "vol_target_floored", "equal_weight", "niftybees", "rp_fixed_0.7"]
 
 
 def main():
+    require_version(1, "eval.page_data")
     r = pd.read_parquet(RES / "test_returns.parquet")
     out = r[COLS + ["_rf"]].rename(columns={"_rf": "rf"})
     vr = pd.read_parquet(RES / "exploratory" / "vix_rule" / "returns.parquet")["vix_rule"]

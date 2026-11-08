@@ -1,0 +1,631 @@
+                                                                 Date: August 12, 2016
+
+                                  PRESS RELEASE
+
+                                Replacements in Indices
+
+The Index Maintenance Sub-Committee (IMSC) has decided to make the following
+replacement of stocks in various indices as part of its periodic review. These changes
+shall become effective from September 30, 2016 (close of September 29, 2016).
+
+1)     Nifty Next 50 Index
+
+The following scrips are being excluded:
+
+ Sr. No.                   Scrip Name                        Symbol
+    1    Reliance Communications Ltd.                     RCOM
+    2    Rural Electrification Corporation Ltd.           RECLTD
+
+The following scrips are being included:
+
+ Sr. No.                  Scrip Name                          Symbol
+    1    InterGlobe Aviation Ltd.                         INDIGO
+    2    Piramal Enterprises Ltd.                         PEL
+
+2)     Nifty 100 Index
+
+The following scrips are being excluded:
+
+ Sr. No.                   Scrip Name                        Symbol
+    1    Reliance Communications Ltd.                     RCOM
+    2    Rural Electrification Corporation Ltd.           RECLTD
+
+The following scrips are being included:
+
+ Sr. No.                  Scrip Name                          Symbol
+    1    InterGlobe Aviation Ltd.                         INDIGO
+    2    Piramal Enterprises Ltd.                         PEL
+
+The above replacements will also be applicable to Nifty100 Equal Weight Index.
+3)     Nifty 200 Index
+
+The following scrips are being excluded:
+
+ Sr. No.                    Scrip Name                   Symbol
+    1      Allahabad Bank                             ALBK
+    2      BEML Ltd.                                  BEML
+    3      Great Eastern Shipping Co. Ltd.            GESHIP
+    4      Hindustan Copper Ltd.                      HINDCOPPER
+    5      MMTC Ltd.                                  MMTC
+    6      Redington (India) Ltd.                     REDINGTON
+    7      TTK Prestige Ltd.                          TTKPRESTIG
+    8      UCO Bank                                   UCOBANK
+    9      Videocon Industries Ltd.                   VIDEOIND
+
+The following scrips are being included:
+
+ Sr. No.                      Scrip Name                  Symbol
+    1      Aditya Birla Fashion and Retail Ltd.       ABFRL
+    2      Aditya Birla Nuvo Ltd.                     ABIRLANUVO
+    3      Alkem Laboratories Ltd.                    ALKEM
+    4      Cholamandalam Invt. and Finance Co. Ltd.   CHOLAFIN
+    5      Coromandel International Ltd.              COROMANDEL
+    6      IDFC Bank Ltd.                             IDFCBANK
+    7      InterGlobe Aviation Ltd.                   INDIGO
+    8      Max Financial Services Ltd.                MFSL
+    9      PI Industries Ltd.                         PIIND
+
+4)     Nifty 500 Index
+
+The following scrips are being excluded:
+
+ Sr. No.                    Scrip Name                   Symbol
+    1      Aarti Drugs Ltd.                           AARTIDRUGS
+    2      ABG Shipyard Ltd.                          ABGSHIP
+    3      Ashiana Housing Ltd.                       ASHIANA
+    4      Castex Technologies Ltd.                   CASTEXTECH
+    5      Clariant Chemicals (India) Ltd.            CLNINDIA
+    6      Electrosteel Castings Ltd.                 ELECTCAST
+    7      Elgi Equipments Ltd.                       ELGIEQUIP
+    8      Ess Dee Aluminium Ltd.                     ESSDEE
+    9      Financial Technologies (India) Ltd.        FINANTECH
+   10      Global Offshore Services Ltd.              GLOBOFFS
+   11      HMT Ltd.                                   HMT
+   12      Hotel Leela Venture Ltd.                  HOTELEELA
+   13      IFB Industries Ltd.                       IFBIND
+   14      INEOS Styrolution India Ltd.              INEOSSTYRO
+   15      Kirloskar Oil Eng Ltd.                    KIRLOSENG
+   16      KSK Energy Ventures Ltd                   KSK
+   17      Minda Corporation Ltd.                    MINDACORP
+   18      Parsvnath Developer Ltd.                  PARSVNATH
+   19      Puravankara Projects Ltd.                 PURVA
+   20      Ratnamani Metals & Tubes Ltd.             RATNAMANI
+   21      Sadbhav Infrastructure Project Ltd.       SADBHIN
+   22      Tata Teleservices (Maharashtra) Ltd.      TTML
+   23      Tree House Education & Accessories Ltd.   TREEHOUSE
+   24      Tribhovandas Bhimji Zaveri Ltd.           TBZ
+   25      Vaibhav Global Ltd.                       VAIBHAVGBL
+
+The following scrips are being included:
+
+ Sr. No.                    Scrip Name                   Symbol
+    1      Aditya Birla Nuvo Ltd.                    ABIRLANUVO
+    2      Alkem Laboratories Ltd.                   ALKEM
+    3      APL Apollo Tubes Ltd.                     APLAPOLLO
+    4      Carborundum Universal Ltd.                CARBORUNIV
+    5      Coffee Day Enterprises Ltd.               COFFEEDAY
+    6      Crompton Greaves Ltd.                     CROMPGREAV
+    7      Dr. Lal Path Labs Ltd.                    LALPATHLAB
+    8      Equitas Holdings Ltd.                     EQUITAS
+    9      IDFC Bank Ltd.                            IDFCBANK
+   10      Infibeam Incorporation Ltd.               INFIBEAM
+   11      InterGlobe Aviation Ltd.                  INDIGO
+   12      ITD Cementation India Ltd.                ITDCEM
+   13      KSB Pumps Ltd.                            KSBPUMPS
+   14      Linde India Ltd.                          LINDEINDIA
+   15      Max Financial Services Ltd.               MFSL
+   16      Narayana Hrudayalaya Ltd.                 NH
+   17      Navin Fluorine International Ltd.         NAVINFLUOR
+   18      Nilkamal Ltd.                             NILKAMAL
+   19      OCL India Ltd.                            OCL
+   20      Religare Enterprises Ltd.                 RELIGARE
+   21      Sequent Scientific Ltd.                   SEQUENT
+   22      Star Ferro & Cement Ltd.                  SFCL
+   23      State Bank of Mysore                      MYSOREBANK
+   24      State Bank of Travancore                  SBT
+   25      Suprajit Engineering Ltd.                 SUPRAJIT
+5)     Nifty Midcap 150 Index
+
+The following scrips are being excluded:
+
+ Sr. No.                    Scrip Name                  Symbol
+    1      Allahabad Bank                           ALBK
+    2      BASF India Ltd.                          BASF
+    3      BEML Ltd.                                BEML
+    4      MMTC Ltd.                                MMTC
+    5      Piramal Enterprises Ltd.                 PEL
+    6      Prism Cement Ltd.                        PRISMCEM
+    7      Redington (India) Ltd.                   REDINGTON
+    8      UCO Bank                                 UCOBANK
+    9      Videocon Industries Ltd.                 VIDEOIND
+
+The following scrips are being included:
+
+ Sr. No.                     Scrip Name                 Symbol
+    1      Aditya Birla Fashion and Retail Ltd.     ABFRL
+    2      Aditya Birla Nuvo Ltd.                   ABIRLANUVO
+    3      Alkem Laboratories Ltd.                  ALKEM
+    4      Dr. Lal Path Labs Ltd.                   LALPATHLAB
+    5      IDFC Bank Ltd.                           IDFCBANK
+    6      Max Financial Services Ltd.              MFSL
+    7      Narayana Hrudayalaya Ltd.                NH
+    8      Reliance Communications Ltd.             RCOM
+    9      Rural Electrification Corporation Ltd.   RECLTD
+
+6)     Nifty Midcap 50 Index
+
+The following scrips are being excluded:
+
+ Sr. No.                Scrip Name                     Symbol
+    1    Allahabad Bank                             ALBK
+    2    Justdial Ltd.                              JUSTDIAL
+    3    Syndicate Bank                             SYNDIBANK
+
+The following scrips are being included:
+
+ Sr. No.                   Scrip Name                  Symbol
+    1    Aditya Birla Nuvo Ltd.                     ABIRLANUVO
+    2    Reliance Communications Ltd.               RCOM
+    3    Rural Electrification Corporation Ltd.     RECLTD
+7)     Nifty Full Midcap 100 Index
+
+The following scrips are being excluded:
+
+ Sr. No.                    Scrip Name                    Symbol
+    1      Allahabad Bank                             ALBK
+    2      BEML Ltd.                                  BEML
+    3      Great Eastern Shipping Co. Ltd.            GESHIP
+    4      Hindustan Copper Ltd.                      HINDCOPPER
+    5      MMTC Ltd.                                  MMTC
+    6      Piramal Enterprises Ltd.                   PEL
+    7      Redington (India) Ltd.                     REDINGTON
+    8      TTK Prestige Ltd.                          TTKPRESTIG
+    9      UCO Bank                                   UCOBANK
+   10      Videocon Industries Ltd.                   VIDEOIND
+
+The following scrips are being included:
+
+ Sr. No.                      Scrip Name                  Symbol
+    1      Aditya Birla Fashion and Retail Ltd.       ABFRL
+    2      Aditya Birla Nuvo Ltd.                     ABIRLANUVO
+    3      Alkem Laboratories Ltd.                    ALKEM
+    4      Cholamandalam Invt. and Finance Co. Ltd.   CHOLAFIN
+    5      Coromandel International Ltd.              COROMANDEL
+    6      IDFC Bank Ltd.                             IDFCBANK
+    7      Max Financial Services Ltd.                MFSL
+    8      PI Industries Ltd.                         PIIND
+    9      Reliance Communications Ltd.               RCOM
+   10      Rural Electrification Corporation Ltd.     RECLTD
+
+8)     Nifty Free Float Midcap 100 Index
+
+The following scrips are being excluded:
+
+ Sr. No.   Scrip Name                                 Symbol
+   1       Bajaj Finance Ltd.                         BAJFINANCE
+   2       Bajaj Finserv Ltd.                         BAJAJFINSV
+   3       JSW Steel Ltd.                             JSWSTEEL
+   4       Marico Ltd.                                MARICO
+   5       Shree Cement Ltd.                          SHREECEM
+The following scrips are being included:
+
+ Sr. No.   Scrip Name                                    Symbol
+   1       Crompton Greaves Ltd.                         CROMPGREAV
+   2       Housing Development and Infrastructure Ltd.   HDIL
+   3       InterGlobe Aviation Ltd.                      INDIGO
+   4       Punjab National Bank                          PNB
+   5       Rural Electrification Corporation Ltd.        RECLTD
+
+9)     Nifty Smallcap 250 Index
+
+The following scrips are being excluded:
+
+ Sr. No.                    Scrip Name                       Symbol
+    1      Aarti Drugs Ltd.                              AARTIDRUGS
+    2      ABG Shipyard Ltd.                             ABGSHIP
+    3      Aditya Birla Fashion and Retail Ltd.          ABFRL
+    4      Ashiana Housing Ltd.                          ASHIANA
+    5      Castex Technologies Ltd.                      CASTEXTECH
+    6      Clariant Chemicals (India) Ltd.               CLNINDIA
+    7      Electrosteel Castings Ltd.                    ELECTCAST
+    8      Elgi Equipments Ltd.                          ELGIEQUIP
+    9      Ess Dee Aluminium Ltd.                        ESSDEE
+   10      Financial Technologies (India) Ltd.           FINANTECH
+   11      Global Offshore Services Ltd.                 GLOBOFFS
+   12      HMT Ltd.                                      HMT
+   13      Hotel Leela Venture Ltd.                      HOTELEELA
+   14      IFB Industries Ltd.                           IFBIND
+   15      INEOS Styrolution India Ltd.                  INEOSSTYRO
+   16      Kirloskar Oil Eng Ltd.                        KIRLOSENG
+   17      KSK Energy Ventures Ltd                       KSK
+   18      Minda Corporation Ltd.                        MINDACORP
+   19      Parsvnath Developer Ltd.                      PARSVNATH
+   20      Puravankara Projects Ltd.                     PURVA
+   21      Ratnamani Metals & Tubes Ltd.                 RATNAMANI
+   22      Sadbhav Infrastructure Project Ltd.           SADBHIN
+   23      Tata Teleservices (Maharashtra) Ltd.          TTML
+   24      Tree House Education & Accessories Ltd.       TREEHOUSE
+   25      Tribhovandas Bhimji Zaveri Ltd.               TBZ
+   26      Vaibhav Global Ltd.                           VAIBHAVGBL
+The following scrips are being included:
+
+ Sr. No.                    Scrip Name             Symbol
+    1      Allahabad Bank                      ALBK
+    2      APL Apollo Tubes Ltd.               APLAPOLLO
+    3      BASF India Ltd.                     BASF
+    4      BEML Ltd.                           BEML
+    5      Carborundum Universal Ltd.          CARBORUNIV
+    6      Coffee Day Enterprises Ltd.         COFFEEDAY
+    7      Crompton Greaves Ltd.               CROMPGREAV
+    8      Equitas Holdings Ltd.               EQUITAS
+    9      Infibeam Incorporation Ltd.         INFIBEAM
+   10      ITD Cementation India Ltd.          ITDCEM
+   11      KSB Pumps Ltd.                      KSBPUMPS
+   12      Linde India Ltd.                    LINDEINDIA
+   13      MMTC Ltd.                           MMTC
+   14      Navin Fluorine International Ltd.   NAVINFLUOR
+   15      Nilkamal Ltd.                       NILKAMAL
+   16      OCL India Ltd.                      OCL
+   17      Prism Cement Ltd.                   PRISMCEM
+   18      Redington (India) Ltd.              REDINGTON
+   19      Religare Enterprises Ltd.           RELIGARE
+   20      Sequent Scientific Ltd.             SEQUENT
+   21      Star Ferro & Cement Ltd.            SFCL
+   22      State Bank of Mysore                MYSOREBANK
+   23      State Bank of Travancore            SBT
+   24      Suprajit Engineering Ltd.           SUPRAJIT
+   25      UCO Bank                            UCOBANK
+   26      Videocon Industries Ltd.            VIDEOIND
+
+10)    Nifty Smallcap 50 Index
+
+The following scrips are being excluded:
+
+ Sr. No.                    Scrip Name             Symbol
+    1      BF Utilities Ltd.                   BFUTILITIE
+    2      Dena Bank                           DENABANK
+    3      Eros Intl Media Ltd.                EROSMEDIA
+    4      Jaiprakash Associates Ltd.          JPASSOCIAT
+    5      Jaiprakash Power Ventures Ltd.      JPPOWER
+    6      Karnataka Bank Ltd.                 KTKBANK
+    7      Kitex Garments Ltd.                 KITEX
+    8      Marksans Pharma Ltd.                MARKSANS
+       9      McLeod Russel India Ltd.                 MCLEODRUSS
+      10      PTC India Fin Serv Ltd.                  PFS
+
+The following scrips are being included:
+
+ Sr. No.                       Scrip Name                  Symbol
+    1         Allahabad Bank                           ALBK
+    2         BEML Ltd.                                BEML
+    3         Capital First Ltd.                       CAPF
+    4         Crompton Greaves Ltd.                    CROMPGREAV
+    5         Equitas Holdings Ltd.                    EQUITAS
+    6         Infibeam Incorporation Ltd.              INFIBEAM
+    7         Monsanto India Ltd.                      MONSANTO
+    8         State Bank of Bikaner & Jaipur Ltd.      SBBJ
+    9         State Bank of Travancore                 SBT
+   10         UCO Bank                                 UCOBANK
+
+11)        Nifty Full Smallcap 100 Index
+
+The following scrips are being excluded:
+
+ Sr. No.                       Scrip Name                  Symbol
+    1         Aban Offshore Ltd.                       ABAN
+    2         Bombay Dyeing & Manufacturing Co. Ltd.   BOMDYEING
+    3         D B Realty Ltd.                          DBREALTY
+    4         Delta Corp Ltd.                          DELTACORP
+    5         Den Networks Ltd.                        DEN
+    6         Eros Intl Media Ltd.                     EROSMEDIA
+    7         Eveready Industries India Ltd.           EVEREADY
+    8         Gati Ltd.                                GATI
+    9         Hindustan Construction Co. Ltd.          HCC
+   10         Jaiprakash Power Ventures Ltd.           JPPOWER
+   11         Puravankara Projects Ltd.                PURVA
+   12         Rolta India Ltd.                         ROLTA
+   13         Tata Coffee Ltd.                         TATACOFFEE
+   14         Tata Teleservices (Maharashtra) Ltd.     TTML
+   15         Unitech Ltd.                             UNITECH
+
+The following scrips are being included:
+
+ Sr. No.                 Scrip Name                       Symbol
+    1    Allahabad Bank                                ALBK
+    2    Balrampur Chini Mills Ltd.                    BALRAMCHIN
+    3    BEML Ltd.                                     BEML
+       4      Crompton Greaves Ltd.                         CROMPGREAV
+       5      E.I.D. Parry (India) Ltd.                     EIDPARRY
+       6      Equitas Holdings Ltd.                         EQUITAS
+       7      Infibeam Incorporation Ltd.                   INFIBEAM
+       8      Jammu & Kashmir Bank Ltd.                     J&KBANK
+       9      KRBL Ltd.                                     KRBL
+      10      Monsanto India Ltd.                           MONSANTO
+      11      Rallis India Ltd.                             RALLIS
+      12      State Bank of Bikaner & Jaipur Ltd.           SBBJ
+      13      State Bank of Mysore                          MYSOREBANK
+      14      State Bank of Travancore                      SBT
+      15      UCO Bank                                      UCOBANK
+
+12)        Nifty Free Float Smallcap 100 Index
+
+The following scrips are being excluded:
+
+ Sr. No.      Scrip Name                                    Symbol
+   1          Alok Industries Ltd.                          ALOKTEXT
+   2          Amtek Auto Ltd.                               AMTEKAUTO
+   3          Bombay Dyeing & Manufacturing Co. Ltd.        BOMDYEING
+   4          Central Bank of India                         CENTRALBK
+   5          Future Consumer Enterprise Ltd.               FCEL
+   6          Housing Development and Infrastructure Ltd.   HDIL
+   7          India Cements Ltd.                            INDIACEM
+   8          Jain Irrigation Systems Ltd.                  JISLJALEQS
+   9          Jaiprakash Power Ventures Ltd.                JPPOWER
+  10          Jaypee Infratech Ltd.                         JPINFRATEC
+  11          KPIT Technologies Ltd.                        KPIT
+  12          Manappuram Finance Ltd.                       MANAPPURAM
+  13          Muthoot Finance Ltd.                          MUTHOOTFIN
+  14          Polaris Consulting & Services Ltd.            POLARIS
+  15          PVR Ltd.                                      PVR
+
+The following scrips are being included:
+
+ Sr. No.      Scrip Name                                    Symbol
+   1          Ashoka Buildcon Ltd.                          ASHOKA
+   2          Astra Microwave Products Ltd.                 ASTRAMICRO
+   3          BEML Ltd.                                     BEML
+   4          Capital First Ltd.                            CAPF
+   5          Century Plyboards (India) Ltd.                CENTURYPLY
+   6          Cox & Kings Ltd.                              COX&KINGS
+   7          Dr. Lal Path Labs Ltd.                        LALPATHLAB
+   8          Himatsingka Seide Ltd.                        HIMATSEIDE
+   9          Indo Count Industries Ltd.                    ICIL
+ Sr. No.   Scrip Name                                 Symbol
+  10       Jammu & Kashmir Bank Ltd.                  J&KBANK
+  11       KRBL Ltd.                                  KRBL
+  12       Mangalore Refinery & Petrochemicals Ltd.   MRPL
+  13       PC Jeweller Ltd.                           PCJEWELLER
+  14       Reliance Defence and Engineering Ltd.      RDEL
+  15       Syngene International Ltd.                 SYNGENE
+
+13)    Nifty MidSmallcap 400 Index
+
+The following scrips are being excluded:
+
+ Sr. No.                    Scrip Name                    Symbol
+    1      Aarti Drugs Ltd.                           AARTIDRUGS
+    2      ABG Shipyard Ltd.                          ABGSHIP
+    3      Ashiana Housing Ltd.                       ASHIANA
+    4      Castex Technologies Ltd.                   CASTEXTECH
+    5      Clariant Chemicals (India) Ltd.            CLNINDIA
+    6      Electrosteel Castings Ltd.                 ELECTCAST
+    7      Elgi Equipments Ltd.                       ELGIEQUIP
+    8      Ess Dee Aluminium Ltd.                     ESSDEE
+    9      Financial Technologies (India) Ltd.        FINANTECH
+   10      Global Offshore Services Ltd.              GLOBOFFS
+   11      HMT Ltd.                                   HMT
+   12      Hotel Leela Venture Ltd.                   HOTELEELA
+   13      IFB Industries Ltd.                        IFBIND
+   14      INEOS Styrolution India Ltd.               INEOSSTYRO
+   15      Kirloskar Oil Eng Ltd.                     KIRLOSENG
+   16      KSK Energy Ventures Ltd                    KSK
+   17      Minda Corporation Ltd.                     MINDACORP
+   18      Parsvnath Developer Ltd.                   PARSVNATH
+   19      Piramal Enterprises Ltd.                   PEL
+   20      Puravankara Projects Ltd.                  PURVA
+   21      Ratnamani Metals & Tubes Ltd.              RATNAMANI
+   22      Sadbhav Infrastructure Project Ltd.        SADBHIN
+   23      Tata Teleservices (Maharashtra) Ltd.       TTML
+   24      Tree House Education & Accessories Ltd.    TREEHOUSE
+   25      Tribhovandas Bhimji Zaveri Ltd.            TBZ
+   26      Vaibhav Global Ltd.                        VAIBHAVGBL
+The following scrips are being included:
+
+ Sr. No.                     Scrip Name                 Symbol
+    1      Aditya Birla Nuvo Ltd.                   ABIRLANUVO
+    2      Alkem Laboratories Ltd.                  ALKEM
+    3      APL Apollo Tubes Ltd.                    APLAPOLLO
+    4      Carborundum Universal Ltd.               CARBORUNIV
+    5      Coffee Day Enterprises Ltd.              COFFEEDAY
+    6      Crompton Greaves Ltd.                    CROMPGREAV
+    7      Dr. Lal Path Labs Ltd.                   LALPATHLAB
+    8      Equitas Holdings Ltd.                    EQUITAS
+    9      IDFC Bank Ltd.                           IDFCBANK
+   10      Infibeam Incorporation Ltd.              INFIBEAM
+   11      ITD Cementation India Ltd.               ITDCEM
+   12      KSB Pumps Ltd.                           KSBPUMPS
+   13      Linde India Ltd.                         LINDEINDIA
+   14      Max Financial Services Ltd.              MFSL
+   15      Narayana Hrudayalaya Ltd.                NH
+   16      Navin Fluorine International Ltd.        NAVINFLUOR
+   17      Nilkamal Ltd.                            NILKAMAL
+   18      OCL India Ltd.                           OCL
+   19      Reliance Communications Ltd.             RCOM
+   20      Religare Enterprises Ltd.                RELIGARE
+   21      Rural Electrification Corporation Ltd.   RECLTD
+   22      Sequent Scientific Ltd.                  SEQUENT
+   23      Star Ferro & Cement Ltd.                 SFCL
+   24      State Bank of Mysore                     MYSOREBANK
+   25      State Bank of Travancore                 SBT
+   26      Suprajit Engineering Ltd.                SUPRAJIT
+
+14)    Nifty100 Liquid 15 Index
+
+The following scrips are being excluded:
+
+ Sr. No.               Scrip Name                      Symbol
+   1     HCL Technologies Ltd.                      HCLTECH
+   2     Reliance Communications Ltd.               RCOM
+
+The following scrips are being included:
+
+ Sr. No.                 Scrip Name                     Symbol
+   1     Indiabulls Housing Finance Ltd.            IBULHSGFIN
+   2     Maruti Suzuki India Ltd.                   MARUTI
+15)    Nifty Midcap Liquid 15 Index
+
+The following scrips are being excluded:
+
+ Sr. No.   Scrip Name                               Symbol
+   1       Bank of India                            BANKINDIA
+   2       Exide Industries Ltd.                    EXIDEIND
+   3       IDBI Bank Ltd.                           IDBI
+   4       JSW Energy Ltd.                          JSWENERGY
+
+The following scrips are being included:
+
+ Sr. No.   Scrip Name                               Symbol
+   1       Petronet LNG Ltd.                        PETRONET
+   2       Reliance Infrastructure Ltd.             RELINFRA
+   3       Rural Electrification Corporation Ltd.   RECLTD
+   4       Strides Shasun Ltd.                      STAR
+
+16)    Nifty India Consumption Index
+
+The following scrips are being excluded:
+
+ Sr. No. Scrip Name                                 Symbol
+   1     Aurobindo Pharma Ltd.                      AUROPHARMA
+   2     Glaxosmithkline Pharmaceuticals Ltd.       GLAXO
+
+The following scrips are being included:
+
+ Sr. No. Scrip Name                                 Symbol
+   1     Emami Ltd.                                 EMAMILTD
+   2     TVS Motor Company Ltd.                     TVSMOTOR
+
+17)    Nifty Infrastructure Index
+
+The following scrip is being excluded:
+
+ Sr. No. Scrip Name                                 Symbol
+   1     PTC India Ltd.                             PTC
+
+The following scrip is being included:
+
+ Sr. No. Scrip Name                                 Symbol
+   1     Crompton Greaves Ltd.                      CROMPGREAV
+18)    Nifty Metal Index
+
+The following scrip is being excluded:
+
+ Sr. No. Scrip Name                                     Symbol
+   1     Ratnamani Metals & Tubes Ltd.                  RATNAMANI
+
+The following scrip is being included:
+
+ Sr. No. Scrip Name                                     Symbol
+   1     MOIL Ltd.                                      MOIL
+
+19)    Nifty MNC Index
+
+The following scrip is being excluded:
+
+ Sr. No. Scrip Name                                     Symbol
+   1     Glaxosmithkline Pharmaceuticals Ltd.           GLAXO
+
+The following scrip is being included:
+
+ Sr. No. Scrip Name                                     Symbol
+   1     ABB India Ltd.                                 ABB
+
+20)    Nifty Private Bank Index
+
+The following scrip is being excluded:
+
+ Sr. No. Scrip Name                                     Symbol
+   1     Karnataka Bank Ltd.                            KTKBANK
+
+The following scrip is being included:
+
+ Sr. No. Scrip Name                                     Symbol
+   1     IDFC Bank Ltd.                                 IDFCBANK
+
+21)    Nifty PSU Bank Index
+
+The following scrip is being excluded:
+
+ Sr. No. Scrip Name                                       Symbol
+    1      Indian Overseas Bank                           IOB
+Note: No inclusion shall be made to Nifty PSU Bank index.
+22)    Nifty Services Sector Index
+
+The following scrip is being excluded:
+
+  Sr. No. Scrip Name                                         Symbol
+    1     Reliance Communications Ltd.                       RCOM
+
+The following scrip is being included:
+
+  Sr. No. Scrip Name                                         Symbol
+    1     Bajaj Finance Ltd.                                 BAJFINANCE
+
+23)    Nifty100 Low Volatility 30 Index
+
+The following scrip is being excluded:
+
+  Sr. No. Scrip Name                                         Symbol
+    1     Dr. Reddy's Laboratories Ltd.                      DRREDDY
+
+The following scrip is being included:
+
+  Sr. No. Scrip Name                                         Symbol
+    1     Kotak Mahindra Bank Ltd.                           KOTAKBANK
+
+
+24)    Nifty IT Index
+
+It has been decided to revise the stock selection criteria of Nifty IT index. At the time
+of final selection of 10 companies in Nifty IT index, preference shall be given to
+companies that are available for trading in NSE’s Futures & Options segment.
+
+The following scrips are being excluded:
+
+  Sr. No. Scrip Name                                         Symbol
+    1     Cyient Ltd.                                        CYIENT
+    2     Info Edge (India) Ltd.                             NAUKRI
+
+The following scrips are being included:
+
+  Sr. No. Scrip Name                                         Symbol
+    1     KPIT Technologies Ltd.                             KPIT
+    2     Tata Elxsi Ltd.                                    TATAELXSI
+
+
+
+
+For more details, contact:
+Arindam Saha | Editor and Communications Head
+asaha@nse.co.in, cc@nse.co.in
+Mobile: +91 – 9930019202 | 09903036100
+Direct: +91– 022 – 2659 8164
+Twitter: @NSEIndia
+www.nseindia.com
+
+About The National Stock Exchange of India (NSE):
+
+In its 20 year history, NSE has transformed the capital market, based on technology,
+innovation, high standards of governance and management practices. NSE's business
+practices and high levels of integrity have earned it the trust of the financial markets
+worldwide. Besides being a platform of choice for all exchange traded financial
+products in India, NSE’s flagship index, the Nifty 50, has become a benchmark
+national level economic parameter. Since inception, the exchange has been covered
+extensively by global media and has won many accolades as recognition of this
+remarkable journey.
+
+
+About India Index Services & Products Ltd. (IISL):
+
+India Index Services & Products Ltd. (IISL), an NSE group company, was setup in
+May 1998 to provide a variety of indices and index related services for the capital
+markets. IISL is India's first specialised company focused upon the index as a core
+product. IISL maintains more than 100 equity indices comprising broad-based
+benchmark indices, strategy indices, thematic indices, sectoral indices and customised
+indices. IISL also maintains fixed income indices based on Government of India
+bonds. Many investment and risk management products based on IISL indices have
+been developed in the recent past, within India and abroad. These include index based
+derivatives traded on NSE, Singapore Exchange Ltd. (SGX), Chicago Mercantile
+Exchange Inc. (CME) and Osaka Exchange Inc. (OSE) and a number of index funds
+and exchange traded funds. The flagship 'Nifty 50' index is widely tracked and traded
+as the benchmark for Indian Capital Markets.
+

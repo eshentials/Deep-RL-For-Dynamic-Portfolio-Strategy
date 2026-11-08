@@ -44,3 +44,17 @@ def select_best_fixed(data: MarketData, fold: Fold) -> dict:
         grid.append(({"e": e, "h": h}, _score(data, lambda e=e, h=h: rules.fixed(e, h), fold, pf["cost_bps"])))
     best = max(grid, key=lambda g: g[1])
     return {"params": best[0], "val_sharpe": best[1], "grid": grid}
+
+
+def select_vix_rule(data: MarketData, fold: Fold) -> dict:
+    """Protocol v2: threshold x horizon grid of the VIX rule, chosen on the fold's validation years."""
+    vr = load()["baselines"]["vix_rule"]
+    cost = load()["portfolio"]["cost_bps"]
+    grid = []
+    for th, hz in itertools.product(vr["thresholds"], vr["horizons"]):
+        def make(th=th, hz=hz):
+            return rules.vix_threshold(data, th, hz, vr["low"], vr["high"])
+        grid.append(({"threshold": th, "horizon": hz, "low": vr["low"], "high": vr["high"]},
+                     _score(data, make, fold, cost)))
+    best = max(grid, key=lambda g: g[1])
+    return {"params": best[0], "val_sharpe": best[1], "grid": grid}

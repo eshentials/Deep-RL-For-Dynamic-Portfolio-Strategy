@@ -1,0 +1,205 @@
+PRESS RELEASE
+Mumbai, December 01, 2025
+
+   Revision in criteria for Nifty indices and inclusions in Nifty Bank index
+
+     A. Revision in criteria of Nifty Bank and Nifty Financial Services Index for adherence to
+        additional eligibility criteria as per SEBI circular dated May 29, 2025
+
+     The Index Maintenance Sub-Committee (Equity) of NSE Indices Limited has decided to revise the
+     index methodology of the Nifty Bank and the Nifty Financial Services to make the indices compliant
+     with the additional eligibility criteria for indices which are traded on Future & Options segment of
+     stock exchanges as prescribed by SEBI in their circular titled - ‘Measures for Enhancing Trading
+     Convenience and Strengthening Risk Monitoring in Equity Derivatives’ (SEBI/HO/MRD/TPD-
+     1/P/CIR/2025/79’ dated May 29, 2025.
+
+     A detail of the proposed revision in methodology of the two indices is as under:
+
+     1) Nifty Financial Services Index:
+
+       Parameter              Existing methodology                Proposed methodology
+      Weight capping    1) No single stock shall be more 1) Top 3 stock cap: Top 3 stock weight
+                           than 33%                          capped at 19%, 14%,10% respectively
+                        2) Weights of top 3 stocks 2) Stocks other than Top 3 stocks:
+                           cumulatively shall not be more    Individual weights will be lower than
+                           than 62% at the time of           those of higher weighted index
+                           rebalancing.                      constituents
+                                                          3) Weight of Non- F&O stocks:
+                                                               a. Non-F&O stocks shall be
+                                                                   individually capped at 4.5%
+                                                               b. Cumulative weight of all non-
+                                                                   F&O stocks shall be capped at
+                                                                   10%
+2) Nifty Bank Index:
+
+     Parameter               Existing methodology                    Proposed methodology
+No. of stocks          Maximum of 12 stocks                                     14
+Selection criteria   - Top 12 companies based on 6            Step 1: Select top 14 stocks based on
+F&O                    month average free-float market        6-month average free-float market
+                       capitalization, that are allowed to    capitalization within the eligible
+                       trade in F&O segment at NSE are        stocks that are available for trading
+                       only eligible to be a constituent of   in NSE’s Futures & Options (F&O)
+                       the index                              segment
+                                                              Step 2: In case the number of stocks
+                                                              selected in the Step 1 above is less
+                                                              than 14, then the deficit number of
+                                                              stocks is selected based on six-month
+                                                              average        free-float       market
+                                                              capitalization from the remaining
+                                                              eligible universe
+Selection criteria   -                   -                    On a prospective basis, non - F&O
+Circuit Filter                                                stocks are eligible for inclusion only
+                                                              if the total instances of the stock
+                                                              hitting the upper or lower circuit
+                                                              (price band) * during the past 6
+                                                              months as of the cut-off date is less
+                                                              than 20% of the number of total
+                                                              trading days over the same period.
+                                                              *An instance is counted each time the stock
+                                                              hits the upper or lower price circuit on a
+                                                              given trading day. If a stock hits the upper
+                                                              and lower price circuit (price band) on the
+                                                              same trading day, it will be counted as two
+                                                              instances
+Weight capping           1) No single stock shall be more 1) Top 3 stock cap: Top 3 stock
+                            than 33%                          weight capped at 19%, 14%, 10%
+                         2) Weights of top 3 stocks           respectively.
+                            cumulatively shall not be more 2) Stocks other than Top 3 stocks:
+                            than 62% at the time of           Individual weights will be lower
+                            rebalancing.                      than those of higher weighted
+                                                              index constituents^
+                                                           3) Weight of Non- F&O stocks:
+                                                              a. Non-F&O stocks shall be
+                                                                  individually capped at 4.5%
+       Parameter                Existing methodology                   Proposed methodology
+                                                                     b. Cumulative weight of all
+                                                                        non-F&O stocks shall be
+                                                                        capped at 10%
+
+As prescribed by SEBI in their circular titled – ‘Implementation of eligibility criteria for derivatives on
+existing Non Benchmark Indices (HO/47/15/11(1)2025-MRD-TPD1/ I/63/2025)’ dated October 30,
+2025, implementation of the changes shall be made effective from in the following way:
+
+ Sr.                                               Method of
+                   Index Name                                                  Effective dates
+ No                                              Implementation
+                                                                         Last trading day           of
+   1    Nifty Financial Services            In single tranche
+                                                                         December, 2025
+                                                                         Last trading day of
+                                                                         December 2025, January
+   2    Nifty Bank                          In four monthly tranches
+                                                                         2026, February 2026 and
+                                                                         March 2026
+
+On an ongoing basis, Nifty indices which are traded on NSE’s futures and option segment, shall be
+screened for compliance with the eligibility criteria as specified in ‘SEBI Master Circular for Stock
+Exchanges and Clearing Corporations’ dated December 30, 2024 and circular for ‘Measures for
+Enhancing Trading Convenience and Strengthening Risk Monitoring in Equity Derivatives’ dated
+May 29th 2025 and as amended/modified from time to time.
+
+
+B. Inclusions in Nifty Bank index for adherence to additional eligibility criteria as per SEBI
+   circular dated May 29, 2025
+
+In accordance with the revised criteria, the Index Maintenance Sub-Committee (Equity) has decided
+to make the following inclusions to the Nifty Bank index:
+
+ Sr. No.                      Company Name                                   Symbol
+    1       Union Bank of India                                          UNIONBANK
+    2       Yes Bank Ltd.                                                YESBANK
+
+
+The above inclusion shall be made effective from December 31, 2025 (close of December 30, 2025).
+C. Revision in treatment of demerger of an index constituent of Nifty equity indices
+
+For scheme of arrangement for stock-based demerger, where any of the index constituents (Demerged
+company’) is demerging its business division(s) in two or more new entities/companies, based on
+feedback received from the market participants through consultation process and through the telephonic
+conversations, the Index Maintenance Sub-Committee (Equity) proposes the following revisions to the
+methodology of the Nifty equity indices:
+
+  Sr.            Parameter                     Exiting method                  Proposed method
+  No
+   1    For scheme of arrangement Not applicable                         The demerged company will
+        for stock-based demerger,                                        be retained in the index if
+        where any of the index                                           Special Pre-Open Session
+        constituents     (Demerged                                       (SPOS) is conducted by the
+        company’) is demerging its                                       exchange, else the demerged
+        business division(s) in two                                      company is excluded from the
+        or         more         new                                      index at the beginning of T-1
+        entities/companies                                               day where T is the ex-date of
+                                                                         demerger.
+                                                                         Further, the spun off entities
+                                                                         shall be retained in the index in
+                                                                         the form of dummy stocks
+                                                                         (with equal weights) and shall
+                                                                         be excluded from the index as
+                                                                         and when listed and as per the
+                                                                         standard criteria
+   2    In terms of exclusion of such The spun off business/ entity The spun off business/ entity
+        newly listed spun -off which is the newly listed entity which is the newly listed entity
+        businesses/entities from the shall be removed from the shall be removed from the
+        index                         index after end of day (EOD) index after end of day (EOD)
+                                      on third day of its listing.       of next business day (D Day)
+                                      In case, during the first 2 days post          observing        two
+                                      of these 3 days, if the spun off consecutive days of the spun
+                                      business/ entity hits the price off business/ entity not hitting
+                                      band (higher or lower price the lower price band.
+                                      band) on both days, then the If on such D Day, the spun off
+                                      exclusion date shall be deferred business/ entity hits the lower
+                                      by another 3 days.           After price band, exclusion of such
+                                      observing two consecutive stock shall not be deferred.
+  Sr.           Parameter                   Exiting method                Proposed method
+  No
+                                     days of the spun off
+                                     business/entity not hitting the
+                                     price band, such spun off
+                                     business/entity    shall     be
+                                     removed after the third trading
+                                     day of such observation.
+                                     If on such 3rd day spun off
+                                     business/ entity again hits the
+                                     price band, exclusion of such
+                                     stock shall not be deferred
+                                     anymore
+  3     In terms of applicability of This treatment is applicable to This treatment of the demerger
+        treatment of retaining the all the Nifty Equity Indices      shall be applicable to index
+        Demerged entity and the                                      constituents of Nifty Total
+        Spun off entity in the index
+                                                                     Market and will thereby apply
+                                                                     to Nifty equity indices which
+                                                                     include        such      index
+                                                                     constituent/s.
+                                                                     For other equity indices, the
+                                                                     demerged company shall be
+                                                                     removed from the index at the
+                                                                     beginning of T-1 day (close of
+                                                                     T-2 day) where T-day would
+                                                                     be the ex-date for demerger of
+                                                                     stock by making a suitable
+                                                                     replacement in case of indices
+                                                                     with fixed number of
+                                                                     companies. No replacement
+                                                                     (inclusion) will be made in
+                                                                     case of indices with variable
+                                                                     number of companies.
+
+
+The above changes in treatment of demerger shall be made effective from December 15, 2025.
+About NSE Indices Limited:
+NSE Indices Limited (formerly known as India Index Services & Products Ltd. - IISL), a subsidiary of
+NSE, provides a variety of indices and index related services for the capital markets. The company
+focuses on the index as a core product. The company owns and manages a portfolio of indices under
+the Nifty brand of NSE, including the flagship index, the Nifty 50. Nifty equity indices comprises
+broad-based benchmark indices, sectoral indices, strategy indices, thematic indices, and customised
+indices. NSE Indices Limited also maintains fixed income indices based on Government of India
+securities, corporate bonds, money market instruments and hybrid indices. Many investment products
+based on Nifty indices have been developed within India and abroad. These include index-based
+derivatives traded on NSE and NSE International Exchange IFSC Limited (NSE IX) and a number of
+index funds and exchange traded funds. The flagship 'Nifty 50' index is widely tracked and traded as
+the benchmark for Indian Capital Markets.
+For more information, please visit: www.niftyindices.com
+Press contact:
+Email ID: cc@nse.co.in
+

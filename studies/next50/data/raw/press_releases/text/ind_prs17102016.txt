@@ -1,0 +1,341 @@
+                                                                Date: October 17, 2016
+
+                                  PRESS RELEASE
+
+                               Replacements in Indices
+
+
+The Index Maintenance Sub-Committee (IMSC) has decided to make the following
+replacements in,
+
+A. Nifty Dividend Opportunities 50, Nifty50 Value 20 and Nifty Quality 30 indices as
+   part of the annual review, shall become effective from November 15, 2016 (close
+   of November 11, 2016),
+
+B. Nifty Alpha 50, Nifty High Beta 50 and Nifty Low Volatility 50 indices as part of
+   the quarterly review, shall become effective from October 24, 2016 (close of
+   October 21, 2016), and
+
+C. Nifty Next 50, Nifty 100, Nifty 200, Nifty 500, Nifty Commodities, Nifty Energy,
+   Nifty Free Float Midcap 100, Nifty100 Equal Weight, Nifty Midcap 50, Nifty
+   Midcap 150 and Nifty Full Midcap 100 indices on account of proposed scheme of
+   arrangement for amalgamation of Cairn India Ltd. into Vedanta Ltd., shall become
+   effective from November 15, 2016 (close of November 11, 2016).
+
+
+1)     Nifty Dividend Opportunities 50 Index
+
+The following scrips are being excluded:
+
+ Sr. No.                   Scrip Name                        Symbol
+   1       Allahabad Bank                                ALBK
+   2       Andhra Bank                                   ANDHRABANK
+   3       Bajaj Corp Ltd.                               BAJAJCORP
+   4       Bank of Baroda                                BANKBARODA
+   5       Bank of India                                 BANKINDIA
+   6       Bharti Infratel Ltd.                          INFRATEL
+   7       Blue Dart Express Ltd.                        BLUEDART
+   8       Cairn India Ltd.                              CAIRN
+   9       Canara Bank                                   CANBK
+  10       Gateway Distriparks Ltd.                      GDL
+  11       Jammu & Kashmir Bank Ltd.                     J&KBANK
+  12       MphasiS Ltd.                                  MPHASIS
+  13       Oriental Bank of Commerce                     ORIENTBANK
+  14       Punjab National Bank                          PNB
+  15       SRF Ltd.                                      SRF
+  16       Syndicate Bank                                SYNDIBANK
+The following scrips are being included:
+
+ Sr. No.                    Scrip Name                   Symbol
+   1       Edelweiss Financial Services Ltd.         EDELWEISS
+   2       GHCL Ltd.                                 GHCL
+   3       Havells India Ltd.                        HAVELLS
+   4       Hindustan Zinc Ltd.                       HINDZINC
+   5       Infosys Ltd.                              INFY
+   6       InterGlobe Aviation Ltd.                  INDIGO
+   7       Lakshmi Vilas Bank Ltd.                   LAKSHVILAS
+   8       Manappuram Finance Ltd.                   MANAPPURAM
+   9       Muthoot Finance Ltd.                      MUTHOOTFIN
+  10       NHPC Ltd.                                 NHPC
+  11       NIIT Technologies Ltd.                    NIITTECH
+  12       Oracle Financial Services Software Ltd.   OFSS
+  13       Reliance Capital Ltd.                     RELCAPITAL
+  14       Tata Steel Ltd.                           TATASTEEL
+  15       Tech Mahindra Ltd.                        TECHM
+  16       Torrent Pharmaceuticals Ltd.              TORNTPHARM
+
+
+2)     Nifty50 Value 20 Index
+
+The following scrip is being excluded:
+
+ Sr. No.                 Scrip Name                        Symbol
+   1     Punjab National Bank                        PNB
+
+The following scrip is being included:
+
+ Sr. No.                Scrip Name                      Symbol
+   1     Yes Bank Limited                            YESBANK
+
+
+3)     Nifty Quality 30 Index
+
+The following scrips are being excluded:
+
+ Sr. No.                    Scrip Name                  Symbol
+   1       Ambuja Cements Ltd.                       AMBUJACEM
+   2       Emami Ltd.                                EMAMILTD
+   3       Page Industries Ltd.                      PAGEIND
+   4       Tata Motors Ltd.                          TATAMOTORS
+
+The following scrips are being included:
+
+ Sr. No.                  Scrip Name                    Symbol
+   1     Castrol India Ltd.                          CASTROLIND
+ Sr. No.                 Scrip Name                          Symbol
+   2     Eicher Motors Ltd.                              EICHERMOT
+   3     Hero MotoCorp Ltd.                              HEROMOTOCO
+   4     Torrent Pharmaceuticals Ltd.                    TORNTPHARM
+
+
+4)     Nifty Alpha 50 Index
+
+The following scrips are being excluded:
+
+ Sr. No.                    Scrip Name                        Symbol
+   1       Ashok Leyland Ltd.                            ASHOKLEY
+   2       Bajaj Hindusthan Sugar Ltd.                   BAJAJHIND
+   3       Bharat Electronics Ltd.                       BEL
+   4       Ceat Ltd.                                     CEATLTD
+   5       DLF Ltd.                                      DLF
+   6       E.I.D. Parry (India) Ltd.                     EIDPARRY
+   7       Future Consumer Enterprise Ltd.               FCEL
+   8       Indiabulls Housing Finance Ltd.               IBULHSGFIN
+   9       Indo Count Industries Ltd.                    ICIL
+  10       Intellect Design Arena Ltd.                   INTELLECT
+  11       Kajaria Ceramics Ltd.                         KAJARIACER
+  12       Kansai Nerolac Paints Ltd.                    KANSAINER
+  13       KPIT Technologies Ltd.                        KPIT
+  14       NIIT Technologies Ltd.                        NIITTECH
+  15       Rajesh Exports Ltd.                           RAJESHEXPO
+  16       Tata Elxsi Ltd.                               TATAELXSI
+  17       Torrent Power Ltd.                            TORNTPOWER
+  18       Welspun India Ltd.                            WELSPUNIND
+
+The following scrips are being included:
+
+ Sr. No.                     Scrip Name                      Symbol
+   1       Capital First Ltd.                            CAPF
+   2       Century Textile & Industries Ltd.             CENTURYTEX
+   3       Coromandel International Ltd.                 COROMANDEL
+   4       Dalmia Bharat Ltd.                            DALMIABHA
+   5       Edelweiss Financial Services Ltd.             EDELWEISS
+   6       Escorts Ltd.                                  ESCORTS
+   7       GHCL Ltd.                                     GHCL
+   8       Havells India Ltd.                            HAVELLS
+   9       Hindalco Industries Ltd.                      HINDALCO
+  10       Hindustan Zinc Ltd.                           HINDZINC
+  11       India Cements Ltd.                            INDIACEM
+  12       Lakshmi Vilas Bank Ltd.                       LAKSHVILAS
+  13       Mahindra & Mahindra Financial Services Ltd.   M&MFIN
+  14       NHPC Ltd.                                     NHPC
+  15       Tata Motors Ltd.                              TATAMOTORS
+ Sr. No.                 Scrip Name                    Symbol
+  16     Tata Steel Ltd.                            TATASTEEL
+  17     TVS Motor Company Ltd.                     TVSMOTOR
+  18     Vedanta Ltd.                               VEDL
+
+
+5)     Nifty High Beta 50 Index
+
+The following scrips are being excluded:
+
+ Sr. No.                  Scrip Name                   Symbol
+   1     Indo Count Industries Ltd.                 ICIL
+   2     Intellect Design Arena Ltd.                INTELLECT
+
+The following scrips are being included:
+
+ Sr. No.                  Scrip Name                    Symbol
+   1     State Bank of India                        SBIN
+   2     TV18 Broadcast Ltd.                        TV18BRDCST
+
+
+6)     Nifty Low Volatility 50 Index
+
+The following scrips are being excluded:
+
+ Sr. No.                 Scrip Name                    Symbol
+   1     Dr. Reddy's Laboratories Ltd.              DRREDDY
+   2     GlaxoSmithkline Consumer Healthcare Ltd.   GSKCONS
+   3     Karur Vysya Bank Ltd.                      KARURVYSYA
+
+The following scrips are being included:
+
+ Sr. No.                 Scrip Name                     Symbol
+   1     Apollo Hospitals Enterprises Ltd.          APOLLOHOSP
+   2     Siemens Ltd.                               SIEMENS
+   3     South Indian Bank Ltd.                     SOUTHBANK
+
+
+7)     Nifty Next 50 Index
+
+The following scrip is being excluded:
+
+ Sr. No.                  Scrip Name                    Symbol
+   1     Cairn India Ltd.                           CAIRN
+
+The following scrip is being included:
+
+ Sr. No.                  Scrip Name                   Symbol
+   1     Havells India Ltd.                         HAVELLS
+8)     Nifty 100 Index
+
+The following scrip is being excluded:
+
+ Sr. No.                  Scrip Name                         Symbol
+   1     Cairn India Ltd.                                CAIRN
+
+The following scrip is being included:
+
+ Sr. No.                  Scrip Name                        Symbol
+   1     Havells India Ltd.                              HAVELLS
+
+The above replacements will also be applicable to Nifty100 Equal Weight Index
+
+
+9)     Nifty 200 Index
+
+The following scrip is being excluded:
+
+ Sr. No.                  Scrip Name                         Symbol
+   1     Cairn India Ltd.                                CAIRN
+
+The following scrip is being included:
+
+ Sr. No.               Scrip Name                           Symbol
+   1     Crompton Greaves Consumer Electricals Ltd.      CROMPTON
+
+
+10)    Nifty 500 Index
+
+The following scrip is being excluded:
+
+ Sr. No.                  Scrip Name                         Symbol
+   1     Cairn India Ltd.                                CAIRN
+
+The following scrip is being included:
+
+ Sr. No.               Scrip Name                           Symbol
+   1     Crompton Greaves Consumer Electricals Ltd.      CROMPTON
+
+
+11)    Nifty Commodities Index
+
+The following scrip is being excluded:
+
+ Sr. No.                  Scrip Name                         Symbol
+   1     Cairn India Ltd.                                CAIRN
+The following scrip is being included:
+
+ Sr. No.                 Scrip Name           Symbol
+   1     Hindustan Zinc Ltd.               HINDZINC
+
+
+12)    Nifty Energy Index
+
+The following scrip is being excluded:
+
+ Sr. No.                  Scrip Name           Symbol
+   1     Cairn India Ltd.                  CAIRN
+
+The following scrip is being included:
+
+ Sr. No.                  Scrip Name           Symbol
+   1     Reliance Infrastructure Ltd.      RELINFRA
+
+
+13)    Nifty Free Float Midcap 100 Index
+
+The following scrip is being excluded:
+
+ Sr. No.                  Scrip Name           Symbol
+   1     Cairn India Ltd.                  CAIRN
+
+The following scrip is being included:
+
+ Sr. No.                 Scrip Name            Symbol
+   1     Aditya Birla Nuvo Ltd.            ABIRLANUVO
+
+
+14)    Nifty Midcap 50 Index
+
+The following scrip is being excluded:
+
+ Sr. No.                  Scrip Name          Symbol
+   1     Havells India Ltd.                HAVELLS
+
+The following scrip is being included:
+
+ Sr. No.                Scrip Name             Symbol
+   1     IDFC Bank Ltd.                    IDFCBANK
+15)    Nifty Midcap 150 Index
+
+The following scrip is being excluded:
+
+ Sr. No.                  Scrip Name                           Symbol
+   1     Havells India Ltd.                                 HAVELLS
+
+The following scrip is being included:
+
+ Sr. No.               Scrip Name                              Symbol
+   1     Crompton Greaves Consumer Electricals Ltd.         CROMPTON
+
+
+16)    Nifty Full Midcap 100
+
+The following scrip is being excluded:
+
+ Sr. No.                  Scrip Name                           Symbol
+   1     Havells India Ltd.                                 HAVELLS
+
+The following scrip is being included:
+
+ Sr. No.               Scrip Name                              Symbol
+   1     Crompton Greaves Consumer Electricals Ltd.         CROMPTON
+
+
+For more details, contact:
+Arindam Saha | Editor and Communications Head
+
+asaha@nse.co.in, cc@nse.co.in
+Mobile: +91 – 9930019202 | 09903036100
+Direct: +91– 022 – 2659 8164
+Twitter: @NSEIndia
+www.nseindia.com
+
+About The National Stock Exchange of India (NSE):
+
+In its 20 year history, NSE has transformed the capital market, based on technology,
+innovation, high standards of governance and management practices. NSE's business
+practices and high levels of integrity have earned it the trust of the financial markets
+worldwide. Besides being a platform of choice for all exchange traded financial
+products in India, NSE’s flagship index, the Nifty 50, has become a benchmark
+national level economic parameter. Since inception, the exchange has been covered
+extensively by global media and has won many accolades as recognition of this
+remarkable journey.
+About India Index Services & Products Ltd. (IISL):
+
+India Index Services & Products Ltd. (IISL), an NSE group company, was setup in
+May 1998 to provide a variety of indices and index related services for the capital
+markets. IISL is India's first specialised company focused upon the index as a core
+product. IISL maintains more than 100 equity indices comprising broad-based
+benchmark indices, strategy indices, thematic indices, sectoral indices and customised
+indices. IISL also maintains fixed income indices based on Government of India
+bonds. Many investment and risk management products based on IISL indices have
+been developed in the recent past, within India and abroad. These include index based
+derivatives traded on NSE, Singapore Exchange Ltd. (SGX), Chicago Mercantile
+Exchange Inc. (CME) and Osaka Exchange Inc. (OSE) and a number of index funds
+and exchange traded funds. The flagship 'Nifty 50' index is widely tracked and traded
+as the benchmark for Indian Capital Markets.
+

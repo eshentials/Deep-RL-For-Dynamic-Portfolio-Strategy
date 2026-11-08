@@ -1,0 +1,66 @@
+PRESS RELEASE
+Mumbai, March 22, 2023
+
+
+                         Revision in Nifty Next 50 index methodology
+     The Nifty Next 50 index represents the balance 50 companies from Nifty 100 index after
+     excluding the Nifty 50 companies. Currently, cumulative weight of Non-F&O stocks in the Nifty
+     Next 50 index is capped at 15% on quarterly rebalance dates. Further, Non-F&O stocks in the
+     index are individually capped at 4.5% on quarterly rebalance dates. In order to enhance the
+     replicability of the Nifty Next 50 index, Index Maintenance Sub-Committee (Equity) of NSE
+     Indices Limited has decided to make the following changes to existing index methodology.
+
+
+
+                       Existing                                  Proposed
+      Capping limit on cumulative weight of non- Capping limit on cumulative weight of non-
+      F&O stocks:                                F&O stocks:
+
+      Cumulative weight of non-F&O stocks in the Cumulative weight of non-F&O stocks in the
+      index is capped at 15% at the time of index is capped at 10% at the time of
+      rebalancing                                rebalancing
+
+
+     The change in the capping limit would be implemented with effect from March 31, 2023 (close
+     of March 29, 2023).
+About National Stock Exchange of India Limited (NSE):
+
+National Stock Exchange of India (NSE) is the world’s largest derivatives exchange by trading
+volume (contracts) as per the statistics maintained by Futures Industry Association (FIA) for
+calendar year 2022. NSE is ranked 3rd in the world in the cash equities by number of trades as per
+the statistics maintained by the World Federation of Exchanges (WFE) for calendar year 2022.
+NSE was the first exchange in India to implement electronic or screen-based trading. It began
+operations in 1994 and is ranked as the largest stock exchange in India in terms of total and
+average daily turnover for equity shares every year since 1995, based on SEBI data. NSE has a
+fully integrated business model comprising exchange listings, trading services, clearing and
+settlement services, indices, market data feeds, technology solutions and financial education
+offerings. NSE also oversees compliance by trading, clearing members and listed companies with
+the rules and regulations of SEBI and the exchange. NSE is a pioneer in technology and ensures
+the reliability and performance of its systems through a culture of innovation and investment in
+technology.
+
+For more information, please visit: https://www.nseindia.com
+
+About NSE Indices Limited:
+NSE Indices Limited (formerly known as India Index Services & Products Ltd. - IISL), a
+subsidiary of NSE, provides a variety of indices and index related services for the capital markets.
+The company focuses on the index as a core product. The company owns and manages a portfolio
+of indices under the Nifty brand of NSE, including the flagship index, the Nifty 50. Nifty equity
+indices comprises of broad-based benchmark indices, sectoral indices, strategy indices, thematic
+indices and customised indices. NSE Indices Limited also maintains fixed income indices based
+on Government of India securities, corporate bonds, money market instruments and hybrid
+indices. Many investment products based on Nifty indices have been developed within India and
+abroad. These include index based derivatives traded on NSE, NSE IFSC and Singapore
+Exchange Ltd. (SGX) and a number of index funds and exchange traded funds. The flagship 'Nifty
+50' index is widely tracked and traded as the benchmark for Indian Capital Markets.
+
+
+For more information, please visit: www.niftyindices.com
+
+
+Press contact:
+
+Kumar Kartikey - Associate Vice President, Corporate Communications
+Priyanka Roy - Manager, Corporate Communications
+Email ID: cc@nse.co.in
+

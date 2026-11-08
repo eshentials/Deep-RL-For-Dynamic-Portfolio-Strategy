@@ -1,0 +1,67 @@
+       IISL
+       INDIA INDEX SERVICES & PRODUCTS LIMITED
+
+                                  PRESS RELEASE
+
+The Index Maintenance Sub-Committee has decided to make the following changes in
+CNX Alpha, CNX High Beta and CNX Low Volatility indices as part of the quarterly
+review. The changes shall become effective from April 20, 2015 (close of April 17,
+2015).
+
+(1)    CNX Alpha Index
+
+The following companies are being excluded:
+
+  Sr. No.   Company Name                              Symbol
+    1       Amtek Auto Ltd.                           AMTEKAUTO
+    2       Apollo Tyres Ltd.                         APOLLOTYRE
+    3       Atul Ltd.                                 ATUL
+    4       Info Edge (India) Ltd.                    NAUKRI
+    5       Persistent Systems Ltd.                   PERSISTENT
+    6       Tech Mahindra Ltd.                        TECHM
+    7       Voltas Ltd.                               VOLTAS
+
+The following companies are being included:
+
+  Sr. No.   Company Name                              Symbol
+    1       Alstom T&D India Ltd.                     ALSTOMT&D
+    2       Emami Ltd.                                EMAMILTD
+    3       NATCO Pharma Ltd.                         NATCOPHARM
+    4       PC Jeweller Ltd.                          PCJEWELLER
+    5       Sadbhav Engineering Ltd                   SADBHAV
+    6       Sun Pharma Advanced Research Co. Ltd.     SPARC
+    7       Suzlon Energy Ltd.                        SUZLON
+
+
+(2)    CNX High Beta Index
+
+The following companies are being excluded:
+
+  Sr. No.   Company Name                              Symbol
+    1       Delta Corp Ltd.                           DELTACORP
+    2       IndusInd Bank Ltd.                        INDUSINDBK
+    3       Jindal Saw Ltd.                           JINDALSAW
+The following companies are being included:
+
+  Sr. No.   Company Name                             Symbol
+    1       Ashok Leyland Ltd.                       ASHOKLEY
+    2       Edelweiss Financial Services Ltd.        EDELWEISS
+    3       Sintex Industries Ltd.                   SINTEX
+
+
+(3)    CNX Low Volatility Index
+
+The following company is being excluded:
+
+  Sr. No. Company Name                               Symbol
+    1     Ipca Laboratories Ltd.                     IPCALAB
+
+The following company is being included:
+
+  Sr. No. Company Name                               Symbol
+    1     GlaxoSmithkline Consumer Healthcare Ltd.   GSKCONS
+
+
+Place: Mumbai
+Date: April 10, 2015
+

@@ -14,7 +14,7 @@ import json
 import numpy as np
 import pandas as pd
 
-from config import ROOT, load, protocol_hash
+from config import ROOT, load, protocol_hash, require_version
 
 RES, EXP, VR = ROOT / "results", ROOT / "results" / "exploratory", ROOT / "results" / "exploratory" / "vix_rule"
 PROC, ROSTER = ROOT / "data" / "processed", ROOT / "data" / "roster"
@@ -70,6 +70,7 @@ def table(path, cols, rows, align=None, notes=None):
 
 
 def main():
+    require_version(1, "eval.paper_numbers")
     cfg = load()
     OUT.mkdir(parents=True, exist_ok=True)
     M = Macros()

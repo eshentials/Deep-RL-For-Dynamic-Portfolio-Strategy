@@ -1,0 +1,41 @@
+PRESS RELEASE
+Mumbai, April 22, 2026
+
+         Higher frequency for real time index dissemination of Nifty 50
+
+      The flagship 'Nifty 50' index is widely tracked and traded as benchmark for Indian Capital Markets.
+      Nifty indices assume leadership position with over 490 passive mutual fund products within India and
+      33 passive products outside India tracking Nifty indices as an underlying with a total Asset under
+      Management (AUM) of about USD 95 billion as on March 31, 2026. Further, derivatives based on
+      Nifty indices trade actively on NSE and NSE International Exchange IFSC Limited (NSE IX).
+
+      With increasing reference to indices for valuation of financial products and increase in trading volumes
+      of derivatives linked to Nifty 50 index, effective May 11, 2026 Nifty 50 index that is currently
+      disseminated live at a frequency of 500 milliseconds (0.5 second) shall be disseminated live at a
+      frequency of 250 milliseconds (0.25 second). In a phased manner, dissemination frequency of other
+      indices shall also be aligned with Nifty 50.
+
+      Presently, NSE Indices computes over 425 indices (equity, debt, multi assets etc.). Out of these, the
+      values of 134 indices (123 equity and 11 debt) are disseminated live during market hours at a frequency
+      of 500 milliseconds (0.5 second) through trading system of the National Stock Exchange of India (NSE)
+      in Capital Market Segment while other indices are calculated and disseminated on end of day basis.
+
+
+
+
+      About NSE Indices Limited:
+      NSE Indices Limited (formerly known as India Index Services & Products Ltd. - IISL), a subsidiary of
+      NSE, provides a variety of indices and index related services for the capital markets. The company
+      focuses on the index as a core product. The company owns and manages a portfolio of indices under
+      the Nifty brand of NSE, including the flagship index, the Nifty 50. Nifty equity indices comprises
+      broad-based benchmark indices, sectoral indices, strategy indices, thematic indices, and customised
+      indices. NSE Indices Limited also maintains fixed income indices based on Government of India
+securities, corporate bonds, money market instruments and hybrid indices. Many investment products
+based on Nifty indices have been developed within India and abroad. These include index-based
+derivatives traded on NSE and NSE International Exchange IFSC Limited (NSE IX) and a number of
+index funds and exchange traded funds. The flagship 'Nifty 50' index is widely tracked and traded as
+the benchmark for Indian Capital Markets.
+For more information, please visit: www.niftyindices.com
+Press contact:
+Email ID: cc@nse.co.in
+

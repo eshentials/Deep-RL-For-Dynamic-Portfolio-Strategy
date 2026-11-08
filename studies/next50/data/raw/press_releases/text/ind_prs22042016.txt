@@ -1,0 +1,184 @@
+                                                                    Date: April 22, 2016
+
+
+                                  PRESS RELEASE
+
+The Index Maintenance Sub-Committee has decided to make the replacements in
+various indices as detailed hereunder:
+
+The changes shall become effective from April 29, 2016 (close of April 28, 2016).
+
+A. Replacements on account of quarterly review:
+
+1)     Nifty Alpha 50 Index
+
+The following companies are being excluded:
+
+ Sr. No.   Company Name                                    Symbol
+    1      Bharti Infratel Ltd.                            INFRATEL
+    2      CCL Products (I) Ltd.                           CCL
+    3      Emami Ltd.                                      EMAMILTD
+    4      Lupin Ltd.                                      LUPIN
+    5      Marksans Pharma Ltd.                            MARKSANS
+    6      Page Industries Ltd.                            PAGEIND
+    7      PI Industries Ltd.                              PIIND
+    8      Siemens Ltd.                                    SIEMENS
+    9      Sun Pharma Adv. Research Co. Ltd.               SPARC
+   10      Suzlon Energy Ltd.                              SUZLON
+   11      Symphony Ltd.                                   SYMPHONY
+   12      Wockhardt Ltd.                                  WOCKPHARMA
+
+The following companies are being included:
+
+ Sr. No.   Company Name                                    Symbol
+   1       Aditya Birla Fashion and Retail Ltd.            ABFRL
+   2       Godfrey Phillips India Ltd.                     GODFRYPHLP
+   3       Godrej Consumer Products Ltd.                   GODREJCP
+   4       Indo Count Industries Ltd.                      ICIL
+   5       Indraprastha Gas Ltd.                           IGL
+   6       Intellect Design Arena Ltd.                     INTELLECT
+   7       JSW Steel Ltd.                                  JSWSTEEL
+   8       KRBL Ltd.                                       KRBL
+   9       Petronet LNG Ltd.                               PETRONET
+  10       Reliance Industries Ltd.                        RELIANCE
+  11       Reliance Infrastructure Ltd.                    RELINFRA
+  12       Torrent Power Ltd.                              TORNTPOWER
+
+2)     Nifty High Beta 50 Index
+
+The following companies are being excluded:
+ Sr. No.   Company Name                                   Symbol
+    1      Allahabad Bank                                 ALBK
+    2      Andhra Bank                                    ANDHRABANK
+    3      Indiabulls Real Estate Ltd.                    IBREALEST
+    4      JSW Steel Ltd.                                 JSWSTEEL
+
+The following companies are being included:
+
+ Sr. No.   Company Name                                   Symbol
+    1      Indo Count Industries Ltd.                     ICIL
+    2      Intellect Design Arena Ltd.                    INTELLECT
+    3      Jet Airways (India) Ltd.                       JETAIRWAYS
+    4      Suzlon Energy Ltd.                             SUZLON
+
+B. Replacements on account of scheme of arrangements (SOA) on account of:
+
+a) Proposed merger of Advanta Ltd. with UPL Ltd.
+b) Proposed demerger of infrastructure business from Jindal Saw Ltd.
+c) Proposed demerger/ transfer of business from Transport Corporation of India Ltd.
+
+
+1. Nifty 500 Index
+
+The following companies are being excluded:
+
+ Sr. No.   Company Name                                   Symbol
+    1      Advanta Ltd.                                   ADVANTA
+    2      Jindal Saw Ltd.                                JINDALSAW
+    3      Transport Corporation of India Ltd.            TCI
+
+The following companies are being included:
+
+ Sr. No.   Company Name                                   Symbol
+   1       Gulf Oil Lubricants India Ltd.                 GULFOILLUB
+   2       S H Kelkar and Company Ltd.                    SHK
+   3       TV Today Network Ltd.                          TVTODAY
+
+2. Nifty Metal Index
+
+The following company is being excluded:
+
+ Sr. No.   Company Name                                     Symbol
+    1      Jindal Saw Ltd.                                  JINDALSAW
+
+The following company is being included:
+
+ Sr. No. Company Name                                     Symbol
+   1     APL Apollo Tubes Ltd.                            APLAPOLLO
+3)     Nifty Smallcap 250 Index
+
+The following companies are being excluded:
+
+ Sr. No.   Company Name                          Symbol
+    1      Advanta Ltd.                          ADVANTA
+    2      Jindal Saw Ltd.                       JINDALSAW
+    3      Transport Corporation of India Ltd.   TCI
+
+The following companies are being included:
+
+ Sr. No.   Company Name                          Symbol
+   1       Gulf Oil Lubricants India Ltd.        GULFOILLUB
+   2       S H Kelkar and Company Ltd.           SHK
+   3       TV Today Network Ltd.                 TVTODAY
+
+4)     Nifty Full Smallcap 100 Index
+
+The following company is being excluded:
+
+ Sr. No.   Company Name                          Symbol
+    1      Jindal Saw Ltd.                       JINDALSAW
+
+The following company is being included:
+
+ Sr. No. Company Name                            Symbol
+   1     S H Kelkar and Company Ltd.             SHK
+
+5)     Nifty MidSmallcap 400 Index
+
+The following companies are being excluded:
+
+ Sr. No.   Company Name                          Symbol
+    1      Advanta Ltd.                          ADVANTA
+    2      Jindal Saw Ltd.                       JINDALSAW
+    3      Transport Corporation of India Ltd.   TCI
+
+The following companies are being included:
+
+ Sr. No.   Company Name                          Symbol
+   1       Gulf Oil Lubricants India Ltd.        GULFOILLUB
+   2       S H Kelkar and Company Ltd.           SHK
+   3       TV Today Network Ltd.                 TVTODAY
+
+6)     Nifty Free Float Smallcap 100 Index
+
+The following company is being excluded:
+
+ Sr. No.   Company Name                           Symbol
+    1      Jindal Saw Ltd.                        JINDALSAW
+The following company is being included:
+
+ Sr. No. Company Name                                      Symbol
+   1     Alkem Laboratories Ltd.                           ALKEM
+
+
+
+For more details, contact:
+Arindam Saha
+Head - Corporate Communications
+cc@nse.co.in
+Mo: +91-9930019202 | Direct: +91-22-2659 8164
+Twitter: @NSEIndia
+
+
+About NSE: In its 20 year history, NSE has transformed the capital market, based on
+technology, innovation, high standards of governance and management practices.
+NSE's business practices and high levels of integrity have earned it the trust of the
+financial markets worldwide. Besides being a platform of choice for all exchange
+traded financial products in India, NSE’s flagship index, the Nifty 50, has become a
+benchmark national level economic parameter. Since inception, the exchange has been
+covered extensively by global media and has won many accolades as recognition of
+this remarkable journey.
+
+About IISL: India Index Services & Products Ltd. (IISL), a NSE group company, was
+setup in May 1998 to provide a variety of indices and index related services for the
+capital markets. IISL is India's first specialised company focused upon the index as a
+core product. IISL maintains more than 100 equity indices comprising broad-based
+benchmark indices, sectoral indices and customised indices. IISL also maintains fixed
+income indices based on Government of India bonds. Many investment and risk
+management products based on IISL indices have been developed in the recent past,
+within India and abroad. These include index based derivatives traded on NSE,
+Singapore Exchange Ltd. (SGX), Chicago Mercantile Exchange Inc. (CME) and Osaka
+Exchange Inc. (OSE) and a number of index funds and exchange traded funds. The
+flagship 'Nifty 50' index is widely tracked and traded as the benchmark for Indian
+Capital Markets.
+

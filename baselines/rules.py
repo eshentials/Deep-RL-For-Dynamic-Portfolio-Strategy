@@ -37,6 +37,18 @@ def vol_target(data: MarketData, target: float, horizon: int, floor: float, cap:
     return pol
 
 
+def vix_threshold(data: MarketData, threshold: float, horizon: int, low: float = 0.5, high: float = 1.0):
+    """Exposure `high` when India VIX at the decision close is at or above `threshold`,
+    else `low` (VIX/100, as stored in the feature array). Post-hoc in protocol v1
+    (eval/vix_rule.py), a registered comparator in protocol v2."""
+    from env.features import MARKET_FEATURES
+    v = data.feats[:, MARKET_FEATURES.index("vix")]
+
+    def pol(sim, t):
+        return (high if v[t] >= threshold else low), horizon
+    return pol
+
+
 def per_year(data: MarketData, make_policy, params_for_year):
     """Policy that rebuilds itself with the parameters selected for each test year."""
     cache: dict[int, object] = {}

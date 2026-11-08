@@ -6,12 +6,12 @@ from dataclasses import dataclass
 
 import numpy as np
 
-from config import ROOT, load, protocol_hash
+from config import PROTOCOL, ROOT, load, protocol_hash, protocol_tag, study_root
 from env.engine import MarketData
 from env.features import zscore_stats
 from env.gym_env import build_obs
 
-RUNS = ROOT / "runs"
+RUNS = study_root() / "runs"
 
 
 @dataclass
@@ -89,12 +89,16 @@ def protocol_gate() -> list[str]:
     """Reasons the protocol-mode run must not start (empty list = allowed)."""
     from data.rf import is_provisional
     problems = []
-    if not git("tag", "-l", "protocol-v1"):
-        problems.append("tag protocol-v1 does not exist (protocol not signed off)")
+    tag, yml = protocol_tag(), str(PROTOCOL.relative_to(ROOT))
+    if not git("tag", "-l", tag):
+        problems.append(f"tag {tag} does not exist (protocol not signed off)")
     else:
-        diff = subprocess.run(["git", "diff", "--quiet", "protocol-v1", "--", "config/protocol.yaml"], cwd=ROOT)
-        if diff.returncode != 0:
-            problems.append("config/protocol.yaml changed since protocol-v1")
+        shown = subprocess.run(["git", "cat-file", "-e", f"{tag}:{yml}"], cwd=ROOT, capture_output=True)
+        diff = subprocess.run(["git", "diff", "--quiet", tag, "--", yml], cwd=ROOT)
+        if shown.returncode != 0:
+            problems.append(f"{yml} is not in the tree at {tag}")
+        elif diff.returncode != 0:
+            problems.append(f"{yml} changed since {tag}")
     if git("status", "--porcelain", "--untracked-files=no"):
         problems.append("working tree has uncommitted changes")
     if is_provisional():

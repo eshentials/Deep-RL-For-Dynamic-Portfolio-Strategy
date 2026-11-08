@@ -1,0 +1,224 @@
+                              PRESS RELEASE
+                                                                   Mumbai, October 22, 2021
+
+
+   Revision in index maintenance guidelines and replacements in indices
+
+The Index Maintenance Sub-Committee - Equity (IMSC) of NSE Indices Limited has decided to
+make changes as given hereunder:
+
+A. Revision in index maintenance guidelines:
+
+ Sr. No.     Description         Existing guideline                Revised guideline
+    1      Investible     Change in IWF of less than 5% is No Change
+           Weight Factors implemented on quarterly basis
+           (IWFs) Review from the last trading day of
+                          March, June, September and
+                          December after providing three
+                          trading days’ prior notice
+                           Change in IWF by 5% or more is    Change in IWF by 5% or more
+                           implemented as soon as possible   will be implemented on monthly
+                           after providing three trading     basis effective from the last
+                           days’ prior notice                trading day of each month after
+                                                             providing three trading days’
+                                                             prior notice
+
+    2      Shares          Change in shares of less than 5% No Change
+           rebalancing     is implemented on quarterly basis
+                           from the last trading day of
+                           March, June, September and
+                           December after providing three
+                           trading days’ prior notice
+                              Change in shares by 5% or more      Change in shares by 5% or more
+                              is implemented as soon as           will be implemented on monthly
+                              possible after providing three      basis effective from the last
+                              trading days’ prior notice          trading day of each month after
+                                                                  providing three trading days’
+                                                                  prior notice
+
+    3      Stock Capping      Weightages of stocks in capped      Weightages of stocks in capped
+                              indices are realigned at the time   indices will be realigned at the
+                              of change in shares and IWF and     time of replacement of stocks and
+                              replacement of stocks after         upon quarterly rebalancing of
+                              providing three trading days’       shares and IWF after providing
+                              prior notice                        three trading days’ prior notice
+                                                                  Weightages of stocks in capped
+                                                                  indices will not be realigned in
+                                                                  case of changes in shares and
+                                                                  IWF carried out between two
+                                                                  quarterly rebalancing
+                              In case of capped indices, No Change
+                              capping of stocks will be
+                              implemented from the last
+                              trading day of March, June,
+                              September and December by
+                              taking into account closing prices
+                              as on T-3 basis, where T day is
+                              last trading day of March, June,
+                              September and December
+
+
+The revision in index maintenance guidelines would be applicable with an immediate effect.
+
+B. Replacements in indices:
+
+The Index Maintenance Sub-Committee - Equity (IMSC) of NSE Indices Limited has decided to
+replace GMR Infrastructure Ltd. on account of proposed scheme of arrangement for demerger and
+Gateway Distriparks Ltd. on account of proposed scheme of amalgamation as approved by equity
+shareholders of the respective companies from various indices as listed hereunder.
+
+These changes shall become effective from October 29, 2021 (close of October 28, 2021).
+1)      NIFTY 500
+
+The following company is being excluded:
+
+     Sr. No.                Company Name                          Symbol
+       1     GMR Infrastructure Ltd.                          GMRINFRA
+
+The following company is being included:
+
+     Sr. No.               Company Name                           Symbol
+       1     Sona BLW Precision Forgings Ltd.                 SONACOMS
+
+The above replacement will also be applicable to NIFTY500 Multicap 50:25:25 Index.
+
+
+2)      NIFTY Midcap 150
+
+The following company is being excluded:
+
+     Sr. No.                Company Name                          Symbol
+       1     GMR Infrastructure Ltd.                          GMRINFRA
+
+The following company is being included:
+
+     Sr. No.               Company Name                           Symbol
+       1     Sona BLW Precision Forgings Ltd.                 SONACOMS
+
+
+3)      NIFTY Midcap 50
+
+The following company is being excluded:
+
+     Sr. No.                Company Name                          Symbol
+       1     GMR Infrastructure Ltd.                          GMRINFRA
+
+The following company is being included:
+
+     Sr. No.                Company Name                             Symbol
+       1     Hindustan Aeronautics Ltd.                       HAL
+4)      NIFTY Midcap 100
+
+The following company is being excluded:
+
+     Sr. No.                Company Name            Symbol
+       1     GMR Infrastructure Ltd.            GMRINFRA
+
+The following company is being included:
+
+     Sr. No.               Company Name             Symbol
+       1     Sona BLW Precision Forgings Ltd.   SONACOMS
+
+
+5)      NIFTY 200
+
+The following company is being excluded:
+
+     Sr. No.                Company Name            Symbol
+       1     GMR Infrastructure Ltd.            GMRINFRA
+
+The following company is being included:
+
+     Sr. No.               Company Name             Symbol
+       1     Sona BLW Precision Forgings Ltd.   SONACOMS
+
+
+6)      NIFTY LargeMidcap 250
+
+The following company is being excluded:
+
+     Sr. No.                Company Name            Symbol
+       1     GMR Infrastructure Ltd.            GMRINFRA
+
+The following company is being included:
+
+     Sr. No.               Company Name             Symbol
+       1     Sona BLW Precision Forgings Ltd.   SONACOMS
+7)      NIFTY MidSmallcap 400
+
+The following company is being excluded:
+
+     Sr. No.                Company Name            Symbol
+       1     GMR Infrastructure Ltd.            GMRINFRA
+
+The following company is being included:
+
+     Sr. No.               Company Name             Symbol
+       1     Sona BLW Precision Forgings Ltd.   SONACOMS
+
+
+8)      NIFTY Microcap 250
+
+The following company is being excluded:
+
+     Sr. No.                Company Name              Symbol
+       1     Gateway Distriparks Ltd.           GDL
+
+The following company is being included:
+
+     Sr. No.                Company Name             Symbol
+       1     Isgec Heavy Engineering Ltd.       ISGEC
+
+
+9)      NIFTY Total Market
+
+The following companies are being excluded:
+
+     Sr. No.                Company Name              Symbol
+       1     Gateway Distriparks Ltd.           GDL
+       2     GMR Infrastructure Ltd.            GMRINFRA
+
+
+The following companies are being included:
+
+     Sr. No.                Company Name             Symbol
+       1     Isgec Heavy Engineering Ltd.       ISGEC
+       2     Sona BLW Precision Forgings Ltd.   SONACOMS
+About National Stock Exchange of India Limited (NSE):
+National Stock Exchange of India (NSE) is the world’s largest derivatives exchange by trading
+volume (contracts) as per the statistics maintained by Futures Industry Association (FIA) for calendar
+year 2020. NSE is ranked 4th in the world in the cash equities by number of trades as per the statistics
+maintained by the World Federation of Exchanges (WFE) for calendar year 2020. NSE was the first
+exchange in India to implement electronic or screen-based trading. It began operations in 1994 and is
+ranked as the largest stock exchange in India in terms of total and average daily turnover for equity
+shares every year since 1995, based on SEBI data. NSE has a fully-integrated business model
+comprising exchange listings, trading services, clearing and settlement services, indices, market data
+feeds, technology solutions and financial education offerings. NSE also oversees compliance by
+trading, clearing members and listed companies with the rules and regulations of SEBI and the
+exchange. NSE is a pioneer in technology and ensures the reliability and performance of its systems
+through a culture of innovation and investment in technology.
+For more information, please visit: www.nseindia.com
+
+
+About NSE Indices Limited:
+NSE Indices Limited (formerly known as India Index Services & Products Ltd. - IISL), a subsidiary of
+NSE, provides a variety of indices and index related services for the capital markets. The company focuses
+on the index as a core product. The company owns and manages a portfolio of indices under the NIFTY
+brand of NSE, including the flagship index, the NIFTY 50. NIFTY equity indices comprises of broad-
+based benchmark indices, sectoral indices, strategy indices, thematic indices and customised indices. NSE
+Indices Limited also maintains fixed income indices based on Government of India securities, corporate
+bonds, money market instruments and hybrid indices. Many investment products based on NIFTY indices
+have been developed within India and abroad. These include index based derivatives traded on NSE, NSE
+IFSC and Singapore Exchange Ltd. (SGX) and a number of index funds and exchange traded funds. The
+flagship 'NIFTY 50' index is widely tracked and traded as the benchmark for Indian Capital Markets.
+For more information, please visit: www.niftyindices.com
+
+For any clarifications please contact:
+Arijit Sengupta
+Chief Marketing & Communications Officer
+
+
+Kumar Kartikey
+Chief Manager, Corporate Communication
+Email id: cc@nse.co.in
+

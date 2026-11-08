@@ -1,0 +1,153 @@
+PRESS RELEASE
+Mumbai, February 26, 2024
+
+                      Revision in methodology of Nifty equity indices
+     The Index Maintenance Sub-Committee (Equity) of NSE Indices Limited has decided to revise the
+     index methodology of the Nifty Midcap 50, Nifty Smallcap 50 and Nifty Sectoral Indices as
+     mentioned hereunder:
+     A. Revision in methodology of Nifty Midcap 50 index:
+
+      Parameters           Existing Methodology                       Revised Methodology
+      Universe             Nifty Midcap 150                           Nifty Midcap 150
+      Eligibility criteria                                            Companies should rank within top 100
+      (Eligible Universe)                                             based on both average daily full market
+                           -
+                                                                      capitalization and average daily turnover
+                                                                      based on previous six months period data
+      Selection Criteria                                              Select 50 stocks based on higher 6 month
+                            Top 50 stocks based on full market
+                                                                      average free-float market capitalization
+                            capitalization with preference to F&O
+                                                                      from the eligible universe with preference
+                            stocks
+                                                                      to F&O stocks
+      Compulsory            1) Rank of any F&O stocks based on 1) Rank of F&O stock based on 6 month
+      Inclusion                 full market capitalization is within      average free float market capitalization
+                                top 30                                    is within top 30 within the eligible
+                                                                          universe
+                            2) Full market capitalization of any
+                                F&O constituent in Nifty Midcap 2) Any non-member eligible F&O stock
+                                150 is at least 1.5 times of the          will be included in the index only if its
+                                smallest index constituent (based         free-float market capitalization is at
+                                on full market capitalization) in         least 1.5 times the free-float market
+                                Nifty Midcap 50                           capitalization of the smallest F&O
+                                                                          index constituent
+                            3) In case of any shortfall (in the event
+                                F&O stocks are not available for 3) Any non-member eligible non - F&O
+                                inclusion in the index), securities       stock will be included in the index if its
+                                with highest average daily turnover       free-float market capitalization is at
+                                will be selected from top 30 non-         least 1.5 times the free-float market
+                                F&O constituents in Nifty Midcap          capitalization of the smallest Non F&O
+                                150 index based on full market            index constituent
+                                capitalization
+Parameters                  Existing Methodology                Revised Methodology
+                                                                4) A non-member eligible F&O stock shall
+                                                                   be compulsorily included in the index
+                                                                   replacing the smallest non F&O stock in
+                                                                   the index (if any) based on free-float
+                                                                   market capitalization in the index
+Compulsory                  1) Constituents excluded from Nifty 1) Constituents excluded from the Nifty
+exclusion                      Midcap 150*                         Midcap 150*
+
+                            2) Rank based on full market 2) Rank based on average full market
+                               capitalization falls below 70 among capitalization or average daily turnover
+                               F&O constituents in Nifty Midcap    (6 month average data) falls beyond
+                               150                                 100 within Nifty Midcap 150*
+
+                                                                                 3) Rank based on 6 month average free
+                                                                                    float market capitalization falls beyond
+                                                                                    70 within eligible universe of top 100
+                                                                                    stocks
+# Maximum 5 replacements per review. * Limits on replacement are not applicable for exclusions on account of non-compliance of
+minimum eligibility criteria, exclusion of stocks from parent index and corporate events such as merger, demerger, delisting, trading
+suspension etc.
+
+B. Revision in methodology of Nifty Smallcap 50 index:
+
+Parameters            Existing Methodology                                       Revised Methodology
+Universe              Nifty Smallcap 250                                         Nifty Smallcap 250
+Eligibility                                                                      Companies should rank within top 150
+criteria                                                                         based on both average daily full market
+                      -
+(Eligible                                                                        capitalization and average daily turnover
+Universe)                                                                        based on previous six months period data
+Selection             Top 50 companies selected based on
+                                                                 Select 50 stocks based on higher 6 month
+Criteria              average daily turnover from top 100
+                                                                 average free-float market capitalization
+                      companies selected based on full market
+                                                                 from the eligible universe
+                      capitalization
+Compulsory            1) Rank based on average daily turnover is 1) Rank based on 6 month average free-
+Inclusion                among top 30 from top 100 constituents      float market capitalization is within top
+                         selected based on full market               30 from the eligible universe
+                         capitalization in Nifty Smallcap 250
+                                                                 2) Free-float market capitalization of non-
+                                                                     member eligible stocks is at least 1.5
+                                                                     times of the free-float market
+                                                                     capitalization of the smallest index
+                                                                     constituent
+Compulsory            1) Constituents excluded from Nifty 1) Constituents excluded from Nifty
+exclusion                Smallcap 250*                               Smallcap 250*
+Parameters            Existing Methodology                                       Revised Methodology
+
+                      2) Rank      based    on    full   market 2) Rank based on average full market
+                         capitalization falls below 130 from       capitalization or average daily turnover
+                         Nifty Smallcap 250 constituents           falls (6 month average data) beyond
+                                                                   150 within Nifty Smallcap 250*
+                      3) Rank      based    on    full   market
+                         capitalization is among top 130 from 3) Rank based on free float market
+                         Nifty Smallcap 250 constituents, but      capitalization falls beyond 70 within
+                         rank based on average daily turnover      the eligible universe
+                         falls below 80 (from top 130
+                         constituents)
+#Maximum 10 replacements per review. * Limits on replacement are not applicable for exclusions on account of non-compliance of
+minimum eligibility criteria, exclusion of stocks from parent index and corporate events such as merger, demerger, delisting, trading
+suspension etc.
+
+C. Revision in methodology of Nifty Sectoral indices:
+
+Parameter      Name of the Nifty Sectoral indices Existing      Revised Methodology
+                                                    methodology
+Selection      Nifty Auto, Nifty Consumer -                     A preference shall be given to
+criteria –     Durables, Nifty Financial Services               companies that are available for
+F&O            Ex-Bank, Nifty FMCG, Nifty Media,                trading in NSE’s Futures & Options
+preference     Nifty Metal, Nifty Oil & Gas, Nifty              segment at the time of final selection
+               PSU Bank, Nifty Realty, Nifty
+               MidSmall Financial Services, Nifty
+               MidSmall       Healthcare,     Nifty
+               MidSmall IT & Telecom
+Selection      Nifty Auto, Nifty Consumer -                     On a prospective basis, non - F&O
+criteria –     Durables, Nifty Financial Services               stocks are eligible for inclusion only
+Circuit Filter Ex-Bank, Nifty FMCG, Nifty Media,                if the total instances of the stock
+               Nifty Metal, Nifty Oil & Gas, Nifty              hitting the upper or lower circuit
+               PSU Bank, Nifty Realty, Nifty                    (price band)* during the past 6
+               Private Bank, Nifty Pharma, Nifty                months as of the cut-off date is less
+               Healthcare,      Nifty     Financial             than 20% of the number of total
+               Services^, Nifty IT                              trading days over the same period.
+                                                                                           *An instance is counted each time the stock hits
+                                                                                           the upper or lower price circuit on a given
+                                                                                           trading day. If a stock hits the upper and lower
+                                                                                           price circuit (price band) on the same trading
+                                                                                           day, it will be counted as two instances
+^As Nifty Financial Services 25/50 index is a variant of the Nifty Financial Services index, the changes applicable to Nifty Financial
+Services index shall be applicable to the Nifty Financial Services 25/50 index.
+
+The above revision in methodology would be applicable from the upcoming review of Nifty equity
+indices.
+About NSE Indices Limited:
+NSE Indices Limited (formerly known as India Index Services & Products Ltd. - IISL), a subsidiary
+of NSE, provides a variety of indices and index related services for the capital markets. The company
+focuses on the index as a core product. The company owns and manages a portfolio of indices under
+the Nifty brand of NSE, including the flagship index, the Nifty 50. Nifty equity indices comprises
+broad-based benchmark indices, sectoral indices, strategy indices, thematic indices, and customised
+indices. NSE Indices Limited also maintains fixed income indices based on Government of India
+securities, corporate bonds, money market instruments and hybrid indices. Many investment
+products based on Nifty indices have been developed within India and abroad. These include index-
+based derivatives traded on NSE and NSE International Exchange IFSC Limited (NSE IX) and a
+number of index funds and exchange traded funds. The flagship 'Nifty 50' index is widely tracked
+and traded as the benchmark for Indian Capital Markets.
+For more information, please visit: www.niftyindices.com
+Press contact:
+Email ID: cc@nse.co.in
+

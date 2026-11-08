@@ -15,24 +15,34 @@ import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
-from config import ROOT, load  # noqa: E402
+from config import load, study_root  # noqa: E402
 from eval import metrics as M  # noqa: E402
 from eval.bootstrap import paired_metric_diff, paired_sharpe_diff  # noqa: E402
 from eval.dsr import dsr  # noqa: E402
 
-# Palette: first three validated categorical slots (light) + neutral for the benchmark.
+# Palette: validated categorical slots in fixed order (light) + neutral for the benchmark.
 SURFACE, INK, INK2, GRID = "#fcfcfb", "#0b0b0b", "#52514e", "#e6e5e1"
+BK = load()["data"].get("benchmark_key", "niftybees")      # niftybees (v1) or juniorbees (v2)
+BNAME = {"niftybees": "NIFTYBEES", "juniorbees": "JUNIORBEES"}[BK]
+HAS_VIX = "vix_rule" in load()["baselines"]                 # registered comparator (v2)
 STYLE = {
     "ppo_ensemble": ("PPO ensemble", "#2a78d6", "-", 1.6),
     "vol_target_floored": ("Vol targeting", "#eb6834", "--", 1.3),
     "equal_weight": ("Equal weight", "#1baf7a", "-.", 1.3),
-    "niftybees": ("NIFTYBEES", INK2, ":", 1.4),
+    BK: (BNAME, INK2, ":", 1.4),
 }
+if HAS_VIX:
+    STYLE = {k: STYLE[k] for k in ("ppo_ensemble", "vol_target_floored")} | \
+        {"vix_rule": ("VIX rule", "#eda100", (0, (5, 1.5, 1, 1.5, 1, 1.5)), 1.3)} | \
+        {k: STYLE[k] for k in ("equal_weight", BK)}
 LABELS = {"ppo_ensemble": "PPO ensemble", "vol_target_floored": "Vol targeting (floor 0.5)",
-          "vol_target_unfloored": "Vol targeting (no floor)", "best_fixed": "Best fixed action",
-          "equal_weight": "Equal weight (monthly)", "niftybees": "NIFTYBEES buy-and-hold",
+          "vol_target_unfloored": "Vol targeting (no floor)", "vix_rule": "VIX threshold rule",
+          "best_fixed": "Best fixed action",
+          "equal_weight": "Equal weight (monthly)", BK: f"{BNAME} buy-and-hold",
           "rp_fixed_0.5": "Risk parity, e=0.50", "rp_fixed_0.7": "Risk parity, e=0.70",
           "rp_fixed_0.85": "Risk parity, e=0.85", "rp_fixed_1": "Risk parity, e=1.00"}
+if not HAS_VIX:
+    del LABELS["vix_rule"]
 
 
 def _style_axes(ax):
@@ -128,6 +138,7 @@ def report(out: Path) -> dict:
     h1 = paired_sharpe_diff(rets["ppo_ensemble"], rets["vol_target_floored"], rf,
                             block=b["block"], draws=b["draws"], seed=b["seed"])
     supported = h1["p05"] > 0
+    family = primary_family(cfg, rets, rf) if isinstance(cfg["evaluation"]["primary"], list) else None
 
     expl = []
     for c in [c for c in named if c not in ("ppo_ensemble",)]:
@@ -137,7 +148,7 @@ def report(out: Path) -> dict:
     expl.to_csv(tables / "delta_sharpe_exploratory.csv", index=False)
 
     sec = []
-    for c in ("equal_weight", "niftybees"):
+    for c in ("equal_weight", BK):
         for name, fn in (("max_drawdown", M.max_drawdown), ("calmar", M.calmar)):
             d = paired_metric_diff(rets["ppo_ensemble"], rets[c], fn, block=b["block"], draws=2000, seed=b["seed"])
             sec.append({"vs": c, "metric": name, "delta": d["observed"], "ci_lo": d["ci95"][0], "ci_hi": d["ci95"][1]})
@@ -152,8 +163,8 @@ def report(out: Path) -> dict:
 
     prev = set(cfg["folds"]["previously_seen"])
     per_year = []
-    for c in ["ppo_ensemble", "vol_target_floored", "vol_target_unfloored", "best_fixed", "equal_weight",
-              "niftybees"] + [f"ppo_seed_{s}" for s in seeds]:
+    for c in ["ppo_ensemble", "vol_target_floored", "vol_target_unfloored", "vix_rule", "best_fixed",
+              "equal_weight", BK] + [f"ppo_seed_{s}" for s in seeds]:
         if c not in rets:
             continue
         t = M.by_year(dates, rets[c].to_numpy(), rf)
@@ -171,15 +182,26 @@ def report(out: Path) -> dict:
         yearly_d.append({"year": y, "delta": d["observed"], "lo": d["ci95"][0], "hi": d["ci95"][1]})
     yearly_d = pd.DataFrame(yearly_d)
     yearly_d.to_csv(tables / "per_year_delta_sharpe.csv", index=False)
+    yearly_v = None
+    if "vix_rule" in rets:
+        yearly_v = []
+        for y in sorted(set(dates.year)):
+            m = dates.year == y
+            d = paired_sharpe_diff(rets.loc[m, "ppo_ensemble"], rets.loc[m, "vix_rule"], rf[m],
+                                   block=b["block"], draws=2000, seed=b["seed"])
+            yearly_v.append({"year": y, "delta": d["observed"], "lo": d["ci95"][0], "hi": d["ci95"][1]})
+        yearly_v = pd.DataFrame(yearly_v)
+        yearly_v.to_csv(tables / "per_year_delta_sharpe_vix_rule.csv", index=False)
 
     navs = {c: pd.Series(M.nav(rets[c].to_numpy())[1:], index=dates) for c in named}
     episodes = []
     for y in cfg["evaluation"]["drawdown_episode_years"]:
-        ep = drawdown_episode(navs["niftybees"], y) if (dates.year == y).any() else None
+        ep = drawdown_episode(navs[BK], y) if (dates.year == y).any() else None
         if ep is None:
             continue
         p, t, depth = ep
-        for c in ["ppo_ensemble", "vol_target_floored", "vol_target_unfloored", "best_fixed", "equal_weight", "niftybees"]:
+        for c in ["ppo_ensemble", "vol_target_floored", "vol_target_unfloored", "vix_rule", "best_fixed",
+                  "equal_weight", BK]:
             if c in navs:
                 seg = navs[c][(navs[c].index >= p) & (navs[c].index <= t)]
                 episodes.append({"year": y, "peak": p.date(), "trough": t.date(), "strategy": c,
@@ -188,7 +210,7 @@ def report(out: Path) -> dict:
     episodes = pd.DataFrame(episodes)
     episodes.to_csv(tables / "drawdown_episodes.csv", index=False)
 
-    _figures(out, rets, rf, dates, navs, dec, yearly_d, per_year, seeds)
+    _figures(out, rets, rf, dates, navs, dec, yearly_d, per_year, seeds, yearly_v)
 
     res = {"mode": info["mode"], "path": f"{info['start']} .. {info['end']}", "sessions": len(rets),
            "h1": {"delta_sharpe": h1["observed"], "p05": h1["p05"], "ci95": h1["ci95"],
@@ -197,13 +219,47 @@ def report(out: Path) -> dict:
            "random_sharpe": {"median": float(np.median(rs)), "p05": float(np.quantile(rs, 0.05)),
                              "p95": float(np.quantile(rs, 0.95))},
            "delisting": extras.get("_delisting_haircut")}
+    if family is not None:
+        res["primary_family"] = family
     (out / "summary.json").write_text(json.dumps(res, indent=1, default=str))
-    _markdown(out, res, combined, expl, sec, per_year, yearly_d, episodes)
+    _markdown(out, res, combined, expl, sec, per_year, yearly_d, episodes, yearly_v)
     return res
 
 
-def _figures(out, rets, rf, dates, navs, dec, yearly_d, per_year, seeds):
-    vix = pd.read_parquet(ROOT / "data" / "processed" / "market.parquet")["vix"].reindex(dates)
+def holm(pvals: dict[str, float], alpha: float) -> dict[str, dict]:
+    """Holm's step-down procedure: reject the k-th smallest p while p <= alpha / (m - k + 1)."""
+    m = len(pvals)
+    out, still = {}, True
+    for k, (hid, p) in enumerate(sorted(pvals.items(), key=lambda kv: kv[1]), start=1):
+        thr = alpha / (m - k + 1)
+        still = still and p <= thr
+        out[hid] = {"p": p, "holm_threshold": thr, "rejected": bool(still), "rank": k}
+    return out
+
+
+def primary_family(cfg, rets, rf) -> dict:
+    """Protocol v2: several primary hypotheses, family-wise error held at alpha by Holm.
+    p = share of paired-bootstrap draws of the Sharpe difference at or below zero."""
+    ev, b = cfg["evaluation"], cfg["evaluation"]["bootstrap"]
+    if ev.get("multiplicity") != "holm":
+        raise ValueError("a list of primary hypotheses needs multiplicity: holm")
+    rows = {}
+    for h in ev["primary"]:
+        if h["metric"] != "sharpe" or h["sided"] != "greater":
+            raise ValueError(f"unsupported primary hypothesis {h}")
+        d = paired_sharpe_diff(rets[h["strategy"]], rets[h["baseline"]], rf,
+                               block=b["block"], draws=b["draws"], seed=b["seed"])
+        rows[h["id"]] = {"strategy": h["strategy"], "baseline": h["baseline"], "delta_sharpe": d["observed"],
+                         "p05": d["p05"], "ci95": d["ci95"], "share_le_0": d["share_le_0"]}
+    dec = holm({k: v["share_le_0"] for k, v in rows.items()}, ev["alpha"])
+    for k in rows:
+        rows[k].update(p=dec[k]["p"], holm_threshold=dec[k]["holm_threshold"], rank=dec[k]["rank"],
+                       supported=dec[k]["rejected"])
+    return {"procedure": "holm", "alpha": ev["alpha"], "hypotheses": rows}
+
+
+def _figures(out, rets, rf, dates, navs, dec, yearly_d, per_year, seeds, yearly_v=None):
+    vix = pd.read_parquet(study_root() / "data" / "processed" / "market.parquet")["vix"].reindex(dates)
 
     from matplotlib.ticker import FuncFormatter, NullFormatter
     fig, ax = _fig(7.0, 3.2)
@@ -258,6 +314,16 @@ def _figures(out, rets, rf, dates, navs, dec, yearly_d, per_year, seeds):
     ax.set_ylabel("Sharpe difference\n(PPO ensemble - vol targeting)", fontsize=8, color=INK)
     _save(fig, out, "per_year_delta_sharpe")
 
+    if yearly_v is not None:
+        fig, ax = _fig(7.0, 2.6)
+        yd = yearly_v
+        ax.axhline(0, color=INK2, lw=0.8)
+        ax.errorbar(yd["year"], yd["delta"], yerr=[yd["delta"] - yd["lo"], yd["hi"] - yd["delta"]],
+                    fmt="o", color="#2a78d6", ecolor="#2a78d6", elinewidth=1.2, capsize=3, ms=5)
+        ax.set_xticks(yd["year"])
+        ax.set_ylabel("Sharpe difference\n(PPO ensemble - VIX rule)", fontsize=8, color=INK)
+        _save(fig, out, "per_year_delta_sharpe_vix_rule")
+
     fig, ax = _fig(7.0, 2.6)
     py = per_year
     seed_rows = py[py["strategy"].str.startswith("ppo_seed_")]
@@ -278,16 +344,31 @@ def _fmt(x, pct=False, nd=3):
     return f"{x * 100:.2f}%" if pct else f"{x:.{nd}f}"
 
 
-def _markdown(out, res, combined, expl, sec, per_year, yearly_d, episodes):
-    h = res["h1"]
+def _primary_lines(res) -> list[str]:
+    if "primary_family" not in res:
+        h = res["h1"]
+        return ["## Primary hypothesis (H1)", "",
+                f"Sharpe(PPO ensemble) - Sharpe(vol targeting, floor 0.5) = **{h['delta_sharpe']:+.3f}**; "
+                f"bootstrap 5th percentile {h['p05']:+.3f}; 95% CI [{h['ci95'][0]:+.3f}, {h['ci95'][1]:+.3f}]; "
+                f"share of draws <= 0: {h['share_le_0']:.3f}.", "",
+                f"**H1 {'SUPPORTED' if h['supported'] else 'NOT SUPPORTED'}** under the pre-registered rule "
+                "(5th percentile above zero).", ""]
+    fam = res["primary_family"]
+    lines = [f"## Primary hypotheses (Holm, family-wise alpha {fam['alpha']:g})", "",
+             "p is the share of paired-bootstrap draws of the Sharpe difference at or below zero. Holm rejects the "
+             "k-th smallest p while p <= alpha / (m - k + 1).", "",
+             "| Hypothesis | Comparison | Sharpe difference | 95% CI | p | Holm threshold | Decision |",
+             "|---|---|---|---|---|---|---|"]
+    for hid, h in fam["hypotheses"].items():
+        lines.append(f"| {hid} | {LABELS.get(h['strategy'], h['strategy'])} - {LABELS.get(h['baseline'], h['baseline'])} | "
+                     f"**{h['delta_sharpe']:+.3f}** | [{h['ci95'][0]:+.3f}, {h['ci95'][1]:+.3f}] | {h['p']:.4f} | "
+                     f"{h['holm_threshold']:.4f} | **{'SUPPORTED' if h['supported'] else 'NOT SUPPORTED'}** |")
+    return lines + [""]
+
+
+def _markdown(out, res, combined, expl, sec, per_year, yearly_d, episodes, yearly_v=None):
     lines = [f"# Test report ({res['mode']})", "",
-             f"Path: {res['path']} ({res['sessions']} sessions).", "",
-             "## Primary hypothesis (H1)", "",
-             f"Sharpe(PPO ensemble) - Sharpe(vol targeting, floor 0.5) = **{h['delta_sharpe']:+.3f}**; "
-             f"bootstrap 5th percentile {h['p05']:+.3f}; 95% CI [{h['ci95'][0]:+.3f}, {h['ci95'][1]:+.3f}]; "
-             f"share of draws <= 0: {h['share_le_0']:.3f}.", "",
-             f"**H1 {'SUPPORTED' if h['supported'] else 'NOT SUPPORTED'}** under the pre-registered rule "
-             "(5th percentile above zero).", "",
+             f"Path: {res['path']} ({res['sessions']} sessions).", ""] + _primary_lines(res) + [
              "## Combined path", "",
              "| Strategy | Sharpe | CAGR | Vol | Max DD | Calmar | Costs | Avg exposure |",
              "|---|---|---|---|---|---|---|---|"]
@@ -310,7 +391,7 @@ def _markdown(out, res, combined, expl, sec, per_year, yearly_d, episodes):
     rnd = res["random_sharpe"]
     lines += ["", f"Random policy Sharpe: median {rnd['median']:.3f}, 5-95% band [{rnd['p05']:.3f}, {rnd['p95']:.3f}].",
               "", "## Per year (previously seen years marked *)", "",
-              "| Year | PPO ens. | Vol tgt | Best fixed | Equal wt | NIFTYBEES | PPO - VT [95% CI] |",
+              f"| Year | PPO ens. | Vol tgt | Best fixed | Equal wt | {BNAME} | PPO - VT [95% CI] |",
               "|---|---|---|---|---|---|---|"]
     pv = per_year.pivot_table(index="year", columns="strategy", values="sharpe")
     seen = per_year.drop_duplicates("year").set_index("year")["previously_seen"]
@@ -318,10 +399,16 @@ def _markdown(out, res, combined, expl, sec, per_year, yearly_d, episodes):
         d = yearly_d.set_index("year").loc[y]
         lines.append(f"| {y}{'*' if seen.get(y) else ''} | {_fmt(pv.loc[y].get('ppo_ensemble'))} | "
                      f"{_fmt(pv.loc[y].get('vol_target_floored'))} | {_fmt(pv.loc[y].get('best_fixed'))} | "
-                     f"{_fmt(pv.loc[y].get('equal_weight'))} | {_fmt(pv.loc[y].get('niftybees'))} | "
+                     f"{_fmt(pv.loc[y].get('equal_weight'))} | {_fmt(pv.loc[y].get(BK))} | "
                      f"{d['delta']:+.3f} [{d['lo']:+.3f}, {d['hi']:+.3f}] |")
+    if yearly_v is not None:
+        lines += ["", "## Per year: PPO ensemble vs VIX threshold rule (exploratory)", "",
+                  "| Year | PPO ens. | VIX rule | PPO - VIX rule [95% CI] |", "|---|---|---|---|"]
+        for r in yearly_v.itertuples():
+            lines.append(f"| {r.year}{'*' if seen.get(r.year) else ''} | {_fmt(pv.loc[r.year].get('ppo_ensemble'))} | "
+                         f"{_fmt(pv.loc[r.year].get('vix_rule'))} | {r.delta:+.3f} [{r.lo:+.3f}, {r.hi:+.3f}] |")
     if len(episodes):
-        lines += ["", "## Drawdown episodes (NIFTYBEES's deepest episode with its peak in the year)", "",
+        lines += ["", f"## Drawdown episodes ({BNAME}'s deepest episode with its peak in the year)", "",
                   "| Year | Peak | Trough | Strategy | Peak-to-trough | Max DD in window |", "|---|---|---|---|---|---|"]
         for r in episodes.itertuples():
             lines.append(f"| {r.year} | {r.peak} | {r.trough} | {LABELS.get(r.strategy, r.strategy)} | "
@@ -329,5 +416,6 @@ def _markdown(out, res, combined, expl, sec, per_year, yearly_d, episodes):
     dl = res.get("delisting") or {}
     lines += ["", f"Delisting haircut sensitivity: {'applied' if dl.get('applicable') else 'not applicable'} "
               f"({dl.get('delisting_exits_on_path', 0)} delisting exits on the path).", "",
-              "Figures: figures/equity, drawdown, exposure_vs_vix, per_year_delta_sharpe, seed_spread (png and pdf)."]
+              "Figures: figures/equity, drawdown, exposure_vs_vix, per_year_delta_sharpe"
+              + (", per_year_delta_sharpe_vix_rule" if yearly_v is not None else "") + ", seed_spread (png and pdf)."]
     (out / "report.md").write_text("\n".join(lines) + "\n")
