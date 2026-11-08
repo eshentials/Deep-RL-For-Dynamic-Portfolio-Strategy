@@ -38,6 +38,24 @@ pytest -q
 
 Post-unblinding analyses are in `results/exploratory/` (`python -m eval.exploratory`) and are labelled exploratory. Any further analysis must be logged in `ledger.csv`. Use kind `exploratory` for re-reading the test returns, or `sensitivity` for any new strategy variant, which counts as a trial in the Deflated Sharpe.
 
+## Protocol v2 (draft): the frozen pipeline on the Nifty Next 50
+
+`protocol_v2.md` and `config/protocol_v2.yaml` are a draft for the authors to sign. They rerun v1 unchanged on the point-in-time Nifty Next 50 and register v1's post-hoc VIX threshold rule as a comparator. The two primary hypotheses, H1 (beats vol targeting) and H2 (beats the VIX rule), are tested under Holm.
+
+Every command reads the active protocol from `RB_PROTOCOL`. Without it, v1 is used and nothing v1 produced changes. v2 keeps its data, runs and results under `studies/next50/`.
+
+```bash
+export RB_PROTOCOL=protocol_v2.yaml
+python -m data.roster_next50 notices      # NSE Indices notices: listing, PDFs (cached in scratch/), text
+python -m data.roster_next50 sections     # Next 50 rows parsed from each notice, plus the hand-review queue
+python -m data.roster_next50 snapshots    # archived Next 50 and Nifty 100 lists
+python -m data.roster_next50 build        # changes.csv -> daily membership, validated against every archived list
+python -m data.market && python -m data.rf && python -m data.prices && python -m data.panel
+python -m data.manifest --verify          # studies/next50/data/MANIFEST.json
+```
+
+Status: data built and validated (50e47d9). One development run was made on 2014-2018 (ledger row 11). Nothing has been scored on 2019 onward. After all three authors sign, tag `protocol-v2` and run `train.walk_forward --protocol`, then `train.run_test --protocol`, with `RB_PROTOCOL` set.
+
 ## Paper
 
 `paper/main.tex` is the working draft. Every number and table in it is generated from the committed results, so rebuild both together:

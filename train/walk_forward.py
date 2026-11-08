@@ -130,6 +130,7 @@ def main(argv=None):
     res.to_csv(RUNS / base / "summary.csv", index=False)
     print(f"done in {(time.time() - t0) / 60:.1f} min")
 
+    from data.rf import is_provisional
     from train import ledger
     desc = f"PPO kappa={cfg['reward']['kappa']} steps={steps}"
     if cfg["version"] != 1:
@@ -138,7 +139,7 @@ def main(argv=None):
                   folds=" ".join(map(str, fold_years)), seeds=" ".join(map(str, seeds)),
                   steps=str(steps), val_sharpe_mean=float(res["best_val_sharpe"].mean()),
                   touched_test=False, counts_as_trial=bool(a.protocol),
-                  notes=(f"{run_rel}; rf={'RBI' if a.protocol else 'PROVISIONAL'}"
+                  notes=(f"{run_rel}; rf={'PROVISIONAL' if is_provisional() else 'RBI'}"
                          + ("" if a.protocol else "; plumbing check with the protocol config, not a selectable variant")))
 
 

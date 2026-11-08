@@ -12,3 +12,4 @@ runs/tb/
 
 # Development runs stay local; protocol runs (models + curves) are committed before the test run
 runs/dev/
+studies/*/runs/dev/
